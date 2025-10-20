@@ -1,1 +1,33 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Install iOS App</title><meta http-equiv="refresh" content="1;url='itms-services://?action=download-manifest&url=https://github.com/altisss0806/mts_upload/releases/download/ALTMobile/manifest.plist'"></head><body style="font-family:-apple-system,Arial,sans-serif;padding:24px;line-height:1.5"><h2>Installing YSflex v3.8.97</h2><p>If it doesn't start, tap <a href="itms-services://?action=download-manifest&url=https://github.com/altisss0806/mts_upload/releases/download/ALTMobile/manifest.plist">Install Link</a>.</p></body></html>
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Online On Air</title>
+    <script>
+        (() => {
+            const params = new URLSearchParams(location.search);
+            const env = (params.get('env') || 'prod').toLowerCase();
+            const manifest = env === 'uat' ? 'manifestUAT.plist' : 'manifest.plist';
+            const manifestUrl = `$https://github.com/altisss0806/mts_upload/releases/download/ALTMobile/${manifest}`;
+            // Use location.href to redirect (works better than meta refresh)
+            location.href = `itms-services://?action=download-manifest&url=${encodeURIComponent(manifestUrl)}`;
+        })();
+    </script>
+</head>
+
+<body style="font-family:-apple-system,Arial,sans-serif;padding:24px;line-height:1.5">
+    <h2>YSflex UAT</h2>
+    <a id="lnk_uat" href="#">Install UAT</a>
+    <h2>YSflex Prod</h2>
+    <a id="lnk" href="#">Install Prod</a>
+    <script>
+        document.getElementById('lnk').href = 'itms-services://?action=download-manifest&url='
+            + encodeURIComponent(`${location.origin}/manifests/manifestUAT.plist`);
+        document.getElementById('lnk').href = 'itms-services://?action=download-manifest&url='
+            + encodeURIComponent(`${location.origin}/manifests/manifest.plist`);
+    </script>
+</body>
+
+</html>
