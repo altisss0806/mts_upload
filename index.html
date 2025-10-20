@@ -13,12 +13,6 @@
     <h2>YSflex Prod</h2>
     <a id="lnk" href="#">Install Prod</a>
     <script>
-        document.getElementById('lnk').href = 'itms-services://?action=download-manifest&url='
-            + encodeURIComponent(`https://github.com/altisss0806/mts_upload/releases/download/ALTMobile/manifests/manifestUAT.plist`);
-        document.getElementById('lnk').href = 'itms-services://?action=download-manifest&url='
-            + encodeURIComponent(`https://github.com/altisss0806/mts_upload/releases/download/ALTMobile/manifests/manifest.plist`);
-    </script>
-    <script>
         (() => {
             const params = new URLSearchParams(location.search);
             const env = (params.get('env') || 'prod').toLowerCase();
@@ -27,6 +21,10 @@
             // Use location.href to redirect (works better than meta refresh)
             location.href = `itms-services://?action=download-manifest&url=${encodeURIComponent(manifestUrl)}`;
         })();
+        document.getElementById('lnk_uat').href = 'itms-services://?action=download-manifest&url='
+            + encodeURIComponent(`https://github.com/altisss0806/mts_upload/releases/download/ALTMobile/manifests/manifestUAT.plist`);
+        document.getElementById('lnk').href = 'itms-services://?action=download-manifest&url='
+            + encodeURIComponent(`https://github.com/altisss0806/mts_upload/releases/download/ALTMobile/manifests/manifest.plist`);
     </script>
 </body>
 
