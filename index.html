@@ -38,21 +38,33 @@
       const params = new URLSearchParams(location.search);
       const seccode = (params.get('seccode') || '').trim();
       const env = (params.get('env') || 'prod').toLowerCase();
-      const plistBase = 'https://github.com/altisss0806/mts_upload/releases/download/ALTMobile/';
-      const manifestName = env === 'uat' ? 'manifestUAT.plist' : 'manifest.plist';
-      const manifestUrl = `${plistBase}${manifestName}`;
+      const GH_OWNER = 'altisss0806';
+      const GH_REPO = 'mts_upload';
+      const envSlug = env === 'prod' ? 'prod' : 'uat';
+      let tag;
+      let manifestName;
+      if (seccode) {
+        tag = tag || `MTS_OTHER_${seccode}`;
+        manifestName = `manifest_${envSlug}_${seccode}.plist`;
+      } else {
+        tag = tag || 'ALTMobile';
+        manifestName = envSlug === 'uat' ? 'manifestUAT.plist' : 'manifest.plist';
+      }
+      const manifestUrl = `https://github.com/${GH_OWNER}/${GH_REPO}/releases/download/${tag}/${manifestName}`;
 
       let map = {};
-      try {
-        const res = await fetch('landingData.json', { cache: 'no-store' });
-        if (res.ok) map = await res.json();
-      } catch (err) {
-        console.warn('Cannot load landing data', err);
+      if (seccode) {
+        try {
+          const res = await fetch('landingData.json', { cache: 'no-store' });
+          if (res.ok) map = await res.json();
+        } catch (err) {
+          console.warn('Cannot load landing data', err);
+        }
       }
 
       const config = map[seccode] || {};
-      const scheme = config.scheme || 'MTS Other';
-      const bundleId = config.bundleId || 'vn.altisss.mts';
+      const scheme = config.scheme || (seccode ? 'MTS Other' : 'YSflex');
+      const bundleId = config.bundleId || (seccode ? 'vn.altisss.mts' : 'vn.ysvn.ysflex');
 
       const titleEl = document.getElementById('app-title');
       const infoEl = document.getElementById('app-info');
@@ -79,6 +91,8 @@
       if (bundleId) metaItems.push(`Bundle ID: ${bundleId}`);
       if (scheme) metaItems.push(`Scheme: ${scheme}`);
       if (env) metaItems.push(`Env: ${env.toUpperCase()}`);
+      if (tag) metaItems.push(`Tag: ${tag}`);
+      if (manifestName) metaItems.push(`Manifest: ${manifestName}`);
       if (metaItems.length) {
         metaEl.textContent = metaItems.join(' • ');
       }
