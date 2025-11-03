@@ -43,11 +43,11 @@
       const envSlug = env === 'prod' ? 'prod' : 'uat';
       let tag;
       let manifestName;
-      if (seccode) {
-        tag = tag || `MTS_OTHER_${seccode}`;
+      if (seccode != '004') {
+        tag = `MTS_OTHER_${seccode}`;
         manifestName = `manifest_${envSlug}_${seccode}.plist`;
       } else {
-        tag = tag || 'ALTMobile';
+        tag = 'ALTMobile';
         manifestName = envSlug === 'uat' ? 'manifestUAT.plist' : 'manifest.plist';
       }
       const manifestUrl = `https://github.com/${GH_OWNER}/${GH_REPO}/releases/download/${tag}/${manifestName}`;
