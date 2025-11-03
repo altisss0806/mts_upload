@@ -1,37 +1,88 @@
 <!doctype html>
-<html>
-
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Online On Air</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mobile Install Portal</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; margin: 0; padding: 24px; background: #f6f6f9; color: #1f2933; }
+    header { margin-bottom: 24px; }
+    h1 { font-size: 24px; margin: 0 0 8px; }
+    p { margin: 8px 0; }
+    .card { background: #fff; border-radius: 12px; padding: 20px; box-shadow: 0 6px 18px -12px rgba(15, 23, 42, 0.45); max-width: 560px; margin: 0 auto; }
+    .links { margin: 16px 0; }
+    .links a { display: inline-block; margin: 8px 12px 0 0; padding: 10px 16px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+    .links a.primary { background: #2563eb; color: #fff; box-shadow: 0 10px 20px -12px rgba(37, 99, 235, 0.6); }
+    .links a.secondary { background: #e2e8f0; color: #1f2933; }
+    .links a:hover { transform: translateY(-1px); box-shadow: 0 18px 20px -18px rgba(15, 23, 42, 0.4); }
+    .meta { font-size: 13px; color: #64748b; margin-top: 12px; }
+    .meta span { display: inline-block; margin-right: 12px; }
+    .notice { margin-top: 24px; background: #f1f5f9; border-radius: 10px; padding: 16px; font-size: 14px; color: #475569; }
+  </style>
 </head>
+<body>
+  <div class="card">
+    <header>
+      <h1 id="app-title">Mobile Build</h1>
+      <p id="app-info">Preparing installation…</p>
+    </header>
+    <div class="links" id="link-container"></div>
+    <div class="meta" id="meta"></div>
+    <div class="notice">
+      <strong>Hướng dẫn:</strong>
+      <p>Mở trang này trên Safari (iOS), nhấn “Install iOS” và xác nhận để cài đặt.</p>
+    </div>
+  </div>
+  <script>
+    (async () => {
+      const params = new URLSearchParams(location.search);
+      const seccode = (params.get('seccode') || '').trim();
+      const env = (params.get('env') || 'prod').toLowerCase();
+      const plistBase = 'https://github.com/altisss0806/mts_upload/releases/download/ALTMobile/';
+      const manifestName = env === 'uat' ? 'manifestUAT.plist' : 'manifest.plist';
+      const manifestUrl = `${plistBase}${manifestName}`;
 
-<body style="font-family:-apple-system,Arial,sans-serif;padding:24px;line-height:1.5">
-    <h2>YSflex UAT</h2>
-    <h6><a id="lnk_uat" href="#">Install IOS UAT</a></h6>
-    <h6><a id="lnk_uat_and" href="#">Download Android UAT</a></h6>
-    <h2>YSflex Prod</h2>
-    <h6><a id="lnk" href="#">Install IOS Prod</a></h6>
-    <h6><a id="lnk_and" href="#">Download Android Prod</a></h6>
-    <script>
-        (() => {
-            const params = new URLSearchParams(location.search);
-            const env = (params.get('env') || 'prod').toLowerCase();
-            const manifest = env === 'uat' ? 'manifestUAT.plist' : 'manifest.plist';
-            const manifestUrl = `https://github.com/altisss0806/mts_upload/releases/download/ALTMobile/${manifest}`;
-            // Use location.href to redirect (works better than meta refresh)
-            location.href = `itms-services://?action=download-manifest&url=${encodeURIComponent(manifestUrl)}`;
-        })();
-        document.getElementById('lnk_uat').href = 'itms-services://?action=download-manifest&url='
-            + encodeURIComponent(`https://github.com/altisss0806/mts_upload/releases/download/ALTMobile/manifestUAT.plist`);
-        document.getElementById('lnk').href = 'itms-services://?action=download-manifest&url='
-            + encodeURIComponent(`https://github.com/altisss0806/mts_upload/releases/download/ALTMobile/manifest.plist`);
-        document.getElementById('lnk_and').href = 'itms-services://?action=download-manifest&url='
-            + encodeURIComponent(`https://github.com/altisss0806/mts_upload/releases/download/ALTMobile/ALTMobile004.apk`);
-        document.getElementById('lnk_uat_and').href = 'itms-services://?action=download-manifest&url='
-            + encodeURIComponent(`https://github.com/altisss0806/mts_upload/releases/download/ALTMobile/ALTMobile004UAT.apk`);
-    </script>
+      let map = {};
+      try {
+        const res = await fetch('landingData.json', { cache: 'no-store' });
+        if (res.ok) map = await res.json();
+      } catch (err) {
+        console.warn('Cannot load landing data', err);
+      }
+
+      const config = map[seccode] || {};
+      const scheme = config.scheme || 'MTS Other';
+      const bundleId = config.bundleId || 'vn.altisss.mts';
+
+      const titleEl = document.getElementById('app-title');
+      const infoEl = document.getElementById('app-info');
+      const linksEl = document.getElementById('link-container');
+      const metaEl = document.getElementById('meta');
+
+      titleEl.textContent = `${scheme} ${env === 'prod' ? 'PROD' : env.toUpperCase()}`;
+      infoEl.textContent = 'Nhấn Install iOS để bắt đầu cài đặt.';
+
+      const installUrl = `itms-services://?action=download-manifest&url=${encodeURIComponent(manifestUrl)}`;
+      setTimeout(() => {
+        try { window.location.replace(installUrl); } catch (err) { console.warn('Auto redirect failed', err); }
+      }, 250);
+
+      const btn = document.createElement('a');
+      btn.textContent = 'Install iOS';
+      btn.href = installUrl;
+      btn.className = 'primary';
+      btn.rel = 'noopener';
+      linksEl.appendChild(btn);
+
+      const metaItems = [];
+      if (seccode) metaItems.push(`Seccode: ${seccode}`);
+      if (bundleId) metaItems.push(`Bundle ID: ${bundleId}`);
+      if (scheme) metaItems.push(`Scheme: ${scheme}`);
+      if (env) metaItems.push(`Env: ${env.toUpperCase()}`);
+      if (metaItems.length) {
+        metaEl.textContent = metaItems.join(' • ');
+      }
+    })();
+  </script>
 </body>
-
 </html>
