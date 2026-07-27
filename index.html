@@ -30,7 +30,7 @@
     <div class="meta" id="meta"></div>
     <div class="notice">
       <strong>Hướng dẫn:</strong>
-      <p>Mở trang này trên Safari (iOS), nhấn “Install iOS” và xác nhận để cài đặt.</p>
+      <p id="instruction">Mở trang này trên Safari (iOS), nhấn “Install iOS” và xác nhận để cài đặt.</p>
     </div>
   </div>
   <script>
@@ -42,6 +42,8 @@
       // Flutter releases may share a seccode but are completely different apps.
       const app = (params.get('app') || '').trim().toLowerCase();
       const isFlutter = app === 'flutter';
+      const platform = (params.get('platform') || 'ios').trim().toLowerCase();
+      const isAndroid = platform === 'android';
       const GH_OWNER = 'altisss0806';
       const GH_REPO = 'mts_upload';
       const envSlug = env === 'prod' ? 'prod' : 'uat';
@@ -75,23 +77,38 @@
       const config = isFlutter ? (map.flutter?.[seccode] || {}) : (map[seccode] || {});
       const scheme = config.scheme || (isFlutter ? `Flutter ${seccode || ''}`.trim() : (seccode ? 'MTS' : 'ALTMobile004'));
       const bundleId = config.bundleId || (isFlutter ? 'Flutter app' : (seccode ? 'vn.altisss.mts' : 'vn.ysvn.ysflex'));
+      const apkName = isFlutter && seccode
+        ? `Flutter_${seccode}_${env === 'prod' ? 'PROD' : 'UAT'}.apk`
+        : config.apkName;
+      const apkUrl = apkName
+        ? `https://github.com/${GH_OWNER}/${GH_REPO}/releases/download/${tag}/${encodeURIComponent(apkName)}`
+        : null;
 
       const titleEl = document.getElementById('app-title');
       const infoEl = document.getElementById('app-info');
       const linksEl = document.getElementById('link-container');
       const metaEl = document.getElementById('meta');
+      const instructionEl = document.getElementById('instruction');
 
       titleEl.textContent = `${scheme} ${env === 'prod' ? 'PROD' : env.toUpperCase()}`;
-      infoEl.textContent = 'Nhấn Install iOS để bắt đầu cài đặt.';
+      infoEl.textContent = isAndroid
+        ? 'APK sẽ tự tải xuống. Nếu chưa bắt đầu, nhấn “Download APK”.'
+        : 'Nhấn Install iOS để bắt đầu cài đặt.';
+      instructionEl.textContent = isAndroid
+        ? 'Mở trang này bằng trình duyệt Android. Sau khi tải xong, mở file APK và xác nhận cài đặt.'
+        : 'Mở trang này trên Safari (iOS), nhấn “Install iOS” và xác nhận để cài đặt.';
 
       const installUrl = `itms-services://?action=download-manifest&url=${encodeURIComponent(manifestUrl)}`;
-      setTimeout(() => {
-        try { window.location.replace(installUrl); } catch (err) { console.warn('Auto redirect failed', err); }
-      }, 250);
+      const targetUrl = isAndroid ? apkUrl : installUrl;
+      if (targetUrl) {
+        setTimeout(() => {
+          try { window.location.replace(targetUrl); } catch (err) { console.warn('Auto redirect failed', err); }
+        }, 250);
+      }
 
       const btn = document.createElement('a');
-      btn.textContent = 'Install iOS';
-      btn.href = installUrl;
+      btn.textContent = isAndroid ? 'Download APK' : 'Install iOS';
+      btn.href = targetUrl || '#';
       btn.className = 'primary';
       btn.rel = 'noopener';
       linksEl.appendChild(btn);
@@ -102,8 +119,10 @@
       if (scheme) metaItems.push(`Scheme: ${scheme}`);
       if (env) metaItems.push(`Env: ${env.toUpperCase()}`);
       if (isFlutter) metaItems.push('App: Flutter');
+      if (isAndroid) metaItems.push('Platform: Android');
       if (tag) metaItems.push(`Tag: ${tag}`);
       if (manifestName) metaItems.push(`Manifest: ${manifestName}`);
+      if (apkName) metaItems.push(`APK: ${apkName}`);
       if (metaItems.length) {
         metaEl.textContent = metaItems.join(' • ');
       }
