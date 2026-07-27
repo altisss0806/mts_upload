@@ -1,0 +1,60 @@
+{
+  "888": {
+    "bundleId": "vn.altisss.mts.android",
+    "scheme": "AltisssTrading"
+  },
+  "102": {
+    "bundleId": "com.vn.vncsmts",
+    "scheme": "CSIMobile"
+  },
+  "061": {
+    "bundleId": "vn.gtjai.mts.test",
+    "scheme": "GTJASMobile"
+  },
+  "099": {
+    "bundleId": "vn.asam.mts",
+    "scheme": "ASAMMobile"
+  },
+  "036": {
+    "bundleId": "vn.alpha.mts",
+    "scheme": "AlphaMobile"
+  },
+  "020": {
+    "bundleId": "vn.vise.mtsv3",
+    "scheme": "OCBSTrading"
+  },
+  "082": {
+    "bundleId": "vn.hbs.iosmts",
+    "scheme": "HBSTrade"
+  },
+  "023": {
+    "bundleId": "com.vn.vscmts",
+    "scheme": "VSCTrade"
+  },
+  "028": {
+    "bundleId": "vn.nsi.nsimobile",
+    "scheme": "NSIMobile"
+  },
+  "075": {
+    "bundleId": "vn.altisss.bsimts",
+    "scheme": "BETAMobile"
+  },
+  "012": {
+    "bundleId": "vn.innotech.hsc.MTS",
+    "scheme": "HACMobile"
+  },
+  "flutter": {
+    "888": { "bundleId": "vn.altisss.mts.ios", "scheme": "Flutter Altisss" },
+    "102": { "bundleId": "com.vn.vncsmts", "scheme": "Flutter VNCS" },
+    "061": { "bundleId": "vn.gtjai.mts", "scheme": "Flutter GTJAS" },
+    "099": { "bundleId": "vn.asam.mts", "scheme": "Flutter ASAM" },
+    "036": { "bundleId": "vn.alpha.mts", "scheme": "Flutter Alpha" },
+    "020": { "bundleId": "vn.vise.mtsv3", "scheme": "Flutter OCBS" },
+    "082": { "bundleId": "vn.hbs.iosmts", "scheme": "Flutter HBS" },
+    "023": { "bundleId": "com.vn.vscmts", "scheme": "Flutter VSC" },
+    "028": { "bundleId": "vn.nsi.nsimobile", "scheme": "Flutter NSI" },
+    "075": { "bundleId": "vn.beta.betatrade", "scheme": "Flutter BETA" },
+    "012": { "bundleId": "vn.innotech.hsc.MTS", "scheme": "Flutter Haseco" },
+    "119": { "bundleId": "vn.altisss.fintech", "scheme": "Flutter CAS" }
+  }
+}
