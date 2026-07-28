@@ -174,10 +174,14 @@
         const platform = (params.get('platform') || 'ios').trim().toLowerCase();
         const isAndroid = platform === 'android';
         const envSlug = env === 'prod' ? 'prod' : 'uat';
+        // The legacy YSflex landing URL deliberately has no seccode.  It must
+        // keep using the original ALTMobile release manifest, not fabricate a
+        // `MTS_OTHER_` tag with an empty suffix.
+        const hasOtherSeccode = Boolean(seccode) && seccode !== '004';
         const tag = isFlutter && seccode
           ? `flutter_${seccode}`
-          : (seccode !== '004' ? `MTS_OTHER_${seccode}` : 'ALTMobile');
-        const manifestName = seccode !== '004'
+          : (hasOtherSeccode ? `MTS_OTHER_${seccode}` : 'ALTMobile');
+        const manifestName = hasOtherSeccode
           ? `manifest_${envSlug}_${seccode}.plist`
           : (envSlug === 'uat' ? 'manifestUAT.plist' : 'manifest.plist');
         const manifestUrl = `https://github.com/${GH_OWNER}/${GH_REPO}/releases/download/${tag}/${manifestName}`;
