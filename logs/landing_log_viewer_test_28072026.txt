@@ -1,0 +1,4 @@
+[Landing log viewer test]
+Timestamp: 2026-07-28
+Status: GitHub Pages deployment verification
+Message: This file validates in-page log viewing through the raw GitHub mirror.
