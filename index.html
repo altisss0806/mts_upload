@@ -27,7 +27,7 @@
     h1 { margin-bottom: 10px; font-size: clamp(25px, 6vw, 36px); line-height: 1.1; letter-spacing: -.025em; }
     h2 { margin-bottom: 0; font-size: 18px; }
     .app-info { color: #cbd5e1; line-height: 1.55; }
-    .links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 24px 0 16px; }
+    .links { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; margin: 24px 0 16px; }
     .action-link, .toolbar-button { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid transparent; border-radius: 10px; padding: 10px 14px; color: inherit; font-size: 14px; font-weight: 700; text-align: center; text-decoration: none; cursor: pointer; }
     .action-link.primary, .toolbar-button.primary { color: #fff; background: #2563eb; box-shadow: 0 10px 24px -14px #2563eb; }
     .action-link.secondary, .toolbar-button.secondary { border-color: #334155; background: #172033; color: #dbeafe; }
@@ -154,8 +154,6 @@
 
       const installPage = document.getElementById('install-page');
       const logsPage = document.getElementById('logs-page');
-      const logsUrl = new URL(location.href);
-      logsUrl.searchParams.set('view', 'logs');
       const installUrl = new URL(location.href);
       installUrl.searchParams.delete('view');
 
@@ -221,12 +219,6 @@
         installButton.className = 'action-link primary';
         installButton.rel = 'noopener';
         links.appendChild(installButton);
-
-        const logsButton = document.createElement('a');
-        logsButton.textContent = 'Xem build logs';
-        logsButton.href = `${logsUrl.pathname}${logsUrl.search}${logsUrl.hash}`;
-        logsButton.className = 'action-link secondary';
-        links.appendChild(logsButton);
 
         const metaItems = [];
         if (seccode) metaItems.push(`Seccode: ${seccode}`);
