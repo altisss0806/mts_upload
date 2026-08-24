@@ -1,0 +1,1416 @@
+[13:22:18]: [33mGet started using a Gemfile for fastlane https://docs.fastlane.tools/getting-started/ios/setup/#use-a-gemfile[0m
+[13:22:19]: [32m------------------------------[0m
+[13:22:19]: [32m--- Step: default_platform ---[0m
+[13:22:19]: [32m------------------------------[0m
+[13:22:19]: [32mDriving the lane 'build_bot' 🚀[0m
+[13:22:19]: osBuild: `all`
+[13:22:19]: [32m🎯 Using version name: 3.9.99[0m
+[13:22:19]: [32m-------------------------------------------------------------[0m
+[13:22:19]: [32m--- Step: yarn prebuild 082 p 3.9.99 $(date +%Y%m%d.%H%M) ---[0m
+[13:22:19]: [32m-------------------------------------------------------------[0m
+[13:22:19]: [36m$ yarn prebuild 082 p 3.9.99 $(date +%Y%m%d.%H%M)[0m
+[13:22:19]: ▸ [35myarn run v1.22.22[0m
+[13:22:19]: ▸ [35m$ node script/prebuild.js 082 p 3.9.99 20260824.1322[0m
+[13:22:20]: ▸ [35m>>>>>> Change active_code:  082 [type]:  p[0m
+[13:22:20]: ▸ [35m>>>>>> [Change] appVersion for PackageJson:  3.9.99[0m
+[13:22:20]: ▸ [35m>>>>>> [Done] appVersion for PackageJson:  3.9.99[0m
+[13:22:20]: ▸ [35m✅ Đã cập nhật app.json với name = "HBSTrade", displayName = "HBS Trade"[0m
+[13:22:20]: ▸ [35m>>>>>> Công ty build:  082[0m
+[13:22:20]: ▸ [35m>>>>>> APP_VERSION: 3.9.99[0m
+[13:22:20]: ▸ [35m>>>>>> APP_BUILD_NUMBER: 20260824.1322[0m
+[13:22:20]: ▸ [35m>>>>>> Môi trường build: CONFIG_PRODUCTION[0m
+[13:22:20]: ▸ [35mDone in 0.93s.[0m
+[13:22:20]: [32m------------------------------------------------------[0m
+[13:22:20]: [32m--- Step: yarn prebuild 082 t 3.9.99 20260824.1322 ---[0m
+[13:22:20]: [32m------------------------------------------------------[0m
+[13:22:20]: [36m$ yarn prebuild 082 t 3.9.99 20260824.1322[0m
+[13:22:20]: ▸ [35myarn run v1.22.22[0m
+[13:22:20]: ▸ [35m$ node script/prebuild.js 082 t 3.9.99 20260824.1322[0m
+[13:22:21]: ▸ [35m>>>>>> Change active_code:  082 [type]:  t[0m
+[13:22:21]: ▸ [35m>>>>>> [Change] appVersion for PackageJson:  3.9.99[0m
+[13:22:21]: ▸ [35m>>>>>> [Done] appVersion for PackageJson:  3.9.99[0m
+[13:22:21]: ▸ [35m✅ Đã cập nhật app.json với name = "HBSTrade", displayName = "HBS Trade"[0m
+[13:22:21]: ▸ [35m>>>>>> Công ty build:  082[0m
+[13:22:21]: ▸ [35m>>>>>> APP_VERSION: 3.9.99[0m
+[13:22:21]: ▸ [35m>>>>>> APP_BUILD_NUMBER: 20260824.1322[0m
+[13:22:21]: ▸ [35m>>>>>> Môi trường build: CONFIG_TEST[0m
+[13:22:21]: ▸ [35mDone in 0.55s.[0m
+[13:22:21]: [32m------------------[0m
+[13:22:21]: [32m--- Step: yarn ---[0m
+[13:22:21]: [32m------------------[0m
+[13:22:21]: [36m$ yarn[0m
+[13:22:21]: ▸ [35myarn install v1.22.22[0m
+[13:22:21]: ▸ [35m[1/5] Validating package.json...[0m
+[13:22:21]: ▸ [35m[2/5] Resolving packages...[0m
+[13:22:22]: ▸ [35m[3/5] Fetching packages...[0m
+[13:22:22]: ▸ [35m[4/5] Linking dependencies...[0m
+[13:22:22]: ▸ [35mwarning " > @react-native-community/cameraroll@4.1.2" has incorrect peer dependency "react@16 || 17".[0m
+[13:22:22]: ▸ [35mwarning " > @react-native-community/datetimepicker@3.4.7" has unmet peer dependency "react-native-windows@>=0.62".[0m
+[13:22:22]: ▸ [35mwarning " > react-native-fs@2.17.0" has incorrect peer dependency "react-native@^0.59.5".[0m
+[13:22:22]: ▸ [35mwarning " > react-native-fs@2.17.0" has unmet peer dependency "react-native-windows@^0.57.2".[0m
+[13:22:22]: ▸ [35mwarning " > react-native-paper@3.8.0" has unmet peer dependency "react-native-vector-icons@*".[0m
+[13:22:22]: ▸ [35mwarning " > react-native-qrcode-svg@6.1.2" has incorrect peer dependency "react-native-svg@^12.1.0".[0m
+[13:22:22]: ▸ [35mwarning "react-native-render-html > @native-html/transient-render-engine@9.3.0" has unmet peer dependency "@types/react-native@*".[0m
+[13:22:22]: ▸ [35mwarning "react-native-render-html > @native-html/transient-render-engine > @native-html/css-processor@1.10.2" has unmet peer dependency "@types/react-native@*".[0m
+[13:22:22]: ▸ [35mwarning " > react-native-tab-view@3.0.1" has unmet peer dependency "react-native-pager-view@*".[0m
+[13:22:22]: ▸ [35mwarning " > styled-components@5.2.3" has unmet peer dependency "react-dom@>= 16.8.0".[0m
+[13:22:22]: ▸ [35mwarning " > styled-components@5.2.3" has unmet peer dependency "react-is@>= 16.8.0".[0m
+[13:22:22]: ▸ [35mwarning "sync-storage > @react-native-community/async-storage@1.12.1" has incorrect peer dependency "react@^16.8".[0m
+[13:22:22]: ▸ [35mwarning "victory-native > victory > victory-area@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[13:22:22]: ▸ [35mwarning "victory-native > victory > victory-axis@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[13:22:22]: ▸ [35mwarning "victory-native > victory > victory-bar@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[13:22:22]: ▸ [35mwarning "victory-native > victory > victory-box-plot@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[13:22:22]: ▸ [35mwarning "victory-native > victory > victory-brush-container@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[13:22:22]: ▸ [35mwarning "victory-native > victory > victory-brush-line@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[13:22:22]: ▸ [35mwarning "victory-native > victory > victory-candlestick@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[13:22:22]: ▸ [35mwarning "victory-native > victory > victory-chart@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[13:22:22]: ▸ [35mwarning "victory-native > victory > victory-core@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[13:22:22]: ▸ [35mwarning "victory-native > victory > victory-create-container@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[13:22:22]: ▸ [35mwarning "victory-native > victory > victory-cursor-container@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[13:22:22]: ▸ [35mwarning "victory-native > victory > victory-errorbar@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[13:22:22]: ▸ [35mwarning "victory-native > victory > victory-group@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[13:22:22]: ▸ [35mwarning "victory-native > victory > victory-histogram@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[13:22:22]: ▸ [35mwarning "victory-native > victory > victory-legend@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[13:22:22]: ▸ [35mwarning "victory-native > victory > victory-line@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[13:22:22]: ▸ [35mwarning "victory-native > victory > victory-pie@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[13:22:22]: ▸ [35mwarning "victory-native > victory > victory-polar-axis@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[13:22:22]: ▸ [35mwarning "victory-native > victory > victory-scatter@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[13:22:22]: ▸ [35mwarning "victory-native > victory > victory-selection-container@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[13:22:22]: ▸ [35mwarning "victory-native > victory > victory-shared-events@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[13:22:22]: ▸ [35mwarning "victory-native > victory > victory-stack@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[13:22:22]: ▸ [35mwarning "victory-native > victory > victory-tooltip@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[13:22:22]: ▸ [35mwarning "victory-native > victory > victory-voronoi@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[13:22:22]: ▸ [35mwarning "victory-native > victory > victory-voronoi-container@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[13:22:22]: ▸ [35mwarning "victory-native > victory > victory-zoom-container@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[13:22:22]: ▸ [35mwarning "@react-native-community/eslint-config > @typescript-eslint/eslint-plugin@2.34.0" has incorrect peer dependency "eslint@^5.0.0 || ^6.0.0".[0m
+[13:22:22]: ▸ [35mwarning "@react-native-community/eslint-config > @typescript-eslint/parser@2.34.0" has incorrect peer dependency "eslint@^5.0.0 || ^6.0.0".[0m
+[13:22:22]: ▸ [35mwarning "@react-native-community/eslint-config > eslint-plugin-react@7.19.0" has incorrect peer dependency "eslint@^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0".[0m
+[13:22:22]: ▸ [35mwarning "@react-native-community/eslint-config > eslint-plugin-react-hooks@3.0.0" has incorrect peer dependency "eslint@^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0".[0m
+[13:22:22]: ▸ [35mwarning "@react-native-community/eslint-config > eslint-plugin-react-native@3.8.1" has incorrect peer dependency "eslint@^3.17.0 || ^4 || ^5 || ^6".[0m
+[13:22:22]: ▸ [35mwarning Workspaces can only be enabled in private projects.[0m
+[13:22:27]: ▸ [35m[5/5] Building fresh packages...[0m
+[13:22:27]: ▸ [35msuccess Saved lockfile.[0m
+[13:22:27]: ▸ [35m$ patch-package && node script/patchAndroidLibraries.js && npx rn-nodeify --install buffer,crypto,stream,util,process,vm --hack && node script/syncFonts.js[0m
+[13:22:27]: ▸ [35mpatch-package 6.5.0[0m
+[13:22:27]: ▸ [35mApplying patches...[0m
+[13:22:27]: ▸ [35m@react-native-community/cameraroll@4.1.2 ✔[0m
+[13:22:27]: ▸ [35mcipher-base@1.0.4 ✔[0m
+[13:22:27]: ▸ [35mnative-base/@codler/react-native-keyboard-aware-scroll-view@1.0.1 ✔[0m
+[13:22:27]: ▸ [35mnative-base@2.15.8 ✔[0m
+[13:22:28]: ▸ [35mreact-native-floating-label-input@1.4.3 ✔[0m
+[13:22:28]: ▸ [35mreact-native-image-picker@4.0.6 ✔[0m
+[13:22:28]: ▸ [35mreact-native-modal-datetime-picker@9.1.0 ✔[0m
+[13:22:29]: ▸ [35m[patchAndroidLibraries] manifestMode=strip, manifests=39, gradleFiles=10, namespaces=26, svgPaper=28, rnCameraMlkit=8 nativeBaseRuntime=0, deprecatedPropTypesRuntime=5, nativeEventEmitterRuntime=1, floatingLabelRuntime=0, reactNavigationRuntime=0, reactNativeModalRuntime=1, navigationBarColorRuntime=1[0m
+[13:22:30]: ▸ [35mnot overwriting "buffer"[0m
+[13:22:30]: ▸ [35mnot overwriting "react-native-crypto"[0m
+[13:22:30]: ▸ [35mnot overwriting "stream-browserify"[0m
+[13:22:30]: ▸ [35mnot overwriting "util"[0m
+[13:22:30]: ▸ [35mnot overwriting "process"[0m
+[13:22:30]: ▸ [35mnot overwriting "vm-browserify"[0m
+[13:22:30]: ▸ [35mnot overwriting "readable-stream"[0m
+[13:22:30]: ▸ [35mnot overwriting "react-native-randombytes"[0m
+[13:22:30]: ▸ [35mnot overwriting shim.js. For the latest version, see rn-nodeify/shim.js[0m
+[13:22:30]: ▸ [35mremoving browser exclude node_modules/bn.js/package.json buffer[0m
+[13:22:30]: ▸ [35mnormalized "main" browser mapping in marky, fixed here: https://github.com/facebook/metro-bundler/pull/3[0m
+[13:22:30]: ▸ [35mremoving browser exclude node_modules/node-forge/package.json buffer[0m
+[13:22:30]: ▸ [35mremoving browser exclude node_modules/node-forge/package.json process[0m
+[13:22:30]: ▸ [35mremoving browser exclude node_modules/readable-stream/package.json util[0m
+[13:22:30]: ▸ [35mnormalized "main" browser mapping in superagent, fixed here: https://github.com/facebook/metro-bundler/pull/3[0m
+[13:22:30]: ▸ [35mremoving browser exclude node_modules/typescript/package.json buffer[0m
+[13:22:31]: ▸ [35mnormalized "main" browser mapping in @emotion/is-prop-valid, fixed here: https://github.com/facebook/metro-bundler/pull/3[0m
+[13:22:31]: ▸ [35mnormalized "main" browser mapping in @emotion/unitless, fixed here: https://github.com/facebook/metro-bundler/pull/3[0m
+[13:22:31]: ▸ [35mnormalized "main" browser mapping in @emotion/stylis, fixed here: https://github.com/facebook/metro-bundler/pull/3[0m
+[13:22:31]: ▸ [35mnormalized "main" browser mapping in @emotion/memoize, fixed here: https://github.com/facebook/metro-bundler/pull/3[0m
+[13:22:31]: ▸ [35mremoving browser exclude node_modules/appcenter-file-upload-client/node_modules/readable-stream/package.json util[0m
+[13:22:31]: ▸ [35mnormalized "main" browser mapping in readable-stream, fixed here: https://github.com/facebook/metro-bundler/pull/3[0m
+[13:22:31]: ▸ [35mnormalized "main" browser mapping in superagent, fixed here: https://github.com/facebook/metro-bundler/pull/3[0m
+[13:22:31]: ▸ [35mremoving browser exclude node_modules/bl/node_modules/readable-stream/package.json util[0m
+[13:22:31]: ▸ [35mnormalized "main" browser mapping in readable-stream, fixed here: https://github.com/facebook/metro-bundler/pull/3[0m
+[13:22:31]: ▸ [35mremoving browser exclude node_modules/browserify-rsa/node_modules/bn.js/package.json buffer[0m
+[13:22:31]: ▸ [35mremoving browser exclude node_modules/browserify-sign/node_modules/bn.js/package.json buffer[0m
+[13:22:31]: ▸ [35mremoving browser exclude node_modules/browserify-sign/node_modules/readable-stream/package.json util[0m
+[13:22:31]: ▸ [35mnormalized "main" browser mapping in readable-stream, fixed here: https://github.com/facebook/metro-bundler/pull/3[0m
+[13:22:31]: ▸ [35mremoving browser exclude node_modules/ftp/node_modules/readable-stream/package.json util[0m
+[13:22:31]: ▸ [35mremoving browser exclude node_modules/md5.js/node_modules/readable-stream/package.json util[0m
+[13:22:31]: ▸ [35mnormalized "main" browser mapping in readable-stream, fixed here: https://github.com/facebook/metro-bundler/pull/3[0m
+[13:22:31]: ▸ [35mnormalized "main" browser mapping in pbkdf2, fixed here: https://github.com/facebook/metro-bundler/pull/3[0m
+[13:22:31]: ▸ [35mremoving browser exclude node_modules/ripemd160/node_modules/readable-stream/package.json util[0m
+[13:22:31]: ▸ [35mnormalized "main" browser mapping in readable-stream, fixed here: https://github.com/facebook/metro-bundler/pull/3[0m
+[13:22:31]: ▸ [35mremoving browser exclude node_modules/stream-browserify/node_modules/readable-stream/package.json util[0m
+[13:22:31]: ▸ [35mremoving browser exclude node_modules/superagent/node_modules/readable-stream/package.json util[0m
+[13:22:31]: ▸ [35mnormalized "main" browser mapping in readable-stream, fixed here: https://github.com/facebook/metro-bundler/pull/3[0m
+[13:22:31]: ▸ [35mfailed to parse node_modules/resolve/test/resolver/malformed_package_json/package.json[0m
+[13:22:31]: ▸ [35mfailed to parse node_modules/eslint-plugin-react/node_modules/resolve/test/resolver/malformed_package_json/package.json[0m
+[13:22:32]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/engine.io-parser/package.json[0m
+[13:22:32]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/form-data/package.json[0m
+[13:22:32]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/iconv-lite/package.json[0m
+[13:22:32]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/pbkdf2/browser.js[0m
+[13:22:32]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/readable-stream/readable.js[0m
+[13:22:32]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/stream-browserify/index.js[0m
+[13:22:32]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/engine.io-client/dist/engine.io.js[0m
+[13:22:32]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-gesture-handler/ReanimatedDrawerLayout/package.json[0m
+[13:22:32]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-gesture-handler/DrawerLayout/package.json[0m
+[13:22:32]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-gesture-handler/Swipeable/package.json[0m
+[13:22:32]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-gesture-handler/ReanimatedSwipeable/package.json[0m
+[13:22:32]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-gesture-handler/jest-utils/package.json[0m
+[13:22:32]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/native-stack/package.json[0m
+[13:22:32]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/gesture-handler/package.json[0m
+[13:22:32]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/reanimated/package.json[0m
+[13:22:32]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-svg/css/package.json[0m
+[13:22:32]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-svg/filter-image/package.json[0m
+[13:22:32]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/readable-stream/lib/_stream_writable.js[0m
+[13:22:32]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/readable-stream/lib/_stream_readable.js[0m
+[13:22:32]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/socket.io-client/dist/socket.io.js[0m
+[13:22:32]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/appcenter-file-upload-client/node_modules/readable-stream/readable.js[0m
+[13:22:32]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/appcenter-file-upload-client/node_modules/readable-stream/package.json[0m
+[13:22:32]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/appcenter-file-upload-client/node_modules/form-data/package.json[0m
+[13:22:32]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/bl/node_modules/readable-stream/package.json[0m
+[13:22:32]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/bl/node_modules/readable-stream/readable.js[0m
+[13:22:32]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/browserify-sign/node_modules/readable-stream/readable.js[0m
+[13:22:32]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/md5.js/node_modules/readable-stream/readable.js[0m
+[13:22:32]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/md5.js/node_modules/readable-stream/package.json[0m
+[13:22:32]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/ripemd160/node_modules/readable-stream/package.json[0m
+[13:22:32]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/ripemd160/node_modules/readable-stream/readable.js[0m
+[13:22:32]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/superagent/node_modules/readable-stream/package.json[0m
+[13:22:32]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/superagent/node_modules/readable-stream/readable.js[0m
+[13:22:32]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/ftp/node_modules/readable-stream/lib/_stream_writable.js[0m
+[13:22:32]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/ftp/node_modules/readable-stream/lib/_stream_readable.js[0m
+[13:22:32]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/parse-asn1/node_modules/pbkdf2/lib/default-encoding.js[0m
+[13:22:32]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/stream-browserify/node_modules/readable-stream/lib/_stream_writable.js[0m
+[13:22:32]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/stream-browserify/node_modules/readable-stream/lib/_stream_readable.js[0m
+[13:22:33]: ▸ [35m[syncFonts] copied=0, skipped=192 (12 dirs, 16 fonts)[0m
+[13:22:33]: ▸ [35mDone in 11.49s.[0m
+[13:22:33]: [32m-------------------[0m
+[13:22:33]: [32m--- Step: clean ---[0m
+[13:22:33]: [32m-------------------[0m
+[13:22:33]: [36m$ /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/082_android/gradlew clean -p 082_android[0m
+[13:22:34]: ▸ [35m> Task :gradle-plugin:settings-plugin:checkKotlinGradlePluginConfigurationErrors SKIPPED[0m
+[13:22:34]: ▸ [35m> Task :gradle-plugin:shared:checkKotlinGradlePluginConfigurationErrors SKIPPED[0m
+[13:22:34]: ▸ [35m> Task :gradle-plugin:settings-plugin:pluginDescriptors[0m
+[13:22:34]: ▸ [35m> Task :gradle-plugin:settings-plugin:processResources[0m
+[13:22:34]: ▸ [35m> Task :gradle-plugin:shared:processResources NO-SOURCE[0m
+[13:22:34]: ▸ [35m> Task :gradle-plugin:shared:compileKotlin[0m
+[13:22:34]: ▸ [35m> Task :gradle-plugin:shared:compileJava NO-SOURCE[0m
+[13:22:34]: ▸ [35m> Task :gradle-plugin:shared:classes UP-TO-DATE[0m
+[13:22:34]: ▸ [35m> Task :gradle-plugin:shared:jar[0m
+[13:22:35]: ▸ [35m> Task :gradle-plugin:settings-plugin:compileKotlin[0m
+[13:22:35]: ▸ [35m> Task :gradle-plugin:settings-plugin:compileJava NO-SOURCE[0m
+[13:22:35]: ▸ [35m> Task :gradle-plugin:settings-plugin:classes[0m
+[13:22:35]: ▸ [35m> Task :gradle-plugin:settings-plugin:jar[0m
+[13:22:35]: ▸ [35m> Task :gradle-plugin:react-native-gradle-plugin:checkKotlinGradlePluginConfigurationErrors SKIPPED[0m
+[13:22:35]: ▸ [35m> Task :gradle-plugin:react-native-gradle-plugin:pluginDescriptors[0m
+[13:22:35]: ▸ [35m> Task :gradle-plugin:react-native-gradle-plugin:processResources[0m
+[13:22:36]: ▸ [35m> Task :gradle-plugin:react-native-gradle-plugin:compileKotlin[0m
+[13:22:36]: ▸ [35m> Task :gradle-plugin:react-native-gradle-plugin:compileJava NO-SOURCE[0m
+[13:22:36]: ▸ [35m> Task :gradle-plugin:react-native-gradle-plugin:classes[0m
+[13:22:36]: ▸ [35m> Task :gradle-plugin:react-native-gradle-plugin:jar[0m
+[13:22:38]: ▸ [35m> Configure project :react-native-firebase_analytics[0m
+[13:22:38]: ▸ [35m:react-native-firebase_analytics package.json found at /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-firebase/analytics/package.json[0m
+[13:22:38]: ▸ [35m:react-native-firebase_app package.json found at /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-firebase/app/package.json[0m
+[13:22:38]: ▸ [35m:react-native-firebase_analytics:firebase.bom using default value: 33.16.0[0m
+[13:22:38]: ▸ [35m:react-native-firebase_analytics package.json found at /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-firebase/analytics/package.json[0m
+[13:22:38]: ▸ [35m:react-native-firebase_analytics:version set from package.json: 14.5.0 (14,5,0 - 14005000)[0m
+[13:22:38]: ▸ [35m:react-native-firebase_analytics:android.compileSdk using custom value: 36[0m
+[13:22:38]: ▸ [35m:react-native-firebase_analytics:android.targetSdk using custom value: 36[0m
+[13:22:38]: ▸ [35m:react-native-firebase_analytics:android.minSdk using custom value: 24[0m
+[13:22:38]: ▸ [35m:react-native-firebase_analytics:reactNativeAndroidDir /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native/android[0m
+[13:22:38]: ▸ [35m> Configure project :react-native-firebase_app[0m
+[13:22:38]: ▸ [35m:react-native-firebase_app package.json found at /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-firebase/app/package.json[0m
+[13:22:38]: ▸ [35m:react-native-firebase_app:firebase.bom using default value: 33.16.0[0m
+[13:22:38]: ▸ [35m:react-native-firebase_app:play.play-services-auth using default value: 20.7.0[0m
+[13:22:38]: ▸ [35m:react-native-firebase_app package.json found at /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-firebase/app/package.json[0m
+[13:22:38]: ▸ [35m:react-native-firebase_app:version set from package.json: 14.5.0 (14,5,0 - 14005000)[0m
+[13:22:38]: ▸ [35m:react-native-firebase_app:android.compileSdk using custom value: 36[0m
+[13:22:38]: ▸ [35m:react-native-firebase_app:android.targetSdk using custom value: 36[0m
+[13:22:38]: ▸ [35m:react-native-firebase_app:android.minSdk using custom value: 24[0m
+[13:22:38]: ▸ [35m:react-native-firebase_app:reactNativeAndroidDir /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native/android[0m
+[13:22:38]: ▸ [35m> Configure project :react-native-firebase_crashlytics[0m
+[13:22:38]: ▸ [35m:react-native-firebase_crashlytics package.json found at /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-firebase/crashlytics/package.json[0m
+[13:22:38]: ▸ [35m:react-native-firebase_app package.json found at /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-firebase/app/package.json[0m
+[13:22:38]: ▸ [35m:react-native-firebase_crashlytics:firebase.bom using default value: 33.16.0[0m
+[13:22:38]: ▸ [35m:react-native-firebase_crashlytics package.json found at /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-firebase/crashlytics/package.json[0m
+[13:22:38]: ▸ [35m:react-native-firebase_crashlytics:version set from package.json: 14.5.0 (14,5,0 - 14005000)[0m
+[13:22:38]: ▸ [35m:react-native-firebase_crashlytics:android.compileSdk using custom value: 36[0m
+[13:22:38]: ▸ [35m:react-native-firebase_crashlytics:android.targetSdk using custom value: 36[0m
+[13:22:38]: ▸ [35m:react-native-firebase_crashlytics:android.minSdk using custom value: 24[0m
+[13:22:38]: ▸ [35m:react-native-firebase_crashlytics:reactNativeAndroidDir /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native/android[0m
+[13:22:39]: ▸ [35m> Configure project :react-native-reanimated[0m
+[13:22:39]: ▸ [35mAndroid gradle plugin: 8.9.2[0m
+[13:22:39]: ▸ [35mGradle: 8.11.1[0m
+[13:22:39]: ▸ [35m> Task :react-native-clipboard_clipboard:clean UP-TO-DATE[0m
+[13:22:39]: ▸ [35m> Task :app:clean UP-TO-DATE[0m
+[13:22:39]: ▸ [35m> Task :react-native-community_checkbox:clean UP-TO-DATE[0m
+[13:22:39]: ▸ [35m> Task :bugsnag_react-native:clean UP-TO-DATE[0m
+[13:22:39]: ▸ [35m> Task :react-native-community_datetimepicker:clean UP-TO-DATE[0m
+[13:22:39]: ▸ [35m> Task :react-native-community_google-signin:clean UP-TO-DATE[0m
+[13:22:39]: ▸ [35m> Task :react-native-async-storage_async-storage:clean UP-TO-DATE[0m
+[13:22:39]: ▸ [35m> Task :react-native-community_netinfo:clean UP-TO-DATE[0m
+[13:22:39]: ▸ [35m> Task :react-native-cookies_cookies:clean UP-TO-DATE[0m
+[13:22:39]: ▸ [35m> Task :react-native-device-info:clean UP-TO-DATE[0m
+[13:22:39]: ▸ [35m> Task :react-native-fingerprint-scanner:clean UP-TO-DATE[0m
+[13:22:39]: ▸ [35m> Task :react-native-exit-app:clean UP-TO-DATE[0m
+[13:22:39]: ▸ [35m> Task :react-native-firebase_app:clean UP-TO-DATE[0m
+[13:22:39]: ▸ [35m> Task :react-native-firebase_analytics:clean UP-TO-DATE[0m
+[13:22:39]: ▸ [35m> Task :react-native-fs:clean UP-TO-DATE[0m
+[13:22:39]: ▸ [35m> Task :react-native-firebase_crashlytics:clean UP-TO-DATE[0m
+[13:22:39]: ▸ [35m> Task :react-native-gesture-handler:clean UP-TO-DATE[0m
+[13:22:39]: ▸ [35m> Task :react-native-keychain:clean UP-TO-DATE[0m
+[13:22:39]: ▸ [35m> Task :react-native-linear-gradient:clean UP-TO-DATE[0m
+[13:22:39]: ▸ [35m> Task :react-native-navigation-bar-color:clean UP-TO-DATE[0m
+[13:22:39]: ▸ [35m> Task :react-native-blob-util:clean UP-TO-DATE[0m
+[13:22:39]: ▸ [35m> Task :react-native-orientation-locker:clean UP-TO-DATE[0m
+[13:22:39]: ▸ [35m> Task :react-native-open-notification:clean UP-TO-DATE[0m
+[13:22:39]: ▸ [35m> Task :react-native-pdf:clean UP-TO-DATE[0m
+[13:22:39]: ▸ [35m> Task :react-native-randombytes:clean UP-TO-DATE[0m
+[13:22:39]: ▸ [35m> Task :react-native-permissions:clean UP-TO-DATE[0m
+[13:22:39]: ▸ [35m> Task :react-native-reanimated:cleanCmakeCache[0m
+[13:22:39]: ▸ [35m> Task :react-native-adjust:clean UP-TO-DATE[0m
+[13:22:39]: ▸ [35m> Task :react-native-camera:clean UP-TO-DATE[0m
+[13:22:39]: ▸ [35m> Task :react-native-community_cameraroll:clean[0m
+[13:22:39]: ▸ [35m> Task :react-native-safe-area-context:clean UP-TO-DATE[0m
+[13:22:39]: ▸ [35m> Task :jail-monkey:clean UP-TO-DATE[0m
+[13:22:39]: ▸ [35m> Task :react-native-share:clean UP-TO-DATE[0m
+[13:22:39]: ▸ [35m> Task :react-native-onesignal:clean[0m
+[13:22:39]: ▸ [35m> Task :react-native-view-shot:clean UP-TO-DATE[0m
+[13:22:39]: ▸ [35m> Task :react-native-webview:clean UP-TO-DATE[0m
+[13:22:39]: ▸ [35m> Task :react-native-image-picker:clean[0m
+[13:22:39]: ▸ [35m> Task :react-native-restart:clean[0m
+[13:22:39]: ▸ [35m> Task :react-native-rsa-native:clean UP-TO-DATE[0m
+[13:22:39]: ▸ [35m> Task :react-native-svg:clean UP-TO-DATE[0m
+[13:22:39]: ▸ [35m> Task :react-native-reanimated:externalNativeBuildCleanDebug[0m
+[13:22:39]: ▸ [35m> Task :react-native-sms-retriever:clean UP-TO-DATE[0m
+[13:22:39]: ▸ [35m> Task :react-native-reanimated:externalNativeBuildCleanRelease[0m
+[13:22:39]: ▸ [35m> Task :react-native-reanimated:clean[0m
+[13:22:39]: ▸ [35m> Task :react-native-screens:externalNativeBuildCleanDebug[0m
+[13:22:39]: ▸ [35m> Task :react-native-screens:externalNativeBuildCleanRelease[0m
+[13:22:39]: ▸ [35m> Task :react-native-screens:clean UP-TO-DATE[0m
+[13:22:39]: ▸ [35m[Incubating] Problems report is available at: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/082_android/build/reports/problems/problems-report.html[0m
+[13:22:39]: ▸ [35mDeprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.[0m
+[13:22:39]: ▸ [35mYou can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.[0m
+[13:22:39]: ▸ [35mFor more on this, please refer to https://docs.gradle.org/8.11.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.[0m
+[13:22:39]: ▸ [35mBUILD SUCCESSFUL in 6s[0m
+[13:22:39]: ▸ [35m57 actionable tasks: 20 executed, 37 up-to-date[0m
+[13:22:40]: [32m---------------------------------[0m
+[13:22:40]: [32m--- Step: app:assembleRelease ---[0m
+[13:22:40]: [32m---------------------------------[0m
+[13:22:40]: [36m$ /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/082_android/gradlew app:assembleRelease -p 082_android[0m
+[13:22:40]: ▸ [35m> Task :gradle-plugin:shared:checkKotlinGradlePluginConfigurationErrors SKIPPED[0m
+[13:22:40]: ▸ [35m> Task :gradle-plugin:settings-plugin:checkKotlinGradlePluginConfigurationErrors SKIPPED[0m
+[13:22:40]: ▸ [35m> Task :gradle-plugin:settings-plugin:pluginDescriptors UP-TO-DATE[0m
+[13:22:40]: ▸ [35m> Task :gradle-plugin:settings-plugin:processResources UP-TO-DATE[0m
+[13:22:40]: ▸ [35m> Task :gradle-plugin:shared:compileKotlin UP-TO-DATE[0m
+[13:22:40]: ▸ [35m> Task :gradle-plugin:shared:compileJava NO-SOURCE[0m
+[13:22:40]: ▸ [35m> Task :gradle-plugin:shared:processResources NO-SOURCE[0m
+[13:22:40]: ▸ [35m> Task :gradle-plugin:shared:classes UP-TO-DATE[0m
+[13:22:40]: ▸ [35m> Task :gradle-plugin:shared:jar UP-TO-DATE[0m
+[13:22:40]: ▸ [35m> Task :gradle-plugin:settings-plugin:compileKotlin UP-TO-DATE[0m
+[13:22:40]: ▸ [35m> Task :gradle-plugin:settings-plugin:compileJava NO-SOURCE[0m
+[13:22:40]: ▸ [35m> Task :gradle-plugin:settings-plugin:classes UP-TO-DATE[0m
+[13:22:40]: ▸ [35m> Task :gradle-plugin:settings-plugin:jar UP-TO-DATE[0m
+[13:22:41]: ▸ [35m> Task :gradle-plugin:react-native-gradle-plugin:checkKotlinGradlePluginConfigurationErrors SKIPPED[0m
+[13:22:41]: ▸ [35m> Task :gradle-plugin:react-native-gradle-plugin:compileKotlin UP-TO-DATE[0m
+[13:22:41]: ▸ [35m> Task :gradle-plugin:react-native-gradle-plugin:compileJava NO-SOURCE[0m
+[13:22:41]: ▸ [35m> Task :gradle-plugin:react-native-gradle-plugin:pluginDescriptors UP-TO-DATE[0m
+[13:22:41]: ▸ [35m> Task :gradle-plugin:react-native-gradle-plugin:processResources UP-TO-DATE[0m
+[13:22:41]: ▸ [35m> Task :gradle-plugin:react-native-gradle-plugin:classes UP-TO-DATE[0m
+[13:22:41]: ▸ [35m> Task :gradle-plugin:react-native-gradle-plugin:jar UP-TO-DATE[0m
+[13:22:41]: ▸ [35m> Configure project :react-native-firebase_analytics[0m
+[13:22:41]: ▸ [35m:react-native-firebase_analytics package.json found at /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-firebase/analytics/package.json[0m
+[13:22:41]: ▸ [35m:react-native-firebase_app package.json found at /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-firebase/app/package.json[0m
+[13:22:41]: ▸ [35m:react-native-firebase_analytics:firebase.bom using default value: 33.16.0[0m
+[13:22:41]: ▸ [35m:react-native-firebase_analytics package.json found at /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-firebase/analytics/package.json[0m
+[13:22:41]: ▸ [35m:react-native-firebase_analytics:version set from package.json: 14.5.0 (14,5,0 - 14005000)[0m
+[13:22:41]: ▸ [35m:react-native-firebase_analytics:android.compileSdk using custom value: 36[0m
+[13:22:41]: ▸ [35m:react-native-firebase_analytics:android.targetSdk using custom value: 36[0m
+[13:22:41]: ▸ [35m:react-native-firebase_analytics:android.minSdk using custom value: 24[0m
+[13:22:41]: ▸ [35m:react-native-firebase_analytics:reactNativeAndroidDir /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native/android[0m
+[13:22:41]: ▸ [35m> Configure project :react-native-firebase_app[0m
+[13:22:41]: ▸ [35m:react-native-firebase_app package.json found at /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-firebase/app/package.json[0m
+[13:22:41]: ▸ [35m:react-native-firebase_app:firebase.bom using default value: 33.16.0[0m
+[13:22:41]: ▸ [35m:react-native-firebase_app:play.play-services-auth using default value: 20.7.0[0m
+[13:22:41]: ▸ [35m:react-native-firebase_app package.json found at /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-firebase/app/package.json[0m
+[13:22:41]: ▸ [35m:react-native-firebase_app:version set from package.json: 14.5.0 (14,5,0 - 14005000)[0m
+[13:22:41]: ▸ [35m:react-native-firebase_app:android.compileSdk using custom value: 36[0m
+[13:22:41]: ▸ [35m:react-native-firebase_app:android.targetSdk using custom value: 36[0m
+[13:22:41]: ▸ [35m:react-native-firebase_app:android.minSdk using custom value: 24[0m
+[13:22:41]: ▸ [35m:react-native-firebase_app:reactNativeAndroidDir /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native/android[0m
+[13:22:41]: ▸ [35m> Configure project :react-native-firebase_crashlytics[0m
+[13:22:41]: ▸ [35m:react-native-firebase_crashlytics package.json found at /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-firebase/crashlytics/package.json[0m
+[13:22:41]: ▸ [35m:react-native-firebase_app package.json found at /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-firebase/app/package.json[0m
+[13:22:41]: ▸ [35m:react-native-firebase_crashlytics:firebase.bom using default value: 33.16.0[0m
+[13:22:41]: ▸ [35m:react-native-firebase_crashlytics package.json found at /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-firebase/crashlytics/package.json[0m
+[13:22:41]: ▸ [35m:react-native-firebase_crashlytics:version set from package.json: 14.5.0 (14,5,0 - 14005000)[0m
+[13:22:41]: ▸ [35m:react-native-firebase_crashlytics:android.compileSdk using custom value: 36[0m
+[13:22:41]: ▸ [35m:react-native-firebase_crashlytics:android.targetSdk using custom value: 36[0m
+[13:22:41]: ▸ [35m:react-native-firebase_crashlytics:android.minSdk using custom value: 24[0m
+[13:22:41]: ▸ [35m:react-native-firebase_crashlytics:reactNativeAndroidDir /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native/android[0m
+[13:22:42]: ▸ [35m> Configure project :react-native-reanimated[0m
+[13:22:42]: ▸ [35mAndroid gradle plugin: 8.9.2[0m
+[13:22:42]: ▸ [35mGradle: 8.11.1[0m
+[13:22:44]: ▸ [35m> Task :bugsnag_react-native:preBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-adjust:preBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :jail-monkey:preBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-async-storage_async-storage:preBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-async-storage_async-storage:preReleaseBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :jail-monkey:preReleaseBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-adjust:preReleaseBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :bugsnag_react-native:preReleaseBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-clipboard_clipboard:preBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-camera:preBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-camera:preMlkitReleaseBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-blob-util:preBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-clipboard_clipboard:preReleaseBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-blob-util:preReleaseBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-adjust:mergeReleaseJniLibFolders[0m
+[13:22:44]: ▸ [35m> Task :react-native-async-storage_async-storage:mergeReleaseJniLibFolders[0m
+[13:22:44]: ▸ [35m> Task :bugsnag_react-native:mergeReleaseJniLibFolders[0m
+[13:22:44]: ▸ [35m> Task :react-native-blob-util:mergeReleaseJniLibFolders[0m
+[13:22:44]: ▸ [35m> Task :jail-monkey:mergeReleaseJniLibFolders[0m
+[13:22:44]: ▸ [35m> Task :react-native-camera:mergeMlkitReleaseJniLibFolders[0m
+[13:22:44]: ▸ [35m> Task :react-native-adjust:mergeReleaseNativeLibs NO-SOURCE[0m
+[13:22:44]: ▸ [35m> Task :react-native-async-storage_async-storage:mergeReleaseNativeLibs NO-SOURCE[0m
+[13:22:44]: ▸ [35m> Task :react-native-blob-util:mergeReleaseNativeLibs NO-SOURCE[0m
+[13:22:44]: ▸ [35m> Task :jail-monkey:mergeReleaseNativeLibs NO-SOURCE[0m
+[13:22:44]: ▸ [35m> Task :bugsnag_react-native:mergeReleaseNativeLibs NO-SOURCE[0m
+[13:22:44]: ▸ [35m> Task :react-native-camera:mergeMlkitReleaseNativeLibs NO-SOURCE[0m
+[13:22:44]: ▸ [35m> Task :react-native-async-storage_async-storage:copyReleaseJniLibsProjectOnly[0m
+[13:22:44]: ▸ [35m> Task :react-native-community_cameraroll:preBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-community_cameraroll:preReleaseBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-blob-util:copyReleaseJniLibsProjectOnly[0m
+[13:22:44]: ▸ [35m> Task :react-native-adjust:copyReleaseJniLibsProjectOnly[0m
+[13:22:44]: ▸ [35m> Task :react-native-clipboard_clipboard:mergeReleaseJniLibFolders[0m
+[13:22:44]: ▸ [35m> Task :jail-monkey:copyReleaseJniLibsProjectOnly[0m
+[13:22:44]: ▸ [35m> Task :react-native-community_google-signin:preBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-community_datetimepicker:preBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-community_google-signin:preReleaseBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-community_checkbox:preBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-community_datetimepicker:preReleaseBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-camera:copyMlkitReleaseJniLibsProjectOnly[0m
+[13:22:44]: ▸ [35m> Task :bugsnag_react-native:copyReleaseJniLibsProjectOnly[0m
+[13:22:44]: ▸ [35m> Task :react-native-community_checkbox:preReleaseBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-community_netinfo:preBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-community_netinfo:preReleaseBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :app:generateAutolinkingPackageList[0m
+[13:22:44]: ▸ [35m> Task :react-native-cookies_cookies:preBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-cookies_cookies:preReleaseBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :app:generateCodegenSchemaFromJavaScript SKIPPED[0m
+[13:22:44]: ▸ [35m> Task :app:generateCodegenArtifactsFromSchema SKIPPED[0m
+[13:22:44]: ▸ [35m> Task :app:preBuild[0m
+[13:22:44]: ▸ [35m> Task :app:preReleaseBuild[0m
+[13:22:44]: ▸ [35m> Task :react-native-clipboard_clipboard:mergeReleaseNativeLibs NO-SOURCE[0m
+[13:22:44]: ▸ [35m> Task :app:mergeReleaseJniLibFolders[0m
+[13:22:44]: ▸ [35m> Task :react-native-clipboard_clipboard:copyReleaseJniLibsProjectOnly[0m
+[13:22:44]: ▸ [35m> Task :react-native-exit-app:preBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-exit-app:preReleaseBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-device-info:preBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-device-info:preReleaseBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-cookies_cookies:mergeReleaseJniLibFolders[0m
+[13:22:44]: ▸ [35m> Task :react-native-community_google-signin:mergeReleaseJniLibFolders[0m
+[13:22:44]: ▸ [35m> Task :react-native-community_cameraroll:mergeReleaseJniLibFolders[0m
+[13:22:44]: ▸ [35m> Task :react-native-community_netinfo:mergeReleaseJniLibFolders[0m
+[13:22:44]: ▸ [35m> Task :react-native-community_datetimepicker:mergeReleaseJniLibFolders[0m
+[13:22:44]: ▸ [35m> Task :react-native-community_checkbox:mergeReleaseJniLibFolders[0m
+[13:22:44]: ▸ [35m> Task :react-native-community_google-signin:mergeReleaseNativeLibs NO-SOURCE[0m
+[13:22:44]: ▸ [35m> Task :react-native-community_netinfo:mergeReleaseNativeLibs NO-SOURCE[0m
+[13:22:44]: ▸ [35m> Task :react-native-community_cameraroll:mergeReleaseNativeLibs NO-SOURCE[0m
+[13:22:44]: ▸ [35m> Task :react-native-community_datetimepicker:mergeReleaseNativeLibs NO-SOURCE[0m
+[13:22:44]: ▸ [35m> Task :react-native-cookies_cookies:mergeReleaseNativeLibs NO-SOURCE[0m
+[13:22:44]: ▸ [35m> Task :react-native-community_checkbox:mergeReleaseNativeLibs NO-SOURCE[0m
+[13:22:44]: ▸ [35m> Task :react-native-exit-app:mergeReleaseJniLibFolders[0m
+[13:22:44]: ▸ [35m> Task :react-native-community_checkbox:copyReleaseJniLibsProjectOnly[0m
+[13:22:44]: ▸ [35m> Task :react-native-exit-app:mergeReleaseNativeLibs NO-SOURCE[0m
+[13:22:44]: ▸ [35m> Task :react-native-cookies_cookies:copyReleaseJniLibsProjectOnly[0m
+[13:22:44]: ▸ [35m> Task :react-native-community_netinfo:copyReleaseJniLibsProjectOnly[0m
+[13:22:44]: ▸ [35m> Task :react-native-fingerprint-scanner:preBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-firebase_analytics:preBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-fingerprint-scanner:preReleaseBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-community_google-signin:copyReleaseJniLibsProjectOnly[0m
+[13:22:44]: ▸ [35m> Task :react-native-firebase_analytics:preReleaseBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-community_datetimepicker:copyReleaseJniLibsProjectOnly[0m
+[13:22:44]: ▸ [35m> Task :react-native-firebase_crashlytics:preBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-firebase_crashlytics:preReleaseBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-community_cameraroll:copyReleaseJniLibsProjectOnly[0m
+[13:22:44]: ▸ [35m> Task :react-native-firebase_app:preBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-fs:preBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-fs:preReleaseBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-gesture-handler:preBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-gesture-handler:preReleaseBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-firebase_app:preReleaseBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-device-info:mergeReleaseJniLibFolders[0m
+[13:22:44]: ▸ [35m> Task :react-native-device-info:mergeReleaseNativeLibs NO-SOURCE[0m
+[13:22:44]: ▸ [35m> Task :react-native-exit-app:copyReleaseJniLibsProjectOnly[0m
+[13:22:44]: ▸ [35m> Task :react-native-image-picker:preBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-image-picker:preReleaseBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-fingerprint-scanner:mergeReleaseJniLibFolders[0m
+[13:22:44]: ▸ [35m> Task :react-native-fs:mergeReleaseJniLibFolders[0m
+[13:22:44]: ▸ [35m> Task :react-native-gesture-handler:mergeReleaseJniLibFolders[0m
+[13:22:44]: ▸ [35m> Task :react-native-firebase_crashlytics:mergeReleaseJniLibFolders[0m
+[13:22:44]: ▸ [35m> Task :react-native-firebase_analytics:mergeReleaseJniLibFolders[0m
+[13:22:44]: ▸ [35m> Task :react-native-firebase_app:mergeReleaseJniLibFolders[0m
+[13:22:44]: ▸ [35m> Task :react-native-fs:mergeReleaseNativeLibs NO-SOURCE[0m
+[13:22:44]: ▸ [35m> Task :react-native-fingerprint-scanner:mergeReleaseNativeLibs NO-SOURCE[0m
+[13:22:44]: ▸ [35m> Task :react-native-gesture-handler:mergeReleaseNativeLibs NO-SOURCE[0m
+[13:22:44]: ▸ [35m> Task :react-native-firebase_crashlytics:mergeReleaseNativeLibs NO-SOURCE[0m
+[13:22:44]: ▸ [35m> Task :react-native-firebase_analytics:mergeReleaseNativeLibs NO-SOURCE[0m
+[13:22:44]: ▸ [35m> Task :react-native-firebase_app:mergeReleaseNativeLibs NO-SOURCE[0m
+[13:22:44]: ▸ [35m> Task :react-native-device-info:copyReleaseJniLibsProjectOnly[0m
+[13:22:44]: ▸ [35m> Task :react-native-keychain:preBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-keychain:preReleaseBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-gesture-handler:copyReleaseJniLibsProjectOnly[0m
+[13:22:44]: ▸ [35m> Task :react-native-image-picker:mergeReleaseJniLibFolders[0m
+[13:22:44]: ▸ [35m> Task :react-native-fs:copyReleaseJniLibsProjectOnly[0m
+[13:22:44]: ▸ [35m> Task :react-native-firebase_crashlytics:copyReleaseJniLibsProjectOnly[0m
+[13:22:44]: ▸ [35m> Task :react-native-firebase_analytics:copyReleaseJniLibsProjectOnly[0m
+[13:22:44]: ▸ [35m> Task :react-native-fingerprint-scanner:copyReleaseJniLibsProjectOnly[0m
+[13:22:44]: ▸ [35m> Task :react-native-firebase_app:copyReleaseJniLibsProjectOnly[0m
+[13:22:44]: ▸ [35m> Task :react-native-navigation-bar-color:preBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-onesignal:preBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-navigation-bar-color:preReleaseBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-linear-gradient:preBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-linear-gradient:preReleaseBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-open-notification:preBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-open-notification:preReleaseBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-orientation-locker:preBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-orientation-locker:preReleaseBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-pdf:preBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-pdf:preReleaseBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-onesignal:preReleaseBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-image-picker:mergeReleaseNativeLibs NO-SOURCE[0m
+[13:22:44]: ▸ [35m> Task :react-native-keychain:mergeReleaseJniLibFolders[0m
+[13:22:44]: ▸ [35m> Task :react-native-open-notification:mergeReleaseJniLibFolders[0m
+[13:22:44]: ▸ [35m> Task :react-native-navigation-bar-color:mergeReleaseJniLibFolders[0m
+[13:22:44]: ▸ [35m> Task :react-native-pdf:mergeReleaseJniLibFolders[0m
+[13:22:44]: ▸ [35m> Task :react-native-orientation-locker:mergeReleaseJniLibFolders[0m
+[13:22:44]: ▸ [35m> Task :react-native-linear-gradient:mergeReleaseJniLibFolders[0m
+[13:22:44]: ▸ [35m> Task :react-native-onesignal:mergeReleaseJniLibFolders[0m
+[13:22:44]: ▸ [35m> Task :react-native-image-picker:copyReleaseJniLibsProjectOnly[0m
+[13:22:44]: ▸ [35m> Task :react-native-permissions:preBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-permissions:preReleaseBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-keychain:mergeReleaseNativeLibs NO-SOURCE[0m
+[13:22:44]: ▸ [35m> Task :react-native-open-notification:mergeReleaseNativeLibs NO-SOURCE[0m
+[13:22:44]: ▸ [35m> Task :react-native-navigation-bar-color:mergeReleaseNativeLibs NO-SOURCE[0m
+[13:22:44]: ▸ [35m> Task :react-native-pdf:mergeReleaseNativeLibs NO-SOURCE[0m
+[13:22:44]: ▸ [35m> Task :react-native-linear-gradient:mergeReleaseNativeLibs NO-SOURCE[0m
+[13:22:44]: ▸ [35m> Task :react-native-orientation-locker:mergeReleaseNativeLibs NO-SOURCE[0m
+[13:22:44]: ▸ [35m> Task :react-native-onesignal:mergeReleaseNativeLibs NO-SOURCE[0m
+[13:22:44]: ▸ [35m> Task :react-native-keychain:copyReleaseJniLibsProjectOnly[0m
+[13:22:44]: ▸ [35m> Task :react-native-open-notification:copyReleaseJniLibsProjectOnly[0m
+[13:22:44]: ▸ [35m> Task :react-native-randombytes:preBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-reanimated:assertMinimalReactNativeVersionTask SKIPPED[0m
+[13:22:44]: ▸ [35m> Task :react-native-randombytes:preReleaseBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-permissions:mergeReleaseJniLibFolders[0m
+[13:22:44]: ▸ [35m> Task :react-native-permissions:mergeReleaseNativeLibs NO-SOURCE[0m
+[13:22:44]: ▸ [35m> Task :react-native-linear-gradient:copyReleaseJniLibsProjectOnly[0m
+[13:22:44]: ▸ [35m> Task :react-native-pdf:copyReleaseJniLibsProjectOnly[0m
+[13:22:44]: ▸ [35m> Task :react-native-rsa-native:preBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-rsa-native:preReleaseBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-restart:preBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-navigation-bar-color:copyReleaseJniLibsProjectOnly[0m
+[13:22:44]: ▸ [35m> Task :react-native-orientation-locker:copyReleaseJniLibsProjectOnly[0m
+[13:22:44]: ▸ [35m> Task :react-native-restart:preReleaseBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-onesignal:copyReleaseJniLibsProjectOnly[0m
+[13:22:44]: ▸ [35m> Task :react-native-screens:preBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-safe-area-context:preBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-screens:preReleaseBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-safe-area-context:preReleaseBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-share:preBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-share:preReleaseBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-randombytes:mergeReleaseJniLibFolders[0m
+[13:22:44]: ▸ [35m> Task :react-native-permissions:copyReleaseJniLibsProjectOnly[0m
+[13:22:44]: ▸ [35m> Task :react-native-sms-retriever:preBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-sms-retriever:preReleaseBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-randombytes:mergeReleaseNativeLibs NO-SOURCE[0m
+[13:22:44]: ▸ [35m> Task :react-native-rsa-native:mergeReleaseJniLibFolders[0m
+[13:22:44]: ▸ [35m> Task :react-native-restart:mergeReleaseJniLibFolders[0m
+[13:22:44]: ▸ [35m> Task :react-native-safe-area-context:mergeReleaseJniLibFolders[0m
+[13:22:44]: ▸ [35m> Task :react-native-sms-retriever:mergeReleaseJniLibFolders[0m
+[13:22:44]: ▸ [35m> Task :react-native-rsa-native:mergeReleaseNativeLibs NO-SOURCE[0m
+[13:22:44]: ▸ [35m> Task :react-native-safe-area-context:mergeReleaseNativeLibs NO-SOURCE[0m
+[13:22:44]: ▸ [35m> Task :react-native-restart:mergeReleaseNativeLibs NO-SOURCE[0m
+[13:22:44]: ▸ [35m> Task :react-native-sms-retriever:mergeReleaseNativeLibs NO-SOURCE[0m
+[13:22:44]: ▸ [35m> Task :react-native-randombytes:copyReleaseJniLibsProjectOnly[0m
+[13:22:44]: ▸ [35m> Task :react-native-svg:preBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-svg:preReleaseBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-rsa-native:copyReleaseJniLibsProjectOnly[0m
+[13:22:44]: ▸ [35m> Task :react-native-view-shot:preBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-view-shot:preReleaseBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-share:mergeReleaseJniLibFolders[0m
+[13:22:44]: ▸ [35m> Task :react-native-reanimated:prepareReanimatedHeadersForPrefabs[0m
+[13:22:44]: ▸ [35m> Task :react-native-share:mergeReleaseNativeLibs NO-SOURCE[0m
+[13:22:44]: ▸ [35m> Task :react-native-view-shot:mergeReleaseJniLibFolders[0m
+[13:22:44]: ▸ [35m> Task :react-native-restart:copyReleaseJniLibsProjectOnly[0m
+[13:22:44]: ▸ [35m> Task :react-native-webview:preBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-webview:preReleaseBuild UP-TO-DATE[0m
+[13:22:44]: ▸ [35m> Task :react-native-view-shot:mergeReleaseNativeLibs NO-SOURCE[0m
+[13:22:44]: ▸ [35m> Task :react-native-view-shot:copyReleaseJniLibsProjectOnly[0m
+[13:22:44]: ▸ [35m> Task :react-native-gesture-handler:checkKotlinGradlePluginConfigurationErrors SKIPPED[0m
+[13:22:44]: ▸ [35m> Task :react-native-svg:mergeReleaseJniLibFolders[0m
+[13:22:44]: ▸ [35m> Task :react-native-svg:mergeReleaseNativeLibs NO-SOURCE[0m
+[13:22:44]: ▸ [35m> Task :react-native-share:copyReleaseJniLibsProjectOnly[0m
+[13:22:44]: ▸ [35m> Task :react-native-safe-area-context:checkKotlinGradlePluginConfigurationErrors SKIPPED[0m
+[13:22:44]: ▸ [35m> Task :react-native-gesture-handler:generateReleaseBuildConfig[0m
+[13:22:44]: ▸ [35m> Task :react-native-gesture-handler:generateReleaseResValues[0m
+[13:22:44]: ▸ [35m> Task :react-native-safe-area-context:generateReleaseBuildConfig[0m
+[13:22:44]: ▸ [35m> Task :react-native-safe-area-context:generateReleaseResValues[0m
+[13:22:44]: ▸ [35m> Task :react-native-gesture-handler:generateReleaseResources[0m
+[13:22:44]: ▸ [35m> Task :react-native-safe-area-context:generateReleaseResources[0m
+[13:22:44]: ▸ [35m> Task :react-native-svg:copyReleaseJniLibsProjectOnly[0m
+[13:22:44]: ▸ [35m> Task :react-native-safe-area-context:copyReleaseJniLibsProjectOnly[0m
+[13:22:44]: ▸ [35m> Task :react-native-sms-retriever:copyReleaseJniLibsProjectOnly[0m
+[13:22:44]: ▸ [35m> Task :react-native-async-storage_async-storage:generateReleaseBuildConfig[0m
+[13:22:44]: ▸ [35m> Task :bugsnag_react-native:generateReleaseBuildConfig[0m
+[13:22:44]: ▸ [35m> Task :react-native-clipboard_clipboard:generateReleaseBuildConfig[0m
+[13:22:44]: ▸ [35m> Task :bugsnag_react-native:generateReleaseResValues[0m
+[13:22:44]: ▸ [35m> Task :react-native-async-storage_async-storage:generateReleaseResValues[0m
+[13:22:44]: ▸ [35m> Task :react-native-clipboard_clipboard:generateReleaseResValues[0m
+[13:22:44]: ▸ [35m> Task :react-native-reanimated:prepareWorkletsHeadersForPrefabs[0m
+[13:22:44]: ▸ [35m> Task :react-native-reanimated:preBuild[0m
+[13:22:44]: ▸ [35m> Task :react-native-reanimated:preReleaseBuild[0m
+[13:22:44]: ▸ [35m> Task :react-native-webview:mergeReleaseJniLibFolders[0m
+[13:22:44]: ▸ [35m> Task :react-native-safe-area-context:packageReleaseResources[0m
+[13:22:44]: ▸ [35m> Task :react-native-gesture-handler:packageReleaseResources[0m
+[13:22:44]: ▸ [35m> Task :react-native-clipboard_clipboard:generateReleaseResources[0m
+[13:22:44]: ▸ [35m> Task :react-native-async-storage_async-storage:generateReleaseResources[0m
+[13:22:44]: ▸ [35m> Task :bugsnag_react-native:generateReleaseResources[0m
+[13:22:44]: ▸ [35m> Task :react-native-webview:mergeReleaseNativeLibs NO-SOURCE[0m
+[13:22:44]: ▸ [35m> Task :react-native-webview:copyReleaseJniLibsProjectOnly[0m
+[13:22:44]: ▸ [35m> Task :react-native-webview:checkKotlinGradlePluginConfigurationErrors SKIPPED[0m
+[13:22:44]: ▸ [35m> Task :react-native-async-storage_async-storage:packageReleaseResources[0m
+[13:22:44]: ▸ [35m> Task :bugsnag_react-native:packageReleaseResources[0m
+[13:22:44]: ▸ [35m> Task :react-native-clipboard_clipboard:packageReleaseResources[0m
+[13:22:44]: ▸ [35m> Task :react-native-webview:generateReleaseBuildConfig[0m
+[13:22:44]: ▸ [35m> Task :react-native-webview:generateReleaseResValues[0m
+[13:22:44]: ▸ [35m> Task :react-native-webview:generateReleaseResources[0m
+[13:22:44]: ▸ [35m> Task :react-native-webview:packageReleaseResources[0m
+[13:22:44]: ▸ [35m> Task :react-native-async-storage_async-storage:parseReleaseLocalResources[0m
+[13:22:44]: ▸ [35m> Task :react-native-webview:parseReleaseLocalResources[0m
+[13:22:44]: ▸ [35m> Task :bugsnag_react-native:parseReleaseLocalResources[0m
+[13:22:44]: ▸ [35m> Task :react-native-clipboard_clipboard:parseReleaseLocalResources[0m
+[13:22:44]: ▸ [35m> Task :react-native-gesture-handler:parseReleaseLocalResources[0m
+[13:22:44]: ▸ [35m> Task :react-native-safe-area-context:parseReleaseLocalResources[0m
+[13:22:44]: ▸ [35m> Task :react-native-safe-area-context:javaPreCompileRelease[0m
+[13:22:44]: ▸ [35m> Task :react-native-gesture-handler:javaPreCompileRelease[0m
+[13:22:44]: ▸ [35m> Task :bugsnag_react-native:generateReleaseRFile[0m
+[13:22:44]: ▸ [35m> Task :react-native-webview:generateReleaseRFile[0m
+[13:22:44]: ▸ [35m> Task :react-native-clipboard_clipboard:generateReleaseRFile[0m
+[13:22:44]: ▸ [35m> Task :react-native-async-storage_async-storage:generateReleaseRFile[0m
+[13:22:44]: ▸ [35m> Task :react-native-safe-area-context:generateReleaseRFile[0m
+[13:22:44]: ▸ [35m> Task :react-native-gesture-handler:generateReleaseRFile[0m
+[13:22:44]: ▸ [35m> Task :bugsnag_react-native:javaPreCompileRelease[0m
+[13:22:44]: ▸ [35m> Task :react-native-webview:javaPreCompileRelease[0m
+[13:22:44]: ▸ [35m> Task :react-native-async-storage_async-storage:javaPreCompileRelease[0m
+[13:22:44]: ▸ [35m> Task :react-native-clipboard_clipboard:javaPreCompileRelease[0m
+[13:22:44]: ▸ [35m> Task :react-native-community_cameraroll:generateReleaseBuildConfig[0m
+[13:22:44]: ▸ [35m> Task :react-native-community_cameraroll:generateReleaseResValues[0m
+[13:22:44]: ▸ [35m> Task :react-native-community_cameraroll:generateReleaseResources[0m
+[13:22:44]: ▸ [35m> Task :react-native-community_cameraroll:packageReleaseResources[0m
+[13:22:44]: ▸ [35m> Task :react-native-community_cameraroll:parseReleaseLocalResources[0m
+[13:22:44]: ▸ [35m> Task :react-native-community_cameraroll:generateReleaseRFile[0m
+[13:22:44]: ▸ [35m> Task :react-native-community_cameraroll:javaPreCompileRelease[0m
+[13:22:46]: ▸ [35m> Task :react-native-safe-area-context:compileReleaseKotlin[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-safe-area-context/android/src/main/java/com/th3rdwave/safeareacontext/SafeAreaView.kt:59:23 'val uiImplementation: UIImplementation!' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-safe-area-context/android/src/paper/java/com/th3rdwave/safeareacontext/InsetsChangeEvent.kt:19:16 This declaration overrides a deprecated member but is not marked as deprecated itself. Please add the '@Deprecated' annotation or suppress the diagnostic.[0m
+[13:22:46]: ▸ [35m> Task :react-native-webview:compileReleaseKotlin[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/RNCWebViewManagerImpl.kt:22:8 'class MapBuilder : Any' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/RNCWebViewManagerImpl.kt:82:18 'var allowFileAccessFromFileURLs: Boolean' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/RNCWebViewManagerImpl.kt:83:18 'var allowUniversalAccessFromFileURLs: Boolean' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/RNCWebViewManagerImpl.kt:124:21 'fun allowScanningByMediaScanner(): Unit' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/RNCWebViewManagerImpl.kt:161:36 'var systemUiVisibility: Int' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/RNCWebViewManagerImpl.kt:300:14 'class MapBuilder : Any' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/RNCWebViewManagerImpl.kt:350:34 Condition is always 'true'.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/RNCWebViewManagerImpl.kt:369:38 'var allowUniversalAccessFromFileURLs: Boolean' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/RNCWebViewManagerImpl.kt:430:51 Unchecked cast of 'kotlin.Any?' to 'java.util.HashMap<kotlin.String, kotlin.String>'.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/RNCWebViewManagerImpl.kt:486:23 'var savePassword: Boolean' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/RNCWebViewManagerImpl.kt:487:23 'var saveFormData: Boolean' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/RNCWebViewManagerImpl.kt:557:23 'var allowFileAccessFromFileURLs: Boolean' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/RNCWebViewManagerImpl.kt:602:52 'static field FORCE_DARK_ON: Int' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/RNCWebViewManagerImpl.kt:602:89 'static field FORCE_DARK_OFF: Int' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/RNCWebViewManagerImpl.kt:603:35 'static fun setForceDark(p0: @NonNull() WebSettings!, p1: Int): Unit' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/RNCWebViewManagerImpl.kt:612:35 'static fun setForceDarkStrategy(p0: @NonNull() WebSettings!, p1: Int): Unit' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/RNCWebViewManagerImpl.kt:614:39 'static field DARK_STRATEGY_PREFER_WEB_THEME_OVER_USER_AGENT_DARKENING: Int' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/RNCWebViewManagerImpl.kt:658:65 Unchecked cast of 'java.util.ArrayList<kotlin.Any?>' to 'kotlin.collections.List<kotlin.collections.Map<kotlin.String, kotlin.String>>'.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/RNCWebViewManagerImpl.kt:679:23 'var saveFormData: Boolean' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/SubResourceErrorEvent.kt:5:8 'interface RCTEventEmitter : Any, JavaScriptModule' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/SubResourceErrorEvent.kt:11:3 'constructor<T : (Event<Event<*>!>..Event<*>?)>(p0: Int): Event<T>' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/SubResourceErrorEvent.kt:22:16 This declaration overrides a deprecated member but is not marked as deprecated itself. Please add the '@Deprecated' annotation or suppress the diagnostic.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/SubResourceErrorEvent.kt:22:42 'interface RCTEventEmitter : Any, JavaScriptModule' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/SubResourceErrorEvent.kt:23:21 'fun receiveEvent(p0: Int, p1: String!, p2: WritableMap?): Unit' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/TopCustomMenuSelectionEvent.kt:5:8 'interface RCTEventEmitter : Any, JavaScriptModule' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/TopCustomMenuSelectionEvent.kt:11:3 'constructor<T : (Event<Event<*>!>..Event<*>?)>(p0: Int): Event<T>' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/TopCustomMenuSelectionEvent.kt:22:16 This declaration overrides a deprecated member but is not marked as deprecated itself. Please add the '@Deprecated' annotation or suppress the diagnostic.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/TopCustomMenuSelectionEvent.kt:22:42 'interface RCTEventEmitter : Any, JavaScriptModule' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/TopCustomMenuSelectionEvent.kt:23:21 'fun receiveEvent(p0: Int, p1: String!, p2: WritableMap?): Unit' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/TopHttpErrorEvent.kt:5:8 'interface RCTEventEmitter : Any, JavaScriptModule' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/TopHttpErrorEvent.kt:11:3 'constructor<T : (Event<Event<*>!>..Event<*>?)>(p0: Int): Event<T>' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/TopHttpErrorEvent.kt:22:16 This declaration overrides a deprecated member but is not marked as deprecated itself. Please add the '@Deprecated' annotation or suppress the diagnostic.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/TopHttpErrorEvent.kt:22:42 'interface RCTEventEmitter : Any, JavaScriptModule' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/TopHttpErrorEvent.kt:23:21 'fun receiveEvent(p0: Int, p1: String!, p2: WritableMap?): Unit' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/TopLoadingErrorEvent.kt:5:8 'interface RCTEventEmitter : Any, JavaScriptModule' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/TopLoadingErrorEvent.kt:11:3 'constructor<T : (Event<Event<*>!>..Event<*>?)>(p0: Int): Event<T>' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/TopLoadingErrorEvent.kt:22:16 This declaration overrides a deprecated member but is not marked as deprecated itself. Please add the '@Deprecated' annotation or suppress the diagnostic.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/TopLoadingErrorEvent.kt:22:42 'interface RCTEventEmitter : Any, JavaScriptModule' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/TopLoadingErrorEvent.kt:23:21 'fun receiveEvent(p0: Int, p1: String!, p2: WritableMap?): Unit' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/TopLoadingFinishEvent.kt:5:8 'interface RCTEventEmitter : Any, JavaScriptModule' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/TopLoadingFinishEvent.kt:11:3 'constructor<T : (Event<Event<*>!>..Event<*>?)>(p0: Int): Event<T>' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/TopLoadingFinishEvent.kt:22:16 This declaration overrides a deprecated member but is not marked as deprecated itself. Please add the '@Deprecated' annotation or suppress the diagnostic.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/TopLoadingFinishEvent.kt:22:42 'interface RCTEventEmitter : Any, JavaScriptModule' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/TopLoadingFinishEvent.kt:23:21 'fun receiveEvent(p0: Int, p1: String!, p2: WritableMap?): Unit' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/TopLoadingProgressEvent.kt:5:8 'interface RCTEventEmitter : Any, JavaScriptModule' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/TopLoadingProgressEvent.kt:11:3 'constructor<T : (Event<Event<*>!>..Event<*>?)>(p0: Int): Event<T>' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/TopLoadingProgressEvent.kt:22:16 This declaration overrides a deprecated member but is not marked as deprecated itself. Please add the '@Deprecated' annotation or suppress the diagnostic.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/TopLoadingProgressEvent.kt:22:42 'interface RCTEventEmitter : Any, JavaScriptModule' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/TopLoadingProgressEvent.kt:23:21 'fun receiveEvent(p0: Int, p1: String!, p2: WritableMap?): Unit' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/TopLoadingStartEvent.kt:5:8 'interface RCTEventEmitter : Any, JavaScriptModule' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/TopLoadingStartEvent.kt:11:3 'constructor<T : (Event<Event<*>!>..Event<*>?)>(p0: Int): Event<T>' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/TopLoadingStartEvent.kt:22:16 This declaration overrides a deprecated member but is not marked as deprecated itself. Please add the '@Deprecated' annotation or suppress the diagnostic.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/TopLoadingStartEvent.kt:22:42 'interface RCTEventEmitter : Any, JavaScriptModule' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/TopLoadingStartEvent.kt:23:21 'fun receiveEvent(p0: Int, p1: String!, p2: WritableMap?): Unit' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/TopMessageEvent.kt:5:8 'interface RCTEventEmitter : Any, JavaScriptModule' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/TopMessageEvent.kt:10:75 'constructor<T : (Event<Event<*>!>..Event<*>?)>(p0: Int): Event<T>' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/TopMessageEvent.kt:21:16 This declaration overrides a deprecated member but is not marked as deprecated itself. Please add the '@Deprecated' annotation or suppress the diagnostic.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/TopMessageEvent.kt:21:42 'interface RCTEventEmitter : Any, JavaScriptModule' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/TopMessageEvent.kt:22:21 'fun receiveEvent(p0: Int, p1: String!, p2: WritableMap?): Unit' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/TopNewWindowEvent.kt:5:8 'interface RCTEventEmitter : Any, JavaScriptModule' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/TopNewWindowEvent.kt:11:3 'constructor<T : (Event<Event<*>!>..Event<*>?)>(p0: Int): Event<T>' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/TopNewWindowEvent.kt:22:16 This declaration overrides a deprecated member but is not marked as deprecated itself. Please add the '@Deprecated' annotation or suppress the diagnostic.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/TopNewWindowEvent.kt:22:42 'interface RCTEventEmitter : Any, JavaScriptModule' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/TopNewWindowEvent.kt:23:21 'fun receiveEvent(p0: Int, p1: String!, p2: WritableMap?): Unit' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/TopRenderProcessGoneEvent.kt:5:8 'interface RCTEventEmitter : Any, JavaScriptModule' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/TopRenderProcessGoneEvent.kt:12:3 'constructor<T : (Event<Event<*>!>..Event<*>?)>(p0: Int): Event<T>' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/TopRenderProcessGoneEvent.kt:23:16 This declaration overrides a deprecated member but is not marked as deprecated itself. Please add the '@Deprecated' annotation or suppress the diagnostic.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/TopRenderProcessGoneEvent.kt:23:42 'interface RCTEventEmitter : Any, JavaScriptModule' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/TopRenderProcessGoneEvent.kt:24:21 'fun receiveEvent(p0: Int, p1: String!, p2: WritableMap?): Unit' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/TopShouldStartLoadWithRequestEvent.kt:5:8 'interface RCTEventEmitter : Any, JavaScriptModule' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/TopShouldStartLoadWithRequestEvent.kt:10:89 'constructor<T : (Event<Event<*>!>..Event<*>?)>(p0: Int): Event<T>' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/TopShouldStartLoadWithRequestEvent.kt:27:16 This declaration overrides a deprecated member but is not marked as deprecated itself. Please add the '@Deprecated' annotation or suppress the diagnostic.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/TopShouldStartLoadWithRequestEvent.kt:27:42 'interface RCTEventEmitter : Any, JavaScriptModule' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-webview/android/src/main/java/com/reactnativecommunity/webview/events/TopShouldStartLoadWithRequestEvent.kt:28:21 'fun receiveEvent(p0: Int, p1: String!, p2: WritableMap?): Unit' is deprecated. Deprecated in Java.[0m
+[13:22:46]: ▸ [35m> Task :bugsnag_react-native:compileReleaseJavaWithJavac[0m
+[13:22:46]: ▸ [35mNote: /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@bugsnag/react-native/android/src/main/java/com/bugsnag/android/ReactNativeCompat.java uses unchecked or unsafe operations.[0m
+[13:22:46]: ▸ [35mNote: Recompile with -Xlint:unchecked for details.[0m
+[13:22:46]: ▸ [35m> Task :bugsnag_react-native:mergeReleaseGeneratedProguardFiles[0m
+[13:22:46]: ▸ [35m> Task :bugsnag_react-native:exportReleaseConsumerProguardFiles[0m
+[13:22:46]: ▸ [35m> Task :react-native-community_checkbox:generateReleaseBuildConfig[0m
+[13:22:46]: ▸ [35m> Task :react-native-community_checkbox:generateReleaseResValues[0m
+[13:22:46]: ▸ [35m> Task :react-native-community_checkbox:generateReleaseResources[0m
+[13:22:46]: ▸ [35m> Task :react-native-community_checkbox:packageReleaseResources[0m
+[13:22:46]: ▸ [35m> Task :react-native-community_checkbox:parseReleaseLocalResources[0m
+[13:22:46]: ▸ [35m> Task :react-native-community_checkbox:generateReleaseRFile[0m
+[13:22:46]: ▸ [35m> Task :react-native-community_cameraroll:compileReleaseJavaWithJavac[0m
+[13:22:46]: ▸ [35mNote: /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-community/cameraroll/android/src/main/java/com/reactnativecommunity/cameraroll/CameraRollModule.java uses or overrides a deprecated API.[0m
+[13:22:46]: ▸ [35mNote: Recompile with -Xlint:deprecation for details.[0m
+[13:22:46]: ▸ [35m> Task :react-native-community_cameraroll:mergeReleaseGeneratedProguardFiles[0m
+[13:22:46]: ▸ [35m> Task :react-native-community_cameraroll:exportReleaseConsumerProguardFiles[0m
+[13:22:46]: ▸ [35m> Task :react-native-screens:configureCMakeRelWithDebInfo[arm64-v8a][0m
+[13:22:46]: ▸ [35m> Task :react-native-community_datetimepicker:generateReleaseBuildConfig[0m
+[13:22:46]: ▸ [35m> Task :react-native-community_datetimepicker:generateReleaseResValues[0m
+[13:22:46]: ▸ [35m> Task :react-native-community_datetimepicker:generateReleaseResources[0m
+[13:22:46]: ▸ [35m> Task :react-native-community_checkbox:javaPreCompileRelease[0m
+[13:22:46]: ▸ [35m> Task :react-native-async-storage_async-storage:compileReleaseJavaWithJavac[0m
+[13:22:46]: ▸ [35mNote: Some input files use or override a deprecated API.[0m
+[13:22:46]: ▸ [35mNote: Recompile with -Xlint:deprecation for details.[0m
+[13:22:46]: ▸ [35mNote: /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-async-storage/async-storage/android/src/javaPackage/java/com/reactnativecommunity/asyncstorage/AsyncStoragePackage.java uses unchecked or unsafe operations.[0m
+[13:22:46]: ▸ [35mNote: Recompile with -Xlint:unchecked for details.[0m
+[13:22:46]: ▸ [35m> Task :react-native-reanimated:configureCMakeRelWithDebInfo[arm64-v8a][0m
+[13:22:46]: ▸ [35m> Task :react-native-community_datetimepicker:packageReleaseResources[0m
+[13:22:46]: ▸ [35m> Task :react-native-clipboard_clipboard:compileReleaseJavaWithJavac[0m
+[13:22:46]: ▸ [35mNote: Some input files use or override a deprecated API.[0m
+[13:22:46]: ▸ [35mNote: Recompile with -Xlint:deprecation for details.[0m
+[13:22:46]: ▸ [35mNote: /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-clipboard/clipboard/android/src/main/java/com/reactnativecommunity/clipboard/ClipboardPackage.java uses unchecked or unsafe operations.[0m
+[13:22:46]: ▸ [35mNote: Recompile with -Xlint:unchecked for details.[0m
+[13:22:46]: ▸ [35m> Task :react-native-async-storage_async-storage:mergeReleaseGeneratedProguardFiles[0m
+[13:22:46]: ▸ [35m> Task :react-native-async-storage_async-storage:exportReleaseConsumerProguardFiles[0m
+[13:22:46]: ▸ [35m> Task :react-native-community_google-signin:generateReleaseBuildConfig[0m
+[13:22:46]: ▸ [35m> Task :react-native-clipboard_clipboard:mergeReleaseGeneratedProguardFiles[0m
+[13:22:46]: ▸ [35m> Task :react-native-clipboard_clipboard:exportReleaseConsumerProguardFiles[0m
+[13:22:46]: ▸ [35m> Task :react-native-community_datetimepicker:javaPreCompileRelease[0m
+[13:22:46]: ▸ [35m> Task :react-native-community_google-signin:generateReleaseResValues[0m
+[13:22:47]: ▸ [35m> Task :react-native-community_netinfo:generateReleaseBuildConfig[0m
+[13:22:47]: ▸ [35m> Task :react-native-community_datetimepicker:parseReleaseLocalResources[0m
+[13:22:47]: ▸ [35m> Task :react-native-community_datetimepicker:generateReleaseRFile[0m
+[13:22:47]: ▸ [35m> Task :react-native-community_netinfo:generateReleaseResValues[0m
+[13:22:47]: ▸ [35m> Task :react-native-community_google-signin:generateReleaseResources[0m
+[13:22:47]: ▸ [35m> Task :react-native-community_netinfo:generateReleaseResources[0m
+[13:22:47]: ▸ [35m> Task :react-native-community_netinfo:packageReleaseResources[0m
+[13:22:47]: ▸ [35m> Task :react-native-community_google-signin:packageReleaseResources[0m
+[13:22:47]: ▸ [35m> Task :react-native-community_netinfo:parseReleaseLocalResources[0m
+[13:22:47]: ▸ [35m> Task :react-native-community_google-signin:parseReleaseLocalResources[0m
+[13:22:47]: ▸ [35m> Task :react-native-safe-area-context:compileReleaseJavaWithJavac[0m
+[13:22:47]: ▸ [35mNote: /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-safe-area-context/android/src/paper/java/com/th3rdwave/safeareacontext/NativeSafeAreaContextSpec.java uses or overrides a deprecated API.[0m
+[13:22:47]: ▸ [35mNote: Recompile with -Xlint:deprecation for details.[0m
+[13:22:47]: ▸ [35m> Task :react-native-safe-area-context:mergeReleaseGeneratedProguardFiles[0m
+[13:22:47]: ▸ [35m> Task :react-native-community_google-signin:generateReleaseRFile[0m
+[13:22:47]: ▸ [35m> Task :react-native-safe-area-context:exportReleaseConsumerProguardFiles[0m
+[13:22:47]: ▸ [35m> Task :react-native-community_netinfo:generateReleaseRFile[0m
+[13:22:47]: ▸ [35m> Task :react-native-community_netinfo:javaPreCompileRelease[0m
+[13:22:47]: ▸ [35m> Task :react-native-community_google-signin:javaPreCompileRelease[0m
+[13:22:47]: ▸ [35m> Task :react-native-cookies_cookies:generateReleaseBuildConfig[0m
+[13:22:47]: ▸ [35m> Task :react-native-cookies_cookies:generateReleaseResValues[0m
+[13:22:47]: ▸ [35m> Task :react-native-cookies_cookies:generateReleaseResources[0m
+[13:22:47]: ▸ [35m> Task :react-native-cookies_cookies:packageReleaseResources[0m
+[13:22:47]: ▸ [35m> Task :react-native-cookies_cookies:parseReleaseLocalResources[0m
+[13:22:47]: ▸ [35m> Task :react-native-cookies_cookies:generateReleaseRFile[0m
+[13:22:47]: ▸ [35m> Task :react-native-cookies_cookies:javaPreCompileRelease[0m
+[13:22:47]: ▸ [35m> Task :react-native-webview:compileReleaseJavaWithJavac[0m
+[13:22:47]: ▸ [35mNote: Some input files use or override a deprecated API.[0m
+[13:22:47]: ▸ [35mNote: Recompile with -Xlint:deprecation for details.[0m
+[13:22:47]: ▸ [35m> Task :react-native-webview:mergeReleaseGeneratedProguardFiles[0m
+[13:22:47]: ▸ [35m> Task :react-native-webview:exportReleaseConsumerProguardFiles[0m
+[13:22:47]: ▸ [35m> Task :react-native-community_checkbox:compileReleaseJavaWithJavac[0m
+[13:22:47]: ▸ [35mNote: /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-community/checkbox/android/src/main/java/com/reactnativecommunity/checkbox/ReactCheckBoxEvent.java uses or overrides a deprecated API.[0m
+[13:22:47]: ▸ [35mNote: Recompile with -Xlint:deprecation for details.[0m
+[13:22:47]: ▸ [35m> Task :react-native-firebase_analytics:generateReleaseBuildConfig[0m
+[13:22:47]: ▸ [35m> Task :react-native-community_checkbox:mergeReleaseGeneratedProguardFiles[0m
+[13:22:47]: ▸ [35m> Task :react-native-community_checkbox:exportReleaseConsumerProguardFiles[0m
+[13:22:47]: ▸ [35m> Task :react-native-firebase_app:generateReleaseBuildConfig[0m
+[13:22:47]: ▸ [35m> Task :react-native-firebase_app:generateReleaseResValues[0m
+[13:22:47]: ▸ [35m> Task :react-native-firebase_app:generateReleaseResources[0m
+[13:22:47]: ▸ [35m> Task :react-native-firebase_analytics:generateReleaseResValues[0m
+[13:22:47]: ▸ [35m> Task :react-native-firebase_analytics:generateReleaseResources[0m
+[13:22:47]: ▸ [35m> Task :react-native-firebase_app:packageReleaseResources[0m
+[13:22:47]: ▸ [35m> Task :react-native-firebase_app:parseReleaseLocalResources[0m
+[13:22:47]: ▸ [35m> Task :react-native-firebase_analytics:packageReleaseResources[0m
+[13:22:47]: ▸ [35m> Task :react-native-firebase_analytics:parseReleaseLocalResources[0m
+[13:22:47]: ▸ [35m> Task :react-native-firebase_app:generateReleaseRFile[0m
+[13:22:47]: ▸ [35m> Task :react-native-firebase_app:javaPreCompileRelease[0m
+[13:22:47]: ▸ [35m> Task :react-native-firebase_analytics:generateReleaseRFile[0m
+[13:22:47]: ▸ [35m> Task :react-native-firebase_analytics:javaPreCompileRelease[0m
+[13:22:47]: ▸ [35m> Task :react-native-firebase_crashlytics:generateReleaseBuildConfig[0m
+[13:22:47]: ▸ [35m> Task :react-native-firebase_crashlytics:generateReleaseResValues[0m
+[13:22:47]: ▸ [35m> Task :react-native-firebase_crashlytics:generateReleaseResources[0m
+[13:22:47]: ▸ [35m> Task :react-native-firebase_crashlytics:packageReleaseResources[0m
+[13:22:47]: ▸ [35m> Task :react-native-firebase_crashlytics:parseReleaseLocalResources[0m
+[13:22:47]: ▸ [35m> Task :react-native-cookies_cookies:compileReleaseJavaWithJavac[0m
+[13:22:47]: ▸ [35mNote: /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-cookies/cookies/android/src/main/java/com/reactnativecommunity/cookies/CookieManagerModule.java uses or overrides a deprecated API.[0m
+[13:22:47]: ▸ [35mNote: Recompile with -Xlint:deprecation for details.[0m
+[13:22:47]: ▸ [35m> Task :react-native-community_datetimepicker:compileReleaseJavaWithJavac[0m
+[13:22:47]: ▸ [35mNote: Some input files use or override a deprecated API.[0m
+[13:22:47]: ▸ [35mNote: Recompile with -Xlint:deprecation for details.[0m
+[13:22:47]: ▸ [35m> Task :react-native-cookies_cookies:mergeReleaseGeneratedProguardFiles[0m
+[13:22:47]: ▸ [35m> Task :react-native-community_datetimepicker:mergeReleaseGeneratedProguardFiles[0m
+[13:22:47]: ▸ [35m> Task :react-native-cookies_cookies:exportReleaseConsumerProguardFiles[0m
+[13:22:47]: ▸ [35m> Task :react-native-community_datetimepicker:exportReleaseConsumerProguardFiles[0m
+[13:22:47]: ▸ [35m> Task :react-native-adjust:generateReleaseBuildConfig[0m
+[13:22:47]: ▸ [35m> Task :jail-monkey:generateReleaseBuildConfig[0m
+[13:22:47]: ▸ [35m> Task :react-native-community_netinfo:compileReleaseJavaWithJavac[0m
+[13:22:47]: ▸ [35m/Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-community/netinfo/android/src/main/java/com/reactnativecommunity/netinfo/NetInfoModule.java:45: warning: [removal] onCatalystInstanceDestroy() in NativeModule has been deprecated and marked for removal[0m
+[13:22:47]: ▸ [35mpublic void onCatalystInstanceDestroy() {[0m
+[13:22:47]: ▸ [35m^[0m
+[13:22:47]: ▸ [35mNote: Some input files use or override a deprecated API.[0m
+[13:22:47]: ▸ [35mNote: Recompile with -Xlint:deprecation for details.[0m
+[13:22:47]: ▸ [35m1 warning[0m
+[13:22:47]: ▸ [35m> Task :react-native-community_netinfo:mergeReleaseGeneratedProguardFiles[0m
+[13:22:47]: ▸ [35m> Task :react-native-firebase_crashlytics:generateReleaseRFile[0m
+[13:22:47]: ▸ [35m> Task :react-native-community_google-signin:compileReleaseJavaWithJavac[0m
+[13:22:47]: ▸ [35mNote: /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-community/google-signin/android/src/main/java/co/apptailor/googlesignin/RNGoogleSigninModule.java uses or overrides a deprecated API.[0m
+[13:22:47]: ▸ [35mNote: Recompile with -Xlint:deprecation for details.[0m
+[13:22:47]: ▸ [35mNote: /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-community/google-signin/android/src/main/java/co/apptailor/googlesignin/RNGoogleSigninModule.java uses unchecked or unsafe operations.[0m
+[13:22:47]: ▸ [35mNote: Recompile with -Xlint:unchecked for details.[0m
+[13:22:47]: ▸ [35m> Task :react-native-firebase_crashlytics:javaPreCompileRelease[0m
+[13:22:47]: ▸ [35m> Task :react-native-blob-util:generateReleaseBuildConfig[0m
+[13:22:47]: ▸ [35m> Task :react-native-blob-util:generateReleaseResValues[0m
+[13:22:47]: ▸ [35m> Task :react-native-community_google-signin:mergeReleaseGeneratedProguardFiles[0m
+[13:22:47]: ▸ [35m> Task :react-native-community_netinfo:exportReleaseConsumerProguardFiles[0m
+[13:22:47]: ▸ [35m> Task :jail-monkey:generateReleaseResValues[0m
+[13:22:47]: ▸ [35m> Task :react-native-blob-util:generateReleaseResources[0m
+[13:22:47]: ▸ [35m> Task :jail-monkey:generateReleaseResources[0m
+[13:22:47]: ▸ [35m> Task :react-native-adjust:generateReleaseResValues[0m
+[13:22:47]: ▸ [35m> Task :react-native-adjust:generateReleaseResources[0m
+[13:22:47]: ▸ [35m> Task :jail-monkey:packageReleaseResources[0m
+[13:22:48]: ▸ [35m> Task :react-native-device-info:generateReleaseBuildConfig[0m
+[13:22:48]: ▸ [35m> Task :react-native-adjust:packageReleaseResources[0m
+[13:22:48]: ▸ [35m> Task :react-native-blob-util:packageReleaseResources[0m
+[13:22:48]: ▸ [35m> Task :jail-monkey:parseReleaseLocalResources[0m
+[13:22:48]: ▸ [35m> Task :react-native-community_google-signin:exportReleaseConsumerProguardFiles[0m
+[13:22:48]: ▸ [35m> Task :react-native-device-info:generateReleaseResValues[0m
+[13:22:48]: ▸ [35m> Task :react-native-device-info:generateReleaseResources[0m
+[13:22:48]: ▸ [35m> Task :react-native-exit-app:generateReleaseBuildConfig[0m
+[13:22:48]: ▸ [35m> Task :react-native-blob-util:parseReleaseLocalResources[0m
+[13:22:48]: ▸ [35m> Task :jail-monkey:javaPreCompileRelease[0m
+[13:22:48]: ▸ [35m> Task :react-native-adjust:javaPreCompileRelease[0m
+[13:22:48]: ▸ [35m> Task :jail-monkey:generateReleaseRFile[0m
+[13:22:48]: ▸ [35m> Task :react-native-adjust:parseReleaseLocalResources[0m
+[13:22:48]: ▸ [35m> Task :react-native-exit-app:generateReleaseResValues[0m
+[13:22:48]: ▸ [35m> Task :react-native-exit-app:generateReleaseResources[0m
+[13:22:48]: ▸ [35m> Task :react-native-device-info:packageReleaseResources[0m
+[13:22:48]: ▸ [35m> Task :react-native-exit-app:packageReleaseResources[0m
+[13:22:48]: ▸ [35m> Task :react-native-exit-app:parseReleaseLocalResources[0m
+[13:22:48]: ▸ [35m> Task :react-native-device-info:parseReleaseLocalResources[0m
+[13:22:48]: ▸ [35m> Task :react-native-adjust:generateReleaseRFile[0m
+[13:22:48]: ▸ [35m> Task :react-native-blob-util:javaPreCompileRelease[0m
+[13:22:48]: ▸ [35m> Task :react-native-device-info:generateReleaseRFile[0m
+[13:22:48]: ▸ [35m> Task :react-native-device-info:javaPreCompileRelease[0m
+[13:22:48]: ▸ [35m> Task :react-native-blob-util:generateReleaseRFile[0m
+[13:22:48]: ▸ [35m> Task :react-native-exit-app:generateReleaseRFile[0m
+[13:22:48]: ▸ [35m> Task :react-native-exit-app:javaPreCompileRelease[0m
+[13:22:48]: ▸ [35m> Task :react-native-exit-app:compileReleaseJavaWithJavac[0m
+[13:22:48]: ▸ [35m> Task :react-native-exit-app:mergeReleaseGeneratedProguardFiles[0m
+[13:22:48]: ▸ [35m> Task :react-native-exit-app:exportReleaseConsumerProguardFiles[0m
+[13:22:48]: ▸ [35m> Task :react-native-fingerprint-scanner:generateReleaseBuildConfig[0m
+[13:22:48]: ▸ [35m> Task :react-native-fingerprint-scanner:generateReleaseResValues[0m
+[13:22:48]: ▸ [35m> Task :react-native-fingerprint-scanner:generateReleaseResources[0m
+[13:22:48]: ▸ [35m> Task :jail-monkey:compileReleaseJavaWithJavac[0m
+[13:22:48]: ▸ [35mNote: Some input files use or override a deprecated API.[0m
+[13:22:48]: ▸ [35mNote: Recompile with -Xlint:deprecation for details.[0m
+[13:22:48]: ▸ [35m> Task :jail-monkey:mergeReleaseGeneratedProguardFiles[0m
+[13:22:48]: ▸ [35m> Task :jail-monkey:exportReleaseConsumerProguardFiles[0m
+[13:22:48]: ▸ [35m> Task :react-native-fs:generateReleaseBuildConfig[0m
+[13:22:48]: ▸ [35m> Task :react-native-fs:generateReleaseResValues[0m
+[13:22:48]: ▸ [35m> Task :react-native-fs:generateReleaseResources[0m
+[13:22:48]: ▸ [35m> Task :react-native-firebase_app:compileReleaseJavaWithJavac[0m
+[13:22:48]: ▸ [35m/Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-firebase/app/android/src/reactnative/java/io/invertase/firebase/common/ReactNativeFirebaseModule.java:86: warning: [removal] onCatalystInstanceDestroy() in NativeModule has been deprecated and marked for removal[0m
+[13:22:48]: ▸ [35mpublic void onCatalystInstanceDestroy() {[0m
+[13:22:48]: ▸ [35m^[0m
+[13:22:48]: ▸ [35mNote: Some input files use or override a deprecated API.[0m
+[13:22:48]: ▸ [35mNote: Recompile with -Xlint:deprecation for details.[0m
+[13:22:48]: ▸ [35m1 warning[0m
+[13:22:48]: ▸ [35m> Task :react-native-fingerprint-scanner:packageReleaseResources[0m
+[13:22:48]: ▸ [35m> Task :react-native-fs:packageReleaseResources[0m
+[13:22:48]: ▸ [35m> Task :react-native-fs:parseReleaseLocalResources[0m
+[13:22:48]: ▸ [35m> Task :react-native-adjust:compileReleaseJavaWithJavac[0m
+[13:22:48]: ▸ [35m> Task :react-native-firebase_app:mergeReleaseGeneratedProguardFiles[0m
+[13:22:48]: ▸ [35m> Task :react-native-fingerprint-scanner:parseReleaseLocalResources[0m
+[13:22:48]: ▸ [35m> Task :react-native-firebase_app:bundleLibCompileToJarRelease[0m
+[13:22:48]: ▸ [35m> Task :react-native-firebase_app:exportReleaseConsumerProguardFiles[0m
+[13:22:48]: ▸ [35m> Task :react-native-fs:generateReleaseRFile[0m
+[13:22:48]: ▸ [35m> Task :react-native-adjust:mergeReleaseGeneratedProguardFiles[0m
+[13:22:48]: ▸ [35m> Task :react-native-adjust:exportReleaseConsumerProguardFiles[0m
+[13:22:48]: ▸ [35m> Task :react-native-fs:javaPreCompileRelease[0m
+[13:22:48]: ▸ [35m> Task :react-native-fingerprint-scanner:generateReleaseRFile[0m
+[13:22:48]: ▸ [35m> Task :react-native-fingerprint-scanner:javaPreCompileRelease[0m
+[13:22:48]: ▸ [35m> Task :react-native-device-info:compileReleaseJavaWithJavac[0m
+[13:22:48]: ▸ [35m/Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-device-info/android/src/main/java/com/learnium/RNDeviceInfo/RNDeviceModule.java:156: warning: [removal] onCatalystInstanceDestroy() in NativeModule has been deprecated and marked for removal[0m
+[13:22:48]: ▸ [35mpublic void onCatalystInstanceDestroy() {[0m
+[13:22:48]: ▸ [35m^[0m
+[13:22:48]: ▸ [35mNote: Some input files use or override a deprecated API.[0m
+[13:22:48]: ▸ [35mNote: Recompile with -Xlint:deprecation for details.[0m
+[13:22:48]: ▸ [35m1 warning[0m
+[13:22:48]: ▸ [35m> Task :react-native-device-info:mergeReleaseGeneratedProguardFiles[0m
+[13:22:48]: ▸ [35m> Task :react-native-device-info:exportReleaseConsumerProguardFiles[0m
+[13:22:48]: ▸ [35m> Task :react-native-image-picker:generateReleaseBuildConfig[0m
+[13:22:48]: ▸ [35m> Task :react-native-image-picker:generateReleaseResValues[0m
+[13:22:48]: ▸ [35m> Task :react-native-image-picker:generateReleaseResources[0m
+[13:22:48]: ▸ [35m> Task :react-native-image-picker:packageReleaseResources[0m
+[13:22:48]: ▸ [35m> Task :react-native-image-picker:parseReleaseLocalResources[0m
+[13:22:48]: ▸ [35m> Task :react-native-image-picker:generateReleaseRFile[0m
+[13:22:48]: ▸ [35m> Task :react-native-image-picker:javaPreCompileRelease[0m
+[13:22:49]: ▸ [35m> Task :react-native-fingerprint-scanner:compileReleaseJavaWithJavac[0m
+[13:22:49]: ▸ [35m> Task :react-native-fingerprint-scanner:mergeReleaseGeneratedProguardFiles[0m
+[13:22:49]: ▸ [35m> Task :react-native-fingerprint-scanner:exportReleaseConsumerProguardFiles[0m
+[13:22:49]: ▸ [35m> Task :react-native-keychain:generateReleaseBuildConfig[0m
+[13:22:49]: ▸ [35m> Task :react-native-keychain:generateReleaseResValues[0m
+[13:22:49]: ▸ [35m> Task :react-native-keychain:generateReleaseResources[0m
+[13:22:49]: ▸ [35m> Task :react-native-keychain:packageReleaseResources[0m
+[13:22:49]: ▸ [35m> Task :react-native-keychain:parseReleaseLocalResources[0m
+[13:22:49]: ▸ [35m> Task :react-native-keychain:generateReleaseRFile[0m
+[13:22:49]: ▸ [35m> Task :react-native-keychain:javaPreCompileRelease[0m
+[13:22:49]: ▸ [35m> Task :react-native-firebase_crashlytics:compileReleaseJavaWithJavac[0m
+[13:22:49]: ▸ [35mNote: /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-firebase/crashlytics/android/src/main/java/io/invertase/firebase/crashlytics/ReactNativeFirebaseCrashlyticsModule.java uses or overrides a deprecated API.[0m
+[13:22:49]: ▸ [35mNote: Recompile with -Xlint:deprecation for details.[0m
+[13:22:49]: ▸ [35m> Task :react-native-blob-util:compileReleaseJavaWithJavac[0m
+[13:22:49]: ▸ [35mNote: Some input files use or override a deprecated API.[0m
+[13:22:49]: ▸ [35mNote: Recompile with -Xlint:deprecation for details.[0m
+[13:22:49]: ▸ [35m> Task :react-native-blob-util:mergeReleaseGeneratedProguardFiles[0m
+[13:22:49]: ▸ [35m> Task :react-native-blob-util:exportReleaseConsumerProguardFiles[0m
+[13:22:49]: ▸ [35m> Task :react-native-navigation-bar-color:generateReleaseBuildConfig[0m
+[13:22:49]: ▸ [35m> Task :react-native-navigation-bar-color:generateReleaseResValues[0m
+[13:22:49]: ▸ [35m> Task :react-native-firebase_crashlytics:mergeReleaseGeneratedProguardFiles[0m
+[13:22:49]: ▸ [35m> Task :react-native-navigation-bar-color:generateReleaseResources[0m
+[13:22:49]: ▸ [35m> Task :react-native-navigation-bar-color:packageReleaseResources[0m
+[13:22:49]: ▸ [35m> Task :react-native-firebase_crashlytics:exportReleaseConsumerProguardFiles[0m
+[13:22:49]: ▸ [35m> Task :react-native-onesignal:generateReleaseBuildConfig[0m
+[13:22:49]: ▸ [35m> Task :react-native-navigation-bar-color:parseReleaseLocalResources[0m
+[13:22:49]: ▸ [35m> Task :react-native-navigation-bar-color:javaPreCompileRelease[0m
+[13:22:49]: ▸ [35m> Task :react-native-firebase_analytics:compileReleaseJavaWithJavac[0m
+[13:22:49]: ▸ [35mNote: Some input files use or override a deprecated API.[0m
+[13:22:49]: ▸ [35mNote: Recompile with -Xlint:deprecation for details.[0m
+[13:22:49]: ▸ [35m> Task :react-native-onesignal:generateReleaseResValues[0m
+[13:22:49]: ▸ [35m> Task :react-native-firebase_analytics:mergeReleaseGeneratedProguardFiles[0m
+[13:22:49]: ▸ [35m> Task :react-native-onesignal:generateReleaseResources[0m
+[13:22:49]: ▸ [35m> Task :react-native-firebase_analytics:exportReleaseConsumerProguardFiles[0m
+[13:22:49]: ▸ [35m> Task :react-native-navigation-bar-color:generateReleaseRFile[0m
+[13:22:49]: ▸ [35m> Task :react-native-onesignal:packageReleaseResources[0m
+[13:22:49]: ▸ [35m> Task :react-native-open-notification:generateReleaseBuildConfig[0m
+[13:22:49]: ▸ [35m> Task :react-native-onesignal:javaPreCompileRelease[0m
+[13:22:49]: ▸ [35m> Task :react-native-fs:compileReleaseJavaWithJavac[0m
+[13:22:49]: ▸ [35mNote: Some input files use or override a deprecated API.[0m
+[13:22:49]: ▸ [35mNote: Recompile with -Xlint:deprecation for details.[0m
+[13:22:49]: ▸ [35m> Task :react-native-fs:mergeReleaseGeneratedProguardFiles[0m
+[13:22:49]: ▸ [35m> Task :react-native-onesignal:parseReleaseLocalResources[0m
+[13:22:49]: ▸ [35m> Task :react-native-open-notification:generateReleaseResValues[0m
+[13:22:49]: ▸ [35m> Task :react-native-fs:exportReleaseConsumerProguardFiles[0m
+[13:22:49]: ▸ [35m> Task :react-native-open-notification:generateReleaseResources[0m
+[13:22:49]: ▸ [35m> Task :react-native-orientation-locker:generateReleaseBuildConfig[0m
+[13:22:49]: ▸ [35m> Task :react-native-orientation-locker:generateReleaseResValues[0m
+[13:22:49]: ▸ [35m> Task :react-native-open-notification:packageReleaseResources[0m
+[13:22:49]: ▸ [35m> Task :react-native-onesignal:generateReleaseRFile[0m
+[13:22:49]: ▸ [35m> Task :react-native-orientation-locker:generateReleaseResources[0m
+[13:22:49]: ▸ [35m> Task :react-native-open-notification:parseReleaseLocalResources[0m
+[13:22:49]: ▸ [35m> Task :react-native-orientation-locker:packageReleaseResources[0m
+[13:22:49]: ▸ [35m> Task :react-native-orientation-locker:parseReleaseLocalResources[0m
+[13:22:49]: ▸ [35m> Task :react-native-open-notification:generateReleaseRFile[0m
+[13:22:49]: ▸ [35m> Task :react-native-open-notification:javaPreCompileRelease[0m
+[13:22:49]: ▸ [35m> Task :react-native-orientation-locker:generateReleaseRFile[0m
+[13:22:49]: ▸ [35m> Task :react-native-orientation-locker:javaPreCompileRelease[0m
+[13:22:49]: ▸ [35m> Task :react-native-image-picker:compileReleaseJavaWithJavac[0m
+[13:22:49]: ▸ [35m> Task :react-native-image-picker:mergeReleaseGeneratedProguardFiles[0m
+[13:22:49]: ▸ [35m> Task :react-native-image-picker:exportReleaseConsumerProguardFiles[0m
+[13:22:49]: ▸ [35m> Task :react-native-pdf:generateReleaseBuildConfig[0m
+[13:22:49]: ▸ [35m> Task :react-native-pdf:generateReleaseResValues[0m
+[13:22:49]: ▸ [35m> Task :react-native-pdf:generateReleaseResources[0m
+[13:22:49]: ▸ [35m> Task :react-native-pdf:packageReleaseResources[0m
+[13:22:49]: ▸ [35m> Task :react-native-pdf:parseReleaseLocalResources[0m
+[13:22:49]: ▸ [35m> Task :react-native-pdf:generateReleaseRFile[0m
+[13:22:49]: ▸ [35m> Task :react-native-pdf:javaPreCompileRelease[0m
+[13:22:49]: ▸ [35m> Task :react-native-open-notification:compileReleaseJavaWithJavac[0m
+[13:22:49]: ▸ [35m> Task :react-native-open-notification:mergeReleaseGeneratedProguardFiles[0m
+[13:22:49]: ▸ [35m> Task :react-native-open-notification:exportReleaseConsumerProguardFiles[0m
+[13:22:49]: ▸ [35m> Task :react-native-permissions:generateReleaseBuildConfig[0m
+[13:22:49]: ▸ [35m> Task :react-native-permissions:generateReleaseResValues[0m
+[13:22:49]: ▸ [35m> Task :react-native-permissions:generateReleaseResources[0m
+[13:22:49]: ▸ [35m> Task :react-native-permissions:packageReleaseResources[0m
+[13:22:49]: ▸ [35m> Task :react-native-permissions:parseReleaseLocalResources[0m
+[13:22:49]: ▸ [35m> Task :react-native-navigation-bar-color:compileReleaseJavaWithJavac[0m
+[13:22:49]: ▸ [35mNote: /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-navigation-bar-color/android/src/main/java/com/thebylito/navigationbarcolor/NavigationBarColorModule.java uses or overrides a deprecated API.[0m
+[13:22:49]: ▸ [35mNote: Recompile with -Xlint:deprecation for details.[0m
+[13:22:49]: ▸ [35m> Task :react-native-permissions:generateReleaseRFile[0m
+[13:22:49]: ▸ [35m> Task :react-native-orientation-locker:compileReleaseJavaWithJavac[0m
+[13:22:49]: ▸ [35mNote: /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-orientation-locker/android/src/main/java/org/wonday/orientation/OrientationModule.java uses or overrides a deprecated API.[0m
+[13:22:49]: ▸ [35mNote: Recompile with -Xlint:deprecation for details.[0m
+[13:22:49]: ▸ [35m> Task :react-native-navigation-bar-color:mergeReleaseGeneratedProguardFiles[0m
+[13:22:49]: ▸ [35m> Task :react-native-orientation-locker:mergeReleaseGeneratedProguardFiles[0m
+[13:22:49]: ▸ [35m> Task :react-native-permissions:javaPreCompileRelease[0m
+[13:22:49]: ▸ [35m> Task :react-native-orientation-locker:exportReleaseConsumerProguardFiles[0m
+[13:22:49]: ▸ [35m> Task :react-native-navigation-bar-color:exportReleaseConsumerProguardFiles[0m
+[13:22:49]: ▸ [35m> Task :react-native-randombytes:generateReleaseBuildConfig[0m
+[13:22:49]: ▸ [35m> Task :react-native-restart:generateReleaseBuildConfig[0m
+[13:22:49]: ▸ [35m> Task :react-native-randombytes:generateReleaseResValues[0m
+[13:22:49]: ▸ [35m> Task :react-native-restart:generateReleaseResValues[0m
+[13:22:49]: ▸ [35m> Task :react-native-randombytes:generateReleaseResources[0m
+[13:22:49]: ▸ [35m> Task :react-native-onesignal:compileReleaseJavaWithJavac[0m
+[13:22:49]: ▸ [35m/Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-onesignal/android/src/main/java/com/geektime/rnonesignalandroid/RNOneSignal.java:851: warning: [removal] onCatalystInstanceDestroy() in NativeModule has been deprecated and marked for removal[0m
+[13:22:49]: ▸ [35mpublic void onCatalystInstanceDestroy() {[0m
+[13:22:49]: ▸ [35m^[0m
+[13:22:49]: ▸ [35m1 warning[0m
+[13:22:49]: ▸ [35m> Task :react-native-restart:generateReleaseResources[0m
+[13:22:49]: ▸ [35m> Task :react-native-onesignal:mergeReleaseGeneratedProguardFiles[0m
+[13:22:49]: ▸ [35m> Task :react-native-onesignal:exportReleaseConsumerProguardFiles[0m
+[13:22:49]: ▸ [35m> Task :react-native-randombytes:packageReleaseResources[0m
+[13:22:49]: ▸ [35m> Task :react-native-rsa-native:generateReleaseBuildConfig[0m
+[13:22:49]: ▸ [35m> Task :react-native-randombytes:javaPreCompileRelease[0m
+[13:22:49]: ▸ [35m> Task :react-native-randombytes:parseReleaseLocalResources[0m
+[13:22:49]: ▸ [35m> Task :react-native-rsa-native:generateReleaseResValues[0m
+[13:22:49]: ▸ [35m> Task :react-native-rsa-native:generateReleaseResources[0m
+[13:22:49]: ▸ [35m> Task :react-native-randombytes:generateReleaseRFile[0m
+[13:22:49]: ▸ [35m> Task :react-native-rsa-native:packageReleaseResources[0m
+[13:22:49]: ▸ [35m> Task :react-native-rsa-native:parseReleaseLocalResources[0m
+[13:22:49]: ▸ [35m> Task :react-native-rsa-native:generateReleaseRFile[0m
+[13:22:49]: ▸ [35m> Task :react-native-restart:packageReleaseResources[0m
+[13:22:49]: ▸ [35m> Task :react-native-rsa-native:javaPreCompileRelease[0m
+[13:22:49]: ▸ [35m> Task :react-native-restart:parseReleaseLocalResources[0m
+[13:22:50]: ▸ [35m> Task :react-native-keychain:compileReleaseJavaWithJavac[0m
+[13:22:50]: ▸ [35mNote: Some input files use or override a deprecated API.[0m
+[13:22:50]: ▸ [35mNote: Recompile with -Xlint:deprecation for details.[0m
+[13:22:50]: ▸ [35m> Task :react-native-restart:generateReleaseRFile[0m
+[13:22:50]: ▸ [35m> Task :react-native-keychain:mergeReleaseGeneratedProguardFiles[0m
+[13:22:50]: ▸ [35m> Task :react-native-keychain:exportReleaseConsumerProguardFiles[0m
+[13:22:50]: ▸ [35m> Task :react-native-restart:javaPreCompileRelease[0m
+[13:22:50]: ▸ [35m> Task :react-native-share:generateReleaseBuildConfig[0m
+[13:22:50]: ▸ [35m> Task :react-native-share:generateReleaseResValues[0m
+[13:22:50]: ▸ [35m> Task :react-native-share:generateReleaseResources[0m
+[13:22:50]: ▸ [35m> Task :react-native-pdf:compileReleaseJavaWithJavac[0m
+[13:22:50]: ▸ [35m> Task :react-native-pdf:mergeReleaseGeneratedProguardFiles[0m
+[13:22:50]: ▸ [35m> Task :react-native-pdf:exportReleaseConsumerProguardFiles[0m
+[13:22:50]: ▸ [35m> Task :react-native-sms-retriever:generateReleaseBuildConfig[0m
+[13:22:50]: ▸ [35m> Task :react-native-share:packageReleaseResources[0m
+[13:22:50]: ▸ [35m> Task :react-native-share:parseReleaseLocalResources[0m
+[13:22:50]: ▸ [35m> Task :react-native-share:generateReleaseRFile[0m
+[13:22:50]: ▸ [35m> Task :react-native-share:javaPreCompileRelease[0m
+[13:22:50]: ▸ [35m> Task :react-native-sms-retriever:generateReleaseResValues[0m
+[13:22:50]: ▸ [35m> Task :react-native-sms-retriever:generateReleaseResources[0m
+[13:22:50]: ▸ [35m> Task :react-native-sms-retriever:packageReleaseResources[0m
+[13:22:50]: ▸ [35m> Task :react-native-sms-retriever:parseReleaseLocalResources[0m
+[13:22:50]: ▸ [35m> Task :react-native-sms-retriever:generateReleaseRFile[0m
+[13:22:50]: ▸ [35m> Task :react-native-sms-retriever:javaPreCompileRelease[0m
+[13:22:50]: ▸ [35m> Task :react-native-restart:compileReleaseJavaWithJavac[0m
+[13:22:50]: ▸ [35m> Task :react-native-restart:mergeReleaseGeneratedProguardFiles[0m
+[13:22:50]: ▸ [35m> Task :react-native-restart:exportReleaseConsumerProguardFiles[0m
+[13:22:50]: ▸ [35m> Task :react-native-svg:generateReleaseBuildConfig[0m
+[13:22:50]: ▸ [35m> Task :react-native-svg:generateReleaseResValues[0m
+[13:22:50]: ▸ [35m> Task :react-native-svg:generateReleaseResources[0m
+[13:22:50]: ▸ [35m> Task :react-native-svg:packageReleaseResources[0m
+[13:22:50]: ▸ [35m> Task :react-native-svg:parseReleaseLocalResources[0m
+[13:22:50]: ▸ [35m> Task :react-native-randombytes:compileReleaseJavaWithJavac[0m
+[13:22:50]: ▸ [35m> Task :react-native-randombytes:mergeReleaseGeneratedProguardFiles[0m
+[13:22:50]: ▸ [35m> Task :react-native-randombytes:exportReleaseConsumerProguardFiles[0m
+[13:22:50]: ▸ [35m> Task :react-native-svg:javaPreCompileRelease[0m
+[13:22:50]: ▸ [35m> Task :react-native-view-shot:generateReleaseBuildConfig[0m
+[13:22:50]: ▸ [35m> Task :react-native-permissions:compileReleaseJavaWithJavac[0m
+[13:22:50]: ▸ [35m> Task :react-native-view-shot:generateReleaseResValues[0m
+[13:22:50]: ▸ [35m> Task :react-native-permissions:mergeReleaseGeneratedProguardFiles[0m
+[13:22:50]: ▸ [35m> Task :react-native-view-shot:generateReleaseResources[0m
+[13:22:50]: ▸ [35m> Task :react-native-svg:generateReleaseRFile[0m
+[13:22:50]: ▸ [35m> Task :react-native-view-shot:packageReleaseResources[0m
+[13:22:50]: ▸ [35m> Task :react-native-permissions:exportReleaseConsumerProguardFiles[0m
+[13:22:50]: ▸ [35m> Task :react-native-view-shot:parseReleaseLocalResources[0m
+[13:22:50]: ▸ [35m> Task :react-native-view-shot:javaPreCompileRelease[0m
+[13:22:50]: ▸ [35m> Task :react-native-camera:generateMlkitReleaseBuildConfig[0m
+[13:22:50]: ▸ [35m> Task :react-native-camera:generateMlkitReleaseResValues[0m
+[13:22:50]: ▸ [35m> Task :react-native-view-shot:generateReleaseRFile[0m
+[13:22:50]: ▸ [35m> Task :react-native-camera:generateMlkitReleaseResources[0m
+[13:22:50]: ▸ [35m> Task :react-native-camera:packageMlkitReleaseResources[0m
+[13:22:50]: ▸ [35m> Task :react-native-camera:parseMlkitReleaseLocalResources[0m
+[13:22:50]: ▸ [35m> Task :react-native-camera:generateMlkitReleaseRFile[0m
+[13:22:50]: ▸ [35m> Task :react-native-camera:javaPreCompileMlkitRelease[0m
+[13:22:50]: ▸ [35m> Task :react-native-sms-retriever:compileReleaseJavaWithJavac[0m
+[13:22:50]: ▸ [35mNote: Some input files use or override a deprecated API.[0m
+[13:22:50]: ▸ [35mNote: Recompile with -Xlint:deprecation for details.[0m
+[13:22:50]: ▸ [35m> Task :react-native-sms-retriever:mergeReleaseGeneratedProguardFiles[0m
+[13:22:50]: ▸ [35m> Task :react-native-rsa-native:compileReleaseJavaWithJavac[0m
+[13:22:50]: ▸ [35mNote: Some input files use or override a deprecated API.[0m
+[13:22:50]: ▸ [35mNote: Recompile with -Xlint:deprecation for details.[0m
+[13:22:50]: ▸ [35m> Task :react-native-sms-retriever:exportReleaseConsumerProguardFiles[0m
+[13:22:50]: ▸ [35m> Task :react-native-rsa-native:mergeReleaseGeneratedProguardFiles[0m
+[13:22:50]: ▸ [35m> Task :react-native-rsa-native:exportReleaseConsumerProguardFiles[0m
+[13:22:50]: ▸ [35m> Task :react-native-linear-gradient:generateReleaseBuildConfig[0m
+[13:22:50]: ▸ [35m> Task :app:buildKotlinToolingMetadata[0m
+[13:22:50]: ▸ [35m> Task :react-native-linear-gradient:generateReleaseResValues[0m
+[13:22:50]: ▸ [35m> Task :react-native-linear-gradient:generateReleaseResources[0m
+[13:22:50]: ▸ [35m> Task :react-native-linear-gradient:packageReleaseResources[0m
+[13:22:50]: ▸ [35m> Task :react-native-linear-gradient:parseReleaseLocalResources[0m
+[13:22:50]: ▸ [35m> Task :react-native-share:compileReleaseJavaWithJavac[0m
+[13:22:50]: ▸ [35mNote: /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-share/android/src/main/java/cl/json/social/TargetChosenReceiver.java uses or overrides a deprecated API.[0m
+[13:22:50]: ▸ [35mNote: Recompile with -Xlint:deprecation for details.[0m
+[13:22:50]: ▸ [35m> Task :react-native-share:mergeReleaseGeneratedProguardFiles[0m
+[13:22:50]: ▸ [35m> Task :react-native-share:exportReleaseConsumerProguardFiles[0m
+[13:22:50]: ▸ [35m> Task :react-native-linear-gradient:javaPreCompileRelease[0m
+[13:22:50]: ▸ [35m> Task :app:checkReleaseDuplicateClasses[0m
+[13:22:50]: ▸ [35m> Task :bugsnag_react-native:writeReleaseAarMetadata[0m
+[13:22:50]: ▸ [35m> Task :react-native-linear-gradient:generateReleaseRFile[0m
+[13:22:50]: ▸ [35m> Task :jail-monkey:writeReleaseAarMetadata[0m
+[13:22:50]: ▸ [35m> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED[0m
+[13:22:50]: ▸ [35m> Task :react-native-adjust:writeReleaseAarMetadata[0m
+[13:22:50]: ▸ [35m> Task :react-native-async-storage_async-storage:writeReleaseAarMetadata[0m
+[13:22:51]: ▸ [35m> Task :app:generateReleaseBuildConfig[0m
+[13:22:51]: ▸ [35m> Task :react-native-clipboard_clipboard:writeReleaseAarMetadata[0m
+[13:22:51]: ▸ [35m> Task :react-native-screens:buildCMakeRelWithDebInfo[arm64-v8a][0m
+[13:22:51]: ▸ [35m> Task :react-native-community_cameraroll:writeReleaseAarMetadata[0m
+[13:22:51]: ▸ [35m> Task :react-native-blob-util:writeReleaseAarMetadata[0m
+[13:22:51]: ▸ [35m> Task :react-native-community_checkbox:writeReleaseAarMetadata[0m
+[13:22:51]: ▸ [35m> Task :react-native-community_datetimepicker:writeReleaseAarMetadata[0m
+[13:22:51]: ▸ [35m> Task :react-native-community_google-signin:writeReleaseAarMetadata[0m
+[13:22:51]: ▸ [35m> Task :react-native-community_netinfo:writeReleaseAarMetadata[0m
+[13:22:51]: ▸ [35m> Task :react-native-cookies_cookies:writeReleaseAarMetadata[0m
+[13:22:51]: ▸ [35m> Task :react-native-device-info:writeReleaseAarMetadata[0m
+[13:22:51]: ▸ [35m> Task :react-native-fingerprint-scanner:writeReleaseAarMetadata[0m
+[13:22:51]: ▸ [35m> Task :react-native-exit-app:writeReleaseAarMetadata[0m
+[13:22:51]: ▸ [35m> Task :react-native-firebase_analytics:writeReleaseAarMetadata[0m
+[13:22:51]: ▸ [35m> Task :react-native-firebase_app:writeReleaseAarMetadata[0m
+[13:22:51]: ▸ [35m> Task :react-native-fs:writeReleaseAarMetadata[0m
+[13:22:51]: ▸ [35m> Task :react-native-firebase_crashlytics:writeReleaseAarMetadata[0m
+[13:22:51]: ▸ [35m> Task :react-native-gesture-handler:writeReleaseAarMetadata[0m
+[13:22:51]: ▸ [35m> Task :react-native-keychain:writeReleaseAarMetadata[0m
+[13:22:51]: ▸ [35m> Task :react-native-image-picker:writeReleaseAarMetadata[0m
+[13:22:51]: ▸ [35m> Task :react-native-navigation-bar-color:writeReleaseAarMetadata[0m
+[13:22:51]: ▸ [35m> Task :react-native-open-notification:writeReleaseAarMetadata[0m
+[13:22:51]: ▸ [35m> Task :react-native-onesignal:writeReleaseAarMetadata[0m
+[13:22:51]: ▸ [35m> Task :react-native-pdf:writeReleaseAarMetadata[0m
+[13:22:51]: ▸ [35m> Task :react-native-orientation-locker:writeReleaseAarMetadata[0m
+[13:22:51]: ▸ [35m> Task :react-native-permissions:writeReleaseAarMetadata[0m
+[13:22:51]: ▸ [35m> Task :react-native-randombytes:writeReleaseAarMetadata[0m
+[13:22:51]: ▸ [35m> Task :react-native-restart:writeReleaseAarMetadata[0m
+[13:22:51]: ▸ [35m> Task :react-native-safe-area-context:writeReleaseAarMetadata[0m
+[13:22:51]: ▸ [35m> Task :react-native-share:writeReleaseAarMetadata[0m
+[13:22:51]: ▸ [35m> Task :react-native-sms-retriever:writeReleaseAarMetadata[0m
+[13:22:51]: ▸ [35m> Task :react-native-webview:writeReleaseAarMetadata[0m
+[13:22:51]: ▸ [35m> Task :react-native-rsa-native:writeReleaseAarMetadata[0m
+[13:22:51]: ▸ [35m> Task :bugsnag_react-native:extractDeepLinksRelease[0m
+[13:22:51]: ▸ [35m> Task :bugsnag_react-native:processReleaseManifest[0m
+[13:22:51]: ▸ [35m> Task :jail-monkey:extractDeepLinksRelease[0m
+[13:22:51]: ▸ [35m> Task :jail-monkey:processReleaseManifest[0m
+[13:22:51]: ▸ [35m> Task :react-native-adjust:extractDeepLinksRelease[0m
+[13:22:51]: ▸ [35m> Task :react-native-adjust:processReleaseManifest[0m
+[13:22:51]: ▸ [35m> Task :react-native-async-storage_async-storage:extractDeepLinksRelease[0m
+[13:22:51]: ▸ [35m> Task :react-native-async-storage_async-storage:processReleaseManifest[0m
+[13:22:51]: ▸ [35m> Task :react-native-blob-util:extractDeepLinksRelease[0m
+[13:22:51]: ▸ [35m> Task :react-native-blob-util:processReleaseManifest[0m
+[13:22:51]: ▸ [35m> Task :react-native-clipboard_clipboard:extractDeepLinksRelease[0m
+[13:22:51]: ▸ [35m> Task :react-native-clipboard_clipboard:processReleaseManifest[0m
+[13:22:51]: ▸ [35m> Task :react-native-community_cameraroll:extractDeepLinksRelease[0m
+[13:22:51]: ▸ [35m> Task :react-native-community_cameraroll:processReleaseManifest[0m
+[13:22:51]: ▸ [35m> Task :react-native-view-shot:compileReleaseJavaWithJavac[0m
+[13:22:51]: ▸ [35m/Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-view-shot/android/src/main/java/fr/greweb/reactnativeviewshot/RNViewShotModule.java:52: warning: [removal] onCatalystInstanceDestroy() in NativeModule has been deprecated and marked for removal[0m
+[13:22:51]: ▸ [35mpublic void onCatalystInstanceDestroy() {[0m
+[13:22:51]: ▸ [35m^[0m
+[13:22:51]: ▸ [35m/Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-view-shot/android/src/main/java/fr/greweb/reactnativeviewshot/RNViewShotModule.java:53: warning: [removal] onCatalystInstanceDestroy() in NativeModule has been deprecated and marked for removal[0m
+[13:22:51]: ▸ [35msuper.onCatalystInstanceDestroy();[0m
+[13:22:51]: ▸ [35m^[0m
+[13:22:51]: ▸ [35mNote: Some input files use or override a deprecated API.[0m
+[13:22:51]: ▸ [35mNote: Recompile with -Xlint:deprecation for details.[0m
+[13:22:51]: ▸ [35m2 warnings[0m
+[13:22:51]: ▸ [35m> Task :react-native-view-shot:mergeReleaseGeneratedProguardFiles[0m
+[13:22:51]: ▸ [35m> Task :react-native-community_checkbox:extractDeepLinksRelease[0m
+[13:22:51]: ▸ [35m> Task :react-native-community_checkbox:processReleaseManifest[0m
+[13:22:51]: ▸ [35m> Task :react-native-view-shot:writeReleaseAarMetadata[0m
+[13:22:51]: ▸ [35m> Task :react-native-view-shot:exportReleaseConsumerProguardFiles[0m
+[13:22:51]: ▸ [35m> Task :react-native-community_google-signin:extractDeepLinksRelease[0m
+[13:22:51]: ▸ [35m> Task :react-native-linear-gradient:compileReleaseJavaWithJavac[0m
+[13:22:51]: ▸ [35m> Task :react-native-linear-gradient:mergeReleaseGeneratedProguardFiles[0m
+[13:22:51]: ▸ [35m> Task :react-native-linear-gradient:exportReleaseConsumerProguardFiles[0m
+[13:22:51]: ▸ [35m> Task :react-native-community_google-signin:processReleaseManifest[0m
+[13:22:51]: ▸ [35m> Task :react-native-community_netinfo:extractDeepLinksRelease[0m
+[13:22:51]: ▸ [35m> Task :react-native-linear-gradient:writeReleaseAarMetadata[0m
+[13:22:51]: ▸ [35m> Task :react-native-cookies_cookies:extractDeepLinksRelease[0m
+[13:22:52]: ▸ [35m> Task :react-native-screens:configureCMakeRelWithDebInfo[armeabi-v7a][0m
+[13:22:52]: ▸ [35m> Task :react-native-svg:compileReleaseJavaWithJavac[0m
+[13:22:52]: ▸ [35m/Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-svg/android/src/main/java/com/horcrux/svg/RenderableViewManager.java:388: warning: [removal] processTransform(ReadableArray,double[]) in TransformHelper has been deprecated and marked for removal[0m
+[13:22:52]: ▸ [35mTransformHelper.processTransform(transforms, sTransformDecompositionArray);[0m
+[13:22:52]: ▸ [35m^[0m
+[13:22:53]: ▸ [35m> Task :react-native-camera:compileMlkitReleaseJavaWithJavac[0m
+[13:22:53]: ▸ [35mNote: Some input files use or override a deprecated API.[0m
+[13:22:53]: ▸ [35mNote: Recompile with -Xlint:deprecation for details.[0m
+[13:22:53]: ▸ [35mNote: /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-camera/android/src/main/java/com/google/android/cameraview/Camera2.java uses unchecked or unsafe operations.[0m
+[13:22:53]: ▸ [35mNote: Recompile with -Xlint:unchecked for details.[0m
+[13:22:53]: ▸ [35m> Task :react-native-camera:mergeMlkitReleaseGeneratedProguardFiles[0m
+[13:22:53]: ▸ [35m> Task :react-native-camera:exportMlkitReleaseConsumerProguardFiles[0m
+[13:22:53]: ▸ [35m> Task :react-native-camera:writeMlkitReleaseAarMetadata[0m
+[13:22:53]: ▸ [35m> Task :react-native-camera:extractDeepLinksMlkitRelease[0m
+[13:22:53]: ▸ [35m> Task :react-native-camera:processMlkitReleaseManifest[0m
+[13:22:53]: ▸ [35m> Task :react-native-device-info:extractDeepLinksRelease[0m
+[13:22:53]: ▸ [35m> Task :react-native-device-info:processReleaseManifest[0m
+[13:22:53]: ▸ [35m> Task :react-native-exit-app:extractDeepLinksRelease[0m
+[13:22:53]: ▸ [35m> Task :react-native-exit-app:processReleaseManifest[0m
+[13:22:53]: ▸ [35m> Task :react-native-fingerprint-scanner:extractDeepLinksRelease[0m
+[13:22:53]: ▸ [35m> Task :react-native-fingerprint-scanner:processReleaseManifest[0m
+[13:22:53]: ▸ [35m> Task :react-native-firebase_analytics:extractDeepLinksRelease[0m
+[13:22:54]: ▸ [35m> Task :react-native-svg:compileReleaseJavaWithJavac[0m
+[13:22:54]: ▸ [35mNote: Some input files use or override a deprecated API.[0m
+[13:22:54]: ▸ [35mNote: Recompile with -Xlint:deprecation for details.[0m
+[13:22:54]: ▸ [35mNote: Some input files use unchecked or unsafe operations.[0m
+[13:22:54]: ▸ [35mNote: Recompile with -Xlint:unchecked for details.[0m
+[13:22:54]: ▸ [35m1 warning[0m
+[13:22:54]: ▸ [35m> Task :react-native-svg:mergeReleaseGeneratedProguardFiles[0m
+[13:22:54]: ▸ [35m> Task :react-native-svg:exportReleaseConsumerProguardFiles[0m
+[13:22:54]: ▸ [35m> Task :react-native-svg:writeReleaseAarMetadata[0m
+[13:22:54]: ▸ [35m> Task :react-native-firebase_app:extractDeepLinksRelease[0m
+[13:22:54]: ▸ [35m> Task :react-native-firebase_app:processReleaseManifest[0m
+[13:22:54]: ▸ [35m> Task :react-native-firebase_crashlytics:extractDeepLinksRelease[0m
+[13:22:54]: ▸ [35m> Task :react-native-firebase_crashlytics:processReleaseManifest[0m
+[13:22:54]: ▸ [35m> Task :react-native-fs:extractDeepLinksRelease[0m
+[13:22:54]: ▸ [35m> Task :react-native-fs:processReleaseManifest[0m
+[13:22:54]: ▸ [35m> Task :react-native-gesture-handler:extractDeepLinksRelease[0m
+[13:22:54]: ▸ [35m> Task :react-native-gesture-handler:processReleaseManifest[0m
+[13:22:54]: ▸ [35m> Task :react-native-image-picker:extractDeepLinksRelease[0m
+[13:22:54]: ▸ [35m> Task :react-native-image-picker:processReleaseManifest[0m
+[13:22:54]: ▸ [35m> Task :react-native-keychain:extractDeepLinksRelease[0m
+[13:22:54]: ▸ [35m> Task :react-native-keychain:processReleaseManifest[0m
+[13:22:54]: ▸ [35m> Task :react-native-linear-gradient:extractDeepLinksRelease[0m
+[13:22:54]: ▸ [35m> Task :react-native-linear-gradient:processReleaseManifest[0m
+[13:22:54]: ▸ [35m> Task :react-native-navigation-bar-color:extractDeepLinksRelease[0m
+[13:22:54]: ▸ [35m> Task :react-native-navigation-bar-color:processReleaseManifest[0m
+[13:22:54]: ▸ [35m> Task :react-native-onesignal:extractDeepLinksRelease[0m
+[13:22:54]: ▸ [35m> Task :react-native-onesignal:processReleaseManifest[0m
+[13:22:54]: ▸ [35m> Task :react-native-open-notification:extractDeepLinksRelease[0m
+[13:22:56]: ▸ [35m> Task :react-native-screens:buildCMakeRelWithDebInfo[armeabi-v7a][0m
+[13:22:56]: ▸ [35m> Task :react-native-screens:mergeReleaseJniLibFolders[0m
+[13:22:56]: ▸ [35m> Task :react-native-screens:mergeReleaseNativeLibs[0m
+[13:22:56]: ▸ [35m> Task :react-native-screens:copyReleaseJniLibsProjectOnly[0m
+[13:22:56]: ▸ [35m> Task :react-native-screens:checkKotlinGradlePluginConfigurationErrors SKIPPED[0m
+[13:22:56]: ▸ [35m> Task :react-native-screens:generateReleaseBuildConfig[0m
+[13:22:56]: ▸ [35m> Task :react-native-screens:generateReleaseResValues[0m
+[13:22:56]: ▸ [35m> Task :react-native-screens:generateReleaseResources[0m
+[13:22:56]: ▸ [35m> Task :react-native-screens:packageReleaseResources[0m
+[13:22:56]: ▸ [35m> Task :react-native-screens:parseReleaseLocalResources[0m
+[13:22:56]: ▸ [35m> Task :react-native-screens:generateReleaseRFile[0m
+[13:22:56]: ▸ [35m> Task :react-native-community_datetimepicker:extractDeepLinksRelease[0m
+[13:22:56]: ▸ [35m> Task :react-native-community_netinfo:processReleaseManifest[0m
+[13:22:56]: ▸ [35m> Task :react-native-cookies_cookies:processReleaseManifest[0m
+[13:22:56]: ▸ [35m> Task :react-native-firebase_analytics:processReleaseManifest[0m
+[13:22:56]: ▸ [35m> Task :react-native-open-notification:processReleaseManifest[0m
+[13:22:56]: ▸ [35m> Task :react-native-permissions:extractDeepLinksRelease[0m
+[13:22:56]: ▸ [35m> Task :react-native-pdf:extractDeepLinksRelease[0m
+[13:22:56]: ▸ [35m> Task :react-native-orientation-locker:extractDeepLinksRelease[0m
+[13:22:56]: ▸ [35m> Task :react-native-randombytes:extractDeepLinksRelease[0m
+[13:22:56]: ▸ [35m> Task :react-native-community_datetimepicker:processReleaseManifest[0m
+[13:22:56]: ▸ [35m> Task :react-native-restart:extractDeepLinksRelease[0m
+[13:22:56]: ▸ [35m> Task :react-native-orientation-locker:processReleaseManifest[0m
+[13:22:56]: ▸ [35m> Task :react-native-permissions:processReleaseManifest[0m
+[13:22:56]: ▸ [35m> Task :react-native-randombytes:processReleaseManifest[0m
+[13:22:56]: ▸ [35m> Task :react-native-pdf:processReleaseManifest[0m
+[13:22:56]: ▸ [35m> Task :react-native-safe-area-context:extractDeepLinksRelease[0m
+[13:22:56]: ▸ [35m> Task :react-native-rsa-native:extractDeepLinksRelease[0m
+[13:22:56]: ▸ [35m> Task :react-native-sms-retriever:extractDeepLinksRelease[0m
+[13:22:56]: ▸ [35m> Task :react-native-share:extractDeepLinksRelease[0m
+[13:22:56]: ▸ [35m> Task :react-native-restart:processReleaseManifest[0m
+[13:22:56]: ▸ [35m> Task :react-native-rsa-native:processReleaseManifest[0m
+[13:22:56]: ▸ [35m> Task :react-native-sms-retriever:processReleaseManifest[0m
+[13:22:56]: ▸ [35m> Task :react-native-share:processReleaseManifest[0m
+[13:22:56]: ▸ [35m> Task :react-native-safe-area-context:processReleaseManifest[0m
+[13:22:56]: ▸ [35m> Task :react-native-svg:extractDeepLinksRelease[0m
+[13:22:56]: ▸ [35m> Task :react-native-webview:extractDeepLinksRelease[0m
+[13:22:56]: ▸ [35m> Task :react-native-view-shot:extractDeepLinksRelease[0m
+[13:22:56]: ▸ [35m> Task :bugsnag_react-native:compileReleaseLibraryResources[0m
+[13:22:56]: ▸ [35m> Task :jail-monkey:compileReleaseLibraryResources[0m
+[13:22:56]: ▸ [35m> Task :react-native-webview:processReleaseManifest[0m
+[13:22:56]: ▸ [35m> Task :react-native-view-shot:processReleaseManifest[0m
+[13:22:56]: ▸ [35m> Task :react-native-svg:processReleaseManifest[0m
+[13:22:56]: ▸ [35m> Task :react-native-async-storage_async-storage:compileReleaseLibraryResources[0m
+[13:22:56]: ▸ [35m> Task :react-native-community_cameraroll:compileReleaseLibraryResources[0m
+[13:22:56]: ▸ [35m> Task :react-native-blob-util:compileReleaseLibraryResources[0m
+[13:22:56]: ▸ [35m> Task :react-native-clipboard_clipboard:compileReleaseLibraryResources[0m
+[13:22:56]: ▸ [35m> Task :react-native-community_checkbox:compileReleaseLibraryResources[0m
+[13:22:56]: ▸ [35m> Task :react-native-community_google-signin:compileReleaseLibraryResources[0m
+[13:22:56]: ▸ [35m> Task :react-native-community_datetimepicker:compileReleaseLibraryResources[0m
+[13:22:56]: ▸ [35m> Task :react-native-adjust:compileReleaseLibraryResources[0m
+[13:22:56]: ▸ [35m> Task :react-native-community_netinfo:compileReleaseLibraryResources[0m
+[13:22:56]: ▸ [35m> Task :react-native-screens:javaPreCompileRelease[0m
+[13:22:56]: ▸ [35m> Task :react-native-cookies_cookies:compileReleaseLibraryResources[0m
+[13:22:56]: ▸ [35m> Task :react-native-screens:writeReleaseAarMetadata[0m
+[13:22:56]: ▸ [35m> Task :react-native-exit-app:compileReleaseLibraryResources[0m
+[13:22:56]: ▸ [35m> Task :react-native-screens:extractDeepLinksRelease[0m
+[13:22:56]: ▸ [35m> Task :react-native-firebase_analytics:compileReleaseLibraryResources[0m
+[13:22:56]: ▸ [35m> Task :react-native-camera:compileMlkitReleaseLibraryResources[0m
+[13:22:56]: ▸ [35m> Task :react-native-device-info:compileReleaseLibraryResources[0m
+[13:22:56]: ▸ [35m> Task :react-native-firebase_app:compileReleaseLibraryResources[0m
+[13:22:56]: ▸ [35m> Task :react-native-screens:processReleaseManifest[0m
+[13:22:56]: ▸ [35m> Task :react-native-fingerprint-scanner:compileReleaseLibraryResources[0m
+[13:22:56]: ▸ [35m> Task :react-native-fs:compileReleaseLibraryResources[0m
+[13:22:56]: ▸ [35m> Task :react-native-firebase_crashlytics:compileReleaseLibraryResources[0m
+[13:22:56]: ▸ [35m> Task :react-native-gesture-handler:compileReleaseLibraryResources[0m
+[13:22:56]: ▸ [35m> Task :react-native-keychain:compileReleaseLibraryResources[0m
+[13:22:56]: ▸ [35m> Task :react-native-linear-gradient:compileReleaseLibraryResources[0m
+[13:22:56]: ▸ [35m> Task :react-native-onesignal:compileReleaseLibraryResources[0m
+[13:22:56]: ▸ [35m> Task :react-native-open-notification:compileReleaseLibraryResources[0m
+[13:22:56]: ▸ [35m> Task :react-native-navigation-bar-color:compileReleaseLibraryResources[0m
+[13:22:56]: ▸ [35m> Task :react-native-image-picker:compileReleaseLibraryResources[0m
+[13:22:56]: ▸ [35m> Task :react-native-orientation-locker:compileReleaseLibraryResources[0m
+[13:22:56]: ▸ [35m> Task :react-native-pdf:compileReleaseLibraryResources[0m
+[13:22:56]: ▸ [35m> Task :react-native-permissions:compileReleaseLibraryResources[0m
+[13:22:56]: ▸ [35m> Task :react-native-safe-area-context:compileReleaseLibraryResources[0m
+[13:22:56]: ▸ [35m> Task :react-native-rsa-native:compileReleaseLibraryResources[0m
+[13:22:56]: ▸ [35m> Task :react-native-randombytes:compileReleaseLibraryResources[0m
+[13:22:56]: ▸ [35m> Task :react-native-restart:compileReleaseLibraryResources[0m
+[13:22:56]: ▸ [35m> Task :react-native-share:compileReleaseLibraryResources[0m
+[13:22:56]: ▸ [35m> Task :react-native-svg:compileReleaseLibraryResources[0m
+[13:22:56]: ▸ [35m> Task :react-native-view-shot:compileReleaseLibraryResources[0m
+[13:22:56]: ▸ [35m> Task :react-native-sms-retriever:compileReleaseLibraryResources[0m
+[13:22:56]: ▸ [35m> Task :react-native-webview:compileReleaseLibraryResources[0m
+[13:22:56]: ▸ [35m> Task :react-native-adjust:bundleLibCompileToJarRelease[0m
+[13:22:56]: ▸ [35m> Task :bugsnag_react-native:bundleLibCompileToJarRelease[0m
+[13:22:56]: ▸ [35m> Task :jail-monkey:bundleLibCompileToJarRelease[0m
+[13:22:56]: ▸ [35m> Task :app:createBundleReleaseJsAndAssets FAILED[0m
+[13:22:56]: ▸ [35m> Task :react-native-screens:compileReleaseLibraryResources[0m
+[13:22:57]: ▸ [35m> Task :react-native-clipboard_clipboard:bundleLibCompileToJarRelease[0m
+[13:22:57]: ▸ [35m> Task :react-native-async-storage_async-storage:bundleLibCompileToJarRelease[0m
+[13:22:57]: ▸ [35m> Task :react-native-blob-util:bundleLibCompileToJarRelease[0m
+[13:22:57]: ▸ [35m> Task :react-native-camera:bundleLibCompileToJarMlkitRelease[0m
+[13:23:02]: ▸ [35m> Task :react-native-screens:compileReleaseKotlin[0m
+[13:23:02]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/CustomToolbar.kt:19:33 'class FrameCallback : Choreographer.FrameCallback' is deprecated. Use Choreographer.FrameCallback instead.[0m
+[13:23:02]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/CustomToolbar.kt:20:18 'class FrameCallback : Choreographer.FrameCallback' is deprecated. Use Choreographer.FrameCallback instead.[0m
+[13:23:02]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/RNScreensPackage.kt:66:17 'constructor(name: String, className: String, canOverrideExistingModule: Boolean, needsEagerInit: Boolean, hasConstants: Boolean, isCxxModule: Boolean, isTurboModule: Boolean): ReactModuleInfo' is deprecated. This constructor is deprecated and will be removed in the future. Use ReactModuleInfo(String, String, boolean, boolean, boolean, boolean)].[0m
+[13:23:02]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/Screen.kt:47:77 Unchecked cast of '(androidx.coordinatorlayout.widget.CoordinatorLayout.Behavior<android.view.View!>?..androidx.coordinatorlayout.widget.CoordinatorLayout.Behavior<*>?)' to 'com.google.android.material.bottomsheet.BottomSheetBehavior<com.swmansion.rnscreens.Screen>'.[0m
+[13:23:02]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenContainer.kt:33:33 'class FrameCallback : Choreographer.FrameCallback' is deprecated. Use Choreographer.FrameCallback instead.[0m
+[13:23:02]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenContainer.kt:34:18 'class FrameCallback : Choreographer.FrameCallback' is deprecated. Use Choreographer.FrameCallback instead.[0m
+[13:23:02]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenStackFragment.kt:282:31 'var targetElevation: Float' is deprecated. Deprecated in Java.[0m
+[13:23:02]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenStackFragment.kt:285:13 'fun setHasOptionsMenu(p0: Boolean): Unit' is deprecated. Deprecated in Java.[0m
+[13:23:02]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenStackFragment.kt:631:18 This declaration overrides a deprecated member but is not marked as deprecated itself. Please add the '@Deprecated' annotation or suppress the diagnostic.[0m
+[13:23:02]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenStackFragment.kt:638:22 'fun onPrepareOptionsMenu(p0: Menu): Unit' is deprecated. Deprecated in Java.[0m
+[13:23:02]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenStackFragment.kt:641:18 This declaration overrides a deprecated member but is not marked as deprecated itself. Please add the '@Deprecated' annotation or suppress the diagnostic.[0m
+[13:23:02]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenStackFragment.kt:646:22 'fun onCreateOptionsMenu(p0: Menu, p1: MenuInflater): Unit' is deprecated. Deprecated in Java.[0m
+[13:23:02]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenStackHeaderConfig.kt:100:38 'val systemWindowInsetTop: Int' is deprecated. Deprecated in Java.[0m
+[13:23:02]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenStackHeaderConfigViewManager.kt:7:8 'class MapBuilder : Any' is deprecated. Deprecated in Java.[0m
+[13:23:02]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenStackHeaderConfigViewManager.kt:210:9 'class MapBuilder : Any' is deprecated. Deprecated in Java.[0m
+[13:23:02]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenStackHeaderConfigViewManager.kt:212:13 'class MapBuilder : Any' is deprecated. Deprecated in Java.[0m
+[13:23:02]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenStackHeaderConfigViewManager.kt:214:13 'class MapBuilder : Any' is deprecated. Deprecated in Java.[0m
+[13:23:02]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenViewManager.kt:7:8 'class MapBuilder : Any' is deprecated. Deprecated in Java.[0m
+[13:23:02]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenViewManager.kt:382:48 'class MapBuilder : Any' is deprecated. Deprecated in Java.[0m
+[13:23:02]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenViewManager.kt:383:49 'class MapBuilder : Any' is deprecated. Deprecated in Java.[0m
+[13:23:02]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenViewManager.kt:384:45 'class MapBuilder : Any' is deprecated. Deprecated in Java.[0m
+[13:23:02]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenViewManager.kt:385:52 'class MapBuilder : Any' is deprecated. Deprecated in Java.[0m
+[13:23:02]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenViewManager.kt:386:48 'class MapBuilder : Any' is deprecated. Deprecated in Java.[0m
+[13:23:02]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenViewManager.kt:387:51 'class MapBuilder : Any' is deprecated. Deprecated in Java.[0m
+[13:23:02]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenViewManager.kt:388:56 'class MapBuilder : Any' is deprecated. Deprecated in Java.[0m
+[13:23:02]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenViewManager.kt:389:57 'class MapBuilder : Any' is deprecated. Deprecated in Java.[0m
+[13:23:02]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenViewManager.kt:390:51 'class MapBuilder : Any' is deprecated. Deprecated in Java.[0m
+[13:23:02]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenWindowTraits.kt:55:42 'fun replaceSystemWindowInsets(p0: Int, p1: Int, p2: Int, p3: Int): WindowInsetsCompat' is deprecated. Deprecated in Java.[0m
+[13:23:02]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenWindowTraits.kt:56:39 'val systemWindowInsetLeft: Int' is deprecated. Deprecated in Java.[0m
+[13:23:02]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenWindowTraits.kt:58:39 'val systemWindowInsetRight: Int' is deprecated. Deprecated in Java.[0m
+[13:23:02]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenWindowTraits.kt:59:39 'val systemWindowInsetBottom: Int' is deprecated. Deprecated in Java.[0m
+[13:23:02]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenWindowTraits.kt:98:53 'var statusBarColor: Int' is deprecated. Deprecated in Java.[0m
+[13:23:02]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenWindowTraits.kt:109:48 'var statusBarColor: Int' is deprecated. Deprecated in Java.[0m
+[13:23:02]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenWindowTraits.kt:112:32 'var statusBarColor: Int' is deprecated. Deprecated in Java.[0m
+[13:23:02]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenWindowTraits.kt:208:72 'var navigationBarColor: Int' is deprecated. Deprecated in Java.[0m
+[13:23:02]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/ScreenWindowTraits.kt:214:16 'var navigationBarColor: Int' is deprecated. Deprecated in Java.[0m
+[13:23:02]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/SearchBarManager.kt:5:8 'class MapBuilder : Any' is deprecated. Deprecated in Java.[0m
+[13:23:02]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/SearchBarManager.kt:142:9 'class MapBuilder : Any' is deprecated. Deprecated in Java.[0m
+[13:23:02]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/SearchBarManager.kt:144:13 'class MapBuilder : Any' is deprecated. Deprecated in Java.[0m
+[13:23:02]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/SearchBarManager.kt:146:13 'class MapBuilder : Any' is deprecated. Deprecated in Java.[0m
+[13:23:02]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/SearchBarManager.kt:148:13 'class MapBuilder : Any' is deprecated. Deprecated in Java.[0m
+[13:23:02]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/SearchBarManager.kt:150:13 'class MapBuilder : Any' is deprecated. Deprecated in Java.[0m
+[13:23:02]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/SearchBarManager.kt:152:13 'class MapBuilder : Any' is deprecated. Deprecated in Java.[0m
+[13:23:02]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/SearchBarManager.kt:154:13 'class MapBuilder : Any' is deprecated. Deprecated in Java.[0m
+[13:23:02]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/bottomsheet/BottomSheetDialogRootView.kt:7:8 'object ReactFeatureFlags : Any' is deprecated. Use com.facebook.react.internal.featureflags.ReactNativeFeatureFlags instead.[0m
+[13:23:02]: ▸ [35mw: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/android/src/main/java/com/swmansion/rnscreens/bottomsheet/BottomSheetDialogRootView.kt:25:13 'object ReactFeatureFlags : Any' is deprecated. Use com.facebook.react.internal.featureflags.ReactNativeFeatureFlags instead.[0m
+[13:23:05]: ▸ [35m> Task :react-native-reanimated:buildCMakeRelWithDebInfo[arm64-v8a][reanimated,worklets][0m
+[13:23:05]: ▸ [35m[Incubating] Problems report is available at: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/082_android/build/reports/problems/problems-report.html[0m
+[13:23:05]: ▸ [35mFAILURE: Build failed with an exception.[0m
+[13:23:05]: ▸ [35m* What went wrong:[0m
+[13:23:05]: ▸ [35mExecution failed for task ':app:createBundleReleaseJsAndAssets'.[0m
+[13:23:05]: ▸ [35m> A problem occurred starting process 'command '/opt/homebrew/bin/node''[0m
+[13:23:05]: ▸ [35m* Try:[0m
+[13:23:05]: ▸ [35m> Run with --stacktrace option to get the stack trace.[0m
+[13:23:05]: ▸ [35m> Run with --info or --debug option to get more log output.[0m
+[13:23:05]: ▸ [35m> Run with --scan to get full insights.[0m
+[13:23:05]: ▸ [35m> Get more help at https://help.gradle.org.[0m
+[13:23:05]: ▸ [35mDeprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.[0m
+[13:23:05]: ▸ [35mYou can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.[0m
+[13:23:05]: ▸ [35mFor more on this, please refer to https://docs.gradle.org/8.11.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.[0m
+[13:23:05]: ▸ [35mBUILD FAILED in 24s[0m
+[13:23:05]: ▸ [35m670 actionable tasks: 660 executed, 10 up-to-date[0m
++-------------------------------+
+|         [33mLane Context[0m          |
++-------------------+-----------+
+| DEFAULT_PLATFORM  | ios       |
+| PLATFORM_NAME     |           |
+| LANE_NAME         | build_bot |
+| GRADLE_BUILD_TYPE | Release   |
++-------------------+-----------+
+[13:23:05]: [31mCalled from Fastfile at line 604[0m
+[13:23:05]: [31m```[0m
+[13:23:05]: [31m    602:	[0m
+[13:23:05]: [31m    603:	    gradle(task: "clean", project_dir: "#{folder_android}")[0m
+[13:23:05]: [31m => 604:	    gradle([0m
+[13:23:05]: [31m    605:	      task: "app:assemble",[0m
+[13:23:05]: [31m    606:	      build_type: "Release",[0m
+[13:23:05]: [31m```[0m
+
++-------------------------------------------+
+|             [32mfastlane summary[0m              |
++------+----------------------+-------------+
+| Step | Action               | Time (in s) |
++------+----------------------+-------------+
+| 1    | default_platform     | 0           |
+| 2    | yarn prebuild 082 p  | 1           |
+|      | 3.9.99 $(date        |             |
+|      | +%Y%m%d.%H%M)        |             |
+| 3    | yarn prebuild 082 t  | 0           |
+|      | 3.9.99 20260824.1322 |             |
+| 4    | yarn                 | 11          |
+| 5    | clean                | 6           |
+| 💥   | [31mapp:assembleRelease[0m  | 25          |
++------+----------------------+-------------+
+
+[13:23:05]: [31mfastlane finished with errors[0m
+[31m
+[!] Exit status of command '/Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/082_android/gradlew app:assembleRelease -p 082_android' was 1 instead of 0.
+more help at https://help.gradle.org.
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.11.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 24s
+670 actionable tasks: 660 executed, 10 up-to-date
+[0m
