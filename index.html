@@ -166,12 +166,25 @@
         startInstallPage();
       }
 
+      // Auto-detects the visiting device so one shared link (no ?platform=) still shows the
+      // right install flow — a link with an explicit ?platform= still always wins.
+      function detectPlatform() {
+        const ua = navigator.userAgent || navigator.vendor || window.opera || '';
+        if (/android/i.test(ua)) return 'android';
+        if (/iphone|ipad|ipod/i.test(ua)) return 'ios';
+        // iPadOS 13+ reports its UA as "Macintosh" but exposes multi-touch — a real desktop Mac
+        // doesn't, so this still tells an iPad apart from an actual desktop browser.
+        if (/macintosh/i.test(ua) && navigator.maxTouchPoints > 1) return 'ios';
+        return null; // desktop or unrecognized — caller decides the fallback
+      }
+
       async function startInstallPage() {
         const seccode = (params.get('seccode') || '').trim();
         const env = (params.get('env') || 'prod').toLowerCase();
         const app = (params.get('app') || '').trim().toLowerCase();
         const isFlutter = app === 'flutter';
-        const platform = (params.get('platform') || 'ios').trim().toLowerCase();
+        const explicitPlatform = (params.get('platform') || '').trim().toLowerCase();
+        const platform = explicitPlatform || detectPlatform() || 'ios';
         const isAndroid = platform === 'android';
         const envSlug = env === 'prod' ? 'prod' : 'uat';
         // The legacy YSflex landing URL deliberately has no seccode.  It must
