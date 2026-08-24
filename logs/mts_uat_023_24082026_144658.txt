@@ -1,0 +1,419 @@
+[14:47:00]: [33mGet started using a Gemfile for fastlane https://docs.fastlane.tools/getting-started/ios/setup/#use-a-gemfile[0m
+[14:47:01]: [32m------------------------------[0m
+[14:47:01]: [32m--- Step: default_platform ---[0m
+[14:47:01]: [32m------------------------------[0m
+[14:47:01]: [32mDriving the lane 'build_bot' 🚀[0m
+[14:47:01]: osBuild: `all`
+[14:47:01]: [32m🎯 Using version name: 3.9.99[0m
+[14:47:01]: [32m-------------------------------------------------------------[0m
+[14:47:01]: [32m--- Step: yarn prebuild 023 p 3.9.99 $(date +%Y%m%d.%H%M) ---[0m
+[14:47:01]: [32m-------------------------------------------------------------[0m
+[14:47:01]: [36m$ yarn prebuild 023 p 3.9.99 $(date +%Y%m%d.%H%M)[0m
+[14:47:01]: ▸ [35myarn run v1.22.22[0m
+[14:47:01]: ▸ [35m$ node script/prebuild.js 023 p 3.9.99 20260824.1447[0m
+[14:47:02]: ▸ [35m>>>>>> Change active_code:  023 [type]:  p[0m
+[14:47:02]: ▸ [35m>>>>>> [Change] appVersion for PackageJson:  3.9.99[0m
+[14:47:02]: ▸ [35m>>>>>> [Done] appVersion for PackageJson:  3.9.99[0m
+[14:47:02]: ▸ [35m✅ Đã cập nhật app.json với name = "VSCTrade", displayName = "VSC Trade"[0m
+[14:47:02]: ▸ [35m>>>>>> Công ty build:  023[0m
+[14:47:02]: ▸ [35m>>>>>> APP_VERSION: 3.9.99[0m
+[14:47:02]: ▸ [35m>>>>>> APP_BUILD_NUMBER: 20260824.1447[0m
+[14:47:02]: ▸ [35m>>>>>> Môi trường build: CONFIG_PRODUCTION[0m
+[14:47:02]: ▸ [35mDone in 1.02s.[0m
+[14:47:02]: [32m------------------------------------------------------[0m
+[14:47:02]: [32m--- Step: yarn prebuild 023 t 3.9.99 20260824.1447 ---[0m
+[14:47:02]: [32m------------------------------------------------------[0m
+[14:47:02]: [36m$ yarn prebuild 023 t 3.9.99 20260824.1447[0m
+[14:47:02]: ▸ [35myarn run v1.22.22[0m
+[14:47:02]: ▸ [35m$ node script/prebuild.js 023 t 3.9.99 20260824.1447[0m
+[14:47:03]: ▸ [35m>>>>>> Change active_code:  023 [type]:  t[0m
+[14:47:03]: ▸ [35m>>>>>> [Change] appVersion for PackageJson:  3.9.99[0m
+[14:47:03]: ▸ [35m>>>>>> [Done] appVersion for PackageJson:  3.9.99[0m
+[14:47:03]: ▸ [35m✅ Đã cập nhật app.json với name = "VSCTrade", displayName = "VSC Trade"[0m
+[14:47:03]: ▸ [35m>>>>>> Công ty build:  023[0m
+[14:47:03]: ▸ [35m>>>>>> APP_VERSION: 3.9.99[0m
+[14:47:03]: ▸ [35m>>>>>> APP_BUILD_NUMBER: 20260824.1447[0m
+[14:47:03]: ▸ [35m>>>>>> Môi trường build: CONFIG_TEST[0m
+[14:47:03]: ▸ [35mDone in 0.54s.[0m
+[14:47:03]: [32m------------------[0m
+[14:47:03]: [32m--- Step: yarn ---[0m
+[14:47:03]: [32m------------------[0m
+[14:47:03]: [36m$ yarn[0m
+[14:47:03]: ▸ [35myarn install v1.22.22[0m
+[14:47:03]: ▸ [35m[1/5] Validating package.json...[0m
+[14:47:03]: ▸ [35m[2/5] Resolving packages...[0m
+[14:47:04]: ▸ [35m[3/5] Fetching packages...[0m
+[14:47:04]: ▸ [35m[4/5] Linking dependencies...[0m
+[14:47:04]: ▸ [35mwarning " > @react-native-community/cameraroll@4.1.2" has incorrect peer dependency "react@16 || 17".[0m
+[14:47:04]: ▸ [35mwarning " > @react-native-community/datetimepicker@3.4.7" has unmet peer dependency "react-native-windows@>=0.62".[0m
+[14:47:04]: ▸ [35mwarning " > react-native-fs@2.17.0" has incorrect peer dependency "react-native@^0.59.5".[0m
+[14:47:04]: ▸ [35mwarning " > react-native-fs@2.17.0" has unmet peer dependency "react-native-windows@^0.57.2".[0m
+[14:47:04]: ▸ [35mwarning " > react-native-paper@3.8.0" has unmet peer dependency "react-native-vector-icons@*".[0m
+[14:47:04]: ▸ [35mwarning " > react-native-qrcode-svg@6.1.2" has incorrect peer dependency "react-native-svg@^12.1.0".[0m
+[14:47:04]: ▸ [35mwarning "react-native-render-html > @native-html/transient-render-engine@9.3.0" has unmet peer dependency "@types/react-native@*".[0m
+[14:47:04]: ▸ [35mwarning "react-native-render-html > @native-html/transient-render-engine > @native-html/css-processor@1.10.2" has unmet peer dependency "@types/react-native@*".[0m
+[14:47:04]: ▸ [35mwarning " > react-native-tab-view@3.0.1" has unmet peer dependency "react-native-pager-view@*".[0m
+[14:47:04]: ▸ [35mwarning " > styled-components@5.2.3" has unmet peer dependency "react-dom@>= 16.8.0".[0m
+[14:47:04]: ▸ [35mwarning " > styled-components@5.2.3" has unmet peer dependency "react-is@>= 16.8.0".[0m
+[14:47:04]: ▸ [35mwarning "sync-storage > @react-native-community/async-storage@1.12.1" has incorrect peer dependency "react@^16.8".[0m
+[14:47:04]: ▸ [35mwarning "victory-native > victory > victory-area@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[14:47:04]: ▸ [35mwarning "victory-native > victory > victory-axis@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[14:47:04]: ▸ [35mwarning "victory-native > victory > victory-bar@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[14:47:04]: ▸ [35mwarning "victory-native > victory > victory-box-plot@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[14:47:04]: ▸ [35mwarning "victory-native > victory > victory-brush-container@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[14:47:04]: ▸ [35mwarning "victory-native > victory > victory-brush-line@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[14:47:04]: ▸ [35mwarning "victory-native > victory > victory-candlestick@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[14:47:04]: ▸ [35mwarning "victory-native > victory > victory-chart@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[14:47:04]: ▸ [35mwarning "victory-native > victory > victory-core@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[14:47:04]: ▸ [35mwarning "victory-native > victory > victory-create-container@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[14:47:04]: ▸ [35mwarning "victory-native > victory > victory-cursor-container@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[14:47:04]: ▸ [35mwarning "victory-native > victory > victory-errorbar@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[14:47:04]: ▸ [35mwarning "victory-native > victory > victory-group@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[14:47:04]: ▸ [35mwarning "victory-native > victory > victory-histogram@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[14:47:04]: ▸ [35mwarning "victory-native > victory > victory-legend@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[14:47:04]: ▸ [35mwarning "victory-native > victory > victory-line@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[14:47:04]: ▸ [35mwarning "victory-native > victory > victory-pie@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[14:47:04]: ▸ [35mwarning "victory-native > victory > victory-polar-axis@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[14:47:04]: ▸ [35mwarning "victory-native > victory > victory-scatter@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[14:47:04]: ▸ [35mwarning "victory-native > victory > victory-selection-container@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[14:47:04]: ▸ [35mwarning "victory-native > victory > victory-shared-events@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[14:47:04]: ▸ [35mwarning "victory-native > victory > victory-stack@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[14:47:04]: ▸ [35mwarning "victory-native > victory > victory-tooltip@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[14:47:04]: ▸ [35mwarning "victory-native > victory > victory-voronoi@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[14:47:04]: ▸ [35mwarning "victory-native > victory > victory-voronoi-container@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[14:47:04]: ▸ [35mwarning "victory-native > victory > victory-zoom-container@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[14:47:04]: ▸ [35mwarning "@react-native-community/eslint-config > @typescript-eslint/eslint-plugin@2.34.0" has incorrect peer dependency "eslint@^5.0.0 || ^6.0.0".[0m
+[14:47:04]: ▸ [35mwarning "@react-native-community/eslint-config > @typescript-eslint/parser@2.34.0" has incorrect peer dependency "eslint@^5.0.0 || ^6.0.0".[0m
+[14:47:04]: ▸ [35mwarning "@react-native-community/eslint-config > eslint-plugin-react@7.19.0" has incorrect peer dependency "eslint@^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0".[0m
+[14:47:04]: ▸ [35mwarning "@react-native-community/eslint-config > eslint-plugin-react-hooks@3.0.0" has incorrect peer dependency "eslint@^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0".[0m
+[14:47:04]: ▸ [35mwarning "@react-native-community/eslint-config > eslint-plugin-react-native@3.8.1" has incorrect peer dependency "eslint@^3.17.0 || ^4 || ^5 || ^6".[0m
+[14:47:04]: ▸ [35mwarning Workspaces can only be enabled in private projects.[0m
+[14:47:10]: ▸ [35m[5/5] Building fresh packages...[0m
+[14:47:10]: ▸ [35msuccess Saved lockfile.[0m
+[14:47:10]: ▸ [35m$ patch-package && node script/patchAndroidLibraries.js && npx rn-nodeify --install buffer,crypto,stream,util,process,vm --hack && node script/syncFonts.js[0m
+[14:47:11]: ▸ [35mpatch-package 6.5.0[0m
+[14:47:11]: ▸ [35mApplying patches...[0m
+[14:47:11]: ▸ [35m@react-native-community/cameraroll@4.1.2 ✔[0m
+[14:47:11]: ▸ [35mcipher-base@1.0.4 ✔[0m
+[14:47:11]: ▸ [35mnative-base/@codler/react-native-keyboard-aware-scroll-view@1.0.1 ✔[0m
+[14:47:11]: ▸ [35mnative-base@2.15.8 ✔[0m
+[14:47:11]: ▸ [35mreact-native-floating-label-input@1.4.3 ✔[0m
+[14:47:11]: ▸ [35mreact-native-image-picker@4.0.6 ✔[0m
+[14:47:11]: ▸ [35mreact-native-modal-datetime-picker@9.1.0 ✔[0m
+[14:47:13]: ▸ [35m[patchAndroidLibraries] manifestMode=strip, manifests=39, gradleFiles=10, namespaces=26, svgPaper=28, rnCameraMlkit=8 nativeBaseRuntime=0, deprecatedPropTypesRuntime=5, nativeEventEmitterRuntime=1, floatingLabelRuntime=0, reactNavigationRuntime=0, reactNativeModalRuntime=1, navigationBarColorRuntime=1[0m
+[14:47:14]: ▸ [35mnot overwriting "buffer"[0m
+[14:47:14]: ▸ [35mnot overwriting "react-native-crypto"[0m
+[14:47:14]: ▸ [35mnot overwriting "stream-browserify"[0m
+[14:47:14]: ▸ [35mnot overwriting "util"[0m
+[14:47:14]: ▸ [35mnot overwriting "process"[0m
+[14:47:14]: ▸ [35mnot overwriting "vm-browserify"[0m
+[14:47:14]: ▸ [35mnot overwriting "readable-stream"[0m
+[14:47:14]: ▸ [35mnot overwriting "react-native-randombytes"[0m
+[14:47:14]: ▸ [35mnot overwriting shim.js. For the latest version, see rn-nodeify/shim.js[0m
+[14:47:14]: ▸ [35mremoving browser exclude node_modules/bn.js/package.json buffer[0m
+[14:47:14]: ▸ [35mnormalized "main" browser mapping in marky, fixed here: https://github.com/facebook/metro-bundler/pull/3[0m
+[14:47:14]: ▸ [35mremoving browser exclude node_modules/node-forge/package.json buffer[0m
+[14:47:14]: ▸ [35mremoving browser exclude node_modules/node-forge/package.json process[0m
+[14:47:14]: ▸ [35mremoving browser exclude node_modules/readable-stream/package.json util[0m
+[14:47:14]: ▸ [35mnormalized "main" browser mapping in superagent, fixed here: https://github.com/facebook/metro-bundler/pull/3[0m
+[14:47:14]: ▸ [35mremoving browser exclude node_modules/typescript/package.json buffer[0m
+[14:47:14]: ▸ [35mnormalized "main" browser mapping in @emotion/stylis, fixed here: https://github.com/facebook/metro-bundler/pull/3[0m
+[14:47:14]: ▸ [35mnormalized "main" browser mapping in @emotion/unitless, fixed here: https://github.com/facebook/metro-bundler/pull/3[0m
+[14:47:14]: ▸ [35mnormalized "main" browser mapping in @emotion/memoize, fixed here: https://github.com/facebook/metro-bundler/pull/3[0m
+[14:47:14]: ▸ [35mnormalized "main" browser mapping in @emotion/is-prop-valid, fixed here: https://github.com/facebook/metro-bundler/pull/3[0m
+[14:47:15]: ▸ [35mnormalized "main" browser mapping in superagent, fixed here: https://github.com/facebook/metro-bundler/pull/3[0m
+[14:47:15]: ▸ [35mremoving browser exclude node_modules/appcenter-file-upload-client/node_modules/readable-stream/package.json util[0m
+[14:47:15]: ▸ [35mnormalized "main" browser mapping in readable-stream, fixed here: https://github.com/facebook/metro-bundler/pull/3[0m
+[14:47:15]: ▸ [35mremoving browser exclude node_modules/bl/node_modules/readable-stream/package.json util[0m
+[14:47:15]: ▸ [35mnormalized "main" browser mapping in readable-stream, fixed here: https://github.com/facebook/metro-bundler/pull/3[0m
+[14:47:15]: ▸ [35mremoving browser exclude node_modules/browserify-rsa/node_modules/bn.js/package.json buffer[0m
+[14:47:15]: ▸ [35mremoving browser exclude node_modules/browserify-sign/node_modules/bn.js/package.json buffer[0m
+[14:47:15]: ▸ [35mremoving browser exclude node_modules/browserify-sign/node_modules/readable-stream/package.json util[0m
+[14:47:15]: ▸ [35mnormalized "main" browser mapping in readable-stream, fixed here: https://github.com/facebook/metro-bundler/pull/3[0m
+[14:47:15]: ▸ [35mremoving browser exclude node_modules/ftp/node_modules/readable-stream/package.json util[0m
+[14:47:15]: ▸ [35mremoving browser exclude node_modules/md5.js/node_modules/readable-stream/package.json util[0m
+[14:47:15]: ▸ [35mnormalized "main" browser mapping in readable-stream, fixed here: https://github.com/facebook/metro-bundler/pull/3[0m
+[14:47:15]: ▸ [35mnormalized "main" browser mapping in pbkdf2, fixed here: https://github.com/facebook/metro-bundler/pull/3[0m
+[14:47:15]: ▸ [35mremoving browser exclude node_modules/ripemd160/node_modules/readable-stream/package.json util[0m
+[14:47:15]: ▸ [35mnormalized "main" browser mapping in readable-stream, fixed here: https://github.com/facebook/metro-bundler/pull/3[0m
+[14:47:15]: ▸ [35mremoving browser exclude node_modules/stream-browserify/node_modules/readable-stream/package.json util[0m
+[14:47:15]: ▸ [35mremoving browser exclude node_modules/superagent/node_modules/readable-stream/package.json util[0m
+[14:47:15]: ▸ [35mnormalized "main" browser mapping in readable-stream, fixed here: https://github.com/facebook/metro-bundler/pull/3[0m
+[14:47:15]: ▸ [35mfailed to parse node_modules/resolve/test/resolver/malformed_package_json/package.json[0m
+[14:47:15]: ▸ [35mfailed to parse node_modules/eslint-plugin-react/node_modules/resolve/test/resolver/malformed_package_json/package.json[0m
+[14:47:16]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/engine.io-parser/package.json[0m
+[14:47:16]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/form-data/package.json[0m
+[14:47:16]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/iconv-lite/package.json[0m
+[14:47:16]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/pbkdf2/browser.js[0m
+[14:47:16]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/readable-stream/readable.js[0m
+[14:47:16]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/stream-browserify/index.js[0m
+[14:47:16]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/engine.io-client/dist/engine.io.js[0m
+[14:47:16]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-gesture-handler/DrawerLayout/package.json[0m
+[14:47:16]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-gesture-handler/ReanimatedSwipeable/package.json[0m
+[14:47:16]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-gesture-handler/Swipeable/package.json[0m
+[14:47:16]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-gesture-handler/jest-utils/package.json[0m
+[14:47:16]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-gesture-handler/ReanimatedDrawerLayout/package.json[0m
+[14:47:16]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/gesture-handler/package.json[0m
+[14:47:16]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/native-stack/package.json[0m
+[14:47:16]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/reanimated/package.json[0m
+[14:47:16]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-svg/filter-image/package.json[0m
+[14:47:16]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-svg/css/package.json[0m
+[14:47:16]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/readable-stream/lib/_stream_readable.js[0m
+[14:47:16]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/readable-stream/lib/_stream_writable.js[0m
+[14:47:16]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/socket.io-client/dist/socket.io.js[0m
+[14:47:16]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/appcenter-file-upload-client/node_modules/form-data/package.json[0m
+[14:47:16]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/appcenter-file-upload-client/node_modules/readable-stream/package.json[0m
+[14:47:16]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/appcenter-file-upload-client/node_modules/readable-stream/readable.js[0m
+[14:47:16]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/bl/node_modules/readable-stream/readable.js[0m
+[14:47:16]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/bl/node_modules/readable-stream/package.json[0m
+[14:47:16]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/browserify-sign/node_modules/readable-stream/readable.js[0m
+[14:47:16]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/md5.js/node_modules/readable-stream/readable.js[0m
+[14:47:16]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/md5.js/node_modules/readable-stream/package.json[0m
+[14:47:16]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/ripemd160/node_modules/readable-stream/package.json[0m
+[14:47:16]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/ripemd160/node_modules/readable-stream/readable.js[0m
+[14:47:16]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/superagent/node_modules/readable-stream/package.json[0m
+[14:47:16]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/superagent/node_modules/readable-stream/readable.js[0m
+[14:47:16]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/ftp/node_modules/readable-stream/lib/_stream_readable.js[0m
+[14:47:16]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/ftp/node_modules/readable-stream/lib/_stream_writable.js[0m
+[14:47:16]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/parse-asn1/node_modules/pbkdf2/lib/default-encoding.js[0m
+[14:47:16]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/stream-browserify/node_modules/readable-stream/lib/_stream_writable.js[0m
+[14:47:16]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/stream-browserify/node_modules/readable-stream/lib/_stream_readable.js[0m
+[14:47:17]: ▸ [35m[syncFonts] copied=0, skipped=192 (12 dirs, 16 fonts)[0m
+[14:47:17]: ▸ [35mDone in 13.52s.[0m
+[14:47:17]: [32m-------------------[0m
+[14:47:17]: [32m--- Step: clean ---[0m
+[14:47:17]: [32m-------------------[0m
+[14:47:17]: [36m$ /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/023_android/gradlew clean -p 023_android[0m
+[14:47:18]: ▸ [35m> Task :gradle-plugin:settings-plugin:checkKotlinGradlePluginConfigurationErrors SKIPPED[0m
+[14:47:18]: ▸ [35m> Task :gradle-plugin:shared:checkKotlinGradlePluginConfigurationErrors SKIPPED[0m
+[14:47:18]: ▸ [35m> Task :gradle-plugin:settings-plugin:pluginDescriptors[0m
+[14:47:18]: ▸ [35m> Task :gradle-plugin:settings-plugin:processResources[0m
+[14:47:18]: ▸ [35m> Task :gradle-plugin:shared:processResources NO-SOURCE[0m
+[14:47:18]: ▸ [35m> Task :gradle-plugin:shared:compileKotlin[0m
+[14:47:18]: ▸ [35m> Task :gradle-plugin:shared:compileJava NO-SOURCE[0m
+[14:47:18]: ▸ [35m> Task :gradle-plugin:shared:classes UP-TO-DATE[0m
+[14:47:18]: ▸ [35m> Task :gradle-plugin:shared:jar[0m
+[14:47:18]: ▸ [35m> Task :gradle-plugin:settings-plugin:compileKotlin[0m
+[14:47:18]: ▸ [35m> Task :gradle-plugin:settings-plugin:compileJava NO-SOURCE[0m
+[14:47:18]: ▸ [35m> Task :gradle-plugin:settings-plugin:classes[0m
+[14:47:19]: ▸ [35m> Task :gradle-plugin:settings-plugin:jar[0m
+[14:47:25]: ▸ [35m> Task :gradle-plugin:react-native-gradle-plugin:checkKotlinGradlePluginConfigurationErrors SKIPPED[0m
+[14:47:25]: ▸ [35m> Task :gradle-plugin:react-native-gradle-plugin:pluginDescriptors[0m
+[14:47:25]: ▸ [35m> Task :gradle-plugin:react-native-gradle-plugin:processResources[0m
+[14:47:26]: ▸ [35m> Task :gradle-plugin:react-native-gradle-plugin:compileKotlin[0m
+[14:47:26]: ▸ [35m> Task :gradle-plugin:react-native-gradle-plugin:compileJava NO-SOURCE[0m
+[14:47:26]: ▸ [35m> Task :gradle-plugin:react-native-gradle-plugin:classes[0m
+[14:47:26]: ▸ [35m> Task :gradle-plugin:react-native-gradle-plugin:jar[0m
+[14:47:27]: ▸ [35m> Configure project :react-native-firebase_analytics[0m
+[14:47:27]: ▸ [35m:react-native-firebase_analytics package.json found at /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-firebase/analytics/package.json[0m
+[14:47:27]: ▸ [35m:react-native-firebase_app package.json found at /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-firebase/app/package.json[0m
+[14:47:27]: ▸ [35m:react-native-firebase_analytics:firebase.bom using default value: 33.16.0[0m
+[14:47:27]: ▸ [35m:react-native-firebase_analytics package.json found at /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-firebase/analytics/package.json[0m
+[14:47:27]: ▸ [35m:react-native-firebase_analytics:version set from package.json: 14.5.0 (14,5,0 - 14005000)[0m
+[14:47:27]: ▸ [35m:react-native-firebase_analytics:android.compileSdk using custom value: 36[0m
+[14:47:27]: ▸ [35m:react-native-firebase_analytics:android.targetSdk using custom value: 36[0m
+[14:47:27]: ▸ [35m:react-native-firebase_analytics:android.minSdk using custom value: 24[0m
+[14:47:27]: ▸ [35m:react-native-firebase_analytics:reactNativeAndroidDir /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native/android[0m
+[14:47:27]: ▸ [35m> Configure project :react-native-firebase_app[0m
+[14:47:27]: ▸ [35m:react-native-firebase_app package.json found at /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-firebase/app/package.json[0m
+[14:47:27]: ▸ [35m:react-native-firebase_app:firebase.bom using default value: 33.16.0[0m
+[14:47:27]: ▸ [35m:react-native-firebase_app:play.play-services-auth using default value: 20.7.0[0m
+[14:47:27]: ▸ [35m:react-native-firebase_app package.json found at /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-firebase/app/package.json[0m
+[14:47:27]: ▸ [35m:react-native-firebase_app:version set from package.json: 14.5.0 (14,5,0 - 14005000)[0m
+[14:47:27]: ▸ [35m:react-native-firebase_app:android.compileSdk using custom value: 36[0m
+[14:47:27]: ▸ [35m:react-native-firebase_app:android.targetSdk using custom value: 36[0m
+[14:47:27]: ▸ [35m:react-native-firebase_app:android.minSdk using custom value: 24[0m
+[14:47:27]: ▸ [35m:react-native-firebase_app:reactNativeAndroidDir /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native/android[0m
+[14:47:27]: ▸ [35m> Configure project :react-native-firebase_crashlytics[0m
+[14:47:27]: ▸ [35m:react-native-firebase_crashlytics package.json found at /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-firebase/crashlytics/package.json[0m
+[14:47:27]: ▸ [35m:react-native-firebase_app package.json found at /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-firebase/app/package.json[0m
+[14:47:27]: ▸ [35m:react-native-firebase_crashlytics:firebase.bom using default value: 33.16.0[0m
+[14:47:27]: ▸ [35m:react-native-firebase_crashlytics package.json found at /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-firebase/crashlytics/package.json[0m
+[14:47:27]: ▸ [35m:react-native-firebase_crashlytics:version set from package.json: 14.5.0 (14,5,0 - 14005000)[0m
+[14:47:27]: ▸ [35m:react-native-firebase_crashlytics:android.compileSdk using custom value: 36[0m
+[14:47:27]: ▸ [35m:react-native-firebase_crashlytics:android.targetSdk using custom value: 36[0m
+[14:47:27]: ▸ [35m:react-native-firebase_crashlytics:android.minSdk using custom value: 24[0m
+[14:47:27]: ▸ [35m:react-native-firebase_crashlytics:reactNativeAndroidDir /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native/android[0m
+[14:47:27]: ▸ [35m> Configure project :react-native-reanimated[0m
+[14:47:27]: ▸ [35mAndroid gradle plugin: 8.9.2[0m
+[14:47:27]: ▸ [35mGradle: 8.11.1[0m
+[14:47:28]: ▸ [35m> Task :react-native-adjust:clean UP-TO-DATE[0m
+[14:47:28]: ▸ [35m> Task :react-native-async-storage_async-storage:clean UP-TO-DATE[0m
+[14:47:28]: ▸ [35m> Task :react-native-camera:clean UP-TO-DATE[0m
+[14:47:28]: ▸ [35m> Task :react-native-community_checkbox:clean UP-TO-DATE[0m
+[14:47:28]: ▸ [35m> Task :jail-monkey:clean UP-TO-DATE[0m
+[14:47:28]: ▸ [35m> Task :react-native-community_google-signin:clean UP-TO-DATE[0m
+[14:47:28]: ▸ [35m> Task :react-native-cookies_cookies:clean UP-TO-DATE[0m
+[14:47:28]: ▸ [35m> Task :react-native-blob-util:clean UP-TO-DATE[0m
+[14:47:28]: ▸ [35m> Task :react-native-clipboard_clipboard:clean UP-TO-DATE[0m
+[14:47:28]: ▸ [35m> Task :react-native-device-info:clean UP-TO-DATE[0m
+[14:47:28]: ▸ [35m> Task :react-native-community_datetimepicker:clean UP-TO-DATE[0m
+[14:47:28]: ▸ [35m> Task :react-native-exit-app:clean UP-TO-DATE[0m
+[14:47:28]: ▸ [35m> Task :bugsnag_react-native:clean UP-TO-DATE[0m
+[14:47:28]: ▸ [35m> Task :react-native-firebase_analytics:clean UP-TO-DATE[0m
+[14:47:28]: ▸ [35m> Task :react-native-firebase_app:clean UP-TO-DATE[0m
+[14:47:28]: ▸ [35m> Task :react-native-community_netinfo:clean UP-TO-DATE[0m
+[14:47:28]: ▸ [35m> Task :react-native-gesture-handler:clean UP-TO-DATE[0m
+[14:47:28]: ▸ [35m> Task :react-native-firebase_crashlytics:clean UP-TO-DATE[0m
+[14:47:28]: ▸ [35m> Task :react-native-keychain:clean UP-TO-DATE[0m
+[14:47:28]: ▸ [35m> Task :react-native-navigation-bar-color:clean UP-TO-DATE[0m
+[14:47:28]: ▸ [35m> Task :react-native-fingerprint-scanner:clean UP-TO-DATE[0m
+[14:47:28]: ▸ [35m> Task :react-native-linear-gradient:clean UP-TO-DATE[0m
+[14:47:28]: ▸ [35m> Task :react-native-orientation-locker:clean UP-TO-DATE[0m
+[14:47:28]: ▸ [35m> Task :react-native-permissions:clean UP-TO-DATE[0m
+[14:47:28]: ▸ [35m> Task :react-native-open-notification:clean UP-TO-DATE[0m
+[14:47:28]: ▸ [35m> Task :react-native-randombytes:clean UP-TO-DATE[0m
+[14:47:28]: ▸ [35m> Task :react-native-pdf:clean UP-TO-DATE[0m
+[14:47:28]: ▸ [35m> Task :react-native-rsa-native:clean UP-TO-DATE[0m
+[14:47:28]: ▸ [35m> Task :react-native-fs:clean UP-TO-DATE[0m
+[14:47:28]: ▸ [35m> Task :react-native-safe-area-context:clean UP-TO-DATE[0m
+[14:47:28]: ▸ [35m> Task :react-native-share:clean UP-TO-DATE[0m
+[14:47:28]: ▸ [35m> Task :react-native-sms-retriever:clean UP-TO-DATE[0m
+[14:47:28]: ▸ [35m> Task :react-native-svg:clean UP-TO-DATE[0m
+[14:47:28]: ▸ [35m> Task :react-native-screens:externalNativeBuildCleanDebug[0m
+[14:47:28]: ▸ [35m> Task :react-native-screens:externalNativeBuildCleanRelease[0m
+[14:47:28]: ▸ [35m> Task :react-native-screens:clean UP-TO-DATE[0m
+[14:47:28]: ▸ [35m> Task :react-native-view-shot:clean UP-TO-DATE[0m
+[14:47:28]: ▸ [35m> Task :react-native-webview:clean UP-TO-DATE[0m
+[14:47:28]: ▸ [35m> Task :react-native-reanimated:cleanCmakeCache[0m
+[14:47:28]: ▸ [35m> Task :react-native-reanimated:externalNativeBuildCleanDebug[0m
+[14:47:28]: ▸ [35m> Task :react-native-reanimated:externalNativeBuildCleanRelease[0m
+[14:47:28]: ▸ [35m> Task :react-native-reanimated:clean[0m
+[14:47:28]: ▸ [35m> Task :react-native-community_cameraroll:clean[0m
+[14:47:28]: ▸ [35m> Task :react-native-restart:clean[0m
+[14:47:28]: ▸ [35m> Task :react-native-onesignal:clean[0m
+[14:47:28]: ▸ [35m> Task :react-native-image-picker:clean[0m
+[14:47:28]: ▸ [35m> Task :app:clean[0m
+[14:47:28]: ▸ [35m[Incubating] Problems report is available at: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/023_android/build/reports/problems/problems-report.html[0m
+[14:47:28]: ▸ [35mDeprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.[0m
+[14:47:28]: ▸ [35mYou can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.[0m
+[14:47:28]: ▸ [35mFor more on this, please refer to https://docs.gradle.org/8.11.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.[0m
+[14:47:28]: ▸ [35mBUILD SUCCESSFUL in 11s[0m
+[14:47:28]: ▸ [35m57 actionable tasks: 21 executed, 36 up-to-date[0m
+[14:47:29]: [32m---------------------------------[0m
+[14:47:29]: [32m--- Step: app:assembleRelease ---[0m
+[14:47:29]: [32m---------------------------------[0m
+[14:47:29]: [36m$ /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/023_android/gradlew app:assembleRelease -p 023_android[0m
+[14:47:29]: ▸ [35m> Task :gradle-plugin:settings-plugin:checkKotlinGradlePluginConfigurationErrors SKIPPED[0m
+[14:47:29]: ▸ [35m> Task :gradle-plugin:shared:checkKotlinGradlePluginConfigurationErrors SKIPPED[0m
+[14:47:29]: ▸ [35m> Task :gradle-plugin:settings-plugin:pluginDescriptors UP-TO-DATE[0m
+[14:47:29]: ▸ [35m> Task :gradle-plugin:settings-plugin:processResources UP-TO-DATE[0m
+[14:47:29]: ▸ [35m> Task :gradle-plugin:shared:compileKotlin UP-TO-DATE[0m
+[14:47:29]: ▸ [35m> Task :gradle-plugin:shared:compileJava NO-SOURCE[0m
+[14:47:29]: ▸ [35m> Task :gradle-plugin:shared:processResources NO-SOURCE[0m
+[14:47:29]: ▸ [35m> Task :gradle-plugin:shared:classes UP-TO-DATE[0m
+[14:47:29]: ▸ [35m> Task :gradle-plugin:shared:jar UP-TO-DATE[0m
+[14:47:29]: ▸ [35m> Task :gradle-plugin:settings-plugin:compileKotlin UP-TO-DATE[0m
+[14:47:29]: ▸ [35m> Task :gradle-plugin:settings-plugin:compileJava NO-SOURCE[0m
+[14:47:29]: ▸ [35m> Task :gradle-plugin:settings-plugin:classes UP-TO-DATE[0m
+[14:47:29]: ▸ [35m> Task :gradle-plugin:settings-plugin:jar UP-TO-DATE[0m
+[14:47:29]: ▸ [35m> Task :gradle-plugin:react-native-gradle-plugin:checkKotlinGradlePluginConfigurationErrors SKIPPED[0m
+[14:47:29]: ▸ [35m> Task :gradle-plugin:react-native-gradle-plugin:compileKotlin UP-TO-DATE[0m
+[14:47:29]: ▸ [35m> Task :gradle-plugin:react-native-gradle-plugin:compileJava NO-SOURCE[0m
+[14:47:29]: ▸ [35m> Task :gradle-plugin:react-native-gradle-plugin:pluginDescriptors UP-TO-DATE[0m
+[14:47:29]: ▸ [35m> Task :gradle-plugin:react-native-gradle-plugin:processResources UP-TO-DATE[0m
+[14:47:29]: ▸ [35m> Task :gradle-plugin:react-native-gradle-plugin:classes UP-TO-DATE[0m
+[14:47:29]: ▸ [35m> Task :gradle-plugin:react-native-gradle-plugin:jar UP-TO-DATE[0m
+[14:47:30]: ▸ [35m> Configure project :react-native-firebase_analytics[0m
+[14:47:30]: ▸ [35m:react-native-firebase_analytics package.json found at /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-firebase/analytics/package.json[0m
+[14:47:30]: ▸ [35m:react-native-firebase_app package.json found at /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-firebase/app/package.json[0m
+[14:47:30]: ▸ [35m:react-native-firebase_analytics:firebase.bom using default value: 33.16.0[0m
+[14:47:30]: ▸ [35m:react-native-firebase_analytics package.json found at /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-firebase/analytics/package.json[0m
+[14:47:30]: ▸ [35m:react-native-firebase_analytics:version set from package.json: 14.5.0 (14,5,0 - 14005000)[0m
+[14:47:30]: ▸ [35m:react-native-firebase_analytics:android.compileSdk using custom value: 36[0m
+[14:47:30]: ▸ [35m:react-native-firebase_analytics:android.targetSdk using custom value: 36[0m
+[14:47:30]: ▸ [35m:react-native-firebase_analytics:android.minSdk using custom value: 24[0m
+[14:47:30]: ▸ [35m:react-native-firebase_analytics:reactNativeAndroidDir /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native/android[0m
+[14:47:30]: ▸ [35m> Configure project :react-native-firebase_app[0m
+[14:47:30]: ▸ [35m:react-native-firebase_app package.json found at /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-firebase/app/package.json[0m
+[14:47:30]: ▸ [35m:react-native-firebase_app:firebase.bom using default value: 33.16.0[0m
+[14:47:30]: ▸ [35m:react-native-firebase_app:play.play-services-auth using default value: 20.7.0[0m
+[14:47:30]: ▸ [35m:react-native-firebase_app package.json found at /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-firebase/app/package.json[0m
+[14:47:30]: ▸ [35m:react-native-firebase_app:version set from package.json: 14.5.0 (14,5,0 - 14005000)[0m
+[14:47:30]: ▸ [35m:react-native-firebase_app:android.compileSdk using custom value: 36[0m
+[14:47:30]: ▸ [35m:react-native-firebase_app:android.targetSdk using custom value: 36[0m
+[14:47:30]: ▸ [35m:react-native-firebase_app:android.minSdk using custom value: 24[0m
+[14:47:30]: ▸ [35m:react-native-firebase_app:reactNativeAndroidDir /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native/android[0m
+[14:47:30]: ▸ [35m> Configure project :react-native-firebase_crashlytics[0m
+[14:47:30]: ▸ [35m:react-native-firebase_crashlytics package.json found at /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-firebase/crashlytics/package.json[0m
+[14:47:30]: ▸ [35m:react-native-firebase_app package.json found at /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-firebase/app/package.json[0m
+[14:47:30]: ▸ [35m:react-native-firebase_crashlytics:firebase.bom using default value: 33.16.0[0m
+[14:47:30]: ▸ [35m:react-native-firebase_crashlytics package.json found at /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-firebase/crashlytics/package.json[0m
+[14:47:30]: ▸ [35m:react-native-firebase_crashlytics:version set from package.json: 14.5.0 (14,5,0 - 14005000)[0m
+[14:47:30]: ▸ [35m:react-native-firebase_crashlytics:android.compileSdk using custom value: 36[0m
+[14:47:30]: ▸ [35m:react-native-firebase_crashlytics:android.targetSdk using custom value: 36[0m
+[14:47:30]: ▸ [35m:react-native-firebase_crashlytics:android.minSdk using custom value: 24[0m
+[14:47:30]: ▸ [35m:react-native-firebase_crashlytics:reactNativeAndroidDir /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native/android[0m
+[14:47:30]: ▸ [35m> Configure project :react-native-reanimated[0m
+[14:47:30]: ▸ [35mAndroid gradle plugin: 8.9.2[0m
+[14:47:30]: ▸ [35mGradle: 8.11.1[0m
+[14:47:31]: ▸ [35m[Incubating] Problems report is available at: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/023_android/build/reports/problems/problems-report.html[0m
+[14:47:31]: ▸ [35mFAILURE: Build failed with an exception.[0m
+[14:47:31]: ▸ [35m* What went wrong:[0m
+[14:47:31]: ▸ [35mCould not determine the dependencies of task ':app:mergeReleaseNativeLibs'.[0m
+[14:47:31]: ▸ [35m> Could not resolve all dependencies for configuration ':app:releaseRuntimeClasspath'.[0m
+[14:47:31]: ▸ [35m> Could not resolve project :nfc_module.[0m
+[14:47:31]: ▸ [35mRequired by:[0m
+[14:47:31]: ▸ [35mproject :app[0m
+[14:47:31]: ▸ [35m> No matching variant of project :nfc_module was found. The consumer was configured to find a library for use during runtime, preferably optimized for Android, as well as attribute 'com.android.build.api.attributes.AgpVersionAttr' with value '8.9.2', attribute 'com.android.build.api.attributes.BuildTypeAttr' with value 'release', attribute 'com.android.build.api.attributes.ProductFlavor:react-native-camera' with value 'mlkit', attribute 'org.jetbrains.kotlin.platform.type' with value 'androidJvm' but:[0m
+[14:47:31]: ▸ [35m- No variants exist.[0m
+[14:47:31]: ▸ [35m* Try:[0m
+[14:47:31]: ▸ [35m> Creating consumable variants is explained in more detail at https://docs.gradle.org/8.11.1/userguide/declaring_dependencies.html#sec:resolvable-consumable-configs.[0m
+[14:47:31]: ▸ [35m> Review the variant matching algorithm at https://docs.gradle.org/8.11.1/userguide/variant_attributes.html#sec:abm_algorithm.[0m
+[14:47:31]: ▸ [35m> Run with --stacktrace option to get the stack trace.[0m
+[14:47:31]: ▸ [35m> Run with --info or --debug option to get more log output.[0m
+[14:47:31]: ▸ [35m> Run with --scan to get full insights.[0m
+[14:47:31]: ▸ [35m> Get more help at https://help.gradle.org.[0m
+[14:47:31]: ▸ [35mDeprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.[0m
+[14:47:31]: ▸ [35mYou can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.[0m
+[14:47:31]: ▸ [35mFor more on this, please refer to https://docs.gradle.org/8.11.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.[0m
+[14:47:31]: ▸ [35mBUILD FAILED in 2s[0m
+[14:47:31]: ▸ [35m10 actionable tasks: 10 up-to-date[0m
++-------------------------------+
+|         [33mLane Context[0m          |
++-------------------+-----------+
+| DEFAULT_PLATFORM  | ios       |
+| PLATFORM_NAME     |           |
+| LANE_NAME         | build_bot |
+| GRADLE_BUILD_TYPE | Release   |
++-------------------+-----------+
+[14:47:31]: [31mCalled from Fastfile at line 604[0m
+[14:47:31]: [31m```[0m
+[14:47:31]: [31m    602:	[0m
+[14:47:31]: [31m    603:	    gradle(task: "clean", project_dir: "#{folder_android}")[0m
+[14:47:31]: [31m => 604:	    gradle([0m
+[14:47:31]: [31m    605:	      task: "app:assemble",[0m
+[14:47:31]: [31m    606:	      build_type: "Release",[0m
+[14:47:31]: [31m```[0m
+
++-------------------------------------------+
+|             [32mfastlane summary[0m              |
++------+----------------------+-------------+
+| Step | Action               | Time (in s) |
++------+----------------------+-------------+
+| 1    | default_platform     | 0           |
+| 2    | yarn prebuild 023 p  | 1           |
+|      | 3.9.99 $(date        |             |
+|      | +%Y%m%d.%H%M)        |             |
+| 3    | yarn prebuild 023 t  | 0           |
+|      | 3.9.99 20260824.1447 |             |
+| 4    | yarn                 | 13          |
+| 5    | clean                | 11          |
+| 💥   | [31mapp:assembleRelease[0m  | 2           |
++------+----------------------+-------------+
+
+[14:47:31]: [31mfastlane finished with errors[0m
+[31m
+[!] Exit status of command '/Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/023_android/gradlew app:assembleRelease -p 023_android' was 1 instead of 0.
+insights.
+> Get more help at https://help.gradle.org.
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.11.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 2s
+10 actionable tasks: 10 up-to-date
+[0m
