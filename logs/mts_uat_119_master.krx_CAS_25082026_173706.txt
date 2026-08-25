@@ -1,0 +1,158 @@
+[17:37:09]: [33mGet started using a Gemfile for fastlane https://docs.fastlane.tools/getting-started/ios/setup/#use-a-gemfile[0m
+[17:37:10]: [32m------------------------------[0m
+[17:37:10]: [32m--- Step: default_platform ---[0m
+[17:37:10]: [32m------------------------------[0m
+[17:37:10]: [32mDriving the lane 'build_bot' 🚀[0m
+[17:37:10]: osBuild: `all`
+[17:37:10]: [32m🎯 Using version name: 3.9.99[0m
+[17:37:10]: [32m-------------------------------------------------------------[0m
+[17:37:10]: [32m--- Step: yarn prebuild 119 p 3.9.99 $(date +%Y%m%d.%H%M) ---[0m
+[17:37:10]: [32m-------------------------------------------------------------[0m
+[17:37:10]: [36m$ yarn prebuild 119 p 3.9.99 $(date +%Y%m%d.%H%M)[0m
+[17:37:10]: ▸ [35myarn run v1.22.22[0m
+[17:37:10]: ▸ [35m$ node script/prebuild.js 119 p 3.9.99 20260825.1737[0m
+[17:37:11]: ▸ [35m>>>>>> Change active_code:  119 [type]:  p[0m
+[17:37:11]: ▸ [35m>>>>>> [Change] appVersion for PackageJson:  3.9.99[0m
+[17:37:11]: ▸ [35m>>>>>> [Done] appVersion for PackageJson:  3.9.99[0m
+[17:37:11]: ▸ [35m✅ Đã cập nhật app.json với name = "CASMobile", displayName = "CASMobile"[0m
+[17:37:11]: ▸ [35m>>>>>> Công ty build:  119[0m
+[17:37:11]: ▸ [35m>>>>>> APP_VERSION: 3.9.99[0m
+[17:37:11]: ▸ [35m>>>>>> APP_BUILD_NUMBER: 20260825.1737[0m
+[17:37:11]: ▸ [35m>>>>>> Môi trường build: CONFIG_PRODUCTION[0m
+[17:37:11]: ▸ [35mDone in 0.89s.[0m
+[17:37:11]: [32m------------------------------------------------------[0m
+[17:37:11]: [32m--- Step: yarn prebuild 119 t 3.9.99 20260825.1737 ---[0m
+[17:37:11]: [32m------------------------------------------------------[0m
+[17:37:11]: [36m$ yarn prebuild 119 t 3.9.99 20260825.1737[0m
+[17:37:12]: ▸ [35myarn run v1.22.22[0m
+[17:37:12]: ▸ [35m$ node script/prebuild.js 119 t 3.9.99 20260825.1737[0m
+[17:37:12]: ▸ [35m>>>>>> Change active_code:  119 [type]:  t[0m
+[17:37:12]: ▸ [35m>>>>>> [Change] appVersion for PackageJson:  3.9.99[0m
+[17:37:12]: ▸ [35m>>>>>> [Done] appVersion for PackageJson:  3.9.99[0m
+[17:37:12]: ▸ [35m✅ Đã cập nhật app.json với name = "CASMobile", displayName = "CASMobile"[0m
+[17:37:12]: ▸ [35m>>>>>> Công ty build:  119[0m
+[17:37:12]: ▸ [35m>>>>>> APP_VERSION: 3.9.99[0m
+[17:37:12]: ▸ [35m>>>>>> APP_BUILD_NUMBER: 20260825.1737[0m
+[17:37:12]: ▸ [35m>>>>>> Môi trường build: CONFIG_TEST[0m
+[17:37:12]: ▸ [35mDone in 0.90s.[0m
+[17:37:13]: [32m------------------[0m
+[17:37:13]: [32m--- Step: yarn ---[0m
+[17:37:13]: [32m------------------[0m
+[17:37:13]: [36m$ yarn[0m
+[17:37:13]: ▸ [35myarn install v1.22.22[0m
+[17:37:14]: ▸ [35m[1/5] Validating package.json...[0m
+[17:37:14]: ▸ [35m[2/5] Resolving packages...[0m
+[17:37:15]: ▸ [35msuccess Already up-to-date.[0m
+[17:37:15]: ▸ [35m$ patch-package && node script/patchAndroidLibraries.js && npx rn-nodeify --install buffer,crypto,stream,util,process,vm --hack && node script/syncFonts.js[0m
+[17:37:16]: ▸ [35mpatch-package 6.5.0[0m
+[17:37:16]: ▸ [35mApplying patches...[0m
+[17:37:16]: ▸ [35m@react-native-community/cameraroll@4.1.2 ✔[0m
+[17:37:16]: ▸ [35mcipher-base@1.0.4 ✔[0m
+[17:37:16]: ▸ [35mnative-base/@codler/react-native-keyboard-aware-scroll-view@1.0.1 ✔[0m
+[17:37:16]: ▸ [35mnative-base@2.15.8 ✔[0m
+[17:37:16]: ▸ [35mreact-native-floating-label-input@1.4.3 ✔[0m
+[17:37:16]: ▸ [35mreact-native-image-picker@4.0.6 ✔[0m
+[17:37:16]: ▸ [35mreact-native-modal-datetime-picker@9.1.0 ✔[0m
+[17:37:20]: ▸ [35m[patchAndroidLibraries] manifestMode=strip, manifests=0, gradleFiles=0, namespaces=0, svgPaper=0, rnCameraMlkit=0 nativeBaseRuntime=0, deprecatedPropTypesRuntime=0, nativeEventEmitterRuntime=0, floatingLabelRuntime=0, reactNavigationRuntime=0, reactNativeModalRuntime=0, navigationBarColorRuntime=0[0m
+[17:37:22]: ▸ [35mnot overwriting "buffer"[0m
+[17:37:22]: ▸ [35mnot overwriting "react-native-crypto"[0m
+[17:37:22]: ▸ [35mnot overwriting "stream-browserify"[0m
+[17:37:22]: ▸ [35mnot overwriting "util"[0m
+[17:37:22]: ▸ [35mnot overwriting "process"[0m
+[17:37:22]: ▸ [35mnot overwriting "vm-browserify"[0m
+[17:37:22]: ▸ [35mnot overwriting "readable-stream"[0m
+[17:37:22]: ▸ [35mnot overwriting "react-native-randombytes"[0m
+[17:37:22]: ▸ [35mnot overwriting shim.js. For the latest version, see rn-nodeify/shim.js[0m
+[17:37:26]: ▸ [35mfailed to parse node_modules/resolve/test/resolver/malformed_package_json/package.json[0m
+[17:37:26]: ▸ [35mfailed to parse node_modules/eslint-plugin-react/node_modules/resolve/test/resolver/malformed_package_json/package.json[0m
+[17:37:30]: ▸ [35m[syncFonts] copied=0, skipped=192 (12 dirs, 16 fonts)[0m
+[17:37:30]: ▸ [35mDone in 16.76s.[0m
+[17:37:30]: [32m-------------------[0m
+[17:37:30]: [32m--- Step: clean ---[0m
+[17:37:30]: [32m-------------------[0m
+[17:37:30]: [36m$ /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/119_android/gradlew clean -p 119_android[0m
+[17:37:31]: ▸ [35m> Task :gradle-plugin:settings-plugin:checkKotlinGradlePluginConfigurationErrors SKIPPED[0m
+[17:37:31]: ▸ [35m> Task :gradle-plugin:shared:checkKotlinGradlePluginConfigurationErrors SKIPPED[0m
+[17:37:31]: ▸ [35m> Task :gradle-plugin:settings-plugin:pluginDescriptors UP-TO-DATE[0m
+[17:37:31]: ▸ [35m> Task :gradle-plugin:settings-plugin:processResources UP-TO-DATE[0m
+[17:37:32]: ▸ [35m> Task :gradle-plugin:shared:compileKotlin UP-TO-DATE[0m
+[17:37:32]: ▸ [35m> Task :gradle-plugin:shared:compileJava NO-SOURCE[0m
+[17:37:32]: ▸ [35m> Task :gradle-plugin:shared:processResources NO-SOURCE[0m
+[17:37:32]: ▸ [35m> Task :gradle-plugin:shared:classes UP-TO-DATE[0m
+[17:37:32]: ▸ [35m> Task :gradle-plugin:shared:jar UP-TO-DATE[0m
+[17:37:32]: ▸ [35m> Task :gradle-plugin:settings-plugin:compileKotlin UP-TO-DATE[0m
+[17:37:32]: ▸ [35m> Task :gradle-plugin:settings-plugin:compileJava NO-SOURCE[0m
+[17:37:32]: ▸ [35m> Task :gradle-plugin:settings-plugin:classes UP-TO-DATE[0m
+[17:37:32]: ▸ [35m> Task :gradle-plugin:settings-plugin:jar UP-TO-DATE[0m
+[17:37:32]: ▸ [35m> Task :gradle-plugin:react-native-gradle-plugin:checkKotlinGradlePluginConfigurationErrors SKIPPED[0m
+[17:37:32]: ▸ [35m> Task :gradle-plugin:react-native-gradle-plugin:compileKotlin UP-TO-DATE[0m
+[17:37:32]: ▸ [35m> Task :gradle-plugin:react-native-gradle-plugin:compileJava NO-SOURCE[0m
+[17:37:32]: ▸ [35m> Task :gradle-plugin:react-native-gradle-plugin:pluginDescriptors UP-TO-DATE[0m
+[17:37:32]: ▸ [35m> Task :gradle-plugin:react-native-gradle-plugin:processResources UP-TO-DATE[0m
+[17:37:32]: ▸ [35m> Task :gradle-plugin:react-native-gradle-plugin:classes UP-TO-DATE[0m
+[17:37:32]: ▸ [35m> Task :gradle-plugin:react-native-gradle-plugin:jar UP-TO-DATE[0m
+[17:37:32]: ▸ [35m> Configure project :nfc_module[0m
+[17:37:32]: ▸ [35mWARNING: Using flatDir should be avoided because it doesn't support any meta-data formats.[0m
+[17:37:32]: ▸ [35m[Incubating] Problems report is available at: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/119_android/build/reports/problems/problems-report.html[0m
+[17:37:32]: ▸ [35mFAILURE: Build failed with an exception.[0m
+[17:37:32]: ▸ [35m* Where:[0m
+[17:37:32]: ▸ [35mBuild file '/Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/nfc_module/android/build.gradle' line: 74[0m
+[17:37:32]: ▸ [35m* What went wrong:[0m
+[17:37:32]: ▸ [35mA problem occurred evaluating project ':nfc_module'.[0m
+[17:37:32]: ▸ [35m> Project with path ':libs' could not be found in project ':nfc_module'.[0m
+[17:37:32]: ▸ [35m* Try:[0m
+[17:37:32]: ▸ [35m> Run with --stacktrace option to get the stack trace.[0m
+[17:37:32]: ▸ [35m> Run with --info or --debug option to get more log output.[0m
+[17:37:32]: ▸ [35m> Run with --scan to get full insights.[0m
+[17:37:32]: ▸ [35m> Get more help at https://help.gradle.org.[0m
+[17:37:32]: ▸ [35mDeprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.[0m
+[17:37:32]: ▸ [35mYou can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.[0m
+[17:37:32]: ▸ [35mFor more on this, please refer to https://docs.gradle.org/8.11.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.[0m
+[17:37:32]: ▸ [35mBUILD FAILED in 2s[0m
+[17:37:32]: ▸ [35m10 actionable tasks: 10 up-to-date[0m
++------------------------------+
+|         [33mLane Context[0m         |
++------------------+-----------+
+| DEFAULT_PLATFORM | ios       |
+| PLATFORM_NAME    |           |
+| LANE_NAME        | build_bot |
++------------------+-----------+
+[17:37:33]: [31mCalled from Fastfile at line 588[0m
+[17:37:33]: [31m```[0m
+[17:37:33]: [31m    586:	    UI.user_error!("❌ Không tìm thấy file Gradle: #{gradle_file}") unless File.exist?(gradle_file)[0m
+[17:37:33]: [31m    587:	[0m
+[17:37:33]: [31m => 588:	    gradle(task: "clean", project_dir: "#{folder_android}")[0m
+[17:37:33]: [31m    589:	    gradle([0m
+[17:37:33]: [31m    590:	      task: "app:assemble",[0m
+[17:37:33]: [31m```[0m
+
++-------------------------------------------+
+|             [32mfastlane summary[0m              |
++------+----------------------+-------------+
+| Step | Action               | Time (in s) |
++------+----------------------+-------------+
+| 1    | default_platform     | 0           |
+| 2    | yarn prebuild 119 p  | 1           |
+|      | 3.9.99 $(date        |             |
+|      | +%Y%m%d.%H%M)        |             |
+| 3    | yarn prebuild 119 t  | 1           |
+|      | 3.9.99 20260825.1737 |             |
+| 4    | yarn                 | 17          |
+| 💥   | [31mclean[0m                | 2           |
++------+----------------------+-------------+
+
+[17:37:33]: [31mfastlane finished with errors[0m
+[31m
+[!] Exit status of command '/Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/119_android/gradlew clean -p 119_android' was 1 instead of 0.
+insights.
+> Get more help at https://help.gradle.org.
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.11.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 2s
+10 actionable tasks: 10 up-to-date
+[0m
