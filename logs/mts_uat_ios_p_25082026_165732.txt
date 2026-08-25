@@ -1,0 +1,198 @@
+[16:57:34]: [33mGet started using a Gemfile for fastlane https://docs.fastlane.tools/getting-started/ios/setup/#use-a-gemfile[0m
+[16:57:35]: [32m------------------------------[0m
+[16:57:35]: [32m--- Step: default_platform ---[0m
+[16:57:35]: [32m------------------------------[0m
+[16:57:35]: [32mDriving the lane 'ios build_bot' 🚀[0m
+[16:57:35]: ENV build_bot: uat
+[16:57:35]: Sử dụng versionName: 3.9.68
+[16:57:35]: [32m---------------------------[0m
+[16:57:35]: [32m--- Step: shell command ---[0m
+[16:57:35]: [32m---------------------------[0m
+[16:57:59]: Bỏ qua cập nhật Android vì osBuild = ios
+[16:57:59]: Chạy build ios tuần tự
+[16:57:59]: [Fastfile] Installing pods with /opt/homebrew/bin/pod in /Users/solutionaltisss/YSflexMobile/Sources/YSfleX_Mobile/ios
+[16:57:59]: [32m---------------------------[0m
+[16:57:59]: [32m--- Step: shell command ---[0m
+[16:57:59]: [32m---------------------------[0m
+[16:57:59]: [32m---------------------------[0m
+[16:57:59]: [32m--- Step: shell command ---[0m
+[16:57:59]: [32m---------------------------[0m
+[16:58:17]: [32m-----------------------[0m
+[16:58:17]: [32m--- Step: build_app ---[0m
+[16:58:17]: [32m-----------------------[0m
+[16:58:17]: [33mResolving Swift Package Manager dependencies...[0m
+[16:58:17]: [36m$ xcodebuild -resolvePackageDependencies -workspace /Users/solutionaltisss/YSflexMobile/Sources/YSfleX_Mobile/ios/YSVNMobile.xcworkspace -scheme YSVNMobile[0m
+[16:58:18]: ▸ [35mCommand line invocation:[0m
+[16:58:18]: ▸ [35m    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -resolvePackageDependencies -workspace /Users/solutionaltisss/YSflexMobile/Sources/YSfleX_Mobile/ios/YSVNMobile.xcworkspace -scheme YSVNMobile[0m
+[16:58:20]: ▸ [35mResolve Package Graph[0m
+[16:58:20]: ▸ [35mResolved source packages:[0m
+[16:58:20]: ▸ [35m  FCIVisionMLVietnam: /Users/solutionaltisss/YSflexMobile/Sources/YSfleX_Mobile/Ekyc/FCIDependencies/ML/FCIVisionMLVietnam @ local[0m
+[16:58:20]: ▸ [35m  FCIVisionMLCore: /Users/solutionaltisss/YSflexMobile/Sources/YSfleX_Mobile/Ekyc/FCIDependencies/ML/FCIVisionMLCore @ local[0m
+[16:58:20]: ▸ [35m  FCIVisionServiceBinary: /Users/solutionaltisss/YSflexMobile/Sources/YSfleX_Mobile/Ekyc/FCIDependencies/VisionService/FCIVisionServiceBinary @ local[0m
+[16:58:20]: ▸ [35m  EkycSDK: /Users/solutionaltisss/YSflexMobile/Sources/YSfleX_Mobile/Ekyc/EkycSDK @ local[0m
+[16:58:20]: ▸ [35m  YuantaEKYCResource: /Users/solutionaltisss/YSflexMobile/Sources/YSfleX_Mobile/Ekyc/FCIResources/YuantaEKYCResource @ local[0m
+[16:58:20]: ▸ [35mresolved source packages: FCIVisionMLVietnam, FCIVisionMLCore, FCIVisionServiceBinary, EkycSDK, YuantaEKYCResource[0m
+[16:58:20]: [36m$ xcodebuild -showBuildSettings -workspace /Users/solutionaltisss/YSflexMobile/Sources/YSfleX_Mobile/ios/YSVNMobile.xcworkspace -scheme YSVNMobile 2>&1[0m
+[16:58:23]: [33mCommand timed out after 3 seconds on try 1 of 4, trying again with a 6 second timeout...[0m
+
++-----------------------------------------------------------------------------+
+|                           [32mSummary for gym 2.238.0[0m                           |
++--------------------------------------+--------------------------------------+
+| workspace                            | /Users/solutionaltisss/YSflexMobile  |
+|                                      | /Sources/YSfleX_Mobile/ios/YSVNMobi  |
+|                                      | le.xcworkspace                       |
+| scheme                               | YSVNMobile                           |
+| clean                                | true                                 |
+| suppress_xcode_output                | true                                 |
+| export_method                        | ad-hoc                               |
+| export_xcargs                        | -allowProvisioningUpdates            |
+| output_directory                     | /Users/solutionaltisss/YSflexMobile  |
+|                                      | /Sources/YSfleX_Mobile/fastlane/bui  |
+|                                      | ld/2026-08-25-MTS_UAT_3.9.68         |
+| silent                               | true                                 |
+| output_name                          | YSflex                               |
+| skip_package_ipa                     | false                                |
+| skip_package_pkg                     | false                                |
+| build_path                           | /Users/solutionaltisss/Library/Deve  |
+|                                      | loper/Xcode/Archives/2026-08-25      |
+| result_bundle                        | false                                |
+| buildlog_path                        | ~/Library/Logs/gym                   |
+| destination                          | generic/platform=iOS                 |
+| xcodebuild_formatter                 | xcpretty                             |
+| build_timing_summary                 | false                                |
+| skip_profile_detection               | false                                |
+| xcodebuild_command                   | xcodebuild                           |
+| skip_package_dependencies_resolutio  | false                                |
+| n                                    |                                      |
+| disable_package_automatic_updates    | false                                |
+| skip_package_repository_fetches      | false                                |
+| use_system_scm                       | false                                |
+| generate_appstore_info               | false                                |
+| xcode_path                           | /Applications/Xcode.app              |
++--------------------------------------+--------------------------------------+
+
+[16:58:26]: [33mUsing xcpretty can result in missing some build errors and is slower than the preferred xcbeautify. See https://docs.fastlane.tools/best-practices/xcodebuild-formatters/ for more information.[0m
+[17:04:25]: [33mGenerated plist file with the following values:[0m
+[17:04:25]: ▸ [35m-----------------------------------------[0m
+[17:04:25]: ▸ [35m{[0m
+[17:04:25]: ▸ [35m  "method": "ad-hoc"[0m
+[17:04:25]: ▸ [35m}[0m
+[17:04:25]: ▸ [35m-----------------------------------------[0m
+rbenv detected, removing env variables
+rbenv: shell integration not enabled. Run `rbenv init' for instructions.
++ xcodebuild -exportArchive -exportOptionsPlist /var/folders/yt/hgf3ky794sv643kdwn4x0kr40000gn/T/gym_config20260825-95446-uzikko.plist -archivePath '/Users/solutionaltisss/Library/Developer/Xcode/Archives/2026-08-25/YSflex 2026-08-25 16.58.26.xcarchive' -exportPath /var/folders/yt/hgf3ky794sv643kdwn4x0kr40000gn/T/gym_output20260825-95446-6hp9mu -allowProvisioningUpdates
+2026-08-25 17:04:26.773 xcodebuild[6916:5363241] [MT] IDEDistribution: -[IDEDistributionLogging _createLoggingBundleAtPath:]: Created bundle at path "/var/folders/yt/hgf3ky794sv643kdwn4x0kr40000gn/T/YSVNMobile_2026-08-25_17-04-26.769.xcdistributionlogs".
+2026-08-25 17:04:27.213 xcodebuild[6916:5363241] [MT] IDEDistribution: Command line name "ad-hoc" is deprecated. Use "release-testing" instead.
+error: exportArchive No Accounts
+
+error: exportArchive No signing certificate "iOS Distribution" found
+
+error: exportArchive No Accounts
+
+error: exportArchive No signing certificate "iOS Distribution" found
+
+error: exportArchive No Accounts
+
+error: exportArchive No signing certificate "iOS Distribution" found
+
+error: exportArchive No Accounts
+
+error: exportArchive No signing certificate "iOS Distribution" found
+
+error: exportArchive No Accounts
+
+error: exportArchive No signing certificate "iOS Distribution" found
+
+error: exportArchive No Accounts
+
+error: exportArchive No signing certificate "iOS Distribution" found
+
+error: exportArchive No Accounts
+
+error: exportArchive No signing certificate "iOS Distribution" found
+
+error: exportArchive No Accounts
+
+error: exportArchive No signing certificate "iOS Distribution" found
+
+error: exportArchive No Accounts
+
+error: exportArchive No signing certificate "iOS Distribution" found
+
+error: exportArchive No Accounts
+
+error: exportArchive No signing certificate "iOS Distribution" found
+
+error: exportArchive No Accounts
+
+error: exportArchive No signing certificate "iOS Distribution" found
+
+** EXPORT FAILED **
+[17:04:27]: [31mExit status: 70[0m
+
++-----------------------------------------+
+|            [32m[33mBuild environment[0m            |
++---------------+-------------------------+
+| xcode_path    | /Applications/Xcode.app |
+| gym_version   | 2.238.0                 |
+| export_method | ad-hoc                  |
+| sdk           | iPhoneOS26.2.sdk        |
++---------------+-------------------------+
+
+[17:04:27]: ▸ [35mwarning: Run script build phase '[CP-User] [RNFB] Core Configuration' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'YSVNMobile' from project 'YSVNMobile')[0m
+[17:04:27]: ▸ [35mwarning: Run script build phase '[CP-User] [RN]Check FBReactNativeSpec' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'React-RCTFBReactNativeSpec' from project 'Pods')[0m
+[17:04:27]: ▸ [35mwarning: Run script build phase '[CP-User] [RN]Check rncore' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'React-FabricComponents' from project 'Pods')[0m
+[17:04:27]: ▸ [35mwarning: Run script build phase '[CP-User] [RN]Check rncore' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'React-Fabric' from project 'Pods')[0m
+[17:04:27]: ▸ [35m** ARCHIVE SUCCEEDED **[0m
+[17:04:27]: ▸ [35m  634 |     BOOL result = [[NSFileManager defaultManager] moveItemAtURL:[NSURL fileURLWithPath:path] toURL:[NSURL fileURLWithPath:dest] error:&error];[0m
+[17:04:27]: 
+[17:04:27]: [31m⬆️  Check out the few lines of raw `xcodebuild` output above for potential hints on how to solve this error[0m
+[17:04:27]: [33m📋  For the complete and more detailed error log, check the full log at:[0m
+[17:04:27]: [33m📋  /Users/solutionaltisss/Library/Logs/gym/YSflex-YSVNMobile.log[0m
+[17:04:27]: 
+[17:04:27]: [31mLooks like fastlane ran into a build/archive error with your project[0m
+[17:04:27]: [31mIt's hard to tell what's causing the error, so we wrote some guides on how[0m
+[17:04:27]: [31mto troubleshoot build and signing issues: https://docs.fastlane.tools/codesigning/getting-started/[0m
+[17:04:27]: [31mBefore submitting an issue on GitHub, please follow the guide above and make[0m
+[17:04:27]: [31msure your project is set up correctly.[0m
+[17:04:27]: [31mfastlane uses `xcodebuild` commands to generate your binary, you can see the[0m
+[17:04:27]: [31mthe full commands printed out in yellow in the above log.[0m
+[17:04:27]: [31mMake sure to inspect the output above, as usually you'll find more error information there[0m
+[17:04:27]: 
+[17:04:27]: [31mLooks like no provisioning profile mapping was provided[0m
+[17:04:27]: [31mPlease check the complete output, in particular the very top[0m
+[17:04:27]: [31mand see if you can find more information. You can also run fastlane[0m
+[17:04:27]: [31mwith the `--verbose` flag.[0m
+[17:04:27]: [31mAlternatively you can provide the provisioning profile mapping manually[0m
+[17:04:27]: [31mhttps://docs.fastlane.tools/codesigning/xcode-project/#xcode-9-and-up[0m
++----------------------------------+
+|           [33mLane Context[0m           |
++------------------+---------------+
+| DEFAULT_PLATFORM | ios           |
+| PLATFORM_NAME    | ios           |
+| LANE_NAME        | ios build_bot |
++------------------+---------------+
+[17:04:27]: [31mCalled from Fastfile at line 243[0m
+[17:04:27]: [31m```[0m
+[17:04:27]: [31m    241:	        build_options[:archive_path] = File.join(path_build, 'YSVNMobile.xcarchive')[0m
+[17:04:27]: [31m    242:	      end[0m
+[17:04:27]: [31m => 243:	      build_app(build_options)[0m
+[17:04:27]: [31m    244:	    end[0m
+[17:04:27]: [31m    245:	[0m
+[17:04:27]: [31m```[0m
+
++---------------------------------------+
+|           [32mfastlane summary[0m            |
++------+------------------+-------------+
+| Step | Action           | Time (in s) |
++------+------------------+-------------+
+| 1    | default_platform | 0           |
+| 2    | shell command    | 23          |
+| 3    | shell command    | 0           |
+| 4    | shell command    | 17          |
+| 💥   | [31mbuild_app[0m        | 370         |
++------+------------------+-------------+
+
+[17:04:28]: [31mfastlane finished with errors[0m
+[31m
+[!] Error packaging up the application[0m
