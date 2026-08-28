@@ -1,0 +1,21 @@
+[18:02:59]: [33mGet started using a Gemfile for fastlane https://docs.fastlane.tools/getting-started/ios/setup/#use-a-gemfile[0m
+[18:02:59]: [32m------------------------------[0m
+[18:02:59]: [32m--- Step: default_platform ---[0m
+[18:02:59]: [32m------------------------------[0m
++------------------------+
+|      [33mLane Context[0m      |
++------------------+-----+
+| DEFAULT_PLATFORM | ios |
++------------------+-----+
+
++---------------------------------------+
+|           [32mfastlane summary[0m            |
++------+------------------+-------------+
+| Step | Action           | Time (in s) |
++------+------------------+-------------+
+| 1    | default_platform | 0           |
++------+------------------+-------------+
+
+[18:02:59]: [31mfastlane finished with errors[0m
+[31m
+[!] Could not find lane 'ios build_bot'. Available lanes: ios build[0m
