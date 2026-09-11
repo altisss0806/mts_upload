@@ -1,0 +1,187 @@
+[10:06:55]: [33mGet started using a Gemfile for fastlane https://docs.fastlane.tools/getting-started/ios/setup/#use-a-gemfile[0m
+[10:06:55]: [32m------------------------------[0m
+[10:06:55]: [32m--- Step: default_platform ---[0m
+[10:06:55]: [32m------------------------------[0m
+[10:06:55]: [32mDriving the lane 'build_bot' 🚀[0m
+[10:06:55]: osBuild: `all`
+[10:06:55]: [32m🎯 Using version name: 4.9.99[0m
+[10:06:55]: [32m✅ activeSeccode='888' activeEnvironment=test[0m
+[10:06:55]: [32m-----------------------------------------------[0m
+[10:06:55]: [32m--- Step: /opt/homebrew/bin/flutter pub get ---[0m
+[10:06:55]: [32m-----------------------------------------------[0m
+[10:06:55]: [36m$ /opt/homebrew/bin/flutter pub get[0m
+[10:06:56]: ▸ [35mResolving dependencies in `/Users/solutionaltisss/mts-mobile-cross-platform/Sources/Flutter`...[0m
+[10:06:56]: ▸ [35mDownloading packages...[0m
+[10:06:57]: ▸ [35m_fe_analyzer_shared 85.0.0 (107.0.0 available)[0m
+[10:06:57]: ▸ [35manalyzer 7.7.1 (14.3.0 available)[0m
+[10:06:57]: ▸ [35mapp_settings 7.0.0 (9.0.0 available)[0m
+[10:06:57]: ▸ [35mbuild 2.4.2 (4.0.11 available)[0m
+[10:06:57]: ▸ [35mbuild_config 1.1.2 (1.3.3 available)[0m
+[10:06:57]: ▸ [35mbuild_resolvers 2.4.4 (3.0.4 available)[0m
+[10:06:57]: ▸ [35mbuild_runner 2.4.14 (2.16.1 available)[0m
+[10:06:57]: ▸ [35mbuild_runner_core 8.0.0 (9.3.2 available)[0m
+[10:06:57]: ▸ [35mclock 1.1.2 (1.1.3 available)[0m
+[10:06:57]: ▸ [35mcode_assets 1.2.1 (2.0.0 available)[0m
+[10:06:57]: ▸ [35mconnectivity_plus 6.0.3 (7.3.1 available)[0m
+[10:06:57]: ▸ [35mdart_style 3.1.1 (3.1.13 available)[0m
+[10:06:57]: ▸ [35mdevice_info_plus 9.1.2 (13.2.0 available)[0m
+[10:06:57]: ▸ [35mdevice_info_plus_platform_interface 7.0.3 (8.1.0 available)[0m
+[10:06:57]: ▸ [35mdio_web_adapter 1.1.1 (2.2.2 available)[0m
+[10:06:57]: ▸ [35mflutter_lints 2.0.3 (6.0.0 available)[0m
+[10:06:57]: ▸ [35mflutter_secure_storage 9.2.4 (11.1.0 available)[0m
+[10:06:57]: ▸ [35mflutter_secure_storage_linux 1.2.3 (3.0.2 available)[0m
+[10:06:57]: ▸ [35mflutter_secure_storage_macos 3.1.3 (4.0.0 available)[0m
+[10:06:57]: ▸ [35mflutter_secure_storage_platform_interface 1.1.2 (2.1.0 available)[0m
+[10:06:57]: ▸ [35mflutter_secure_storage_web 1.2.1 (2.1.1 available)[0m
+[10:06:57]: ▸ [35mflutter_secure_storage_windows 3.1.2 (4.2.2 available)[0m
+[10:06:57]: ▸ [35mfreezed 2.5.8 (4.0.1 available)[0m
+[10:06:57]: ▸ [35mfreezed_annotation 2.4.4 (3.1.0 available)[0m
+[10:06:57]: ▸ [35mget_it 7.7.0 (9.2.1 available)[0m
+[10:06:57]: ▸ [35mgo_router 13.2.5 (18.0.1 available)[0m
+[10:06:57]: ▸ [35mhooks 2.0.2 (2.2.0 available)[0m
+[10:06:57]: ▸ [35mhttp 1.2.0 (1.6.0 available)[0m
+[10:06:57]: ▸ [35mintl 0.20.2 (0.20.3 available)[0m
+[10:06:57]: ▸ [35mjs 0.6.7 (0.7.2 available)[0m
+[10:06:57]: ▸ [35mjson_annotation 4.9.0 (4.12.0 available)[0m
+[10:06:57]: ▸ [35mjson_serializable 6.9.5 (6.14.1 available)[0m
+[10:06:57]: ▸ [35mlints 2.1.1 (6.1.0 available)[0m
+[10:06:57]: ▸ [35mlocal_auth 2.3.0 (3.0.2 available)[0m
+[10:06:57]: ▸ [35mlocal_auth_android 1.0.56 (2.0.10 available)[0m
+[10:06:57]: ▸ [35mlocal_auth_darwin 1.6.1 (2.0.4 available)[0m
+[10:06:57]: ▸ [35mlocal_auth_windows 1.0.11 (2.0.2 available)[0m
+[10:06:57]: ▸ [35mmatcher 0.12.19 (0.12.20 available)[0m
+[10:06:57]: ▸ [35mmaterial_color_utilities 0.13.0 (0.13.1 available)[0m
+[10:06:57]: ▸ [35mmeta 1.18.0 (1.19.0 available)[0m
+[10:06:57]: ▸ [35mobjective_c 9.5.0 (9.6.0 available)[0m
+[10:06:57]: ▸ [35mpackage_config 2.2.0 (3.0.0 available)[0m
+[10:06:57]: ▸ [35mpackage_info_plus 5.0.1 (10.2.1 available)[0m
+[10:06:57]: ▸ [35mpackage_info_plus_platform_interface 2.0.1 (4.1.0 available)[0m
+[10:06:57]: ▸ [35mpermission_handler 11.4.0 (13.0.2 available)[0m
+[10:06:57]: ▸ [35mpermission_handler_android 12.1.0 (14.1.0 available)[0m
+[10:06:57]: ▸ [35mpermission_handler_html 0.1.1 (0.1.4+1 available)[0m
+[10:06:57]: ▸ [35mpointycastle 3.9.1 (4.0.0 available)[0m
+[10:06:57]: ▸ [35mqr 3.0.2 (4.0.0 available)[0m
+[10:06:57]: ▸ [35mrecord_use 0.6.0 (1.1.1 available)[0m
+[10:06:57]: ▸ [35mshared_preferences 2.2.3 (2.5.5 available)[0m
+[10:06:57]: ▸ [35mshared_preferences_web 2.2.2 (2.4.3 available)[0m
+[10:06:57]: ▸ [35mshelf_web_socket 2.0.1 (3.0.0 available)[0m
+[10:06:57]: ▸ [35mshimmer 3.0.0 (4.0.0 available)[0m
+[10:06:57]: ▸ [35msocket_io_client 2.0.3+1 (3.1.6 available)[0m
+[10:06:57]: ▸ [35msocket_io_common 2.0.3 (3.1.1 available)[0m
+[10:06:57]: ▸ [35msource_gen 2.0.0 (4.3.0 available)[0m
+[10:06:57]: ▸ [35msource_helper 1.3.7 (1.3.13 available)[0m
+[10:06:57]: ▸ [35mstack_trace 1.12.1 (1.12.2 available)[0m
+[10:06:57]: ▸ [35mtest_api 0.7.11 (0.7.14 available)[0m
+[10:06:57]: ▸ [35murl_launcher_web 2.2.3 (2.4.3 available)[0m
+[10:06:57]: ▸ [35mvector_math 2.2.0 (2.4.2 available)[0m
+[10:06:57]: ▸ [35mweb 0.4.2 (1.1.1 available)[0m
+[10:06:57]: ▸ [35mweb_socket_channel 2.4.3 (3.0.3 available)[0m
+[10:06:57]: ▸ [35mwin32 5.15.0 (6.4.0 available)[0m
+[10:06:57]: ▸ [35mwin32_registry 1.1.5 (3.0.3 available)[0m
+[10:06:57]: ▸ [35mGot dependencies in `/Users/solutionaltisss/mts-mobile-cross-platform/Sources/Flutter`![0m
+[10:06:57]: ▸ [35m66 packages have newer versions incompatible with dependency constraints.[0m
+[10:06:57]: ▸ [35mTry `flutter pub outdated` for more information.[0m
+[10:06:58]: [32m--------------------------------------------------------------------[0m
+[10:06:58]: [32mStep: /opt/homebrew/bin/flutter build apk --release --build-name=4.9.99 --flavor altisss[0m
+[10:06:58]: [32m--------------------------------------------------------------------[0m
+[10:06:58]: [36m$ /opt/homebrew/bin/flutter build apk --release --build-name=4.9.99 --flavor altisss[0m
+[10:06:58]: ▸ [35mChanging current working directory to: /Users/solutionaltisss/mts-mobile-cross-platform/Sources/Flutter[0m
+[10:07:20]: ▸ [35mRunning Gradle task 'assembleAltisssRelease'...[0m
+[10:07:20]: ▸ [35mExpected to find fonts for (packages/cupertino_icons/CupertinoIcons, MaterialIcons), but found (MaterialIcons). This usually means you are referring to font families in an IconData class but not including them in the assets section of your pubspec.yaml, are missing the package that would include them, or are missing "uses-material-design: true".[0m
+[10:07:20]: ▸ [35mFont asset "MaterialIcons-Regular.otf" was tree-shaken, reducing it from 1645184 to 18160 bytes (98.9% reduction). Tree-shaking can be disabled by providing the --no-tree-shake-icons flag when building your app.[0m
+[10:08:59]: ▸ [35mRunning Gradle task 'assembleAltisssRelease'...                   120.3s[0m
+[10:09:00]: ▸ [35m✓ Built build/app/outputs/flutter-apk/app-altisss-release.apk (128.0MB)[0m
+[10:09:00]: [32m✅ APK đã build: build/888_t/app-release.apk[0m
+[10:09:00]: [32m--------------------------------------------------------------------[0m
+[10:09:00]: [32mStep: cd .. && /opt/homebrew/bin/flutter build ipa --release --flavor altisss --build-name=4.9.99 --export-method ad-hoc[0m
+[10:09:00]: [32m--------------------------------------------------------------------[0m
+[10:09:00]: [36m$ cd .. && /opt/homebrew/bin/flutter build ipa --release --flavor altisss --build-name=4.9.99 --export-method ad-hoc[0m
+[10:09:07]: ▸ [35mArchiving vn.altisss.mts.ios...[0m
+[10:09:10]: ▸ [35mThe following plugins do not support Swift Package Manager for ios:[0m
+[10:09:10]: ▸ [35m- connectivity_plus[0m
+[10:09:10]: ▸ [35m- device_info_plus[0m
+[10:09:10]: ▸ [35m- flutter_secure_storage[0m
+[10:09:10]: ▸ [35m- flutterekyc[0m
+[10:09:10]: ▸ [35m- package_info_plus[0m
+[10:09:10]: ▸ [35mThis will become an error in a future version of Flutter. Please contact the plugin maintainers to request Swift Package Manager adoption.[0m
+[10:09:10]: ▸ [35mAutomatically signing iOS for device deployment using specified development team in Xcode project: 3894P43295[0m
+[10:09:15]: ▸ [35mRunning pod install...                                           2,962ms[0m
+[10:10:41]: ▸ [35mRunning Xcode build...[0m
+[10:10:41]: ▸ [35mXcode archive done.                                         85.8s[0m
+[10:10:41]: ▸ [35m✓ Built build/ios/archive/Runner.xcarchive (281.7MB)[0m
+[10:10:41]: ▸ [35m[!] App Settings Validation[0m
+[10:10:41]: ▸ [35m• Version Number: 3.5.4[0m
+[10:10:41]: ▸ [35m! Build Number: Missing[0m
+[10:10:41]: ▸ [35m• Display Name: AMobile v3[0m
+[10:10:41]: ▸ [35m• Deployment Target: 15.0[0m
+[10:10:41]: ▸ [35m• Bundle Identifier: vn.altisss.mts.ios[0m
+[10:10:41]: ▸ [35m! You must set up the missing app settings.[0m
+[10:10:41]: ▸ [35m[!] App Icon and Launch Image Assets Validation[0m
+[10:10:41]: ▸ [35m! Launch image is set to the default placeholder icon. Replace with unique launch image.[0m
+[10:10:41]: ▸ [35mTo update the settings, please refer to https://flutter.dev/to/ios-deploy[0m
+[10:11:17]: ▸ [35mBuilding release-testing IPA...                                    36.0s[0m
+[10:11:17]: ▸ [35m✓ Built IPA to build/ios/ipa (72.5MB)[0m
+[10:11:17]: [32m--------------------------------------------------------------------[0m
+[10:11:17]: [32mStep: unzip -qq /Users/solutionaltisss/mts-mobile-cross-platform/Sources/Flutter/build/ios/ipa/AMobile\ v3.ipa -d /var/folders/yt/hgf3ky794sv643kdwn4x0kr40000gn/T/flutter-ipa-info-20260911-1838-jf39bq[0m
+[10:11:17]: [32m--------------------------------------------------------------------[0m
+[10:11:17]: [36m$ unzip -qq /Users/solutionaltisss/mts-mobile-cross-platform/Sources/Flutter/build/ios/ipa/AMobile\ v3.ipa -d /var/folders/yt/hgf3ky794sv643kdwn4x0kr40000gn/T/flutter-ipa-info-20260911-1838-jf39bq[0m
+[10:11:18]: [32m--------------------------------------------------------------------[0m
+[10:11:18]: [32mStep: /usr/libexec/PlistBuddy -c 'Print :CFBundleIdentifier' /var/folders/yt/hgf3ky794sv643kdwn4x0kr40000gn/T/flutter-ipa-info-20260911-1838-jf39bq/Payload/Runner.app/Info.plist[0m
+[10:11:18]: [32m--------------------------------------------------------------------[0m
+[10:11:18]: [36m$ /usr/libexec/PlistBuddy -c 'Print :CFBundleIdentifier' /var/folders/yt/hgf3ky794sv643kdwn4x0kr40000gn/T/flutter-ipa-info-20260911-1838-jf39bq/Payload/Runner.app/Info.plist[0m
+[10:11:18]: ▸ [35mvn.altisss.mts.ios[0m
+[10:11:18]: [32m✅ IPA đã build: build/888_t/AMobile v3.ipa (vn.altisss.mts.ios)[0m
+[10:11:18]: [32m✅ xcarchive đã copy: build/888_t/Runner.xcarchive[0m
+[10:11:18]: 🏁 build_bot hoàn tất cho 888 (all)
+
++---------------------------------------------+
+|              [32mfastlane summary[0m               |
++------+------------------------+-------------+
+| Step | Action                 | Time (in s) |
++------+------------------------+-------------+
+| 1    | default_platform       | 0           |
+| 2    | /opt/homebrew/bin/flu  | 2           |
+|      | tter pub get           |             |
+| 3    | /opt/homebrew/bin/flu  | 122         |
+|      | tter build apk         |             |
+|      | --release              |             |
+|      | --build-name=4.        |             |
+| 4    | cd .. &&               | 137         |
+|      | /opt/homebrew/bin/flu  |             |
+|      | tter build ipa         |             |
+|      | --release --flav       |             |
+| 5    | unzip -qq              | 0           |
+|      | /Users/solutionaltiss  |             |
+|      | s/mts-mobile-cross-pl  |             |
+|      | atform/So              |             |
+| 6    | /usr/libexec/PlistBud  | 0           |
+|      | dy -c 'Print           |             |
+|      | :CFBundleIdentifier'   |             |
+|      | /var/f                 |             |
++------+------------------------+-------------+
+
+[10:11:19]: [32mfastlane.tools finished successfully 🎉[0m
+
+#######################################################################
+# fastlane 2.239.0 is available. You are on 2.238.0.
+# You should use the latest version.
+# Please update using `fastlane update_fastlane`.
+#######################################################################
+
+[32m2.239.0 Improvements[0m
+* [supply] list google play releases (#30000) via Tim Shedor (@tshedor)
+* [sigh] Fix duplicate prefix in application-identifier entitlement during resign (#30169) via Shubhransh Gupta (@shubhransh-gupta)
+* [Ruby] Ruby 3.1 is now the minimum (dropping Ruby 3.0) (#30120) via Connor Tumbleson (@iBotPeaches)
+* [deliver/pilot] support app coverage files (#30153) via Connor Tumbleson (@iBotPeaches)
+* [match] prevent leaking keys if invalid usage (#30161) via Connor Tumbleson (@iBotPeaches)
+* [meta] set pr template to drop reference to CircleCI (#30162) via Connor Tumbleson (@iBotPeaches)
+* [deliver] prevent duplicate image uploads (#30150) via Connor Tumbleson (@iBotPeaches)
+* [match] Remove command on failure to prevent secret exposure for git storage. (#30165) via Aleksandr B (@sozzjilly)
+* [pem] Add support for VoIP Services push certificates (#30166) via Rafael da Rosa Ferreira (@Rafinha-rf)
+* harden: detected non-static command inside system in... (#30147) via Anupam Mediratta (@anupamme)
+* [changelog_from_git_commits] Add optional argument to filter commits. (#14441) via Juan A. Romero (@rukano)
+* [sh_helper] fix output stripping - invalid byte sequence in UTF-8 (ArgumentError) (#20539) via Wendy Liga (@wendyliga)
+* [ci] move release workflows to Ruby 3.4 (#30155) via Connor Tumbleson (@iBotPeaches)
+* [gems] move to json 2.21.x (#30156) via Connor Tumbleson (@iBotPeaches)
+
+[32mPlease update using `fastlane update_fastlane`[0m
