@@ -1,0 +1,408 @@
+[16:12:35]: [33mGet started using a Gemfile for fastlane https://docs.fastlane.tools/getting-started/ios/setup/#use-a-gemfile[0m
+[16:12:36]: [32m------------------------------[0m
+[16:12:36]: [32m--- Step: default_platform ---[0m
+[16:12:36]: [32m------------------------------[0m
+[16:12:36]: [32mDriving the lane 'build_bot' 🚀[0m
+[16:12:36]: osBuild: `all`
+[16:12:36]: [32m🎯 Using version name: 3.9.99[0m
+[16:12:36]: [32m-------------------------------------------------------------[0m
+[16:12:36]: [32m--- Step: yarn prebuild 119 p 3.9.99 $(date +%Y%m%d.%H%M) ---[0m
+[16:12:36]: [32m-------------------------------------------------------------[0m
+[16:12:36]: [36m$ yarn prebuild 119 p 3.9.99 $(date +%Y%m%d.%H%M)[0m
+[16:12:39]: ▸ [35myarn run v1.22.22[0m
+[16:12:39]: ▸ [35m$ node script/prebuild.js 119 p 3.9.99 20260916.1612[0m
+[16:12:41]: ▸ [35m>>>>>> Change active_code:  119 [type]:  p[0m
+[16:12:41]: ▸ [35m>>>>>> [Change] appVersion for PackageJson:  3.9.99[0m
+[16:12:41]: ▸ [35m>>>>>> [Done] appVersion for PackageJson:  3.9.99[0m
+[16:12:41]: ▸ [35m✅ Đã cập nhật app.json với name = "CASMobile", displayName = "CASMobile"[0m
+[16:12:41]: ▸ [35m>>>>>> Công ty build:  119[0m
+[16:12:41]: ▸ [35m>>>>>> APP_VERSION: 3.9.99[0m
+[16:12:41]: ▸ [35m>>>>>> APP_BUILD_NUMBER: 20260916.1612[0m
+[16:12:41]: ▸ [35m>>>>>> Môi trường build: CONFIG_PRODUCTION[0m
+[16:12:41]: ▸ [35mDone in 2.43s.[0m
+[16:12:41]: [32m------------------------------------------------------[0m
+[16:12:41]: [32m--- Step: yarn prebuild 119 t 3.9.99 20260916.1612 ---[0m
+[16:12:41]: [32m------------------------------------------------------[0m
+[16:12:41]: [36m$ yarn prebuild 119 t 3.9.99 20260916.1612[0m
+[16:12:44]: ▸ [35myarn run v1.22.22[0m
+[16:12:44]: ▸ [35m$ node script/prebuild.js 119 t 3.9.99 20260916.1612[0m
+[16:12:46]: ▸ [35m>>>>>> Change active_code:  119 [type]:  t[0m
+[16:12:46]: ▸ [35m>>>>>> [Change] appVersion for PackageJson:  3.9.99[0m
+[16:12:46]: ▸ [35m>>>>>> [Done] appVersion for PackageJson:  3.9.99[0m
+[16:12:46]: ▸ [35m✅ Đã cập nhật app.json với name = "CASMobile", displayName = "CASMobile"[0m
+[16:12:46]: ▸ [35m>>>>>> Công ty build:  119[0m
+[16:12:46]: ▸ [35m>>>>>> APP_VERSION: 3.9.99[0m
+[16:12:46]: ▸ [35m>>>>>> APP_BUILD_NUMBER: 20260916.1612[0m
+[16:12:46]: ▸ [35m>>>>>> Môi trường build: CONFIG_TEST[0m
+[16:12:46]: ▸ [35mDone in 2.35s.[0m
+[16:12:46]: [32m------------------[0m
+[16:12:46]: [32m--- Step: yarn ---[0m
+[16:12:46]: [32m------------------[0m
+[16:12:46]: [36m$ yarn[0m
+[16:12:49]: ▸ [35myarn install v1.22.22[0m
+[16:12:49]: ▸ [35m[1/5] Validating package.json...[0m
+[16:12:49]: ▸ [35m[2/5] Resolving packages...[0m
+[16:12:52]: ▸ [35m[3/5] Fetching packages...[0m
+[16:12:55]: ▸ [35m[4/5] Linking dependencies...[0m
+[16:12:55]: ▸ [35mwarning " > @react-native-community/cameraroll@4.1.2" has incorrect peer dependency "react@16 || 17".[0m
+[16:12:55]: ▸ [35mwarning " > @react-native-community/datetimepicker@3.4.7" has unmet peer dependency "react-native-windows@>=0.62".[0m
+[16:12:55]: ▸ [35mwarning " > react-native-fs@2.17.0" has incorrect peer dependency "react-native@^0.59.5".[0m
+[16:12:55]: ▸ [35mwarning " > react-native-fs@2.17.0" has unmet peer dependency "react-native-windows@^0.57.2".[0m
+[16:12:55]: ▸ [35mwarning " > react-native-paper@3.8.0" has unmet peer dependency "react-native-vector-icons@*".[0m
+[16:12:55]: ▸ [35mwarning " > react-native-qrcode-svg@6.1.2" has incorrect peer dependency "react-native-svg@^12.1.0".[0m
+[16:12:55]: ▸ [35mwarning "react-native-render-html > @native-html/transient-render-engine@9.3.0" has unmet peer dependency "@types/react-native@*".[0m
+[16:12:55]: ▸ [35mwarning "react-native-render-html > @native-html/transient-render-engine > @native-html/css-processor@1.10.2" has unmet peer dependency "@types/react-native@*".[0m
+[16:12:55]: ▸ [35mwarning " > react-native-tab-view@3.0.1" has unmet peer dependency "react-native-pager-view@*".[0m
+[16:12:55]: ▸ [35mwarning " > styled-components@5.2.3" has unmet peer dependency "react-dom@>= 16.8.0".[0m
+[16:12:55]: ▸ [35mwarning " > styled-components@5.2.3" has unmet peer dependency "react-is@>= 16.8.0".[0m
+[16:12:55]: ▸ [35mwarning "sync-storage > @react-native-community/async-storage@1.12.1" has incorrect peer dependency "react@^16.8".[0m
+[16:12:55]: ▸ [35mwarning "victory-native > victory > victory-area@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[16:12:55]: ▸ [35mwarning "victory-native > victory > victory-axis@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[16:12:55]: ▸ [35mwarning "victory-native > victory > victory-bar@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[16:12:55]: ▸ [35mwarning "victory-native > victory > victory-box-plot@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[16:12:55]: ▸ [35mwarning "victory-native > victory > victory-brush-container@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[16:12:55]: ▸ [35mwarning "victory-native > victory > victory-brush-line@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[16:12:55]: ▸ [35mwarning "victory-native > victory > victory-candlestick@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[16:12:55]: ▸ [35mwarning "victory-native > victory > victory-chart@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[16:12:55]: ▸ [35mwarning "victory-native > victory > victory-core@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[16:12:55]: ▸ [35mwarning "victory-native > victory > victory-create-container@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[16:12:55]: ▸ [35mwarning "victory-native > victory > victory-cursor-container@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[16:12:55]: ▸ [35mwarning "victory-native > victory > victory-errorbar@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[16:12:55]: ▸ [35mwarning "victory-native > victory > victory-group@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[16:12:55]: ▸ [35mwarning "victory-native > victory > victory-histogram@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[16:12:55]: ▸ [35mwarning "victory-native > victory > victory-legend@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[16:12:55]: ▸ [35mwarning "victory-native > victory > victory-line@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[16:12:55]: ▸ [35mwarning "victory-native > victory > victory-pie@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[16:12:55]: ▸ [35mwarning "victory-native > victory > victory-polar-axis@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[16:12:55]: ▸ [35mwarning "victory-native > victory > victory-scatter@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[16:12:55]: ▸ [35mwarning "victory-native > victory > victory-selection-container@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[16:12:55]: ▸ [35mwarning "victory-native > victory > victory-shared-events@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[16:12:55]: ▸ [35mwarning "victory-native > victory > victory-stack@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[16:12:55]: ▸ [35mwarning "victory-native > victory > victory-tooltip@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[16:12:55]: ▸ [35mwarning "victory-native > victory > victory-voronoi@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[16:12:55]: ▸ [35mwarning "victory-native > victory > victory-voronoi-container@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[16:12:55]: ▸ [35mwarning "victory-native > victory > victory-zoom-container@35.11.4" has incorrect peer dependency "react@^16.6.0 || ^17.0.0".[0m
+[16:12:55]: ▸ [35mwarning "@react-native-community/eslint-config > @typescript-eslint/eslint-plugin@2.34.0" has incorrect peer dependency "eslint@^5.0.0 || ^6.0.0".[0m
+[16:12:55]: ▸ [35mwarning "@react-native-community/eslint-config > @typescript-eslint/parser@2.34.0" has incorrect peer dependency "eslint@^5.0.0 || ^6.0.0".[0m
+[16:12:55]: ▸ [35mwarning "@react-native-community/eslint-config > eslint-plugin-react@7.19.0" has incorrect peer dependency "eslint@^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0".[0m
+[16:12:55]: ▸ [35mwarning "@react-native-community/eslint-config > eslint-plugin-react-hooks@3.0.0" has incorrect peer dependency "eslint@^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0".[0m
+[16:12:55]: ▸ [35mwarning "@react-native-community/eslint-config > eslint-plugin-react-native@3.8.1" has incorrect peer dependency "eslint@^3.17.0 || ^4 || ^5 || ^6".[0m
+[16:12:55]: ▸ [35mwarning Workspaces can only be enabled in private projects.[0m
+[16:13:25]: ▸ [35m[5/5] Building fresh packages...[0m
+[16:13:25]: ▸ [35m$ patch-package && node script/patchAndroidLibraries.js && npx rn-nodeify --install buffer,crypto,stream,util,process,vm --hack && node script/syncFonts.js[0m
+[16:13:27]: ▸ [35mpatch-package 6.5.0[0m
+[16:13:27]: ▸ [35mApplying patches...[0m
+[16:13:27]: ▸ [35m@react-native-community/cameraroll@4.1.2 ✔[0m
+[16:13:27]: ▸ [35mcipher-base@1.0.4 ✔[0m
+[16:13:27]: ▸ [35mnative-base/@codler/react-native-keyboard-aware-scroll-view@1.0.1 ✔[0m
+[16:13:27]: ▸ [35mnative-base@2.15.8 ✔[0m
+[16:13:27]: ▸ [35mreact-native-floating-label-input@1.4.3 ✔[0m
+[16:13:28]: ▸ [35mreact-native-image-picker@4.0.6 ✔[0m
+[16:13:28]: ▸ [35mreact-native-modal-datetime-picker@9.1.0 ✔[0m
+[16:13:32]: ▸ [35m[patchAndroidLibraries] manifestMode=strip, manifests=39, gradleFiles=10, namespaces=26, svgPaper=28, rnCameraMlkit=8 nativeBaseRuntime=0, deprecatedPropTypesRuntime=5, nativeEventEmitterRuntime=1, floatingLabelRuntime=0, reactNavigationRuntime=0, reactNativeModalRuntime=1, navigationBarColorRuntime=1[0m
+[16:13:36]: ▸ [35mnot overwriting "buffer"[0m
+[16:13:36]: ▸ [35mnot overwriting "react-native-crypto"[0m
+[16:13:36]: ▸ [35mnot overwriting "stream-browserify"[0m
+[16:13:36]: ▸ [35mnot overwriting "util"[0m
+[16:13:36]: ▸ [35mnot overwriting "process"[0m
+[16:13:36]: ▸ [35mnot overwriting "vm-browserify"[0m
+[16:13:36]: ▸ [35mnot overwriting "readable-stream"[0m
+[16:13:36]: ▸ [35mnot overwriting "react-native-randombytes"[0m
+[16:13:36]: ▸ [35mnot overwriting shim.js. For the latest version, see rn-nodeify/shim.js[0m
+[16:13:36]: ▸ [35mremoving browser exclude node_modules/bn.js/package.json buffer[0m
+[16:13:36]: ▸ [35mnormalized "main" browser mapping in marky, fixed here: https://github.com/facebook/metro-bundler/pull/3[0m
+[16:13:36]: ▸ [35mremoving browser exclude node_modules/node-forge/package.json buffer[0m
+[16:13:36]: ▸ [35mremoving browser exclude node_modules/node-forge/package.json process[0m
+[16:13:36]: ▸ [35mremoving browser exclude node_modules/readable-stream/package.json util[0m
+[16:13:36]: ▸ [35mnormalized "main" browser mapping in superagent, fixed here: https://github.com/facebook/metro-bundler/pull/3[0m
+[16:13:36]: ▸ [35mremoving browser exclude node_modules/typescript/package.json buffer[0m
+[16:13:36]: ▸ [35mnormalized "main" browser mapping in @emotion/memoize, fixed here: https://github.com/facebook/metro-bundler/pull/3[0m
+[16:13:36]: ▸ [35mnormalized "main" browser mapping in @emotion/is-prop-valid, fixed here: https://github.com/facebook/metro-bundler/pull/3[0m
+[16:13:36]: ▸ [35mnormalized "main" browser mapping in @emotion/stylis, fixed here: https://github.com/facebook/metro-bundler/pull/3[0m
+[16:13:36]: ▸ [35mnormalized "main" browser mapping in @emotion/unitless, fixed here: https://github.com/facebook/metro-bundler/pull/3[0m
+[16:13:37]: ▸ [35mremoving browser exclude node_modules/appcenter-file-upload-client/node_modules/readable-stream/package.json util[0m
+[16:13:37]: ▸ [35mnormalized "main" browser mapping in readable-stream, fixed here: https://github.com/facebook/metro-bundler/pull/3[0m
+[16:13:37]: ▸ [35mnormalized "main" browser mapping in superagent, fixed here: https://github.com/facebook/metro-bundler/pull/3[0m
+[16:13:37]: ▸ [35mremoving browser exclude node_modules/bl/node_modules/readable-stream/package.json util[0m
+[16:13:37]: ▸ [35mnormalized "main" browser mapping in readable-stream, fixed here: https://github.com/facebook/metro-bundler/pull/3[0m
+[16:13:37]: ▸ [35mremoving browser exclude node_modules/browserify-rsa/node_modules/bn.js/package.json buffer[0m
+[16:13:37]: ▸ [35mremoving browser exclude node_modules/browserify-sign/node_modules/bn.js/package.json buffer[0m
+[16:13:37]: ▸ [35mremoving browser exclude node_modules/browserify-sign/node_modules/readable-stream/package.json util[0m
+[16:13:37]: ▸ [35mnormalized "main" browser mapping in readable-stream, fixed here: https://github.com/facebook/metro-bundler/pull/3[0m
+[16:13:37]: ▸ [35mremoving browser exclude node_modules/ftp/node_modules/readable-stream/package.json util[0m
+[16:13:37]: ▸ [35mremoving browser exclude node_modules/md5.js/node_modules/readable-stream/package.json util[0m
+[16:13:37]: ▸ [35mnormalized "main" browser mapping in readable-stream, fixed here: https://github.com/facebook/metro-bundler/pull/3[0m
+[16:13:37]: ▸ [35mnormalized "main" browser mapping in pbkdf2, fixed here: https://github.com/facebook/metro-bundler/pull/3[0m
+[16:13:37]: ▸ [35mremoving browser exclude node_modules/ripemd160/node_modules/readable-stream/package.json util[0m
+[16:13:37]: ▸ [35mnormalized "main" browser mapping in readable-stream, fixed here: https://github.com/facebook/metro-bundler/pull/3[0m
+[16:13:37]: ▸ [35mremoving browser exclude node_modules/stream-browserify/node_modules/readable-stream/package.json util[0m
+[16:13:37]: ▸ [35mremoving browser exclude node_modules/superagent/node_modules/readable-stream/package.json util[0m
+[16:13:37]: ▸ [35mnormalized "main" browser mapping in readable-stream, fixed here: https://github.com/facebook/metro-bundler/pull/3[0m
+[16:13:37]: ▸ [35mremoving browser exclude node_modules/through2/node_modules/readable-stream/package.json util[0m
+[16:13:37]: ▸ [35mnormalized "main" browser mapping in readable-stream, fixed here: https://github.com/facebook/metro-bundler/pull/3[0m
+[16:13:38]: ▸ [35mfailed to parse node_modules/resolve/test/resolver/malformed_package_json/package.json[0m
+[16:13:38]: ▸ [35mfailed to parse node_modules/eslint-plugin-react/node_modules/resolve/test/resolver/malformed_package_json/package.json[0m
+[16:13:39]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/engine.io-parser/package.json[0m
+[16:13:39]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/form-data/package.json[0m
+[16:13:39]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/iconv-lite/package.json[0m
+[16:13:39]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/pbkdf2/browser.js[0m
+[16:13:39]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/readable-stream/readable.js[0m
+[16:13:39]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/stream-browserify/index.js[0m
+[16:13:40]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/engine.io-client/dist/engine.io.js[0m
+[16:13:40]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-gesture-handler/DrawerLayout/package.json[0m
+[16:13:40]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-gesture-handler/ReanimatedDrawerLayout/package.json[0m
+[16:13:40]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-gesture-handler/ReanimatedSwipeable/package.json[0m
+[16:13:40]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-gesture-handler/jest-utils/package.json[0m
+[16:13:40]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-gesture-handler/Swipeable/package.json[0m
+[16:13:40]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/gesture-handler/package.json[0m
+[16:13:40]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/reanimated/package.json[0m
+[16:13:40]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-screens/native-stack/package.json[0m
+[16:13:40]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-svg/filter-image/package.json[0m
+[16:13:40]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native-svg/css/package.json[0m
+[16:13:40]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/readable-stream/lib/_stream_writable.js[0m
+[16:13:40]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/readable-stream/lib/_stream_readable.js[0m
+[16:13:40]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/socket.io-client/dist/socket.io.js[0m
+[16:13:40]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/appcenter-file-upload-client/node_modules/readable-stream/package.json[0m
+[16:13:40]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/appcenter-file-upload-client/node_modules/readable-stream/readable.js[0m
+[16:13:40]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/appcenter-file-upload-client/node_modules/form-data/package.json[0m
+[16:13:40]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/bl/node_modules/readable-stream/package.json[0m
+[16:13:40]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/bl/node_modules/readable-stream/readable.js[0m
+[16:13:40]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/browserify-sign/node_modules/readable-stream/readable.js[0m
+[16:13:40]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/md5.js/node_modules/readable-stream/package.json[0m
+[16:13:40]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/md5.js/node_modules/readable-stream/readable.js[0m
+[16:13:40]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/ripemd160/node_modules/readable-stream/package.json[0m
+[16:13:40]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/ripemd160/node_modules/readable-stream/readable.js[0m
+[16:13:40]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/superagent/node_modules/readable-stream/package.json[0m
+[16:13:40]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/superagent/node_modules/readable-stream/readable.js[0m
+[16:13:40]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/through2/node_modules/readable-stream/readable.js[0m
+[16:13:40]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/ftp/node_modules/readable-stream/lib/_stream_writable.js[0m
+[16:13:40]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/ftp/node_modules/readable-stream/lib/_stream_readable.js[0m
+[16:13:40]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/parse-asn1/node_modules/pbkdf2/lib/default-encoding.js[0m
+[16:13:40]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/stream-browserify/node_modules/readable-stream/lib/_stream_writable.js[0m
+[16:13:40]: ▸ [35mhacking /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/stream-browserify/node_modules/readable-stream/lib/_stream_readable.js[0m
+[16:13:41]: ▸ [35m[syncFonts] copied=0, skipped=192 (12 dirs, 16 fonts)[0m
+[16:13:41]: ▸ [35mDone in 52.64s.[0m
+[16:13:41]: [32m-------------------[0m
+[16:13:41]: [32m--- Step: clean ---[0m
+[16:13:41]: [32m-------------------[0m
+[16:13:41]: [36m$ /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/119_android/gradlew clean -p 119_android[0m
+[16:13:42]: ▸ [35mStarting a Gradle Daemon, 1 busy Daemon could not be reused, use --status for details[0m
+[16:13:51]: ▸ [35m> Task :gradle-plugin:shared:checkKotlinGradlePluginConfigurationErrors SKIPPED[0m
+[16:13:51]: ▸ [35m> Task :gradle-plugin:settings-plugin:checkKotlinGradlePluginConfigurationErrors SKIPPED[0m
+[16:13:51]: ▸ [35m> Task :gradle-plugin:settings-plugin:pluginDescriptors[0m
+[16:13:51]: ▸ [35m> Task :gradle-plugin:settings-plugin:processResources[0m
+[16:13:52]: ▸ [35m> Task :gradle-plugin:shared:processResources NO-SOURCE[0m
+[16:13:53]: ▸ [35m> Task :gradle-plugin:shared:compileKotlin[0m
+[16:13:53]: ▸ [35m> Task :gradle-plugin:shared:compileJava NO-SOURCE[0m
+[16:13:53]: ▸ [35m> Task :gradle-plugin:shared:classes UP-TO-DATE[0m
+[16:13:53]: ▸ [35m> Task :gradle-plugin:shared:jar[0m
+[16:13:54]: ▸ [35m> Task :gradle-plugin:settings-plugin:compileKotlin[0m
+[16:13:54]: ▸ [35m> Task :gradle-plugin:settings-plugin:compileJava NO-SOURCE[0m
+[16:13:54]: ▸ [35m> Task :gradle-plugin:settings-plugin:classes[0m
+[16:13:54]: ▸ [35m> Task :gradle-plugin:settings-plugin:jar[0m
+[16:14:09]: ▸ [35m> Task :gradle-plugin:react-native-gradle-plugin:checkKotlinGradlePluginConfigurationErrors SKIPPED[0m
+[16:14:09]: ▸ [35m> Task :gradle-plugin:react-native-gradle-plugin:pluginDescriptors[0m
+[16:14:09]: ▸ [35m> Task :gradle-plugin:react-native-gradle-plugin:processResources[0m
+[16:14:12]: ▸ [35m> Task :gradle-plugin:react-native-gradle-plugin:compileKotlin[0m
+[16:14:12]: ▸ [35m> Task :gradle-plugin:react-native-gradle-plugin:compileJava NO-SOURCE[0m
+[16:14:12]: ▸ [35m> Task :gradle-plugin:react-native-gradle-plugin:classes[0m
+[16:14:12]: ▸ [35m> Task :gradle-plugin:react-native-gradle-plugin:jar[0m
+[16:14:20]: ▸ [35m> Configure project :nfc_module[0m
+[16:14:20]: ▸ [35mWARNING: Using flatDir should be avoided because it doesn't support any meta-data formats.[0m
+[16:14:23]: ▸ [35m> Configure project :react-native-firebase_analytics[0m
+[16:14:23]: ▸ [35m:react-native-firebase_analytics package.json found at /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-firebase/analytics/package.json[0m
+[16:14:23]: ▸ [35m:react-native-firebase_app package.json found at /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-firebase/app/package.json[0m
+[16:14:23]: ▸ [35m:react-native-firebase_analytics:firebase.bom using default value: 33.16.0[0m
+[16:14:23]: ▸ [35m:react-native-firebase_analytics package.json found at /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-firebase/analytics/package.json[0m
+[16:14:23]: ▸ [35m:react-native-firebase_analytics:version set from package.json: 14.5.0 (14,5,0 - 14005000)[0m
+[16:14:23]: ▸ [35m:react-native-firebase_analytics:android.compileSdk using custom value: 36[0m
+[16:14:23]: ▸ [35m:react-native-firebase_analytics:android.targetSdk using custom value: 36[0m
+[16:14:23]: ▸ [35m:react-native-firebase_analytics:android.minSdk using custom value: 24[0m
+[16:14:23]: ▸ [35m:react-native-firebase_analytics:reactNativeAndroidDir /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native/android[0m
+[16:14:23]: ▸ [35m> Configure project :react-native-firebase_app[0m
+[16:14:23]: ▸ [35m:react-native-firebase_app package.json found at /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-firebase/app/package.json[0m
+[16:14:23]: ▸ [35m:react-native-firebase_app:firebase.bom using default value: 33.16.0[0m
+[16:14:23]: ▸ [35m:react-native-firebase_app:play.play-services-auth using default value: 20.7.0[0m
+[16:14:23]: ▸ [35m:react-native-firebase_app package.json found at /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-firebase/app/package.json[0m
+[16:14:23]: ▸ [35m:react-native-firebase_app:version set from package.json: 14.5.0 (14,5,0 - 14005000)[0m
+[16:14:23]: ▸ [35m:react-native-firebase_app:android.compileSdk using custom value: 36[0m
+[16:14:23]: ▸ [35m:react-native-firebase_app:android.targetSdk using custom value: 36[0m
+[16:14:23]: ▸ [35m:react-native-firebase_app:android.minSdk using custom value: 24[0m
+[16:14:23]: ▸ [35m:react-native-firebase_app:reactNativeAndroidDir /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native/android[0m
+[16:14:23]: ▸ [35m> Configure project :react-native-firebase_crashlytics[0m
+[16:14:23]: ▸ [35m:react-native-firebase_crashlytics package.json found at /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-firebase/crashlytics/package.json[0m
+[16:14:23]: ▸ [35m:react-native-firebase_app package.json found at /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-firebase/app/package.json[0m
+[16:14:23]: ▸ [35m:react-native-firebase_crashlytics:firebase.bom using default value: 33.16.0[0m
+[16:14:23]: ▸ [35m:react-native-firebase_crashlytics package.json found at /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-firebase/crashlytics/package.json[0m
+[16:14:23]: ▸ [35m:react-native-firebase_crashlytics:version set from package.json: 14.5.0 (14,5,0 - 14005000)[0m
+[16:14:23]: ▸ [35m:react-native-firebase_crashlytics:android.compileSdk using custom value: 36[0m
+[16:14:23]: ▸ [35m:react-native-firebase_crashlytics:android.targetSdk using custom value: 36[0m
+[16:14:23]: ▸ [35m:react-native-firebase_crashlytics:android.minSdk using custom value: 24[0m
+[16:14:23]: ▸ [35m:react-native-firebase_crashlytics:reactNativeAndroidDir /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native/android[0m
+[16:14:28]: ▸ [35m> Configure project :react-native-reanimated[0m
+[16:14:28]: ▸ [35mAndroid gradle plugin: 8.9.2[0m
+[16:14:28]: ▸ [35mGradle: 8.11.1[0m
+[16:14:32]: ▸ [35m> Task :react-native-adjust:clean UP-TO-DATE[0m
+[16:14:32]: ▸ [35m> Task :bugsnag_react-native:clean UP-TO-DATE[0m
+[16:14:32]: ▸ [35m> Task :nfc_module:clean UP-TO-DATE[0m
+[16:14:32]: ▸ [35m> Task :react-native-async-storage_async-storage:clean UP-TO-DATE[0m
+[16:14:32]: ▸ [35m> Task :react-native-camera:clean UP-TO-DATE[0m
+[16:14:32]: ▸ [35m> Task :react-native-community_checkbox:clean UP-TO-DATE[0m
+[16:14:32]: ▸ [35m> Task :react-native-clipboard_clipboard:clean UP-TO-DATE[0m
+[16:14:32]: ▸ [35m> Task :react-native-blob-util:clean UP-TO-DATE[0m
+[16:14:32]: ▸ [35m> Task :react-native-community_datetimepicker:clean UP-TO-DATE[0m
+[16:14:32]: ▸ [35m> Task :react-native-cookies_cookies:clean UP-TO-DATE[0m
+[16:14:32]: ▸ [35m> Task :react-native-community_google-signin:clean UP-TO-DATE[0m
+[16:14:32]: ▸ [35m> Task :jail-monkey:clean UP-TO-DATE[0m
+[16:14:32]: ▸ [35m> Task :react-native-device-info:clean UP-TO-DATE[0m
+[16:14:32]: ▸ [35m> Task :react-native-exit-app:clean UP-TO-DATE[0m
+[16:14:32]: ▸ [35m> Task :react-native-community_netinfo:clean UP-TO-DATE[0m
+[16:14:32]: ▸ [35m> Task :react-native-fs:clean UP-TO-DATE[0m
+[16:14:32]: ▸ [35m> Task :react-native-fingerprint-scanner:clean UP-TO-DATE[0m
+[16:14:32]: ▸ [35m> Task :react-native-gesture-handler:clean UP-TO-DATE[0m
+[16:14:32]: ▸ [35m> Task :react-native-keychain:clean UP-TO-DATE[0m
+[16:14:32]: ▸ [35m> Task :react-native-firebase_crashlytics:clean UP-TO-DATE[0m
+[16:14:32]: ▸ [35m> Task :react-native-navigation-bar-color:clean UP-TO-DATE[0m
+[16:14:32]: ▸ [35m> Task :react-native-firebase_app:clean UP-TO-DATE[0m
+[16:14:32]: ▸ [35m> Task :react-native-linear-gradient:clean UP-TO-DATE[0m
+[16:14:32]: ▸ [35m> Task :react-native-open-notification:clean UP-TO-DATE[0m
+[16:14:32]: ▸ [35m> Task :react-native-orientation-locker:clean UP-TO-DATE[0m
+[16:14:32]: ▸ [35m> Task :react-native-permissions:clean UP-TO-DATE[0m
+[16:14:32]: ▸ [35m> Task :react-native-firebase_analytics:clean UP-TO-DATE[0m
+[16:14:32]: ▸ [35m> Task :react-native-pdf:clean UP-TO-DATE[0m
+[16:14:32]: ▸ [35m> Task :react-native-safe-area-context:clean UP-TO-DATE[0m
+[16:14:32]: ▸ [35m> Task :react-native-randombytes:clean UP-TO-DATE[0m
+[16:14:32]: ▸ [35m> Task :react-native-share:clean UP-TO-DATE[0m
+[16:14:32]: ▸ [35m> Task :react-native-sms-retriever:clean UP-TO-DATE[0m
+[16:14:32]: ▸ [35m> Task :react-native-svg:clean UP-TO-DATE[0m
+[16:14:32]: ▸ [35m> Task :react-native-view-shot:clean UP-TO-DATE[0m
+[16:14:32]: ▸ [35m> Task :react-native-webview:clean UP-TO-DATE[0m
+[16:14:32]: ▸ [35m> Task :react-native-reanimated:cleanCmakeCache[0m
+[16:14:32]: ▸ [35m> Task :react-native-community_cameraroll:clean[0m
+[16:14:32]: ▸ [35m> Task :react-native-onesignal:clean[0m
+[16:14:32]: ▸ [35m> Task :react-native-screens:externalNativeBuildCleanDebug[0m
+[16:14:32]: ▸ [35m> Task :react-native-reanimated:externalNativeBuildCleanDebug[0m
+[16:14:32]: ▸ [35m> Task :react-native-restart:clean[0m
+[16:14:32]: ▸ [35m> Task :react-native-reanimated:externalNativeBuildCleanRelease[0m
+[16:14:32]: ▸ [35m> Task :react-native-image-picker:clean[0m
+[16:14:32]: ▸ [35m> Task :react-native-screens:externalNativeBuildCleanRelease[0m
+[16:14:32]: ▸ [35m> Task :react-native-reanimated:clean[0m
+[16:14:32]: ▸ [35m> Task :react-native-screens:clean UP-TO-DATE[0m
+[16:14:32]: ▸ [35m> Task :app:clean[0m
+[16:14:33]: ▸ [35m[Incubating] Problems report is available at: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/119_android/build/reports/problems/problems-report.html[0m
+[16:14:33]: ▸ [35mDeprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.[0m
+[16:14:33]: ▸ [35mYou can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.[0m
+[16:14:33]: ▸ [35mFor more on this, please refer to https://docs.gradle.org/8.11.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.[0m
+[16:14:33]: ▸ [35mBUILD SUCCESSFUL in 50s[0m
+[16:14:33]: ▸ [35m57 actionable tasks: 21 executed, 36 up-to-date[0m
+[16:14:33]: [32m---------------------------------[0m
+[16:14:33]: [32m--- Step: app:assembleRelease ---[0m
+[16:14:33]: [32m---------------------------------[0m
+[16:14:33]: [36m$ /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/119_android/gradlew app:assembleRelease -p 119_android[0m
++-------------------------------+
+|         [33mLane Context[0m          |
++-------------------+-----------+
+| DEFAULT_PLATFORM  | ios       |
+| PLATFORM_NAME     |           |
+| LANE_NAME         | build_bot |
+| GRADLE_BUILD_TYPE | Release   |
++-------------------+-----------+
+[16:17:48]: [31mCalled from Fastfile at line 589[0m
+[16:17:48]: [31m```[0m
+[16:17:48]: [31m    587:	[0m
+[16:17:48]: [31m    588:	    gradle(task: "clean", project_dir: "#{folder_android}")[0m
+[16:17:48]: [31m => 589:	    gradle([0m
+[16:17:48]: [31m    590:	      task: "app:assemble",[0m
+[16:17:48]: [31m    591:	      build_type: "Release",[0m
+[16:17:48]: [31m```[0m
+
++-------------------------------------------+
+|             [32mfastlane summary[0m              |
++------+----------------------+-------------+
+| Step | Action               | Time (in s) |
++------+----------------------+-------------+
+| 1    | default_platform     | 0           |
+| 2    | yarn prebuild 119 p  | 4           |
+|      | 3.9.99 $(date        |             |
+|      | +%Y%m%d.%H%M)        |             |
+| 3    | yarn prebuild 119 t  | 5           |
+|      | 3.9.99 20260916.1612 |             |
+| 4    | yarn                 | 55          |
+| 5    | clean                | 51          |
+| 💥   | [31mapp:assembleRelease[0m  | 194         |
++------+----------------------+-------------+
+
+[16:17:48]: [31mfastlane finished with errors[0m
+[31m
+[!] Exit status of command '/Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/119_android/gradlew app:assembleRelease -p 119_android' was 1 instead of 0.
+[0m
+
+#######################################################################
+# fastlane 2.240.1 is available. You are on 2.238.0.
+# You should use the latest version.
+# Please update using `fastlane update_fastlane`.
+#######################################################################
+# Run `gem cleanup` from time to time to speed up fastlane
+#######################################################################
+
+[32m2.240.1 Improvements[0m
+* [gem] add cgi gem for Ruby 4 std removal (#30232) via Connor Tumbleson (@iBotPeaches)
+* [deliver] keep an explicitly set platform when a pkg is present (#30224) via Anand Hegde (@anandghegde)
+* [match] upload certs immediatly to storage to prevent desync of files (#30160) via Connor Tumbleson (@iBotPeaches)
+* security gem 0.3.0 integration (#30178) via Jerome Lacoste (@lacostej)
+* build: prevent locking androidpublisher_v3 to 0.99.0 (#30228) via Connor Tumbleson (@iBotPeaches)
+* [tests] Keep the Tempfile, not only its path (#30227) via Jerome Lacoste (@lacostej)
+* [tests] Stop four specs writing into the shared temp root (#30225) via Jerome Lacoste (@lacostej)
+* [tests] Restore the working directory structurally in two specs (#30221) via Jerome Lacoste (@lacostej)
+* [tests] Remove the fixed paths under /tmp from the test suite (#30220) via Jerome Lacoste (@lacostej)
+* build(deps): bump actions/upload-artifact from 4 to 7 (#30222) via dependabot[bot] (@dependabot[bot])
+
+[32m2.240.0 Improvements[0m
+* [fastlane_core] Fix for upload_to_testflight and altool - report failure, but upload succeeds (#30196) via Michal Šrůtek (@michalsrutek)
+* [ci] run full workflows on master as they stack (#30218) via Connor Tumbleson (@iBotPeaches)
+* chore: treat 'both' as 'all' for all 3 platforms (#30214) via Connor Tumbleson (@iBotPeaches)
+* [tests] Give each spec its own scratch directory instead of /tmp/fastlane (#30217) via Jerome Lacoste (@lacostej)
+* [tests] Stop a spec mutating the plist fixture another spec reads (#30215) via Jerome Lacoste (@lacostej)
+* [spaceship] Read the App Store Connect API key from where Apple keeps it now (#30206) via Jerome Lacoste (@lacostej)
+* [tests] Stop two spec files racing for the system clipboard (#30211) via Jerome Lacoste (@lacostej)
+* [spaceship] Say what actually went wrong fetching the App Store Connect API key (#30205) via Jerome Lacoste (@lacostej)
+* [core] Stop hardcoding /tmp where a real path is needed (#30209) via Jerome Lacoste (@lacostej)
+* Run the CI suite as several processes (#30202) via Jerome Lacoste (@lacostej)
+* Run the spec suite as several processes (#30191) via Jerome Lacoste (@lacostej)
+* [fastlane_core] Carry the pty exit status as a value rather than in $? (#30201) via Jerome Lacoste (@lacostej)
+* Stop two specs depending on process wide state another example populated (#30200) via Jerome Lacoste (@lacostej)
+* [spaceship] Use the system temporary directory instead of a literal /tmp (#30197) via Jerome Lacoste (@lacostej)
+* Stop two specs depending on files an earlier run left behind (#30195) via Jerome Lacoste (@lacostej)
+* Report the environment variables that escape the example that set them (#30194) via Jerome Lacoste (@lacostej)
+* Stop nine specs depending on what ran before them (#30193) via Jerome Lacoste (@lacostej)
+* Stop spaceship specs sharing clients and cached state (#30192) via Jerome Lacoste (@lacostej)
+* Stop specs depending on module level configuration another example left behind (#30190) via Jerome Lacoste (@lacostej)
+* build: move to Bundler 2.6.9 (#30185) via Connor Tumbleson (@iBotPeaches)
+* Define only the trainer fixture groups that apply to the current xcresulttool (#30183) via Jerome Lacoste (@lacostej)
+* Surface xcresulttool version detection failures instead of hiding them (#30182) via Jerome Lacoste (@lacostej)
+* Stop the pilot transporter specs querying the real Keychain (#30181) via Jerome Lacoste (@lacostej)
+* Fix flaky fastlane_pty_spec by applying the PTY flush workaround (#30180) via Jerome Lacoste (@lacostej)
+* [gym][scan][snapshot] Add disallow_xcodebuild_settings_lookup option (#30112) via Brett Best (@Brett-Best)
+* [gem] move to rubyzip v3 (#30176) via Connor Tumbleson (@iBotPeaches)
+* chore: update security gem to 0.2.0 (#30177) via Jerome Lacoste (@lacostej)
+* [ci] unset GEM_HOST_API_KEY for GHA publish (#30174) via Connor Tumbleson (@iBotPeaches)
+
+[32m2.239.0 Improvements[0m
+* [supply] list google play releases (#30000) via Tim Shedor (@tshedor)
+* [sigh] Fix duplicate prefix in application-identifier entitlement during resign (#30169) via Shubhransh Gupta (@shubhransh-gupta)
+* [Ruby] Ruby 3.1 is now the minimum (dropping Ruby 3.0) (#30120) via Connor Tumbleson (@iBotPeaches)
+* [deliver/pilot] support app coverage files (#30153) via Connor Tumbleson (@iBotPeaches)
+* [match] prevent leaking keys if invalid usage (#30161) via Connor Tumbleson (@iBotPeaches)
+* [meta] set pr template to drop reference to CircleCI (#30162) via Connor Tumbleson (@iBotPeaches)
+* [deliver] prevent duplicate image uploads (#30150) via Connor Tumbleson (@iBotPeaches)
+* [match] Remove command on failure to prevent secret exposure for git storage. (#30165) via Aleksandr B (@sozzjilly)
+* [pem] Add support for VoIP Services push certificates (#30166) via Rafael da Rosa Ferreira (@Rafinha-rf)
+* harden: detected non-static command inside system in... (#30147) via Anupam Mediratta (@anupamme)
+* [changelog_from_git_commits] Add optional argument to filter commits. (#14441) via Juan A. Romero (@rukano)
+* [sh_helper] fix output stripping - invalid byte sequence in UTF-8 (ArgumentError) (#20539) via Wendy Liga (@wendyliga)
+* [ci] move release workflows to Ruby 3.4 (#30155) via Connor Tumbleson (@iBotPeaches)
+* [gems] move to json 2.21.x (#30156) via Connor Tumbleson (@iBotPeaches)
+
+[32mTo see all new releases, open https://github.com/fastlane/fastlane/releases[0m
+
+[32mPlease update using `fastlane update_fastlane`[0m
