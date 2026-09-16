@@ -1,0 +1,542 @@
+[16:42:20]: [33mGet started using a Gemfile for fastlane https://docs.fastlane.tools/getting-started/ios/setup/#use-a-gemfile[0m
+[16:42:21]: [32m------------------------------[0m
+[16:42:21]: [32m--- Step: default_platform ---[0m
+[16:42:21]: [32m------------------------------[0m
+[16:42:21]: [32mDriving the lane 'build_bot' 🚀[0m
+[16:42:21]: osBuild: `all`
+[16:42:21]: [32m🎯 Using version name: 3.9.99[0m
+[16:42:21]: [32m-------------------------------------------------------------[0m
+[16:42:21]: [32m--- Step: yarn prebuild 119 p 3.9.99 $(date +%Y%m%d.%H%M) ---[0m
+[16:42:21]: [32m-------------------------------------------------------------[0m
+[16:42:21]: [36m$ yarn prebuild 119 p 3.9.99 $(date +%Y%m%d.%H%M)[0m
+[16:42:21]: ▸ [35myarn run v1.22.22[0m
+[16:42:21]: ▸ [35m$ node script/prebuild.js 119 p 3.9.99 20260916.1642[0m
+[16:42:23]: ▸ [35m>>>>>> Change active_code:  119 [type]:  p[0m
+[16:42:23]: ▸ [35m>>>>>> [Change] appVersion for PackageJson:  3.9.99[0m
+[16:42:23]: ▸ [35m>>>>>> [Done] appVersion for PackageJson:  3.9.99[0m
+[16:42:23]: ▸ [35m✅ Đã cập nhật app.json với name = "CASMobile", displayName = "CASMobile"[0m
+[16:42:23]: ▸ [35m>>>>>> Công ty build:  119[0m
+[16:42:23]: ▸ [35m>>>>>> APP_VERSION: 3.9.99[0m
+[16:42:23]: ▸ [35m>>>>>> APP_BUILD_NUMBER: 20260916.1642[0m
+[16:42:23]: ▸ [35m>>>>>> Môi trường build: CONFIG_PRODUCTION[0m
+[16:42:23]: ▸ [35mDone in 1.24s.[0m
+[16:42:23]: [32m------------------------------------------------------[0m
+[16:42:23]: [32m--- Step: yarn prebuild 119 t 3.9.99 20260916.1642 ---[0m
+[16:42:23]: [32m------------------------------------------------------[0m
+[16:42:23]: [36m$ yarn prebuild 119 t 3.9.99 20260916.1642[0m
+[16:42:23]: ▸ [35myarn run v1.22.22[0m
+[16:42:23]: ▸ [35m$ node script/prebuild.js 119 t 3.9.99 20260916.1642[0m
+[16:42:24]: ▸ [35m>>>>>> Change active_code:  119 [type]:  t[0m
+[16:42:24]: ▸ [35m>>>>>> [Change] appVersion for PackageJson:  3.9.99[0m
+[16:42:24]: ▸ [35m>>>>>> [Done] appVersion for PackageJson:  3.9.99[0m
+[16:42:24]: ▸ [35m✅ Đã cập nhật app.json với name = "CASMobile", displayName = "CASMobile"[0m
+[16:42:24]: ▸ [35m>>>>>> Công ty build:  119[0m
+[16:42:24]: ▸ [35m>>>>>> APP_VERSION: 3.9.99[0m
+[16:42:24]: ▸ [35m>>>>>> APP_BUILD_NUMBER: 20260916.1642[0m
+[16:42:24]: ▸ [35m>>>>>> Môi trường build: CONFIG_TEST[0m
+[16:42:24]: ▸ [35mDone in 0.77s.[0m
+[16:42:24]: [32m------------------[0m
+[16:42:24]: [32m--- Step: yarn ---[0m
+[16:42:24]: [32m------------------[0m
+[16:42:24]: [36m$ yarn[0m
+[16:42:25]: ▸ [35myarn install v1.22.22[0m
+[16:42:25]: ▸ [35m[1/5] Validating package.json...[0m
+[16:42:25]: ▸ [35m[2/5] Resolving packages...[0m
+[16:42:25]: ▸ [35msuccess Already up-to-date.[0m
+[16:42:25]: ▸ [35m$ patch-package && node script/patchAndroidLibraries.js && npx rn-nodeify --install buffer,crypto,stream,util,process,vm --hack && node script/syncFonts.js[0m
+[16:42:26]: ▸ [35mpatch-package 6.5.0[0m
+[16:42:26]: ▸ [35mApplying patches...[0m
+[16:42:26]: ▸ [35m@react-native-community/cameraroll@4.1.2 ✔[0m
+[16:42:26]: ▸ [35mcipher-base@1.0.4 ✔[0m
+[16:42:26]: ▸ [35mnative-base/@codler/react-native-keyboard-aware-scroll-view@1.0.1 ✔[0m
+[16:42:26]: ▸ [35mnative-base@2.15.8 ✔[0m
+[16:42:26]: ▸ [35mreact-native-floating-label-input@1.4.3 ✔[0m
+[16:42:26]: ▸ [35mreact-native-image-picker@4.0.6 ✔[0m
+[16:42:26]: ▸ [35mreact-native-modal-datetime-picker@9.1.0 ✔[0m
+[16:42:29]: ▸ [35m[patchAndroidLibraries] manifestMode=strip, manifests=0, gradleFiles=0, namespaces=0, svgPaper=0, rnCameraMlkit=0 nativeBaseRuntime=0, deprecatedPropTypesRuntime=0, nativeEventEmitterRuntime=0, floatingLabelRuntime=0, reactNavigationRuntime=0, reactNativeModalRuntime=0, navigationBarColorRuntime=0[0m
+[16:42:31]: ▸ [35mnot overwriting "buffer"[0m
+[16:42:31]: ▸ [35mnot overwriting "react-native-crypto"[0m
+[16:42:31]: ▸ [35mnot overwriting "stream-browserify"[0m
+[16:42:31]: ▸ [35mnot overwriting "util"[0m
+[16:42:31]: ▸ [35mnot overwriting "process"[0m
+[16:42:31]: ▸ [35mnot overwriting "vm-browserify"[0m
+[16:42:31]: ▸ [35mnot overwriting "readable-stream"[0m
+[16:42:31]: ▸ [35mnot overwriting "react-native-randombytes"[0m
+[16:42:31]: ▸ [35mnot overwriting shim.js. For the latest version, see rn-nodeify/shim.js[0m
+[16:42:32]: ▸ [35mfailed to parse node_modules/resolve/test/resolver/malformed_package_json/package.json[0m
+[16:42:32]: ▸ [35mfailed to parse node_modules/eslint-plugin-react/node_modules/resolve/test/resolver/malformed_package_json/package.json[0m
+[16:42:34]: ▸ [35m[syncFonts] copied=0, skipped=192 (12 dirs, 16 fonts)[0m
+[16:42:34]: ▸ [35mDone in 9.27s.[0m
+[16:42:34]: [32m-------------------[0m
+[16:42:34]: [32m--- Step: clean ---[0m
+[16:42:34]: [32m-------------------[0m
+[16:42:34]: [36m$ /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/119_android/gradlew clean -p 119_android[0m
+[16:42:35]: ▸ [35m> Task :gradle-plugin:settings-plugin:checkKotlinGradlePluginConfigurationErrors SKIPPED[0m
+[16:42:35]: ▸ [35m> Task :gradle-plugin:shared:checkKotlinGradlePluginConfigurationErrors SKIPPED[0m
+[16:42:35]: ▸ [35m> Task :gradle-plugin:settings-plugin:pluginDescriptors UP-TO-DATE[0m
+[16:42:35]: ▸ [35m> Task :gradle-plugin:settings-plugin:processResources UP-TO-DATE[0m
+[16:42:35]: ▸ [35m> Task :gradle-plugin:shared:compileKotlin UP-TO-DATE[0m
+[16:42:35]: ▸ [35m> Task :gradle-plugin:shared:compileJava NO-SOURCE[0m
+[16:42:35]: ▸ [35m> Task :gradle-plugin:shared:processResources NO-SOURCE[0m
+[16:42:35]: ▸ [35m> Task :gradle-plugin:shared:classes UP-TO-DATE[0m
+[16:42:35]: ▸ [35m> Task :gradle-plugin:shared:jar UP-TO-DATE[0m
+[16:42:35]: ▸ [35m> Task :gradle-plugin:settings-plugin:compileKotlin UP-TO-DATE[0m
+[16:42:35]: ▸ [35m> Task :gradle-plugin:settings-plugin:compileJava NO-SOURCE[0m
+[16:42:35]: ▸ [35m> Task :gradle-plugin:settings-plugin:classes UP-TO-DATE[0m
+[16:42:35]: ▸ [35m> Task :gradle-plugin:settings-plugin:jar UP-TO-DATE[0m
+[16:42:35]: ▸ [35m> Task :gradle-plugin:react-native-gradle-plugin:checkKotlinGradlePluginConfigurationErrors SKIPPED[0m
+[16:42:35]: ▸ [35m> Task :gradle-plugin:react-native-gradle-plugin:compileKotlin UP-TO-DATE[0m
+[16:42:35]: ▸ [35m> Task :gradle-plugin:react-native-gradle-plugin:compileJava NO-SOURCE[0m
+[16:42:35]: ▸ [35m> Task :gradle-plugin:react-native-gradle-plugin:pluginDescriptors UP-TO-DATE[0m
+[16:42:35]: ▸ [35m> Task :gradle-plugin:react-native-gradle-plugin:processResources UP-TO-DATE[0m
+[16:42:35]: ▸ [35m> Task :gradle-plugin:react-native-gradle-plugin:classes UP-TO-DATE[0m
+[16:42:35]: ▸ [35m> Task :gradle-plugin:react-native-gradle-plugin:jar UP-TO-DATE[0m
+[16:42:35]: ▸ [35m> Configure project :nfc_module[0m
+[16:42:35]: ▸ [35mWARNING: Using flatDir should be avoided because it doesn't support any meta-data formats.[0m
+[16:42:35]: ▸ [35m> Configure project :react-native-firebase_analytics[0m
+[16:42:35]: ▸ [35m:react-native-firebase_analytics package.json found at /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-firebase/analytics/package.json[0m
+[16:42:35]: ▸ [35m:react-native-firebase_app package.json found at /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-firebase/app/package.json[0m
+[16:42:35]: ▸ [35m:react-native-firebase_analytics:firebase.bom using default value: 33.16.0[0m
+[16:42:35]: ▸ [35m:react-native-firebase_analytics package.json found at /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-firebase/analytics/package.json[0m
+[16:42:35]: ▸ [35m:react-native-firebase_analytics:version set from package.json: 14.5.0 (14,5,0 - 14005000)[0m
+[16:42:35]: ▸ [35m:react-native-firebase_analytics:android.compileSdk using custom value: 36[0m
+[16:42:35]: ▸ [35m:react-native-firebase_analytics:android.targetSdk using custom value: 36[0m
+[16:42:35]: ▸ [35m:react-native-firebase_analytics:android.minSdk using custom value: 24[0m
+[16:42:35]: ▸ [35m:react-native-firebase_analytics:reactNativeAndroidDir /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native/android[0m
+[16:42:35]: ▸ [35m> Configure project :react-native-firebase_app[0m
+[16:42:35]: ▸ [35m:react-native-firebase_app package.json found at /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-firebase/app/package.json[0m
+[16:42:35]: ▸ [35m:react-native-firebase_app:firebase.bom using default value: 33.16.0[0m
+[16:42:35]: ▸ [35m:react-native-firebase_app:play.play-services-auth using default value: 20.7.0[0m
+[16:42:35]: ▸ [35m:react-native-firebase_app package.json found at /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-firebase/app/package.json[0m
+[16:42:35]: ▸ [35m:react-native-firebase_app:version set from package.json: 14.5.0 (14,5,0 - 14005000)[0m
+[16:42:35]: ▸ [35m:react-native-firebase_app:android.compileSdk using custom value: 36[0m
+[16:42:35]: ▸ [35m:react-native-firebase_app:android.targetSdk using custom value: 36[0m
+[16:42:35]: ▸ [35m:react-native-firebase_app:android.minSdk using custom value: 24[0m
+[16:42:35]: ▸ [35m:react-native-firebase_app:reactNativeAndroidDir /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native/android[0m
+[16:42:35]: ▸ [35m> Configure project :react-native-firebase_crashlytics[0m
+[16:42:35]: ▸ [35m:react-native-firebase_crashlytics package.json found at /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-firebase/crashlytics/package.json[0m
+[16:42:35]: ▸ [35m:react-native-firebase_app package.json found at /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-firebase/app/package.json[0m
+[16:42:35]: ▸ [35m:react-native-firebase_crashlytics:firebase.bom using default value: 33.16.0[0m
+[16:42:35]: ▸ [35m:react-native-firebase_crashlytics package.json found at /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/@react-native-firebase/crashlytics/package.json[0m
+[16:42:35]: ▸ [35m:react-native-firebase_crashlytics:version set from package.json: 14.5.0 (14,5,0 - 14005000)[0m
+[16:42:35]: ▸ [35m:react-native-firebase_crashlytics:android.compileSdk using custom value: 36[0m
+[16:42:35]: ▸ [35m:react-native-firebase_crashlytics:android.targetSdk using custom value: 36[0m
+[16:42:35]: ▸ [35m:react-native-firebase_crashlytics:android.minSdk using custom value: 24[0m
+[16:42:35]: ▸ [35m:react-native-firebase_crashlytics:reactNativeAndroidDir /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/node_modules/react-native/android[0m
+[16:42:36]: ▸ [35m> Configure project :react-native-reanimated[0m
+[16:42:36]: ▸ [35mAndroid gradle plugin: 8.9.2[0m
+[16:42:36]: ▸ [35mGradle: 8.11.1[0m
+[16:42:38]: ▸ [35m> Task :jail-monkey:clean[0m
+[16:42:38]: ▸ [35m> Task :react-native-async-storage_async-storage:clean[0m
+[16:42:38]: ▸ [35m> Task :react-native-blob-util:clean[0m
+[16:42:38]: ▸ [35m> Task :bugsnag_react-native:clean[0m
+[16:42:38]: ▸ [35m> Task :nfc_module:clean[0m
+[16:42:38]: ▸ [35m> Task :react-native-adjust:clean[0m
+[16:42:38]: ▸ [35m> Task :react-native-clipboard_clipboard:clean[0m
+[16:42:38]: ▸ [35m> Task :react-native-community_datetimepicker:clean[0m
+[16:42:38]: ▸ [35m> Task :react-native-camera:clean[0m
+[16:42:38]: ▸ [35m> Task :react-native-community_checkbox:clean[0m
+[16:42:38]: ▸ [35m> Task :react-native-community_google-signin:clean[0m
+[16:42:38]: ▸ [35m> Task :react-native-community_netinfo:clean[0m
+[16:42:38]: ▸ [35m> Task :react-native-community_cameraroll:clean[0m
+[16:42:38]: ▸ [35m> Task :react-native-cookies_cookies:clean[0m
+[16:42:38]: ▸ [35m> Task :react-native-exit-app:clean[0m
+[16:42:38]: ▸ [35m> Task :react-native-device-info:clean[0m
+[16:42:38]: ▸ [35m> Task :react-native-fingerprint-scanner:clean[0m
+[16:42:38]: ▸ [35m> Task :react-native-firebase_crashlytics:clean[0m
+[16:42:38]: ▸ [35m> Task :react-native-firebase_analytics:clean[0m
+[16:42:38]: ▸ [35m> Task :react-native-firebase_app:clean[0m
+[16:42:38]: ▸ [35m> Task :react-native-fs:clean[0m
+[16:42:38]: ▸ [35m> Task :react-native-linear-gradient:clean[0m
+[16:42:38]: ▸ [35m> Task :react-native-navigation-bar-color:clean[0m
+[16:42:38]: ▸ [35m> Task :react-native-keychain:clean[0m
+[16:42:38]: ▸ [35m> Task :react-native-image-picker:clean[0m
+[16:42:38]: ▸ [35m> Task :react-native-onesignal:clean[0m
+[16:42:38]: ▸ [35m> Task :react-native-gesture-handler:clean[0m
+[16:42:38]: ▸ [35m> Task :react-native-open-notification:clean[0m
+[16:42:38]: ▸ [35m> Task :react-native-permissions:clean[0m
+[16:42:38]: ▸ [35m> Task :react-native-orientation-locker:clean[0m
+[16:42:38]: ▸ [35m> Task :react-native-pdf:clean[0m
+[16:42:38]: ▸ [35m> Task :react-native-screens:externalNativeBuildCleanDebug[0m
+[16:42:38]: ▸ [35m> Task :react-native-randombytes:clean[0m
+[16:42:38]: ▸ [35m> Task :react-native-restart:clean[0m
+[16:42:38]: ▸ [35m> Task :react-native-sms-retriever:clean[0m
+[16:42:38]: ▸ [35m> Task :react-native-share:clean[0m
+[16:42:38]: ▸ [35m> Task :react-native-reanimated:cleanCmakeCache[0m
+[16:42:38]: ▸ [35m> Task :react-native-reanimated:externalNativeBuildCleanDebug[0m
+[16:42:38]: ▸ [35m> Task :react-native-reanimated:externalNativeBuildCleanRelease[0m
+[16:42:38]: ▸ [35m> Task :react-native-safe-area-context:clean[0m
+[16:42:38]: ▸ [35m> Task :react-native-view-shot:clean[0m
+[16:42:38]: ▸ [35m> Task :react-native-svg:clean[0m
+[16:42:38]: ▸ [35m> Task :react-native-webview:clean[0m
+[16:42:38]: ▸ [35m> Task :react-native-screens:externalNativeBuildCleanRelease[0m
+[16:42:38]: ▸ [35mClean rnscreens-armeabi-v7a[0m
+[16:42:38]: ▸ [35mClean rnscreens-arm64-v8a[0m
+[16:42:38]: ▸ [35m> Task :react-native-reanimated:clean[0m
+[16:42:38]: ▸ [35m> Task :app:clean[0m
+[16:42:38]: ▸ [35m> Task :react-native-screens:clean[0m
+[16:42:38]: ▸ [35m[Incubating] Problems report is available at: file:///Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/119_android/build/reports/problems/problems-report.html[0m
+[16:42:38]: ▸ [35mDeprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.[0m
+[16:42:38]: ▸ [35mYou can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.[0m
+[16:42:38]: ▸ [35mFor more on this, please refer to https://docs.gradle.org/8.11.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.[0m
+[16:42:38]: ▸ [35mBUILD SUCCESSFUL in 4s[0m
+[16:42:38]: ▸ [35m57 actionable tasks: 47 executed, 10 up-to-date[0m
+[16:42:38]: [32m---------------------------------[0m
+[16:42:38]: [32m--- Step: app:assembleRelease ---[0m
+[16:42:38]: [32m---------------------------------[0m
+[16:42:38]: [36m$ /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/119_android/gradlew app:assembleRelease -p 119_android[0m
+[16:46:01]: [32m✅ APK đã build: build/119_t/app-release.apk[0m
+[16:46:01]: Using node: /Users/solutionaltisss/.nvm/versions/node/v20.19.4/bin/node
+[16:46:01]: [32m--------------------------------------------------[0m
+[16:46:01]: [32m--- Step: cd ../119_ios && pod install && cd - ---[0m
+[16:46:01]: [32m--------------------------------------------------[0m
+[16:46:01]: [36m$ cd ../119_ios && pod install && cd -[0m
+[16:46:03]: ▸ [35mRNFBAnalytics: Using default Firebase/Analytics with Ad Ids. May require App Tracking Transparency. Not allowed for Kids apps.[0m
+[16:46:03]: ▸ [35mRNFBAnalytics: You may set variable `$RNFirebaseAnalyticsWithoutAdIdSupport=true` in Podfile to use analytics without ad ids.[0m
+[16:46:03]: ▸ [35mAdding a custom script phase for Pod RNFBApp: [RNFB] Core Configuration[0m
+[16:46:03]: ▸ [35mAuto-linking React Native modules for target `CASMobile`: BVLinearGradient, BugsnagReactNative, RNCAsyncStorage, RNCCheckbox, RNCClipboard, RNCPushNotificationIOS, RNDateTimePicker, RNDeviceInfo, RNExitApp, RNFBAnalytics, RNFBApp, RNFS, RNGestureHandler, RNGoogleSignin, RNKeychain, RNPermissions, RNReanimated, RNSVG, RNScreens, RNShare, jail-monkey, react-native-adjust, react-native-blob-util, react-native-cameraroll, react-native-cookies, react-native-fingerprint-scanner, react-native-floating-label-input, react-native-image-picker, react-native-netinfo, react-native-onesignal, react-native-orientation-locker, react-native-pdf, react-native-randombytes, react-native-render-html, react-native-restart, react-native-safe-area-context, react-native-view-shot, and react-native-webview[0m
+[16:46:03]: ▸ [35mFramework build type is static library[0m
+[16:46:03]: ▸ [35m[36m[1m[Codegen][0m [33mwarn: using experimental new codegen integration[0m
+[16:46:03]: ▸ [35m[36m[1m[Codegen][0m Adding script_phases to ReactCodegen.[0m
+[16:46:03]: ▸ [35m[36m[1m[Codegen][0m Generating ./build/generated/ios/ReactCodegen.podspec.json[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Analyzing /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/package.json[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m [33mSearching for codegen-enabled libraries in the app.[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m [33mThe "codegenConfig" field is not defined in package.json. Assuming there is nothing to generate at the app level.[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m [33mSearching for codegen-enabled libraries in the project dependencies.[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Found @bugsnag/react-native[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Found @react-native-async-storage/async-storage[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Found @react-native-clipboard/clipboard[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Found react-native[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Found react-native-blob-util[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Found react-native-gesture-handler[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Found react-native-pdf[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Found react-native-reanimated[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Found react-native-safe-area-context[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Found react-native-screens[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Found react-native-svg[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Found react-native-webview[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m [33mSearching for codegen-enabled libraries in react-native.config.js[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Processing BugsnagReactNativeSpec[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m [33mSearching for podspec in the project dependencies.[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Supported Apple platforms: ios for BugsnagReactNativeSpec[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Processing rnasyncstorage[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m [33mSearching for podspec in the project dependencies.[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Supported Apple platforms: ios, macos, tvos, visionos for rnasyncstorage[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Processing rnclipboard[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m [33mSearching for podspec in the project dependencies.[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Supported Apple platforms: ios, macos, tvos, visionos for rnclipboard[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Processing FBReactNativeSpec[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m [33mSearching for podspec in the project dependencies.[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Processing rncore[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m [33mSearching for podspec in the project dependencies.[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Processing ReactNativeBlobUtilSpec[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m [33mSearching for podspec in the project dependencies.[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Supported Apple platforms: ios for ReactNativeBlobUtilSpec[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Processing rngesturehandler_codegen[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m [33mSearching for podspec in the project dependencies.[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Supported Apple platforms: ios, macos, tvos, visionos for rngesturehandler_codegen[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Processing rnpdf[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m [33mSearching for podspec in the project dependencies.[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Supported Apple platforms: ios, tvos for rnpdf[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Processing rnreanimated[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m [33mSearching for podspec in the project dependencies.[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Supported Apple platforms: ios, macos, tvos, visionos for rnreanimated[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Processing safeareacontext[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m [33mSearching for podspec in the project dependencies.[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Supported Apple platforms: ios, macos, tvos, visionos for safeareacontext[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Processing rnscreens[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m [33mSearching for podspec in the project dependencies.[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Supported Apple platforms: ios, tvos, visionos for rnscreens[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Processing rnsvg[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m [33mSearching for podspec in the project dependencies.[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Supported Apple platforms: ios, macos, tvos, visionos for rnsvg[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Processing RNCWebViewSpec[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m [33mSearching for podspec in the project dependencies.[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Supported Apple platforms: ios, macos, visionos for RNCWebViewSpec[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Generating Native Code for BugsnagReactNativeSpec - ios[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Generated artifacts: /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/119_ios/build/generated/ios[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Generating Native Code for rnasyncstorage - ios[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Generated artifacts: /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/119_ios/build/generated/ios[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Generating Native Code for rnclipboard - ios[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Generated artifacts: /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/119_ios/build/generated/ios[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m [33m[Codegen - FBReactNativeSpec] Skipping iOS code generation for FBReactNativeSpec as it has been generated already.[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m [33m[Codegen - rncore] Skipping iOS code generation for rncore as it has been generated already.[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Generating Native Code for ReactNativeBlobUtilSpec - ios[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Generated artifacts: /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/119_ios/build/generated/ios[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Generating Native Code for rngesturehandler_codegen - ios[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Generated artifacts: /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/119_ios/build/generated/ios[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Generating Native Code for rnpdf - ios[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Generated artifacts: /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/119_ios/build/generated/ios[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Generating Native Code for rnreanimated - ios[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Generated artifacts: /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/119_ios/build/generated/ios[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Generating Native Code for safeareacontext - ios[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Generated artifacts: /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/119_ios/build/generated/ios[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Generating Native Code for rnscreens - ios[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Generated artifacts: /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/119_ios/build/generated/ios[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Generating Native Code for rnsvg - ios[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Generated artifacts: /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/119_ios/build/generated/ios[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Generating Native Code for RNCWebViewSpec - ios[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Generated artifacts: /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/119_ios/build/generated/ios[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Generating RCTThirdPartyComponentsProvider.h[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Generated artifact: /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/119_ios/build/generated/ios/RCTThirdPartyComponentsProvider.h[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Generating RCTThirdPartyComponentsProvider.mm[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Crawling react-native-pdf library for components[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Match found RNPDFPdfView -> RNPDFPdfView[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m [33m[DEPRECATED] react-native-pdf should add the 'ios.componentProvider' property in their codegenConfig[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Crawling react-native-svg library for components[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Match found RNSVGClipPath -> RNSVGClipPath[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Match found RNSVGDefs -> RNSVGDefs[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Match found RNSVGForeignObject -> RNSVGForeignObject[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Match found RNSVGGroup -> RNSVGGroup[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Match found RNSVGImage -> RNSVGImage[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Match found RNSVGLinearGradient -> RNSVGLinearGradient[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Match found RNSVGMarker -> RNSVGMarker[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Match found RNSVGMask -> RNSVGMask[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Match found RNSVGPath -> RNSVGPath[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Match found RNSVGPattern -> RNSVGPattern[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Match found RNSVGRadialGradient -> RNSVGRadialGradient[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Match found RNSVGSvgView -> RNSVGSvgView[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Match found RNSVGSymbol -> RNSVGSymbol[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Match found RNSVGUse -> RNSVGUse[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Match found RNSVGFeBlend -> RNSVGFeBlend[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Match found RNSVGFeColorMatrix -> RNSVGFeColorMatrix[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Match found RNSVGFeFlood -> RNSVGFeFlood[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Match found RNSVGFeGaussianBlur -> RNSVGFeGaussianBlur[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Match found RNSVGFeMerge -> RNSVGFeMerge[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Match found RNSVGFeOffset -> RNSVGFeOffset[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Match found RNSVGFilter -> RNSVGFilter[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Match found RNSVGCircle -> RNSVGCircle[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Match found RNSVGEllipse -> RNSVGEllipse[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Match found RNSVGLine -> RNSVGLine[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Match found RNSVGRect -> RNSVGRect[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Match found RNSVGTSpan -> RNSVGTSpan[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Match found RNSVGText -> RNSVGText[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Match found RNSVGTextPath -> RNSVGTextPath[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m [33m[DEPRECATED] react-native-svg should add the 'ios.componentProvider' property in their codegenConfig[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Generated artifact: /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/119_ios/build/generated/ios/RCTThirdPartyComponentsProvider.mm[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Generating RCTAppDependencyProvider[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Generated artifact: /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/119_ios/build/generated/ios/RCTAppDependencyProvider.h[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Generated artifact: /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/119_ios/build/generated/ios/RCTAppDependencyProvider.mm[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m Generated podspec: /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/119_ios/build/generated/ios/ReactAppDependencyProvider.podspec[0m
+[16:46:04]: ▸ [35m[36m[1m[Codegen][0m [33mDone.[0m
+[16:46:04]: ▸ [35mAnalyzing dependencies[0m
+[16:46:04]: ▸ [35mRNFBAnalytics: Using default Firebase/Analytics with Ad Ids. May require App Tracking Transparency. Not allowed for Kids apps.[0m
+[16:46:04]: ▸ [35mRNFBAnalytics: You may set variable `$RNFirebaseAnalyticsWithoutAdIdSupport=true` in Podfile to use analytics without ad ids.[0m
+[16:46:13]: ▸ [35mDownloading dependencies[0m
+[16:46:13]: ▸ [35mGenerating Pods project[0m
+[16:46:13]: ▸ [35mSetting USE_HERMES build settings[0m
+[16:46:13]: ▸ [35mSetting REACT_NATIVE_PATH build settings[0m
+[16:46:13]: ▸ [35mSetting SWIFT_ACTIVE_COMPILATION_CONDITIONS build settings[0m
+[16:46:13]: ▸ [35m[Ccache]: Removing Ccache from CC, LD, CXX & LDPLUSPLUS build settings[0m
+[16:46:14]: ▸ [35m[SPM] Cleaning old SPM dependencies from Pods project[0m
+[16:46:14]: ▸ [35m[SPM] Adding SPM dependencies to Pods project[0m
+[16:46:14]: ▸ [35m[Privacy Manifest Aggregation] Appending aggregated reasons to existing PrivacyInfo.xcprivacy file.[0m
+[16:46:14]: ▸ [35m[Privacy Manifest Aggregation] Reading .xcprivacy files to aggregate all used Required Reason APIs.[0m
+[16:46:14]: ▸ [35mSetting CLANG_CXX_LANGUAGE_STANDARD to c++20 on /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/119_ios/CASMobile.xcodeproj[0m
+[16:46:14]: ▸ [35mPod install took 12 [s] to run[0m
+[16:46:14]: ▸ [35mStripping bitcode: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/119_ios/Pods/OneSignalXCFramework/iOS_SDK/OneSignalSDK/OneSignal_XCFramework/OneSignal.xcframework/ios-arm64_armv7_armv7s/OneSignal.framework/OneSignal -r -o /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/119_ios/Pods/OneSignalXCFramework/iOS_SDK/OneSignalSDK/OneSignal_XCFramework/OneSignal.xcframework/ios-arm64_armv7_armv7s/OneSignal.framework/OneSignal[0m
+[16:46:14]: ▸ [35mStripping bitcode: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/119_ios/Pods/OneSignalXCFramework/iOS_SDK/OneSignalSDK/OneSignal_Extension/OneSignalExtension.xcframework/ios-arm64_armv7_armv7s/OneSignalExtension.framework/OneSignalExtension -r -o /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/119_ios/Pods/OneSignalXCFramework/iOS_SDK/OneSignalSDK/OneSignal_Extension/OneSignalExtension.xcframework/ios-arm64_armv7_armv7s/OneSignalExtension.framework/OneSignalExtension[0m
+[16:46:14]: ▸ [35mStripping bitcode: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/119_ios/Pods/OneSignalXCFramework/iOS_SDK/OneSignalSDK/OneSignal_Core/OneSignalCore.xcframework/ios-arm64_armv7_armv7s/OneSignalCore.framework/OneSignalCore -r -o /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/119_ios/Pods/OneSignalXCFramework/iOS_SDK/OneSignalSDK/OneSignal_Core/OneSignalCore.xcframework/ios-arm64_armv7_armv7s/OneSignalCore.framework/OneSignalCore[0m
+[16:46:14]: ▸ [35mStripping bitcode: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/119_ios/Pods/OneSignalXCFramework/iOS_SDK/OneSignalSDK/OneSignal_Outcomes/OneSignalOutcomes.xcframework/ios-arm64_armv7_armv7s/OneSignalOutcomes.framework/OneSignalOutcomes -r -o /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/119_ios/Pods/OneSignalXCFramework/iOS_SDK/OneSignalSDK/OneSignal_Outcomes/OneSignalOutcomes.xcframework/ios-arm64_armv7_armv7s/OneSignalOutcomes.framework/OneSignalOutcomes[0m
+[16:46:14]: ▸ [35mStripping bitcode: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/119_ios/../node_modules/nfc_module/ios/OpenSSL.xcframework/ios-arm64/OpenSSL.framework/OpenSSL -r -o /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/119_ios/../node_modules/nfc_module/ios/OpenSSL.xcframework/ios-arm64/OpenSSL.framework/OpenSSL[0m
+[16:46:15]: ▸ [35mIntegrating client project[0m
+[16:46:15]: ▸ [35mPod installation complete! There are 114 dependencies from the Podfile and 138 total pods installed.[0m
+[16:46:15]: ▸ [35m[!] The `CASMobile [Debug]` target overrides the `ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES` build setting defined in `Pods/Target Support Files/Pods-CASMobile/Pods-CASMobile.debug.xcconfig'. This can lead to problems with the CocoaPods installation[0m
+[16:46:15]: ▸ [35m[!] The `CASMobile [Release]` target overrides the `ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES` build setting defined in `Pods/Target Support Files/Pods-CASMobile/Pods-CASMobile.release.xcconfig'. This can lead to problems with the CocoaPods installation[0m
+[16:46:15]: ▸ [35m[!] The `OneSignalNotificationServiceExtension [Debug]` target overrides the `CLANG_CXX_LANGUAGE_STANDARD` build setting defined in `Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.debug.xcconfig'. This can lead to problems with the CocoaPods installation[0m
+[16:46:15]: ▸ [35m[!] The `OneSignalNotificationServiceExtension [Release]` target overrides the `CLANG_CXX_LANGUAGE_STANDARD` build setting defined in `Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.release.xcconfig'. This can lead to problems with the CocoaPods installation[0m
+[16:46:15]: ▸ [35m- Use the `$(inherited)` flag, or[0m
+[16:46:15]: ▸ [35m- Remove the build settings from the target.[0m
+[16:46:15]: ▸ [35m- Use the `$(inherited)` flag, or[0m
+[16:46:15]: ▸ [35m- Remove the build settings from the target.[0m
+[16:46:15]: ▸ [35m- Use the `$(inherited)` flag, or[0m
+[16:46:15]: ▸ [35m- Remove the build settings from the target.[0m
+[16:46:15]: ▸ [35m- Use the `$(inherited)` flag, or[0m
+[16:46:15]: ▸ [35m- Remove the build settings from the target.[0m
+[16:46:15]: ▸ [35m/Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/fastlane[0m
+[16:46:15]: [32m-----------------------[0m
+[16:46:15]: [32m--- Step: build_app ---[0m
+[16:46:15]: [32m-----------------------[0m
+[16:46:15]: [33mResolving Swift Package Manager dependencies...[0m
+[16:46:15]: [36m$ xcodebuild -resolvePackageDependencies -workspace 119_ios/CASMobile.xcworkspace -scheme CASMobile[0m
+[16:46:17]: ▸ [35mCommand line invocation:[0m
+[16:46:17]: ▸ [35m    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -resolvePackageDependencies -workspace 119_ios/CASMobile.xcworkspace -scheme CASMobile[0m
+[16:46:18]: ▸ [35mResolve Package Graph[0m
+[16:46:18]: ▸ [35mResolved source packages:[0m
+[16:46:18]: ▸ [35m  FCIVisionMLCore: /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/Ekyc/FCIDependencies/ML/FCIVisionMLCore @ local[0m
+[16:46:18]: ▸ [35m  FCISDKResource: /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/Ekyc/FCIResources/FCISDKResource @ local[0m
+[16:46:18]: ▸ [35m  PhilippinesEKYCResource: /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/Ekyc/FCIResources/PhilippinesEKYCResource @ local[0m
+[16:46:18]: ▸ [35m  IndonesiaEKYCResource: /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/Ekyc/FCIResources/IndonesiaEKYCResource @ local[0m
+[16:46:18]: ▸ [35m  EkycSDK: /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/Ekyc/EkycSDK @ local[0m
+[16:46:18]: ▸ [35m  FCIVisionMLPhilippines: /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/Ekyc/FCIDependencies/ML/FCIVisionMLPhilippines @ local[0m
+[16:46:18]: ▸ [35m  FCIVisionServiceBinary: /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/Ekyc/FCIDependencies/VisionService/FCIVisionServiceBinary @ local[0m
+[16:46:18]: ▸ [35m  ThailandEKYCResource: /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/Ekyc/FCIResources/ThailandEKYCResource @ local[0m
+[16:46:18]: ▸ [35m  FCIVisionMLVietnam: /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/Ekyc/FCIDependencies/ML/FCIVisionMLVietnam @ local[0m
+[16:46:18]: ▸ [35mresolved source packages: FCIVisionMLCore, FCISDKResource, PhilippinesEKYCResource, IndonesiaEKYCResource, EkycSDK, FCIVisionMLPhilippines, FCIVisionServiceBinary, ThailandEKYCResource, FCIVisionMLVietnam[0m
+[16:46:18]: [36m$ xcodebuild -showBuildSettings -workspace 119_ios/CASMobile.xcworkspace -scheme CASMobile 2>&1[0m
+
++-----------------------------------------------------------------------------+
+|                           [32mSummary for gym 2.238.0[0m                           |
++--------------------------------------+--------------------------------------+
+| workspace                            | 119_ios/CASMobile.xcworkspace        |
+| scheme                               | CASMobile                            |
+| clean                                | true                                 |
+| export_method                        | ad-hoc                               |
+| export_team_id                       | 3894P43295                           |
+| suppress_xcode_output                | true                                 |
+| output_directory                     | fastlane/build/119_t                 |
+| archive_path                         | fastlane/build/119_t/CASMobile.xcar  |
+|                                      | chive                                |
+| xcargs                               | -allowProvisioningUpdates            |
+| output_name                          | CASMobile                            |
+| silent                               | false                                |
+| skip_package_ipa                     | false                                |
+| skip_package_pkg                     | false                                |
+| build_path                           | /Users/solutionaltisss/Library/Deve  |
+|                                      | loper/Xcode/Archives/2026-09-16      |
+| result_bundle                        | false                                |
+| buildlog_path                        | ~/Library/Logs/gym                   |
+| destination                          | generic/platform=iOS                 |
+| xcodebuild_formatter                 | xcpretty                             |
+| build_timing_summary                 | false                                |
+| skip_profile_detection               | false                                |
+| xcodebuild_command                   | xcodebuild                           |
+| skip_package_dependencies_resolutio  | false                                |
+| n                                    |                                      |
+| disable_package_automatic_updates    | false                                |
+| skip_package_repository_fetches      | false                                |
+| use_system_scm                       | false                                |
+| generate_appstore_info               | false                                |
+| xcode_path                           | /Applications/Xcode.app              |
++--------------------------------------+--------------------------------------+
+
+[16:46:21]: [33mUsing xcpretty can result in missing some build errors and is slower than the preferred xcbeautify. See https://docs.fastlane.tools/best-practices/xcodebuild-formatters/ for more information.[0m
+[16:46:21]: [36m$ set -o pipefail && xcodebuild -workspace 119_ios/CASMobile.xcworkspace -scheme CASMobile -destination 'generic/platform=iOS' -archivePath fastlane/build/119_t/CASMobile.xcarchive -allowProvisioningUpdates clean archive | tee /Users/solutionaltisss/Library/Logs/gym/CASMobile-CASMobile.log | xcpretty > /dev/null[0m
+[16:50:45]: [32mSuccessfully stored the archive. You can find it in the Xcode Organizer.[0m
+[16:50:45]: [33mGenerated plist file with the following values:[0m
+[16:50:45]: ▸ [35m-----------------------------------------[0m
+[16:50:45]: ▸ [35m{[0m
+[16:50:45]: ▸ [35m  "method": "ad-hoc",[0m
+[16:50:45]: ▸ [35m  "teamID": "3894P43295"[0m
+[16:50:45]: ▸ [35m}[0m
+[16:50:45]: ▸ [35m-----------------------------------------[0m
+[16:50:45]: [36m$ /usr/bin/xcrun /opt/homebrew/Cellar/fastlane/2.238.0/libexec/gems/fastlane-2.238.0/gym/lib/assets/wrap_xcodebuild/xcbuild-safe.sh -exportArchive -exportOptionsPlist '/var/folders/yt/hgf3ky794sv643kdwn4x0kr40000gn/T/gym_config20260916-92825-8pnyra.plist' -archivePath fastlane/build/119_t/CASMobile.xcarchive -exportPath '/var/folders/yt/hgf3ky794sv643kdwn4x0kr40000gn/T/gym_output20260916-92825-55q94a' -allowProvisioningUpdates [0m
+[16:51:15]: Compressing 2 dSYM(s)
+[16:51:15]: [36m$ cd '/Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/fastlane/build/119_t/CASMobile.xcarchive/dSYMs' && zip -r '/Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/fastlane/build/119_t/CASMobile.app.dSYM.zip' *.dSYM[0m
+[16:51:18]: ▸ [35mupdating: CASMobile.app.dSYM/ (stored 0%)[0m
+[16:51:18]: ▸ [35mupdating: CASMobile.app.dSYM/Contents/ (stored 0%)[0m
+[16:51:18]: ▸ [35mupdating: CASMobile.app.dSYM/Contents/Resources/ (stored 0%)[0m
+[16:51:18]: ▸ [35mupdating: CASMobile.app.dSYM/Contents/Resources/Relocations/ (stored 0%)[0m
+[16:51:18]: ▸ [35mupdating: CASMobile.app.dSYM/Contents/Resources/Relocations/aarch64/ (stored 0%)[0m
+[16:51:18]: ▸ [35mupdating: CASMobile.app.dSYM/Contents/Resources/Relocations/aarch64/CASMobile.yml (deflated 89%)[0m
+[16:51:18]: ▸ [35mupdating: CASMobile.app.dSYM/Contents/Resources/DWARF/ (stored 0%)[0m
+[16:51:18]: ▸ [35mupdating: CASMobile.app.dSYM/Contents/Resources/DWARF/CASMobile (deflated 72%)[0m
+[16:51:18]: ▸ [35mupdating: CASMobile.app.dSYM/Contents/Resources/Swift/ (stored 0%)[0m
+[16:51:18]: ▸ [35mupdating: CASMobile.app.dSYM/Contents/Resources/Swift/aarch64/ (stored 0%)[0m
+[16:51:18]: ▸ [35mupdating: CASMobile.app.dSYM/Contents/Resources/Swift/aarch64/FCIVisionKit.swiftinterface (deflated 86%)[0m
+[16:51:18]: ▸ [35mupdating: CASMobile.app.dSYM/Contents/Info.plist (deflated 52%)[0m
+[16:51:18]: ▸ [35mupdating: OneSignalNotificationServiceExtension.appex.dSYM/ (stored 0%)[0m
+[16:51:18]: ▸ [35mupdating: OneSignalNotificationServiceExtension.appex.dSYM/Contents/ (stored 0%)[0m
+[16:51:18]: ▸ [35mupdating: OneSignalNotificationServiceExtension.appex.dSYM/Contents/Resources/ (stored 0%)[0m
+[16:51:18]: ▸ [35mupdating: OneSignalNotificationServiceExtension.appex.dSYM/Contents/Resources/Relocations/ (stored 0%)[0m
+[16:51:18]: ▸ [35mupdating: OneSignalNotificationServiceExtension.appex.dSYM/Contents/Resources/Relocations/aarch64/ (stored 0%)[0m
+[16:51:18]: ▸ [35mupdating: OneSignalNotificationServiceExtension.appex.dSYM/Contents/Resources/Relocations/aarch64/OneSignalNotificationServiceExtension.yml (deflated 76%)[0m
+[16:51:18]: ▸ [35mupdating: OneSignalNotificationServiceExtension.appex.dSYM/Contents/Resources/DWARF/ (stored 0%)[0m
+[16:51:18]: ▸ [35mupdating: OneSignalNotificationServiceExtension.appex.dSYM/Contents/Resources/DWARF/OneSignalNotificationServiceExtension (deflated 57%)[0m
+[16:51:18]: ▸ [35mupdating: OneSignalNotificationServiceExtension.appex.dSYM/Contents/Info.plist (deflated 52%)[0m
+[16:51:18]: ▸ [35m  adding: CASMobile.app.dSYM/Contents/Resources/Swift/aarch64/NFCReader.swiftinterface (deflated 84%)[0m
+
+[16:51:18]: [32mSuccessfully exported and compressed dSYM file[0m
+[16:51:18]: [32mSuccessfully exported and signed the ipa file:[0m
+[16:51:18]: /Users/solutionaltisss/mts-mobile-cross-platform/Sources/AMobile_V2/fastlane/build/119_t/CASMobile.ipa
+[16:51:18]: [32m✅ IPA đã build: build/119_t/CASMobile.ipa[0m
+[16:51:18]: 🏁 build_bot hoàn tất cho 119 (all)
+
++--------------------------------------------+
+|              [32mfastlane summary[0m              |
++------+-----------------------+-------------+
+| Step | Action                | Time (in s) |
++------+-----------------------+-------------+
+| 1    | default_platform      | 0           |
+| 2    | yarn prebuild 119 p   | 1           |
+|      | 3.9.99 $(date         |             |
+|      | +%Y%m%d.%H%M)         |             |
+| 3    | yarn prebuild 119 t   | 1           |
+|      | 3.9.99 20260916.1642  |             |
+| 4    | yarn                  | 9           |
+| 5    | clean                 | 4           |
+| 6    | app:assembleRelease   | 202         |
+| 7    | cd ../119_ios && pod  | 14          |
+|      | install && cd -       |             |
+| 8    | build_app             | 302         |
++------+-----------------------+-------------+
+
+[16:51:18]: [32mfastlane.tools just saved you 9 minutes! 🎉[0m
+
+#######################################################################
+# fastlane 2.240.1 is available. You are on 2.238.0.
+# You should use the latest version.
+# Please update using `fastlane update_fastlane`.
+#######################################################################
+
+[32m2.240.1 Improvements[0m
+* [gem] add cgi gem for Ruby 4 std removal (#30232) via Connor Tumbleson (@iBotPeaches)
+* [deliver] keep an explicitly set platform when a pkg is present (#30224) via Anand Hegde (@anandghegde)
+* [match] upload certs immediatly to storage to prevent desync of files (#30160) via Connor Tumbleson (@iBotPeaches)
+* security gem 0.3.0 integration (#30178) via Jerome Lacoste (@lacostej)
+* build: prevent locking androidpublisher_v3 to 0.99.0 (#30228) via Connor Tumbleson (@iBotPeaches)
+* [tests] Keep the Tempfile, not only its path (#30227) via Jerome Lacoste (@lacostej)
+* [tests] Stop four specs writing into the shared temp root (#30225) via Jerome Lacoste (@lacostej)
+* [tests] Restore the working directory structurally in two specs (#30221) via Jerome Lacoste (@lacostej)
+* [tests] Remove the fixed paths under /tmp from the test suite (#30220) via Jerome Lacoste (@lacostej)
+* build(deps): bump actions/upload-artifact from 4 to 7 (#30222) via dependabot[bot] (@dependabot[bot])
+
+[32m2.240.0 Improvements[0m
+* [fastlane_core] Fix for upload_to_testflight and altool - report failure, but upload succeeds (#30196) via Michal Šrůtek (@michalsrutek)
+* [ci] run full workflows on master as they stack (#30218) via Connor Tumbleson (@iBotPeaches)
+* chore: treat 'both' as 'all' for all 3 platforms (#30214) via Connor Tumbleson (@iBotPeaches)
+* [tests] Give each spec its own scratch directory instead of /tmp/fastlane (#30217) via Jerome Lacoste (@lacostej)
+* [tests] Stop a spec mutating the plist fixture another spec reads (#30215) via Jerome Lacoste (@lacostej)
+* [spaceship] Read the App Store Connect API key from where Apple keeps it now (#30206) via Jerome Lacoste (@lacostej)
+* [tests] Stop two spec files racing for the system clipboard (#30211) via Jerome Lacoste (@lacostej)
+* [spaceship] Say what actually went wrong fetching the App Store Connect API key (#30205) via Jerome Lacoste (@lacostej)
+* [core] Stop hardcoding /tmp where a real path is needed (#30209) via Jerome Lacoste (@lacostej)
+* Run the CI suite as several processes (#30202) via Jerome Lacoste (@lacostej)
+* Run the spec suite as several processes (#30191) via Jerome Lacoste (@lacostej)
+* [fastlane_core] Carry the pty exit status as a value rather than in $? (#30201) via Jerome Lacoste (@lacostej)
+* Stop two specs depending on process wide state another example populated (#30200) via Jerome Lacoste (@lacostej)
+* [spaceship] Use the system temporary directory instead of a literal /tmp (#30197) via Jerome Lacoste (@lacostej)
+* Stop two specs depending on files an earlier run left behind (#30195) via Jerome Lacoste (@lacostej)
+* Report the environment variables that escape the example that set them (#30194) via Jerome Lacoste (@lacostej)
+* Stop nine specs depending on what ran before them (#30193) via Jerome Lacoste (@lacostej)
+* Stop spaceship specs sharing clients and cached state (#30192) via Jerome Lacoste (@lacostej)
+* Stop specs depending on module level configuration another example left behind (#30190) via Jerome Lacoste (@lacostej)
+* build: move to Bundler 2.6.9 (#30185) via Connor Tumbleson (@iBotPeaches)
+* Define only the trainer fixture groups that apply to the current xcresulttool (#30183) via Jerome Lacoste (@lacostej)
+* Surface xcresulttool version detection failures instead of hiding them (#30182) via Jerome Lacoste (@lacostej)
+* Stop the pilot transporter specs querying the real Keychain (#30181) via Jerome Lacoste (@lacostej)
+* Fix flaky fastlane_pty_spec by applying the PTY flush workaround (#30180) via Jerome Lacoste (@lacostej)
+* [gym][scan][snapshot] Add disallow_xcodebuild_settings_lookup option (#30112) via Brett Best (@Brett-Best)
+* [gem] move to rubyzip v3 (#30176) via Connor Tumbleson (@iBotPeaches)
+* chore: update security gem to 0.2.0 (#30177) via Jerome Lacoste (@lacostej)
+* [ci] unset GEM_HOST_API_KEY for GHA publish (#30174) via Connor Tumbleson (@iBotPeaches)
+
+[32m2.239.0 Improvements[0m
+* [supply] list google play releases (#30000) via Tim Shedor (@tshedor)
+* [sigh] Fix duplicate prefix in application-identifier entitlement during resign (#30169) via Shubhransh Gupta (@shubhransh-gupta)
+* [Ruby] Ruby 3.1 is now the minimum (dropping Ruby 3.0) (#30120) via Connor Tumbleson (@iBotPeaches)
+* [deliver/pilot] support app coverage files (#30153) via Connor Tumbleson (@iBotPeaches)
+* [match] prevent leaking keys if invalid usage (#30161) via Connor Tumbleson (@iBotPeaches)
+* [meta] set pr template to drop reference to CircleCI (#30162) via Connor Tumbleson (@iBotPeaches)
+* [deliver] prevent duplicate image uploads (#30150) via Connor Tumbleson (@iBotPeaches)
+* [match] Remove command on failure to prevent secret exposure for git storage. (#30165) via Aleksandr B (@sozzjilly)
+* [pem] Add support for VoIP Services push certificates (#30166) via Rafael da Rosa Ferreira (@Rafinha-rf)
+* harden: detected non-static command inside system in... (#30147) via Anupam Mediratta (@anupamme)
+* [changelog_from_git_commits] Add optional argument to filter commits. (#14441) via Juan A. Romero (@rukano)
+* [sh_helper] fix output stripping - invalid byte sequence in UTF-8 (ArgumentError) (#20539) via Wendy Liga (@wendyliga)
+* [ci] move release workflows to Ruby 3.4 (#30155) via Connor Tumbleson (@iBotPeaches)
+* [gems] move to json 2.21.x (#30156) via Connor Tumbleson (@iBotPeaches)
+
+[32mTo see all new releases, open https://github.com/fastlane/fastlane/releases[0m
+
+[32mPlease update using `fastlane update_fastlane`[0m
