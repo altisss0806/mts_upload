@@ -1,0 +1,776 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b1220" />
+  <title>IPA Upload Portal</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #0b1220;
+      color: #e5edf8;
+      font-synthesis: none;
+    }
+    * { box-sizing: border-box; }
+    body { min-width: 0; min-height: 100dvh; margin: 0; background: radial-gradient(circle at top left, #172554, #0b1220 46rem); }
+    a, button, input { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid #93c5fd; outline-offset: 2px; }
+    .hidden { display: none !important; }
+    h1, h2, p { margin-top: 0; }
+    h2 { margin-bottom: 0; font-size: 18px; }
+    .eyebrow { margin: 0 0 8px; color: #93c5fd; font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    .meta { margin-bottom: 0; color: #94a3b8; font-size: 12px; line-height: 1.55; overflow-wrap: anywhere; }
+    .status { margin: 0; color: #94a3b8; font-size: 13px; line-height: 1.45; overflow-wrap: anywhere; }
+    .status[data-state="error"] { color: #fca5a5; }
+    .status[data-state="ok"] { color: #86efac; }
+    .button { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid #334155; border-radius: 10px; padding: 10px 14px; background: #172033; color: #dbeafe; font-size: 14px; font-weight: 700; text-align: center; text-decoration: none; cursor: pointer; }
+    .button.primary { border-color: transparent; background: #2563eb; color: #fff; box-shadow: 0 10px 24px -14px #2563eb; }
+    .button.danger { border-color: #7f1d1d; background: #2a1215; color: #fecaca; }
+    .button.small { min-height: 36px; padding: 6px 10px; font-size: 12px; }
+    .button:disabled { opacity: .55; cursor: not-allowed; }
+    .input { width: 100%; min-width: 0; min-height: 42px; border: 1px solid #3a4b65; border-radius: 9px; padding: 9px 11px; background: #0b1322; color: #f1f5f9; }
+    .input[type="file"] { padding: 8px; }
+    .qr-box { justify-self: center; width: max-content; margin: 0 auto; padding: 12px; border-radius: 12px; background: #fff; line-height: 0; }
+    .qr-box img, .qr-box canvas { width: 200px; height: 200px; }
+
+    .install-page { min-height: 100dvh; display: grid; place-items: center; padding: 24px; }
+    .install-card { width: min(100%, 600px); padding: clamp(20px, 5vw, 36px); border: 1px solid rgba(148, 163, 184, .25); border-radius: 20px; background: rgba(15, 23, 42, .86); box-shadow: 0 24px 60px rgba(0, 0, 0, .35); }
+    .install-card h1 { margin-bottom: 10px; font-size: clamp(25px, 6vw, 36px); line-height: 1.1; letter-spacing: -.025em; overflow-wrap: anywhere; }
+    .app-info { color: #cbd5e1; line-height: 1.55; }
+    .links { display: grid; gap: 10px; margin: 24px 0 16px; }
+    .install-card .qr-box { margin-bottom: 16px; }
+    .notice { margin-top: 20px; padding: 16px; border: 1px solid #334155; border-radius: 12px; background: rgba(30, 41, 59, .64); color: #cbd5e1; font-size: 14px; line-height: 1.55; }
+    .notice p { margin: 6px 0 0; }
+
+    .upload-page { width: min(100%, 1180px); min-height: 100dvh; margin: 0 auto; padding: clamp(12px, 3vw, 28px); }
+    .upload-header { margin-bottom: 16px; }
+    .upload-header h1 { margin-bottom: 6px; font-size: clamp(24px, 4vw, 34px); }
+    .upload-header p:last-child { margin-bottom: 0; color: #a9b9cf; font-size: 14px; line-height: 1.45; }
+    .upload-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 14px; align-items: start; }
+    .panel { display: grid; gap: 12px; min-width: 0; padding: 16px; border: 1px solid #29364b; border-radius: 14px; background: rgba(15, 23, 42, .9); box-shadow: 0 18px 46px rgba(0, 0, 0, .2); }
+    .field { display: grid; gap: 6px; min-width: 0; color: #dbeafe; font-size: 13px; font-weight: 700; }
+    .field-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    progress { width: 100%; height: 8px; accent-color: #2563eb; }
+    .copy-row { display: flex; gap: 8px; }
+    .list-heading { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding-top: 12px; border-top: 1px solid #29364b; }
+    .build-list { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+    .build-item { display: grid; gap: 8px; padding: 10px; border: 1px solid #29364b; border-radius: 10px; background: #0f1a2e; }
+    .build-item strong { color: #f8fafc; font-size: 14px; overflow-wrap: anywhere; }
+    .build-actions { display: flex; flex-wrap: wrap; gap: 6px; }
+    .empty-list { color: #94a3b8; font-size: 13px; line-height: 1.5; }
+    @media (max-width: 760px) {
+      .upload-layout { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 430px) {
+      .install-page { padding: 14px; }
+      .install-card { border-radius: 14px; }
+      .field-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="install-page hidden" id="install-page">
+    <section class="install-card" aria-labelledby="app-title">
+      <p class="eyebrow">IPA riêng</p>
+      <h1 id="app-title">Đang tải…</h1>
+      <p class="app-info" id="app-info">Đang lấy thông tin bản build…</p>
+      <div class="links" id="install-links"></div>
+      <div class="qr-box hidden" id="install-qr" aria-label="QR mở trang cài đặt"></div>
+      <p class="meta" id="install-meta"></p>
+      <div class="notice">
+        <strong>Hướng dẫn:</strong>
+        <p>Mở trang này bằng Safari trên iPhone/iPad, nhấn “Install iOS” và xác nhận để cài đặt.</p>
+        <p>Thiết bị phải nằm trong provisioning profile đã ký IPA (UDID với bản ad-hoc), nếu không iOS sẽ báo không cài được.</p>
+      </div>
+    </section>
+  </main>
+
+  <main class="upload-page hidden" id="upload-page" aria-labelledby="upload-title">
+    <header class="upload-header">
+      <p class="eyebrow">IPA riêng</p>
+      <h1 id="upload-title">Upload IPA</h1>
+      <p>Upload file .ipa (tối đa 100 MB) để có link cài đặt và QR. Mỗi IPA nằm trên một branch <code>ipa-*</code> riêng, không đụng GitHub Release hay branch main.</p>
+    </header>
+    <div class="upload-layout">
+      <form class="panel" id="upload-form" novalidate>
+        <label class="field">
+          <span>GitHub token (Contents: write trên mts_upload)</span>
+          <input class="input" id="upload-token" type="password" autocomplete="off" required />
+        </label>
+        <label class="field">
+          <span>File .ipa</span>
+          <input class="input" id="ipa-file" type="file" accept=".ipa" required />
+        </label>
+        <p class="status" id="ipa-detect" aria-live="polite">Chọn file để tự đọc tên app, Bundle ID và version.</p>
+        <div class="field-grid">
+          <label class="field"><span>Tên app</span><input class="input" id="ipa-name" maxlength="80" /></label>
+          <label class="field"><span>Bundle ID</span><input class="input" id="ipa-bundle" maxlength="155" required /></label>
+          <label class="field"><span>Version</span><input class="input" id="ipa-version" maxlength="40" /></label>
+          <label class="field"><span>Build</span><input class="input" id="ipa-build" maxlength="40" /></label>
+        </div>
+        <label class="field">
+          <span>Ghi chú</span>
+          <input class="input" id="ipa-note" maxlength="300" placeholder="VD: build test fix login cho QA" />
+        </label>
+        <button class="button primary" type="submit" id="upload-submit">Upload</button>
+        <progress class="hidden" id="upload-progress" max="1" value="0"></progress>
+        <p class="status" id="upload-status" aria-live="polite"></p>
+      </form>
+
+      <section class="panel" aria-labelledby="result-title">
+        <h2 id="result-title">QR cài đặt</h2>
+        <div class="qr-box hidden" id="result-qr" aria-label="QR cài đặt"></div>
+        <p class="meta" id="result-meta">Upload xong hoặc chọn một build bên dưới để hiện QR.</p>
+        <div class="copy-row hidden" id="result-link-row">
+          <input class="input" id="result-link" readonly aria-label="Link cài đặt" />
+          <button class="button" type="button" id="copy-result-link">Copy</button>
+        </div>
+        <div class="list-heading">
+          <h2>IPA đã upload</h2>
+          <button class="button small" type="button" id="reload-builds">Tải lại</button>
+        </div>
+        <ol class="build-list" id="build-list"></ol>
+      </section>
+    </div>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script>
+    (() => {
+      // Each upload is an orphan branch `ipa-<id>` holding app.ipa, manifest.plist and meta.json.
+      // Browsers cannot upload release assets (uploads.github.com has no CORS), but the Git
+      // Data API on api.github.com can, and raw.githubusercontent.com serves the files over HTTPS.
+      const GH_OWNER = 'altisss0806';
+      const GH_REPO = 'mts_upload';
+      const GITHUB_API = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}`;
+      const BRANCH_PREFIX = 'ipa-';
+      const ID_PATTERN = /^\d{8}-\d{6}-[a-z0-9]{4}$/;
+      const MAX_IPA_BYTES = 100 * 1024 * 1024; // Git blob limit
+      const LIST_LIMIT = 50;
+      const TOKEN_STORAGE_KEY = 'mtsIpaUploadToken';
+      const params = new URLSearchParams(location.search);
+      const buildId = (params.get('id') || '').trim();
+
+      if (buildId) {
+        document.getElementById('install-page').classList.remove('hidden');
+        startInstallPage(buildId);
+      } else {
+        document.getElementById('upload-page').classList.remove('hidden');
+        startUploadPage();
+      }
+
+      function installPageUrl(id) {
+        return `${location.origin}${location.pathname}?id=${encodeURIComponent(id)}`;
+      }
+
+      function detectPlatform() {
+        const ua = navigator.userAgent || '';
+        if (/android/i.test(ua)) return 'android';
+        if (/iphone|ipad|ipod/i.test(ua)) return 'ios';
+        // iPadOS reports a Macintosh UA but exposes multi-touch.
+        if (/macintosh/i.test(ua) && navigator.maxTouchPoints > 1) return 'ios';
+        return null;
+      }
+
+      function formatSize(bytes) {
+        if (!Number.isFinite(bytes)) return '';
+        if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
+        return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+      }
+
+      function formatDate(value) {
+        const date = value ? new Date(value) : null;
+        return date && !Number.isNaN(date.getTime())
+          ? date.toLocaleString('vi-VN', { dateStyle: 'short', timeStyle: 'short' })
+          : '';
+      }
+
+      function buildTitle(build) {
+        return `${build.name} ${build.version}${build.build ? ` (${build.build})` : ''}`;
+      }
+
+      function renderQr(container, text) {
+        container.innerHTML = '';
+        container.classList.remove('hidden');
+        if (typeof QRCode === 'function') {
+          try {
+            new QRCode(container, { text, width: 200, height: 200, correctLevel: QRCode.CorrectLevel.M });
+            return;
+          } catch (error) {
+            console.warn('QR render failed', error);
+          }
+        }
+        container.classList.add('hidden');
+      }
+
+      function setStatus(element, text, state = '') {
+        element.textContent = text;
+        element.dataset.state = state;
+      }
+
+      function readStoredToken() {
+        try { return localStorage.getItem(TOKEN_STORAGE_KEY) || ''; } catch { return ''; }
+      }
+
+      function storeToken(token) {
+        try { localStorage.setItem(TOKEN_STORAGE_KEY, token); } catch { /* storage unavailable */ }
+      }
+
+      function rawUrl(id, file) {
+        return `https://raw.githubusercontent.com/${GH_OWNER}/${GH_REPO}/${BRANCH_PREFIX}${id}/${file}`;
+      }
+
+      function githubError(status, data) {
+        const reasons = {
+          401: 'Token sai hoặc đã hết hạn',
+          403: 'Token không có quyền ghi repo mts_upload',
+          404: 'Token không có quyền ghi repo mts_upload',
+        };
+        const error = new Error(reasons[status] || data?.message || `GitHub trả về HTTP ${status}`);
+        error.status = status;
+        return error;
+      }
+
+      async function githubApi(path, { method = 'GET', token, body } = {}) {
+        const headers = { Accept: 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28' };
+        if (token) headers.Authorization = `Bearer ${token}`;
+        if (body) headers['Content-Type'] = 'application/json';
+        const response = await fetch(`${GITHUB_API}${path}`, {
+          method,
+          headers,
+          body: body ? JSON.stringify(body) : undefined,
+          cache: 'no-store',
+        });
+        const data = await response.json().catch(() => null);
+        if (!response.ok) throw githubError(response.status, data);
+        return data;
+      }
+
+      async function fetchBuildMeta(id) {
+        const response = await fetch(rawUrl(id, 'meta.json'), { cache: 'no-store' });
+        if (!response.ok) {
+          const error = new Error(`HTTP ${response.status}`);
+          error.status = response.status;
+          throw error;
+        }
+        return response.json();
+      }
+
+      // ---- Install page (?id=<build id>) ----
+
+      async function startInstallPage(id) {
+        const title = document.getElementById('app-title');
+        const info = document.getElementById('app-info');
+
+        let build;
+        try {
+          if (!ID_PATTERN.test(id)) throw Object.assign(new Error('ID không hợp lệ'), { status: 404 });
+          build = await fetchBuildMeta(id);
+        } catch (error) {
+          title.textContent = 'Không tìm thấy bản build';
+          info.textContent = error.status === 404
+            ? 'Link sai hoặc build đã bị xoá.'
+            : `Không tải được thông tin build: ${error.message}`;
+          return;
+        }
+
+        document.title = `${buildTitle(build)} · IPA`;
+        title.textContent = buildTitle(build);
+        const installLink = `itms-services://?action=download-manifest&url=${encodeURIComponent(rawUrl(id, 'manifest.plist'))}`;
+        const isIos = detectPlatform() === 'ios';
+        info.textContent = isIos
+          ? 'Nhấn Install iOS để bắt đầu cài đặt.'
+          : 'Quét QR bằng camera iPhone/iPad để mở trang cài đặt.';
+
+        const links = document.getElementById('install-links');
+        const installButton = document.createElement('a');
+        installButton.className = 'button primary';
+        installButton.textContent = 'Install iOS';
+        installButton.href = installLink;
+        const downloadButton = document.createElement('a');
+        downloadButton.className = 'button';
+        downloadButton.textContent = `Tải IPA (${formatSize(build.size)})`;
+        downloadButton.href = rawUrl(id, 'app.ipa');
+        links.append(installButton, downloadButton);
+
+        document.getElementById('install-meta').textContent = [
+          `Bundle ID: ${build.bundleId}`,
+          `Upload: ${formatDate(build.createdAt)}`,
+          build.note && `Ghi chú: ${build.note}`,
+        ].filter(Boolean).join(' • ');
+
+        if (isIos) {
+          setTimeout(() => {
+            try { window.location.href = installLink; } catch (error) { console.warn('Auto redirect failed', error); }
+          }, 250);
+        } else {
+          renderQr(document.getElementById('install-qr'), location.href);
+        }
+      }
+
+      // ---- Upload page ----
+
+      function startUploadPage() {
+        const form = document.getElementById('upload-form');
+        const tokenInput = document.getElementById('upload-token');
+        const fileInput = document.getElementById('ipa-file');
+        const detectStatus = document.getElementById('ipa-detect');
+        const fields = {
+          name: document.getElementById('ipa-name'),
+          bundleId: document.getElementById('ipa-bundle'),
+          version: document.getElementById('ipa-version'),
+          build: document.getElementById('ipa-build'),
+          note: document.getElementById('ipa-note'),
+        };
+        const submitButton = document.getElementById('upload-submit');
+        const progress = document.getElementById('upload-progress');
+        const uploadStatus = document.getElementById('upload-status');
+        const resultQr = document.getElementById('result-qr');
+        const resultMeta = document.getElementById('result-meta');
+        const resultLinkRow = document.getElementById('result-link-row');
+        const resultLink = document.getElementById('result-link');
+        const buildList = document.getElementById('build-list');
+
+        tokenInput.value = readStoredToken();
+
+        let fileReadSequence = 0;
+        fileInput.addEventListener('change', async () => {
+          const sequence = ++fileReadSequence;
+          const file = fileInput.files?.[0];
+          for (const key of ['name', 'bundleId', 'version', 'build']) fields[key].value = '';
+          if (!file) {
+            setStatus(detectStatus, 'Chọn file để tự đọc tên app, Bundle ID và version.');
+            return;
+          }
+          setStatus(detectStatus, 'Đang đọc Info.plist…');
+          try {
+            const plist = await readIpaInfo(file);
+            if (sequence !== fileReadSequence) return;
+            fields.name.value = plist.CFBundleDisplayName || plist.CFBundleName || '';
+            fields.bundleId.value = plist.CFBundleIdentifier || '';
+            fields.version.value = plist.CFBundleShortVersionString || '';
+            fields.build.value = plist.CFBundleVersion || '';
+            setStatus(detectStatus, `Đã đọc ${file.name} · ${formatSize(file.size)}`, 'ok');
+          } catch (error) {
+            if (sequence !== fileReadSequence) return;
+            setStatus(detectStatus, `Không tự đọc được Info.plist (${error.message}). Nhập Bundle ID thủ công.`, 'error');
+          }
+        });
+
+        form.addEventListener('submit', async (event) => {
+          event.preventDefault();
+          const token = tokenInput.value.trim();
+          const file = fileInput.files?.[0];
+          const meta = Object.fromEntries(Object.entries(fields).map(([key, input]) => [key, input.value.trim()]));
+          if (!token || !file || !meta.bundleId) {
+            setStatus(uploadStatus, 'Cần GitHub token, file .ipa và Bundle ID.', 'error');
+            return;
+          }
+          if (!/\.ipa$/i.test(file.name)) {
+            setStatus(uploadStatus, 'Chỉ nhận file .ipa.', 'error');
+            return;
+          }
+          if (file.size > MAX_IPA_BYTES) {
+            setStatus(uploadStatus, `File ${formatSize(file.size)} vượt giới hạn 100 MB của Git.`, 'error');
+            return;
+          }
+
+          submitButton.disabled = true;
+          progress.value = 0;
+          progress.classList.remove('hidden');
+          setStatus(uploadStatus, 'Đang upload…');
+          try {
+            const build = await uploadIpa(file, meta, token, (ratio, text) => {
+              progress.value = ratio;
+              setStatus(uploadStatus, text);
+            });
+            storeToken(token);
+            setStatus(uploadStatus, `Upload xong: ${buildTitle(build)}`, 'ok');
+            showResult(build);
+            fileInput.value = '';
+            for (const input of Object.values(fields)) input.value = '';
+            setStatus(detectStatus, 'Chọn file để tự đọc tên app, Bundle ID và version.');
+            loadBuilds();
+          } catch (error) {
+            setStatus(uploadStatus, `Upload lỗi: ${error.message}`, 'error');
+          } finally {
+            submitButton.disabled = false;
+            progress.classList.add('hidden');
+          }
+        });
+
+        document.getElementById('copy-result-link').addEventListener('click', () => copyText(resultLink.value));
+        document.getElementById('reload-builds').addEventListener('click', loadBuilds);
+        tokenInput.addEventListener('change', loadBuilds);
+
+        function showResult(build) {
+          const url = installPageUrl(build.id);
+          renderQr(resultQr, url);
+          resultMeta.textContent = [buildTitle(build), build.bundleId, formatSize(build.size), build.note].filter(Boolean).join(' • ');
+          resultLink.value = url;
+          resultLinkRow.classList.remove('hidden');
+        }
+
+        async function copyText(text) {
+          try {
+            await navigator.clipboard.writeText(text);
+          } catch {
+            resultLink.select();
+            document.execCommand('copy');
+          }
+        }
+
+        function showListMessage(text) {
+          buildList.innerHTML = '';
+          const item = document.createElement('li');
+          item.className = 'empty-list';
+          item.textContent = text;
+          buildList.appendChild(item);
+        }
+
+        async function loadBuilds() {
+          const token = tokenInput.value.trim();
+          showListMessage('Đang tải…');
+          try {
+            const refs = await githubApi(`/git/matching-refs/heads/${BRANCH_PREFIX}`, { token });
+            const ids = refs
+              .map((ref) => ref.ref.slice(`refs/heads/${BRANCH_PREFIX}`.length))
+              .filter((id) => ID_PATTERN.test(id))
+              .sort()
+              .reverse()
+              .slice(0, LIST_LIMIT);
+            const builds = await Promise.all(ids.map((id) => fetchBuildMeta(id).then((meta) => ({ ...meta, id })).catch(() => null)));
+            renderBuilds(builds.filter(Boolean), token);
+          } catch (error) {
+            showListMessage(`Không tải được danh sách: ${error.message}`);
+          }
+        }
+
+        function renderBuilds(builds, token) {
+          if (!builds.length) {
+            showListMessage('Chưa có IPA nào.');
+            return;
+          }
+          buildList.innerHTML = '';
+          for (const build of builds) {
+            const item = document.createElement('li');
+            item.className = 'build-item';
+            const title = document.createElement('strong');
+            title.textContent = buildTitle(build);
+            const meta = document.createElement('p');
+            meta.className = 'meta';
+            meta.textContent = [
+              formatDate(build.createdAt),
+              formatSize(build.size),
+              build.bundleId,
+              build.note,
+            ].filter(Boolean).join(' • ');
+
+            const actions = document.createElement('div');
+            actions.className = 'build-actions';
+            const qrButton = document.createElement('button');
+            qrButton.type = 'button';
+            qrButton.className = 'button small';
+            qrButton.textContent = 'QR';
+            qrButton.addEventListener('click', () => showResult(build));
+            const openLink = document.createElement('a');
+            openLink.className = 'button small';
+            openLink.textContent = 'Mở trang cài';
+            openLink.href = installPageUrl(build.id);
+            openLink.target = '_blank';
+            openLink.rel = 'noopener';
+            const deleteButton = document.createElement('button');
+            deleteButton.type = 'button';
+            deleteButton.className = 'button small danger';
+            deleteButton.textContent = 'Xoá';
+            deleteButton.addEventListener('click', async () => {
+              if (!token) {
+                alert('Cần GitHub token để xoá.');
+                return;
+              }
+              if (!confirm(`Xoá ${buildTitle(build)}? Link và QR của build này sẽ không dùng được nữa.`)) return;
+              deleteButton.disabled = true;
+              try {
+                await githubApi(`/git/refs/heads/${BRANCH_PREFIX}${build.id}`, { method: 'DELETE', token });
+                loadBuilds();
+              } catch (error) {
+                deleteButton.disabled = false;
+                alert(`Xoá lỗi: ${error.message}`);
+              }
+            });
+            actions.append(qrButton, openLink, deleteButton);
+            item.append(title, meta, actions);
+            buildList.appendChild(item);
+          }
+        }
+
+        loadBuilds();
+      }
+
+      async function uploadIpa(file, meta, token, onProgress) {
+        const id = newBuildId();
+        const record = {
+          id,
+          name: meta.name || file.name.replace(/\.ipa$/i, ''),
+          bundleId: meta.bundleId,
+          version: meta.version || '1.0',
+          build: meta.build,
+          note: meta.note,
+          fileName: file.name,
+          size: file.size,
+          createdAt: new Date().toISOString(),
+        };
+
+        onProgress(0, 'Đang đọc file…');
+        const base64 = await readBase64(file);
+        const body = new Blob(['{"encoding":"base64","content":"', base64, '"}'], { type: 'application/json' });
+        const blob = await createBlobWithProgress(body, token, (ratio) => {
+          onProgress(ratio * 0.95, `Đang upload IPA ${(ratio * 100).toFixed(1)}%`);
+        });
+
+        onProgress(0.97, 'Đang tạo branch…');
+        const tree = await githubApi('/git/trees', {
+          method: 'POST',
+          token,
+          body: {
+            tree: [
+              { path: 'app.ipa', mode: '100644', type: 'blob', sha: blob.sha },
+              { path: 'manifest.plist', mode: '100644', type: 'blob', content: buildManifest(record) },
+              { path: 'meta.json', mode: '100644', type: 'blob', content: `${JSON.stringify(record, null, 2)}\n` },
+            ],
+          },
+        });
+        // No parents: each build branch is an orphan, so deleting the branch drops the IPA
+        // without leaving it in any other branch's history.
+        const commit = await githubApi('/git/commits', {
+          method: 'POST',
+          token,
+          body: { message: `ipa: ${record.name} ${record.version} (${id})`, tree: tree.sha, parents: [] },
+        });
+        await githubApi('/git/refs', {
+          method: 'POST',
+          token,
+          body: { ref: `refs/heads/${BRANCH_PREFIX}${id}`, sha: commit.sha },
+        });
+        onProgress(1, 'Xong');
+        return record;
+      }
+
+      function newBuildId() {
+        const stamp = new Date().toISOString().replace(/[-:]/g, '').replace('T', '-').slice(0, 15);
+        const alphabet = 'abcdefghijkmnpqrstuvwxyz23456789';
+        const random = Array.from(crypto.getRandomValues(new Uint8Array(4)), (byte) => alphabet[byte & 31]).join('');
+        return `${stamp}-${random}`;
+      }
+
+      function readBase64(file) {
+        return new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = () => {
+            const dataUrl = String(reader.result);
+            resolve(dataUrl.slice(dataUrl.indexOf(',') + 1));
+          };
+          reader.onerror = () => reject(reader.error || new Error('Không đọc được file'));
+          reader.readAsDataURL(file);
+        });
+      }
+
+      // fetch() has no upload progress, so the large blob request goes through XHR.
+      function createBlobWithProgress(body, token, onRatio) {
+        return new Promise((resolve, reject) => {
+          const xhr = new XMLHttpRequest();
+          xhr.open('POST', `${GITHUB_API}/git/blobs`);
+          xhr.setRequestHeader('Accept', 'application/vnd.github+json');
+          xhr.setRequestHeader('X-GitHub-Api-Version', '2022-11-28');
+          xhr.setRequestHeader('Authorization', `Bearer ${token}`);
+          xhr.setRequestHeader('Content-Type', 'application/json');
+          xhr.upload.onprogress = (event) => {
+            if (event.lengthComputable) onRatio(event.loaded / event.total);
+          };
+          xhr.onload = () => {
+            let data = null;
+            try { data = JSON.parse(xhr.responseText); } catch { /* non-JSON error body */ }
+            if (xhr.status >= 200 && xhr.status < 300 && data?.sha) {
+              resolve(data);
+              return;
+            }
+            reject(githubError(xhr.status, data));
+          };
+          xhr.onerror = () => reject(new Error('Mất kết nối khi upload lên GitHub'));
+          xhr.send(body);
+        });
+      }
+
+      function escapeXml(value) {
+        return String(value ?? '').replace(/[<>&'"]/g, (char) => ({
+          '<': '&lt;', '>': '&gt;', '&': '&amp;', "'": '&apos;', '"': '&quot;',
+        })[char]);
+      }
+
+      function buildManifest(record) {
+        return `<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>items</key>
+  <array>
+    <dict>
+      <key>assets</key>
+      <array>
+        <dict>
+          <key>kind</key>
+          <string>software-package</string>
+          <key>url</key>
+          <string>${escapeXml(rawUrl(record.id, 'app.ipa'))}</string>
+        </dict>
+      </array>
+      <key>metadata</key>
+      <dict>
+        <key>bundle-identifier</key>
+        <string>${escapeXml(record.bundleId)}</string>
+        <key>bundle-version</key>
+        <string>${escapeXml(record.version)}</string>
+        <key>kind</key>
+        <string>software</string>
+        <key>title</key>
+        <string>${escapeXml(record.name)}</string>
+      </dict>
+    </dict>
+  </array>
+</dict>
+</plist>
+`;
+      }
+
+      // ---- IPA metadata: read Payload/*.app/Info.plist straight from the zip ----
+
+      async function readIpaInfo(file) {
+        const entry = await findZipEntry(file, /^Payload\/[^/]+\.app\/Info\.plist$/);
+        if (!entry) throw new Error('không thấy Payload/*.app/Info.plist');
+        return parsePlist(await readZipEntry(file, entry));
+      }
+
+      async function findZipEntry(file, pattern) {
+        // End of central directory record: 22 bytes plus an optional comment of up to 64 KB.
+        const tailStart = Math.max(0, file.size - 65557);
+        const tail = new DataView(await file.slice(tailStart).arrayBuffer());
+        let eocd = -1;
+        for (let i = tail.byteLength - 22; i >= 0; i -= 1) {
+          if (tail.getUint32(i, true) === 0x06054b50) { eocd = i; break; }
+        }
+        if (eocd < 0) throw new Error('file không phải zip/ipa hợp lệ');
+        let count = tail.getUint16(eocd + 10, true);
+        let cdSize = tail.getUint32(eocd + 12, true);
+        let cdOffset = tail.getUint32(eocd + 16, true);
+        if (count === 0xffff || cdSize === 0xffffffff || cdOffset === 0xffffffff) {
+          const locator = eocd - 20;
+          if (locator < 0 || tail.getUint32(locator, true) !== 0x07064b50) throw new Error('ZIP64 không hợp lệ');
+          const zip64Offset = Number(tail.getBigUint64(locator + 8, true));
+          const zip64 = new DataView(await file.slice(zip64Offset, zip64Offset + 56).arrayBuffer());
+          count = Number(zip64.getBigUint64(32, true));
+          cdSize = Number(zip64.getBigUint64(40, true));
+          cdOffset = Number(zip64.getBigUint64(48, true));
+        }
+
+        const directory = await file.slice(cdOffset, cdOffset + cdSize).arrayBuffer();
+        const view = new DataView(directory);
+        const decoder = new TextDecoder();
+        for (let pos = 0, index = 0; index < count && pos + 46 <= view.byteLength; index += 1) {
+          if (view.getUint32(pos, true) !== 0x02014b50) break;
+          const nameLength = view.getUint16(pos + 28, true);
+          const extraLength = view.getUint16(pos + 30, true);
+          const commentLength = view.getUint16(pos + 32, true);
+          const name = decoder.decode(new Uint8Array(directory, pos + 46, nameLength));
+          if (pattern.test(name)) {
+            return {
+              method: view.getUint16(pos + 10, true),
+              compressedSize: view.getUint32(pos + 20, true),
+              localOffset: view.getUint32(pos + 42, true),
+            };
+          }
+          pos += 46 + nameLength + extraLength + commentLength;
+        }
+        return null;
+      }
+
+      async function readZipEntry(file, entry) {
+        const header = new DataView(await file.slice(entry.localOffset, entry.localOffset + 30).arrayBuffer());
+        if (header.getUint32(0, true) !== 0x04034b50) throw new Error('zip local header lỗi');
+        const start = entry.localOffset + 30 + header.getUint16(26, true) + header.getUint16(28, true);
+        const data = file.slice(start, start + entry.compressedSize);
+        if (entry.method === 0) return new Uint8Array(await data.arrayBuffer());
+        if (entry.method !== 8 || typeof DecompressionStream !== 'function') {
+          throw new Error('trình duyệt không giải nén được Info.plist');
+        }
+        const stream = data.stream().pipeThrough(new DecompressionStream('deflate-raw'));
+        return new Uint8Array(await new Response(stream).arrayBuffer());
+      }
+
+      function parsePlist(bytes) {
+        if (new TextDecoder().decode(bytes.subarray(0, 8)) === 'bplist00') return parseBinaryPlist(bytes);
+        const doc = new DOMParser().parseFromString(new TextDecoder().decode(bytes), 'application/xml');
+        const dict = doc.querySelector('plist > dict');
+        if (!dict) throw new Error('Info.plist không đọc được');
+        const result = {};
+        const children = Array.from(dict.children);
+        for (let i = 0; i < children.length - 1; i += 1) {
+          if (children[i].tagName === 'key' && children[i + 1].tagName === 'string') {
+            result[children[i].textContent] = children[i + 1].textContent;
+          }
+        }
+        return result;
+      }
+
+      function parseBinaryPlist(bytes) {
+        const view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
+        const trailer = bytes.byteLength - 32;
+        const offsetSize = view.getUint8(trailer + 6);
+        const refSize = view.getUint8(trailer + 7);
+        const objectCount = Number(view.getBigUint64(trailer + 8));
+        const topObject = Number(view.getBigUint64(trailer + 16));
+        const tableOffset = Number(view.getBigUint64(trailer + 24));
+        const latin1 = new TextDecoder('latin1');
+        const utf16 = new TextDecoder('utf-16be');
+        const readUInt = (pos, size) => {
+          let value = 0;
+          for (let i = 0; i < size; i += 1) value = value * 256 + view.getUint8(pos + i);
+          return value;
+        };
+        const lengthAt = (pos, info) => {
+          if (info !== 0xf) return [info, pos + 1];
+          const size = 1 << (view.getUint8(pos + 1) & 0xf);
+          return [readUInt(pos + 2, size), pos + 2 + size];
+        };
+        const parse = (ref, depth) => {
+          if (depth > 32 || ref >= objectCount) throw new Error('bplist lỗi');
+          const pos = readUInt(tableOffset + ref * offsetSize, offsetSize);
+          const marker = view.getUint8(pos);
+          const type = marker >> 4;
+          const info = marker & 0xf;
+          if (type === 0x0) return info === 0x9 ? true : (info === 0x8 ? false : null);
+          if (type === 0x1) return readUInt(pos + 1, 1 << info);
+          const [length, start] = lengthAt(pos, info);
+          if (type === 0x5) return latin1.decode(bytes.subarray(start, start + length));
+          if (type === 0x6) return utf16.decode(bytes.subarray(start, start + length * 2));
+          if (type === 0xa) {
+            return Array.from({ length }, (_, i) => parse(readUInt(start + i * refSize, refSize), depth + 1));
+          }
+          if (type === 0xd) {
+            const result = {};
+            for (let i = 0; i < length; i += 1) {
+              const key = parse(readUInt(start + i * refSize, refSize), depth + 1);
+              result[key] = parse(readUInt(start + (length + i) * refSize, refSize), depth + 1);
+            }
+            return result;
+          }
+          return null; // real, date, data, uid: not needed for app metadata
+        };
+        return parse(topObject, 0);
+      }
+    })();
+  </script>
+</body>
+</html>
