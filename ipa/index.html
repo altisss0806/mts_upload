@@ -107,12 +107,12 @@
     <header class="upload-header">
       <p class="eyebrow">IPA riêng</p>
       <h1 id="upload-title">Upload IPA</h1>
-      <p>Kéo thả file .ipa (tối đa 100 MB) để có link cài đặt và QR. Mỗi IPA nằm trên một branch <code>ipa-*</code> riêng, không đụng GitHub Release hay branch main.</p>
+      <p>Kéo thả file .ipa (tối đa 500 MB) để có link cài đặt và QR. Mỗi Bundle ID chỉ giữ 1 IPA: upload bản mới sẽ đè bản cũ, link và QR giữ nguyên.</p>
     </header>
     <form class="upload-layout" id="upload-form" novalidate>
       <section class="panel" aria-label="Thông tin app">
         <label class="field">
-          <span>GitHub token (Contents: write trên mts_upload)</span>
+          <span>Upload token</span>
           <input class="input" id="upload-token" type="password" autocomplete="off" required />
         </label>
         <label class="field"><span>Tên app</span><input class="input" id="ipa-name" maxlength="80" /></label>
@@ -134,7 +134,7 @@
             <path d="M12 15V3" /><path d="m7 8 5-5 5 5" /><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3" />
           </svg>
           <span class="drop-title" id="drop-title">Kéo thả file .ipa vào đây</span>
-          <span class="drop-hint" id="drop-hint">hoặc bấm để chọn file · tối đa 100 MB</span>
+          <span class="drop-hint" id="drop-hint">hoặc bấm để chọn file · tối đa 500 MB</span>
           <span class="status" id="ipa-detect" aria-live="polite">Tên app, Bundle ID và version sẽ được đọc tự động.</span>
         </label>
         <div class="upload-actions">
@@ -167,19 +167,21 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
   <script>
     (() => {
-      // Each upload is an orphan branch `ipa-<id>` holding app.ipa, manifest.plist and meta.json.
-      // Browsers cannot upload release assets (uploads.github.com has no CORS), but the Git
-      // Data API on api.github.com can, and raw.githubusercontent.com serves the files over HTTPS.
-      const GH_OWNER = 'altisss0806';
-      const GH_REPO = 'mts_upload';
-      const GITHUB_API = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}`;
-      const BRANCH_PREFIX = 'ipa-';
-      const ID_PATTERN = /^\d{8}-\d{6}-[a-z0-9]{4}$/;
-      const MAX_IPA_BYTES = 100 * 1024 * 1024; // Git blob limit
-      const LIST_LIMIT = 50;
-      const TOKEN_STORAGE_KEY = 'mtsIpaUploadToken';
+      // IPA upload API (CICD_Online/ipa-upload-server) behind nginx on devops.altisss.vn.
+      // It keeps one build per bundle ID, so the build ID is the bundle ID.
+      const API_BASE = 'https://devops.altisss.vn/mts-upload';
+      const ID_PATTERN = /^[A-Za-z0-9][A-Za-z0-9.-]{0,154}$/;
+      const MAX_IPA_BYTES = 500 * 1024 * 1024;
+      const TOKEN_STORAGE_KEY = 'mtsIpaApiToken';
       const params = new URLSearchParams(location.search);
       const buildId = (params.get('id') || '').trim();
+
+      // A shared link like .../ipa/#token=<UPLOAD_TOKEN> stores the token once, then drops it from the URL.
+      const hashToken = (new URLSearchParams(location.hash.slice(1)).get('token') || '').trim();
+      if (hashToken) {
+        storeToken(hashToken);
+        history.replaceState(null, '', `${location.pathname}${location.search}`);
+      }
 
       if (buildId) {
         document.getElementById('install-page').classList.remove('hidden');
@@ -246,44 +248,18 @@
         try { localStorage.setItem(TOKEN_STORAGE_KEY, token); } catch { /* storage unavailable */ }
       }
 
-      function rawUrl(id, file) {
-        return `https://raw.githubusercontent.com/${GH_OWNER}/${GH_REPO}/${BRANCH_PREFIX}${id}/${file}`;
+      function apiError(status, data) {
+        const message = status === 401 ? 'Sai upload token' : (data && data.error) || `Server trả về HTTP ${status}`;
+        return Object.assign(new Error(message), { status });
       }
 
-      function githubError(status, data) {
-        const reasons = {
-          401: 'Token sai hoặc đã hết hạn',
-          403: 'Token không có quyền ghi repo mts_upload',
-          404: 'Token không có quyền ghi repo mts_upload',
-        };
-        const error = new Error(reasons[status] || data?.message || `GitHub trả về HTTP ${status}`);
-        error.status = status;
-        return error;
-      }
-
-      async function githubApi(path, { method = 'GET', token, body } = {}) {
-        const headers = { Accept: 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28' };
+      async function api(path, { method = 'GET', token } = {}) {
+        const headers = {};
         if (token) headers.Authorization = `Bearer ${token}`;
-        if (body) headers['Content-Type'] = 'application/json';
-        const response = await fetch(`${GITHUB_API}${path}`, {
-          method,
-          headers,
-          body: body ? JSON.stringify(body) : undefined,
-          cache: 'no-store',
-        });
+        const response = await fetch(`${API_BASE}${path}`, { method, headers, cache: 'no-store' });
         const data = await response.json().catch(() => null);
-        if (!response.ok) throw githubError(response.status, data);
+        if (!response.ok) throw apiError(response.status, data);
         return data;
-      }
-
-      async function fetchBuildMeta(id) {
-        const response = await fetch(rawUrl(id, 'meta.json'), { cache: 'no-store' });
-        if (!response.ok) {
-          const error = new Error(`HTTP ${response.status}`);
-          error.status = response.status;
-          throw error;
-        }
-        return response.json();
       }
 
       // ---- Install page (?id=<build id>) ----
@@ -295,7 +271,7 @@
         let build;
         try {
           if (!ID_PATTERN.test(id)) throw Object.assign(new Error('ID không hợp lệ'), { status: 404 });
-          build = await fetchBuildMeta(id);
+          build = await api(`/api/builds/${encodeURIComponent(id)}`);
         } catch (error) {
           title.textContent = 'Không tìm thấy bản build';
           info.textContent = error.status === 404
@@ -306,7 +282,7 @@
 
         document.title = `${buildTitle(build)} · IPA`;
         title.textContent = buildTitle(build);
-        const installLink = `itms-services://?action=download-manifest&url=${encodeURIComponent(rawUrl(id, 'manifest.plist'))}`;
+        const installLink = build.installUrl;
         const isIos = detectPlatform() === 'ios';
         info.textContent = isIos
           ? 'Nhấn Install iOS để bắt đầu cài đặt.'
@@ -320,7 +296,7 @@
         const downloadButton = document.createElement('a');
         downloadButton.className = 'button';
         downloadButton.textContent = `Tải IPA (${formatSize(build.size)})`;
-        downloadButton.href = rawUrl(id, 'app.ipa');
+        downloadButton.href = build.ipaUrl;
         links.append(installButton, downloadButton);
 
         document.getElementById('install-meta').textContent = [
@@ -366,13 +342,19 @@
 
         tokenInput.value = readStoredToken();
         let uploading = false;
+        let currentBuilds = [];
+
+        function replacementNote(bundleId) {
+          const existing = currentBuilds.find((build) => build.bundleId === bundleId);
+          return existing ? `sẽ thay bản ${existing.version}${existing.build ? ` (${existing.build})` : ''} đang có` : '';
+        }
 
         function renderDropzone(file) {
           dropzone.classList.toggle('has-file', Boolean(file));
           dropTitle.textContent = file ? file.name : 'Kéo thả file .ipa vào đây';
           dropHint.textContent = file
             ? `${formatSize(file.size)} · bấm hoặc kéo file khác để đổi`
-            : 'hoặc bấm để chọn file · tối đa 100 MB';
+            : 'hoặc bấm để chọn file · tối đa 500 MB';
           if (!file) setStatus(detectStatus, 'Tên app, Bundle ID và version sẽ được đọc tự động.');
         }
 
@@ -392,7 +374,7 @@
             fields.version.value = plist.CFBundleShortVersionString || '';
             fields.build.value = plist.CFBundleVersion || '';
             const version = [fields.version.value, fields.build.value && `(${fields.build.value})`].filter(Boolean).join(' ');
-            setStatus(detectStatus, [fields.name.value, version, fields.bundleId.value].filter(Boolean).join(' · '), 'ok');
+            setStatus(detectStatus, [fields.name.value, version, fields.bundleId.value, replacementNote(fields.bundleId.value)].filter(Boolean).join(' · '), 'ok');
           } catch (error) {
             if (sequence !== fileReadSequence) return;
             setStatus(detectStatus, `Không tự đọc được Info.plist (${error.message}). Nhập Bundle ID thủ công.`, 'error');
@@ -441,7 +423,7 @@
           const file = fileInput.files?.[0];
           const meta = Object.fromEntries(Object.entries(fields).map(([key, input]) => [key, input.value.trim()]));
           const missing = [
-            !token && { label: 'GitHub token', input: tokenInput },
+            !token && { label: 'upload token', input: tokenInput },
             !file && { label: 'file .ipa' },
             !meta.bundleId && { label: 'Bundle ID', input: fields.bundleId },
           ].filter(Boolean);
@@ -449,7 +431,7 @@
             for (const { input } of missing) input?.setAttribute('aria-invalid', 'true');
             missing.find(({ input }) => input)?.input.focus();
             setStatus(uploadStatus, `Thiếu ${missing.map(({ label }) => label).join(', ')}.${!token
-              ? ' Tạo token tại GitHub → Settings → Developer settings → Fine-grained tokens (repo mts_upload, Contents: Read and write).'
+              ? ' Token là UPLOAD_TOKEN của server, hỏi người quản trị.'
               : ''}`, 'error');
             return;
           }
@@ -458,7 +440,7 @@
             return;
           }
           if (file.size > MAX_IPA_BYTES) {
-            setStatus(uploadStatus, `File ${formatSize(file.size)} vượt giới hạn 100 MB của Git.`, 'error');
+            setStatus(uploadStatus, `File ${formatSize(file.size)} vượt giới hạn 500 MB.`, 'error');
             return;
           }
 
@@ -475,7 +457,10 @@
               setStatus(uploadStatus, text);
             });
             storeToken(token);
-            setStatus(uploadStatus, `Upload xong: ${buildTitle(build)}`, 'ok');
+            const replaced = build.replaced
+              ? `, đã thay bản ${build.replaced.version}${build.replaced.build ? ` (${build.replaced.build})` : ''}`
+              : '';
+            setStatus(uploadStatus, `Upload xong: ${buildTitle(build)}${replaced}`, 'ok');
             showResult(build);
             fileInput.value = '';
             for (const input of Object.values(fields)) input.value = '';
@@ -528,17 +513,17 @@
 
         async function loadBuilds() {
           const token = tokenInput.value.trim();
+          if (!token) {
+            currentBuilds = [];
+            showListMessage('Nhập upload token để xem danh sách.');
+            return;
+          }
           showListMessage('Đang tải…');
           try {
-            const refs = await githubApi(`/git/matching-refs/heads/${BRANCH_PREFIX}`, { token });
-            const ids = refs
-              .map((ref) => ref.ref.slice(`refs/heads/${BRANCH_PREFIX}`.length))
-              .filter((id) => ID_PATTERN.test(id))
-              .sort()
-              .reverse()
-              .slice(0, LIST_LIMIT);
-            const builds = await Promise.all(ids.map((id) => fetchBuildMeta(id).then((meta) => ({ ...meta, id })).catch(() => null)));
-            renderBuilds(builds.filter(Boolean), token);
+            const { builds } = await api('/api/builds', { token });
+            storeToken(token);
+            currentBuilds = builds || [];
+            renderBuilds(currentBuilds, token);
           } catch (error) {
             showListMessage(`Không tải được danh sách: ${error.message}`);
           }
@@ -583,13 +568,13 @@
             deleteButton.textContent = 'Xoá';
             deleteButton.addEventListener('click', async () => {
               if (!token) {
-                alert('Cần GitHub token để xoá.');
+                alert('Cần upload token để xoá.');
                 return;
               }
               if (!confirm(`Xoá ${buildTitle(build)}? Link và QR của build này sẽ không dùng được nữa.`)) return;
               deleteButton.disabled = true;
               try {
-                await githubApi(`/git/refs/heads/${BRANCH_PREFIX}${build.id}`, { method: 'DELETE', token });
+                await api(`/api/builds/${encodeURIComponent(build.id)}`, { method: 'DELETE', token });
                 loadBuilds();
               } catch (error) {
                 deleteButton.disabled = false;
@@ -605,139 +590,37 @@
         loadBuilds();
       }
 
-      async function uploadIpa(file, meta, token, onProgress) {
-        const id = newBuildId();
-        const record = {
-          id,
-          name: meta.name || file.name.replace(/\.ipa$/i, ''),
-          bundleId: meta.bundleId,
-          version: meta.version || '1.0',
-          build: meta.build,
-          note: meta.note,
-          fileName: file.name,
-          size: file.size,
-          createdAt: new Date().toISOString(),
-        };
-
-        onProgress(0, 'Đang đọc file…');
-        const base64 = await readBase64(file);
-        const body = new Blob(['{"encoding":"base64","content":"', base64, '"}'], { type: 'application/json' });
-        const blob = await createBlobWithProgress(body, token, (ratio) => {
-          onProgress(ratio * 0.95, `Đang upload IPA ${(ratio * 100).toFixed(1)}%`);
-        });
-
-        onProgress(0.97, 'Đang tạo branch…');
-        const tree = await githubApi('/git/trees', {
-          method: 'POST',
-          token,
-          body: {
-            tree: [
-              { path: 'app.ipa', mode: '100644', type: 'blob', sha: blob.sha },
-              { path: 'manifest.plist', mode: '100644', type: 'blob', content: buildManifest(record) },
-              { path: 'meta.json', mode: '100644', type: 'blob', content: `${JSON.stringify(record, null, 2)}\n` },
-            ],
-          },
-        });
-        // No parents: each build branch is an orphan, so deleting the branch drops the IPA
-        // without leaving it in any other branch's history.
-        const commit = await githubApi('/git/commits', {
-          method: 'POST',
-          token,
-          body: { message: `ipa: ${record.name} ${record.version} (${id})`, tree: tree.sha, parents: [] },
-        });
-        await githubApi('/git/refs', {
-          method: 'POST',
-          token,
-          body: { ref: `refs/heads/${BRANCH_PREFIX}${id}`, sha: commit.sha },
-        });
-        onProgress(1, 'Xong');
-        return record;
-      }
-
-      function newBuildId() {
-        const stamp = new Date().toISOString().replace(/[-:]/g, '').replace('T', '-').slice(0, 15);
-        const alphabet = 'abcdefghijkmnpqrstuvwxyz23456789';
-        const random = Array.from(crypto.getRandomValues(new Uint8Array(4)), (byte) => alphabet[byte & 31]).join('');
-        return `${stamp}-${random}`;
-      }
-
-      function readBase64(file) {
-        return new Promise((resolve, reject) => {
-          const reader = new FileReader();
-          reader.onload = () => {
-            const dataUrl = String(reader.result);
-            resolve(dataUrl.slice(dataUrl.indexOf(',') + 1));
-          };
-          reader.onerror = () => reject(reader.error || new Error('Không đọc được file'));
-          reader.readAsDataURL(file);
-        });
-      }
-
-      // fetch() has no upload progress, so the large blob request goes through XHR.
-      function createBlobWithProgress(body, token, onRatio) {
+      // The body is the raw .ipa; the server re-reads Info.plist, and the edited fields go in the
+      // query string to override it.
+      function uploadIpa(file, meta, token, onProgress) {
+        const query = new URLSearchParams({ fileName: file.name });
+        for (const [key, value] of Object.entries(meta)) {
+          if (value) query.set(key, value);
+        }
         return new Promise((resolve, reject) => {
           const xhr = new XMLHttpRequest();
-          xhr.open('POST', `${GITHUB_API}/git/blobs`);
-          xhr.setRequestHeader('Accept', 'application/vnd.github+json');
-          xhr.setRequestHeader('X-GitHub-Api-Version', '2022-11-28');
+          xhr.open('POST', `${API_BASE}/api/builds?${query}`);
           xhr.setRequestHeader('Authorization', `Bearer ${token}`);
-          xhr.setRequestHeader('Content-Type', 'application/json');
+          xhr.setRequestHeader('Content-Type', 'application/octet-stream');
           xhr.upload.onprogress = (event) => {
-            if (event.lengthComputable) onRatio(event.loaded / event.total);
+            if (!event.lengthComputable) return;
+            const ratio = event.loaded / event.total;
+            onProgress(ratio * 0.98, `Đang upload ${(ratio * 100).toFixed(1)}%`);
           };
+          xhr.upload.onload = () => onProgress(0.99, 'Server đang xử lý…');
           xhr.onload = () => {
             let data = null;
             try { data = JSON.parse(xhr.responseText); } catch { /* non-JSON error body */ }
-            if (xhr.status >= 200 && xhr.status < 300 && data?.sha) {
+            if (xhr.status >= 200 && xhr.status < 300 && data && data.id) {
+              onProgress(1, 'Xong');
               resolve(data);
               return;
             }
-            reject(githubError(xhr.status, data));
+            reject(apiError(xhr.status, data));
           };
-          xhr.onerror = () => reject(new Error('Mất kết nối khi upload lên GitHub'));
-          xhr.send(body);
+          xhr.onerror = () => reject(new Error('Mất kết nối khi upload'));
+          xhr.send(file);
         });
-      }
-
-      function escapeXml(value) {
-        return String(value ?? '').replace(/[<>&'"]/g, (char) => ({
-          '<': '&lt;', '>': '&gt;', '&': '&amp;', "'": '&apos;', '"': '&quot;',
-        })[char]);
-      }
-
-      function buildManifest(record) {
-        return `<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-  <key>items</key>
-  <array>
-    <dict>
-      <key>assets</key>
-      <array>
-        <dict>
-          <key>kind</key>
-          <string>software-package</string>
-          <key>url</key>
-          <string>${escapeXml(rawUrl(record.id, 'app.ipa'))}</string>
-        </dict>
-      </array>
-      <key>metadata</key>
-      <dict>
-        <key>bundle-identifier</key>
-        <string>${escapeXml(record.bundleId)}</string>
-        <key>bundle-version</key>
-        <string>${escapeXml(record.version)}</string>
-        <key>kind</key>
-        <string>software</string>
-        <key>title</key>
-        <string>${escapeXml(record.name)}</string>
-      </dict>
-    </dict>
-  </array>
-</dict>
-</plist>
-`;
       }
 
       // ---- IPA metadata: read Payload/*.app/Info.plist straight from the zip ----
