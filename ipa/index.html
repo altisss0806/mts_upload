@@ -111,10 +111,6 @@
     </header>
     <form class="upload-layout" id="upload-form" novalidate>
       <section class="panel" aria-label="Thông tin app">
-        <label class="field">
-          <span>Upload token</span>
-          <input class="input" id="upload-token" type="password" autocomplete="off" required />
-        </label>
         <label class="field"><span>Tên app</span><input class="input" id="ipa-name" maxlength="80" /></label>
         <label class="field"><span>Bundle ID</span><input class="input" id="ipa-bundle" maxlength="155" required /></label>
         <div class="field-grid">
@@ -172,16 +168,8 @@
       const API_BASE = 'https://devops.altisss.vn/mts-upload';
       const ID_PATTERN = /^[A-Za-z0-9][A-Za-z0-9.-]{0,154}$/;
       const MAX_IPA_BYTES = 500 * 1024 * 1024;
-      const TOKEN_STORAGE_KEY = 'mtsIpaApiToken';
       const params = new URLSearchParams(location.search);
       const buildId = (params.get('id') || '').trim();
-
-      // A shared link like .../ipa/#token=<UPLOAD_TOKEN> stores the token once, then drops it from the URL.
-      const hashToken = (new URLSearchParams(location.hash.slice(1)).get('token') || '').trim();
-      if (hashToken) {
-        storeToken(hashToken);
-        history.replaceState(null, '', `${location.pathname}${location.search}`);
-      }
 
       if (buildId) {
         document.getElementById('install-page').classList.remove('hidden');
@@ -240,23 +228,13 @@
         element.dataset.state = state;
       }
 
-      function readStoredToken() {
-        try { return localStorage.getItem(TOKEN_STORAGE_KEY) || ''; } catch { return ''; }
-      }
-
-      function storeToken(token) {
-        try { localStorage.setItem(TOKEN_STORAGE_KEY, token); } catch { /* storage unavailable */ }
-      }
-
       function apiError(status, data) {
-        const message = status === 401 ? 'Sai upload token' : (data && data.error) || `Server trả về HTTP ${status}`;
+        const message = (data && data.error) || `Server trả về HTTP ${status}`;
         return Object.assign(new Error(message), { status });
       }
 
-      async function api(path, { method = 'GET', token } = {}) {
-        const headers = {};
-        if (token) headers.Authorization = `Bearer ${token}`;
-        const response = await fetch(`${API_BASE}${path}`, { method, headers, cache: 'no-store' });
+      async function api(path, { method = 'GET' } = {}) {
+        const response = await fetch(`${API_BASE}${path}`, { method, cache: 'no-store' });
         const data = await response.json().catch(() => null);
         if (!response.ok) throw apiError(response.status, data);
         return data;
@@ -318,7 +296,6 @@
 
       function startUploadPage() {
         const form = document.getElementById('upload-form');
-        const tokenInput = document.getElementById('upload-token');
         const fileInput = document.getElementById('ipa-file');
         const detectStatus = document.getElementById('ipa-detect');
         const dropzone = document.getElementById('dropzone');
@@ -340,7 +317,6 @@
         const resultLink = document.getElementById('result-link');
         const buildList = document.getElementById('build-list');
 
-        tokenInput.value = readStoredToken();
         let uploading = false;
         let currentBuilds = [];
 
@@ -419,20 +395,16 @@
 
         form.addEventListener('submit', async (event) => {
           event.preventDefault();
-          const token = tokenInput.value.trim();
           const file = fileInput.files?.[0];
           const meta = Object.fromEntries(Object.entries(fields).map(([key, input]) => [key, input.value.trim()]));
           const missing = [
-            !token && { label: 'upload token', input: tokenInput },
             !file && { label: 'file .ipa' },
             !meta.bundleId && { label: 'Bundle ID', input: fields.bundleId },
           ].filter(Boolean);
           if (missing.length) {
             for (const { input } of missing) input?.setAttribute('aria-invalid', 'true');
             missing.find(({ input }) => input)?.input.focus();
-            setStatus(uploadStatus, `Thiếu ${missing.map(({ label }) => label).join(', ')}.${!token
-              ? ' Token là UPLOAD_TOKEN của server, hỏi người quản trị.'
-              : ''}`, 'error');
+            setStatus(uploadStatus, `Thiếu ${missing.map(({ label }) => label).join(', ')}.`, 'error');
             return;
           }
           if (!/\.ipa$/i.test(file.name)) {
@@ -452,11 +424,10 @@
           progress.classList.remove('hidden');
           setStatus(uploadStatus, 'Đang upload…');
           try {
-            const build = await uploadIpa(file, meta, token, (ratio, text) => {
+            const build = await uploadIpa(file, meta, (ratio, text) => {
               progress.value = ratio;
               setStatus(uploadStatus, text);
             });
-            storeToken(token);
             const replaced = build.replaced
               ? `, đã thay bản ${build.replaced.version}${build.replaced.build ? ` (${build.replaced.build})` : ''}`
               : '';
@@ -477,14 +448,11 @@
           }
         });
 
-        for (const input of [tokenInput, fields.bundleId]) {
-          input.addEventListener('input', () => input.removeAttribute('aria-invalid'));
-        }
+        fields.bundleId.addEventListener('input', () => fields.bundleId.removeAttribute('aria-invalid'));
         fileInput.addEventListener('change', () => fields.bundleId.removeAttribute('aria-invalid'));
 
         document.getElementById('copy-result-link').addEventListener('click', () => copyText(resultLink.value));
         document.getElementById('reload-builds').addEventListener('click', loadBuilds);
-        tokenInput.addEventListener('change', loadBuilds);
 
         function showResult(build) {
           const url = installPageUrl(build.id);
@@ -512,24 +480,17 @@
         }
 
         async function loadBuilds() {
-          const token = tokenInput.value.trim();
-          if (!token) {
-            currentBuilds = [];
-            showListMessage('Nhập upload token để xem danh sách.');
-            return;
-          }
           showListMessage('Đang tải…');
           try {
-            const { builds } = await api('/api/builds', { token });
-            storeToken(token);
+            const { builds } = await api('/api/builds');
             currentBuilds = builds || [];
-            renderBuilds(currentBuilds, token);
+            renderBuilds(currentBuilds);
           } catch (error) {
             showListMessage(`Không tải được danh sách: ${error.message}`);
           }
         }
 
-        function renderBuilds(builds, token) {
+        function renderBuilds(builds) {
           if (!builds.length) {
             showListMessage('Chưa có IPA nào.');
             return;
@@ -567,14 +528,10 @@
             deleteButton.className = 'button small danger';
             deleteButton.textContent = 'Xoá';
             deleteButton.addEventListener('click', async () => {
-              if (!token) {
-                alert('Cần upload token để xoá.');
-                return;
-              }
               if (!confirm(`Xoá ${buildTitle(build)}? Link và QR của build này sẽ không dùng được nữa.`)) return;
               deleteButton.disabled = true;
               try {
-                await api(`/api/builds/${encodeURIComponent(build.id)}`, { method: 'DELETE', token });
+                await api(`/api/builds/${encodeURIComponent(build.id)}`, { method: 'DELETE' });
                 loadBuilds();
               } catch (error) {
                 deleteButton.disabled = false;
@@ -592,7 +549,7 @@
 
       // The body is the raw .ipa; the server re-reads Info.plist, and the edited fields go in the
       // query string to override it.
-      function uploadIpa(file, meta, token, onProgress) {
+      function uploadIpa(file, meta, onProgress) {
         const query = new URLSearchParams({ fileName: file.name });
         for (const [key, value] of Object.entries(meta)) {
           if (value) query.set(key, value);
@@ -600,7 +557,6 @@
         return new Promise((resolve, reject) => {
           const xhr = new XMLHttpRequest();
           xhr.open('POST', `${API_BASE}/api/builds?${query}`);
-          xhr.setRequestHeader('Authorization', `Bearer ${token}`);
           xhr.setRequestHeader('Content-Type', 'application/octet-stream');
           xhr.upload.onprogress = (event) => {
             if (!event.lengthComputable) return;
