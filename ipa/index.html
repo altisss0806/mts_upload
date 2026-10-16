@@ -32,7 +32,6 @@
     .button.small { min-height: 36px; padding: 6px 10px; font-size: 12px; }
     .button:disabled { opacity: .55; cursor: not-allowed; }
     .input { width: 100%; min-width: 0; min-height: 42px; border: 1px solid #3a4b65; border-radius: 9px; padding: 9px 11px; background: #0b1322; color: #f1f5f9; }
-    .input[type="file"] { padding: 8px; }
     .qr-box { justify-self: center; width: max-content; margin: 0 auto; padding: 12px; border-radius: 12px; background: #fff; line-height: 0; }
     .qr-box img, .qr-box canvas { width: 200px; height: 200px; }
 
@@ -45,24 +44,39 @@
     .notice { margin-top: 20px; padding: 16px; border: 1px solid #334155; border-radius: 12px; background: rgba(30, 41, 59, .64); color: #cbd5e1; font-size: 14px; line-height: 1.55; }
     .notice p { margin: 6px 0 0; }
 
-    .upload-page { width: min(100%, 1180px); min-height: 100dvh; margin: 0 auto; padding: clamp(12px, 3vw, 28px); }
-    .upload-header { margin-bottom: 16px; }
+    .upload-page { width: min(100%, 1360px); min-height: 100dvh; margin: 0 auto; padding: clamp(12px, 3vw, 28px); }
+    .upload-header { margin-bottom: 16px; text-align: center; }
     .upload-header h1 { margin-bottom: 6px; font-size: clamp(24px, 4vw, 34px); }
     .upload-header p:last-child { margin-bottom: 0; color: #a9b9cf; font-size: 14px; line-height: 1.45; }
-    .upload-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 14px; align-items: start; }
-    .panel { display: grid; gap: 12px; min-width: 0; padding: 16px; border: 1px solid #29364b; border-radius: 14px; background: rgba(15, 23, 42, .9); box-shadow: 0 18px 46px rgba(0, 0, 0, .2); }
+    .upload-layout { display: grid; grid-template-columns: minmax(230px, 1fr) minmax(340px, 1.7fr) minmax(250px, 1fr); gap: 16px; align-items: stretch; }
+    .panel { display: grid; align-content: start; gap: 12px; min-width: 0; padding: 16px; border: 1px solid #29364b; border-radius: 14px; background: rgba(15, 23, 42, .9); box-shadow: 0 18px 46px rgba(0, 0, 0, .2); }
     .field { display: grid; gap: 6px; min-width: 0; color: #dbeafe; font-size: 13px; font-weight: 700; }
     .field-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .drop-column { display: grid; grid-template-rows: 1fr auto; gap: 12px; min-width: 0; }
+    .dropzone { position: relative; min-height: min(64vh, 600px); display: grid; place-content: center; justify-items: center; gap: 10px; padding: 32px 24px; border: 2px dashed #3b5b8c; border-radius: 22px; background: rgba(15, 23, 42, .72); text-align: center; cursor: pointer; transition: border-color .15s, background-color .15s; }
+    .dropzone:hover, .dropzone.is-dragging { border-color: #60a5fa; background: rgba(37, 99, 235, .16); }
+    .dropzone.has-file { border-style: solid; border-color: #2563eb; }
+    .dropzone.is-busy { cursor: progress; }
+    .dropzone:focus-within { outline: 3px solid #93c5fd; outline-offset: 2px; }
+    .drop-icon { width: 72px; height: 72px; color: #93c5fd; }
+    .drop-title { max-width: 100%; color: #f8fafc; font-size: clamp(20px, 2.6vw, 28px); font-weight: 800; line-height: 1.2; overflow-wrap: anywhere; }
+    .drop-hint { color: #94a3b8; font-size: 14px; line-height: 1.45; }
+    .dropzone .status { max-width: 460px; font-size: 15px; }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+    .upload-actions { display: grid; gap: 10px; }
+    .button.large { min-height: 52px; font-size: 16px; }
     progress { width: 100%; height: 8px; accent-color: #2563eb; }
     .copy-row { display: flex; gap: 8px; }
-    .list-heading { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding-top: 12px; border-top: 1px solid #29364b; }
-    .build-list { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
-    .build-item { display: grid; gap: 8px; padding: 10px; border: 1px solid #29364b; border-radius: 10px; background: #0f1a2e; }
+    .builds-panel { margin-top: 16px; }
+    .list-heading { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+    .build-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px; margin: 0; padding: 0; list-style: none; }
+    .build-item { display: grid; align-content: start; gap: 8px; padding: 12px; border: 1px solid #29364b; border-radius: 10px; background: #0f1a2e; }
     .build-item strong { color: #f8fafc; font-size: 14px; overflow-wrap: anywhere; }
     .build-actions { display: flex; flex-wrap: wrap; gap: 6px; }
-    .empty-list { color: #94a3b8; font-size: 13px; line-height: 1.5; }
-    @media (max-width: 760px) {
+    .empty-list { grid-column: 1 / -1; color: #94a3b8; font-size: 13px; line-height: 1.5; }
+    @media (max-width: 1000px) {
       .upload-layout { grid-template-columns: 1fr; }
+      .dropzone { min-height: 300px; }
     }
     @media (max-width: 430px) {
       .install-page { padding: 14px; }
@@ -92,22 +106,17 @@
     <header class="upload-header">
       <p class="eyebrow">IPA riêng</p>
       <h1 id="upload-title">Upload IPA</h1>
-      <p>Upload file .ipa (tối đa 100 MB) để có link cài đặt và QR. Mỗi IPA nằm trên một branch <code>ipa-*</code> riêng, không đụng GitHub Release hay branch main.</p>
+      <p>Kéo thả file .ipa (tối đa 100 MB) để có link cài đặt và QR. Mỗi IPA nằm trên một branch <code>ipa-*</code> riêng, không đụng GitHub Release hay branch main.</p>
     </header>
-    <div class="upload-layout">
-      <form class="panel" id="upload-form" novalidate>
+    <form class="upload-layout" id="upload-form" novalidate>
+      <section class="panel" aria-label="Thông tin app">
         <label class="field">
           <span>GitHub token (Contents: write trên mts_upload)</span>
           <input class="input" id="upload-token" type="password" autocomplete="off" required />
         </label>
-        <label class="field">
-          <span>File .ipa</span>
-          <input class="input" id="ipa-file" type="file" accept=".ipa" required />
-        </label>
-        <p class="status" id="ipa-detect" aria-live="polite">Chọn file để tự đọc tên app, Bundle ID và version.</p>
+        <label class="field"><span>Tên app</span><input class="input" id="ipa-name" maxlength="80" /></label>
+        <label class="field"><span>Bundle ID</span><input class="input" id="ipa-bundle" maxlength="155" required /></label>
         <div class="field-grid">
-          <label class="field"><span>Tên app</span><input class="input" id="ipa-name" maxlength="80" /></label>
-          <label class="field"><span>Bundle ID</span><input class="input" id="ipa-bundle" maxlength="155" required /></label>
           <label class="field"><span>Version</span><input class="input" id="ipa-version" maxlength="40" /></label>
           <label class="field"><span>Build</span><input class="input" id="ipa-build" maxlength="40" /></label>
         </div>
@@ -115,10 +124,24 @@
           <span>Ghi chú</span>
           <input class="input" id="ipa-note" maxlength="300" placeholder="VD: build test fix login cho QA" />
         </label>
-        <button class="button primary" type="submit" id="upload-submit">Upload</button>
-        <progress class="hidden" id="upload-progress" max="1" value="0"></progress>
-        <p class="status" id="upload-status" aria-live="polite"></p>
-      </form>
+      </section>
+
+      <section class="drop-column">
+        <label class="dropzone" id="dropzone">
+          <input class="visually-hidden" id="ipa-file" type="file" accept=".ipa" />
+          <svg class="drop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 15V3" /><path d="m7 8 5-5 5 5" /><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3" />
+          </svg>
+          <span class="drop-title" id="drop-title">Kéo thả file .ipa vào đây</span>
+          <span class="drop-hint" id="drop-hint">hoặc bấm để chọn file · tối đa 100 MB</span>
+          <span class="status" id="ipa-detect" aria-live="polite">Tên app, Bundle ID và version sẽ được đọc tự động.</span>
+        </label>
+        <div class="upload-actions">
+          <button class="button primary large" type="submit" id="upload-submit">Upload</button>
+          <progress class="hidden" id="upload-progress" max="1" value="0"></progress>
+          <p class="status" id="upload-status" aria-live="polite"></p>
+        </div>
+      </section>
 
       <section class="panel" aria-labelledby="result-title">
         <h2 id="result-title">QR cài đặt</h2>
@@ -128,13 +151,16 @@
           <input class="input" id="result-link" readonly aria-label="Link cài đặt" />
           <button class="button" type="button" id="copy-result-link">Copy</button>
         </div>
-        <div class="list-heading">
-          <h2>IPA đã upload</h2>
-          <button class="button small" type="button" id="reload-builds">Tải lại</button>
-        </div>
-        <ol class="build-list" id="build-list"></ol>
       </section>
-    </div>
+    </form>
+
+    <section class="panel builds-panel" aria-labelledby="builds-title">
+      <div class="list-heading">
+        <h2 id="builds-title">IPA đã upload</h2>
+        <button class="button small" type="button" id="reload-builds">Tải lại</button>
+      </div>
+      <ol class="build-list" id="build-list"></ol>
+    </section>
   </main>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
@@ -318,6 +344,9 @@
         const tokenInput = document.getElementById('upload-token');
         const fileInput = document.getElementById('ipa-file');
         const detectStatus = document.getElementById('ipa-detect');
+        const dropzone = document.getElementById('dropzone');
+        const dropTitle = document.getElementById('drop-title');
+        const dropHint = document.getElementById('drop-hint');
         const fields = {
           name: document.getElementById('ipa-name'),
           bundleId: document.getElementById('ipa-bundle'),
@@ -335,16 +364,24 @@
         const buildList = document.getElementById('build-list');
 
         tokenInput.value = readStoredToken();
+        let uploading = false;
+
+        function renderDropzone(file) {
+          dropzone.classList.toggle('has-file', Boolean(file));
+          dropTitle.textContent = file ? file.name : 'Kéo thả file .ipa vào đây';
+          dropHint.textContent = file
+            ? `${formatSize(file.size)} · bấm hoặc kéo file khác để đổi`
+            : 'hoặc bấm để chọn file · tối đa 100 MB';
+          if (!file) setStatus(detectStatus, 'Tên app, Bundle ID và version sẽ được đọc tự động.');
+        }
 
         let fileReadSequence = 0;
         fileInput.addEventListener('change', async () => {
           const sequence = ++fileReadSequence;
           const file = fileInput.files?.[0];
           for (const key of ['name', 'bundleId', 'version', 'build']) fields[key].value = '';
-          if (!file) {
-            setStatus(detectStatus, 'Chọn file để tự đọc tên app, Bundle ID và version.');
-            return;
-          }
+          renderDropzone(file);
+          if (!file) return;
           setStatus(detectStatus, 'Đang đọc Info.plist…');
           try {
             const plist = await readIpaInfo(file);
@@ -353,11 +390,48 @@
             fields.bundleId.value = plist.CFBundleIdentifier || '';
             fields.version.value = plist.CFBundleShortVersionString || '';
             fields.build.value = plist.CFBundleVersion || '';
-            setStatus(detectStatus, `Đã đọc ${file.name} · ${formatSize(file.size)}`, 'ok');
+            const version = [fields.version.value, fields.build.value && `(${fields.build.value})`].filter(Boolean).join(' ');
+            setStatus(detectStatus, [fields.name.value, version, fields.bundleId.value].filter(Boolean).join(' · '), 'ok');
           } catch (error) {
             if (sequence !== fileReadSequence) return;
             setStatus(detectStatus, `Không tự đọc được Info.plist (${error.message}). Nhập Bundle ID thủ công.`, 'error');
           }
+        });
+
+        // The whole window accepts the drop so a file released just outside the box does not
+        // make the browser navigate away to the raw .ipa.
+        const hasFiles = (event) => Array.from(event.dataTransfer?.types || []).includes('Files');
+        let dragDepth = 0;
+        window.addEventListener('dragenter', (event) => {
+          if (!hasFiles(event) || uploading) return;
+          dragDepth += 1;
+          dropzone.classList.add('is-dragging');
+        });
+        window.addEventListener('dragleave', (event) => {
+          if (!hasFiles(event)) return;
+          dragDepth = Math.max(0, dragDepth - 1);
+          if (!dragDepth) dropzone.classList.remove('is-dragging');
+        });
+        window.addEventListener('dragover', (event) => {
+          if (!hasFiles(event)) return;
+          event.preventDefault();
+          event.dataTransfer.dropEffect = uploading ? 'none' : 'copy';
+        });
+        window.addEventListener('drop', (event) => {
+          if (!hasFiles(event)) return;
+          event.preventDefault();
+          dragDepth = 0;
+          dropzone.classList.remove('is-dragging');
+          if (uploading) return;
+          const file = Array.from(event.dataTransfer.files).find((item) => /\.ipa$/i.test(item.name));
+          if (!file) {
+            setStatus(detectStatus, 'Chỉ nhận file .ipa.', 'error');
+            return;
+          }
+          const transfer = new DataTransfer();
+          transfer.items.add(file);
+          fileInput.files = transfer.files;
+          fileInput.dispatchEvent(new Event('change'));
         });
 
         form.addEventListener('submit', async (event) => {
@@ -378,7 +452,10 @@
             return;
           }
 
+          uploading = true;
           submitButton.disabled = true;
+          fileInput.disabled = true;
+          dropzone.classList.add('is-busy');
           progress.value = 0;
           progress.classList.remove('hidden');
           setStatus(uploadStatus, 'Đang upload…');
@@ -392,12 +469,15 @@
             showResult(build);
             fileInput.value = '';
             for (const input of Object.values(fields)) input.value = '';
-            setStatus(detectStatus, 'Chọn file để tự đọc tên app, Bundle ID và version.');
+            renderDropzone(null);
             loadBuilds();
           } catch (error) {
             setStatus(uploadStatus, `Upload lỗi: ${error.message}`, 'error');
           } finally {
+            uploading = false;
             submitButton.disabled = false;
+            fileInput.disabled = false;
+            dropzone.classList.remove('is-busy');
             progress.classList.add('hidden');
           }
         });
