@@ -31,8 +31,6 @@
     .button.danger { border-color: #7f1d1d; background: #2a1215; color: #fecaca; }
     .button.small { min-height: 36px; padding: 6px 10px; font-size: 12px; }
     .button:disabled { opacity: .55; cursor: not-allowed; }
-    .input { width: 100%; min-width: 0; min-height: 42px; border: 1px solid #3a4b65; border-radius: 9px; padding: 9px 11px; background: #0b1322; color: #f1f5f9; }
-    .input[aria-invalid="true"] { border-color: #f87171; }
     .qr-box { justify-self: center; width: max-content; margin: 0 auto; padding: 12px; border-radius: 12px; background: #fff; line-height: 0; }
     .qr-box img, .qr-box canvas { width: 200px; height: 200px; }
 
@@ -45,44 +43,51 @@
     .notice { margin-top: 20px; padding: 16px; border: 1px solid #334155; border-radius: 12px; background: rgba(30, 41, 59, .64); color: #cbd5e1; font-size: 14px; line-height: 1.55; }
     .notice p { margin: 6px 0 0; }
 
-    .upload-page { width: min(100%, 1360px); min-height: 100dvh; margin: 0 auto; padding: clamp(12px, 3vw, 28px); }
+    .upload-page { width: min(100%, 1100px); min-height: 100dvh; margin: 0 auto; padding: clamp(12px, 3vw, 28px); }
     .upload-header { margin-bottom: 16px; text-align: center; }
     .upload-header h1 { margin-bottom: 6px; font-size: clamp(24px, 4vw, 34px); }
     .upload-header p:last-child { margin-bottom: 0; color: #a9b9cf; font-size: 14px; line-height: 1.45; }
-    .upload-layout { display: grid; grid-template-columns: minmax(230px, 1fr) minmax(340px, 1.7fr) minmax(250px, 1fr); gap: 16px; align-items: stretch; }
-    .panel { display: grid; align-content: start; gap: 12px; min-width: 0; padding: 16px; border: 1px solid #29364b; border-radius: 14px; background: rgba(15, 23, 42, .9); box-shadow: 0 18px 46px rgba(0, 0, 0, .2); }
-    .field { display: grid; gap: 6px; min-width: 0; color: #dbeafe; font-size: 13px; font-weight: 700; }
-    .field-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
-    .drop-column { display: grid; grid-template-rows: 1fr auto; gap: 12px; min-width: 0; }
-    .dropzone { position: relative; min-height: min(64vh, 600px); display: grid; place-content: center; justify-items: center; gap: 10px; padding: 32px 24px; border: 2px dashed #3b5b8c; border-radius: 22px; background: rgba(15, 23, 42, .72); text-align: center; cursor: pointer; transition: border-color .15s, background-color .15s; }
+    .upload-main { display: grid; gap: 12px; width: min(100%, 760px); margin: 0 auto; }
+    .stage-panel { position: relative; min-height: min(62vh, 560px); display: grid; place-content: center; justify-items: center; gap: 12px; padding: 32px 24px; border-radius: 22px; text-align: center; }
+    .dropzone { border: 2px dashed #3b5b8c; background: rgba(15, 23, 42, .72); cursor: pointer; transition: border-color .15s, background-color .15s; }
     .dropzone:hover, .dropzone.is-dragging { border-color: #60a5fa; background: rgba(37, 99, 235, .16); }
     .dropzone.has-file { border-style: solid; border-color: #2563eb; }
-    .dropzone.is-busy { cursor: progress; }
     .dropzone:focus-within { outline: 3px solid #93c5fd; outline-offset: 2px; }
+    .skeleton, .result { border: 2px solid #29364b; background: rgba(15, 23, 42, .86); }
     .drop-icon { width: 72px; height: 72px; color: #93c5fd; }
-    .drop-title { max-width: 100%; color: #f8fafc; font-size: clamp(20px, 2.6vw, 28px); font-weight: 800; line-height: 1.2; overflow-wrap: anywhere; }
-    .drop-hint { color: #94a3b8; font-size: 14px; line-height: 1.45; }
-    .dropzone .status { max-width: 460px; font-size: 15px; }
+    .drop-title, .result-title { max-width: 100%; color: #f8fafc; font-size: clamp(20px, 2.6vw, 28px); font-weight: 800; line-height: 1.2; overflow-wrap: anywhere; }
+    .drop-hint { color: #94a3b8; font-size: 14px; line-height: 1.45; overflow-wrap: anywhere; }
+    .stage-panel .status { max-width: 460px; font-size: 15px; }
     .visually-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
-    .upload-actions { display: grid; gap: 10px; }
+    .skel { border-radius: 12px; background: linear-gradient(90deg, #1e293b 25%, #334155 37%, #1e293b 63%); background-size: 400% 100%; animation: shimmer 1.4s ease infinite; }
+    .skel-qr { width: 248px; height: 248px; border-radius: 16px; }
+    .skel-line { width: 240px; height: 18px; }
+    .skel-line.short { width: 150px; height: 14px; }
+    @keyframes shimmer { from { background-position: 100% 50%; } to { background-position: 0 50%; } }
+    .skeleton progress { width: min(320px, 80vw); }
+    .result .qr-box img, .result .qr-box canvas { width: 224px; height: 224px; }
+    .result-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 6px; }
+    .result-actions .button { min-width: 150px; }
+    .link-button { border: 0; padding: 6px; background: none; color: #93c5fd; font-size: 14px; font-weight: 700; text-decoration: underline; cursor: pointer; }
     .button.large { min-height: 52px; font-size: 16px; }
     progress { width: 100%; height: 8px; accent-color: #2563eb; }
-    .copy-row { display: flex; gap: 8px; }
-    .builds-panel { margin-top: 16px; }
+    .panel { display: grid; align-content: start; gap: 12px; min-width: 0; padding: 16px; border: 1px solid #29364b; border-radius: 14px; background: rgba(15, 23, 42, .9); box-shadow: 0 18px 46px rgba(0, 0, 0, .2); }
+    .builds-panel { margin-top: 28px; }
     .list-heading { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
     .build-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px; margin: 0; padding: 0; list-style: none; }
     .build-item { display: grid; align-content: start; gap: 8px; padding: 12px; border: 1px solid #29364b; border-radius: 10px; background: #0f1a2e; }
     .build-item strong { color: #f8fafc; font-size: 14px; overflow-wrap: anywhere; }
     .build-actions { display: flex; flex-wrap: wrap; gap: 6px; }
     .empty-list { grid-column: 1 / -1; color: #94a3b8; font-size: 13px; line-height: 1.5; }
-    @media (max-width: 1000px) {
-      .upload-layout { grid-template-columns: 1fr; }
-      .dropzone { min-height: 300px; }
+    @media (max-width: 760px) {
+      .stage-panel { min-height: 340px; }
     }
     @media (max-width: 430px) {
       .install-page { padding: 14px; }
       .install-card { border-radius: 14px; }
-      .field-grid { grid-template-columns: 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .skel { animation: none; }
     }
   </style>
 </head>
@@ -109,47 +114,39 @@
       <h1 id="upload-title">Upload IPA</h1>
       <p>Kéo thả file .ipa (tối đa 500 MB) để có link cài đặt và QR. Mỗi Bundle ID chỉ giữ 1 IPA: upload bản mới sẽ đè bản cũ, link và QR giữ nguyên.</p>
     </header>
-    <form class="upload-layout" id="upload-form" novalidate>
-      <section class="panel" aria-label="Thông tin app">
-        <label class="field"><span>Tên app</span><input class="input" id="ipa-name" maxlength="80" /></label>
-        <label class="field"><span>Bundle ID</span><input class="input" id="ipa-bundle" maxlength="155" required /></label>
-        <div class="field-grid">
-          <label class="field"><span>Version</span><input class="input" id="ipa-version" maxlength="40" /></label>
-          <label class="field"><span>Build</span><input class="input" id="ipa-build" maxlength="40" /></label>
-        </div>
-        <label class="field">
-          <span>Ghi chú</span>
-          <input class="input" id="ipa-note" maxlength="300" placeholder="VD: build test fix login cho QA" />
-        </label>
-      </section>
+    <section class="upload-main" aria-label="Upload">
+      <label class="stage-panel dropzone" id="dropzone">
+        <input class="visually-hidden" id="ipa-file" type="file" accept=".ipa" />
+        <svg class="drop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 15V3" /><path d="m7 8 5-5 5 5" /><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3" />
+        </svg>
+        <span class="drop-title" id="drop-title">Kéo thả file .ipa vào đây</span>
+        <span class="drop-hint" id="drop-hint">hoặc bấm để chọn file · tối đa 500 MB</span>
+        <span class="status" id="ipa-detect" aria-live="polite">Tên app, Bundle ID và version sẽ được đọc tự động.</span>
+      </label>
 
-      <section class="drop-column">
-        <label class="dropzone" id="dropzone">
-          <input class="visually-hidden" id="ipa-file" type="file" accept=".ipa" />
-          <svg class="drop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M12 15V3" /><path d="m7 8 5-5 5 5" /><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3" />
-          </svg>
-          <span class="drop-title" id="drop-title">Kéo thả file .ipa vào đây</span>
-          <span class="drop-hint" id="drop-hint">hoặc bấm để chọn file · tối đa 500 MB</span>
-          <span class="status" id="ipa-detect" aria-live="polite">Tên app, Bundle ID và version sẽ được đọc tự động.</span>
-        </label>
-        <div class="upload-actions">
-          <button class="button primary large" type="submit" id="upload-submit">Upload</button>
-          <progress class="hidden" id="upload-progress" max="1" value="0"></progress>
-          <p class="status" id="upload-status" aria-live="polite"></p>
-        </div>
-      </section>
+      <div class="stage-panel skeleton hidden" id="upload-skeleton" role="status" aria-live="polite">
+        <div class="skel skel-qr"></div>
+        <div class="skel skel-line"></div>
+        <div class="skel skel-line short"></div>
+        <progress id="upload-progress" max="1" value="0"></progress>
+        <p class="status" id="upload-progress-text">Đang upload…</p>
+      </div>
 
-      <section class="panel" aria-labelledby="result-title">
-        <h2 id="result-title">QR cài đặt</h2>
-        <div class="qr-box hidden" id="result-qr" aria-label="QR cài đặt"></div>
-        <p class="meta" id="result-meta">Upload xong hoặc chọn một build bên dưới để hiện QR.</p>
-        <div class="copy-row hidden" id="result-link-row">
-          <input class="input" id="result-link" readonly aria-label="Link cài đặt" />
-          <button class="button" type="button" id="copy-result-link">Copy</button>
+      <div class="stage-panel result hidden" id="upload-result">
+        <div class="qr-box" id="result-qr" aria-label="QR cài đặt"></div>
+        <span class="result-title" id="result-title"></span>
+        <span class="drop-hint" id="result-meta"></span>
+        <div class="result-actions">
+          <button class="button primary" type="button" id="share-link">Chia sẻ</button>
+          <button class="button" type="button" id="copy-link">Copy link</button>
         </div>
-      </section>
-    </form>
+        <button class="link-button" type="button" id="upload-another">Upload file khác</button>
+      </div>
+
+      <button class="button primary large" type="button" id="upload-submit" disabled>Upload</button>
+      <p class="status" id="upload-status" aria-live="polite"></p>
+    </section>
 
     <section class="panel builds-panel" aria-labelledby="builds-title">
       <div class="list-heading">
@@ -295,30 +292,35 @@
       // ---- Upload page ----
 
       function startUploadPage() {
-        const form = document.getElementById('upload-form');
         const fileInput = document.getElementById('ipa-file');
-        const detectStatus = document.getElementById('ipa-detect');
         const dropzone = document.getElementById('dropzone');
         const dropTitle = document.getElementById('drop-title');
         const dropHint = document.getElementById('drop-hint');
-        const fields = {
-          name: document.getElementById('ipa-name'),
-          bundleId: document.getElementById('ipa-bundle'),
-          version: document.getElementById('ipa-version'),
-          build: document.getElementById('ipa-build'),
-          note: document.getElementById('ipa-note'),
-        };
-        const submitButton = document.getElementById('upload-submit');
+        const detectStatus = document.getElementById('ipa-detect');
+        const skeleton = document.getElementById('upload-skeleton');
         const progress = document.getElementById('upload-progress');
-        const uploadStatus = document.getElementById('upload-status');
+        const progressText = document.getElementById('upload-progress-text');
+        const result = document.getElementById('upload-result');
         const resultQr = document.getElementById('result-qr');
+        const resultTitle = document.getElementById('result-title');
         const resultMeta = document.getElementById('result-meta');
-        const resultLinkRow = document.getElementById('result-link-row');
-        const resultLink = document.getElementById('result-link');
+        const shareButton = document.getElementById('share-link');
+        const copyButton = document.getElementById('copy-link');
+        const submitButton = document.getElementById('upload-submit');
+        const uploadStatus = document.getElementById('upload-status');
         const buildList = document.getElementById('build-list');
 
         let uploading = false;
         let currentBuilds = [];
+        let resultBuild = null;
+
+        // One area in the middle of the page shows the drop zone, the upload skeleton or the QR.
+        function showStage(name) {
+          dropzone.classList.toggle('hidden', name !== 'drop');
+          skeleton.classList.toggle('hidden', name !== 'uploading');
+          result.classList.toggle('hidden', name !== 'result');
+          submitButton.classList.toggle('hidden', name !== 'drop');
+        }
 
         function replacementNote(bundleId) {
           const existing = currentBuilds.find((build) => build.bundleId === bundleId);
@@ -332,34 +334,34 @@
             ? `${formatSize(file.size)} · bấm hoặc kéo file khác để đổi`
             : 'hoặc bấm để chọn file · tối đa 500 MB';
           if (!file) setStatus(detectStatus, 'Tên app, Bundle ID và version sẽ được đọc tự động.');
+          submitButton.disabled = !file;
         }
 
         let fileReadSequence = 0;
         fileInput.addEventListener('change', async () => {
           const sequence = ++fileReadSequence;
-          const file = fileInput.files?.[0];
-          for (const key of ['name', 'bundleId', 'version', 'build']) fields[key].value = '';
+          const file = fileInput.files && fileInput.files[0];
           renderDropzone(file);
+          showStage('drop');
+          setStatus(uploadStatus, '');
           if (!file) return;
           setStatus(detectStatus, 'Đang đọc Info.plist…');
           try {
             const plist = await readIpaInfo(file);
             if (sequence !== fileReadSequence) return;
-            fields.name.value = plist.CFBundleDisplayName || plist.CFBundleName || '';
-            fields.bundleId.value = plist.CFBundleIdentifier || '';
-            fields.version.value = plist.CFBundleShortVersionString || '';
-            fields.build.value = plist.CFBundleVersion || '';
-            const version = [fields.version.value, fields.build.value && `(${fields.build.value})`].filter(Boolean).join(' ');
-            setStatus(detectStatus, [fields.name.value, version, fields.bundleId.value, replacementNote(fields.bundleId.value)].filter(Boolean).join(' · '), 'ok');
+            const name = plist.CFBundleDisplayName || plist.CFBundleName || '';
+            const bundleId = plist.CFBundleIdentifier || '';
+            const version = [plist.CFBundleShortVersionString, plist.CFBundleVersion && `(${plist.CFBundleVersion})`].filter(Boolean).join(' ');
+            setStatus(detectStatus, [name, version, bundleId, replacementNote(bundleId)].filter(Boolean).join(' · '), 'ok');
           } catch (error) {
             if (sequence !== fileReadSequence) return;
-            setStatus(detectStatus, `Không tự đọc được Info.plist (${error.message}). Nhập Bundle ID thủ công.`, 'error');
+            setStatus(detectStatus, `Không tự đọc được Info.plist (${error.message}).`, 'error');
           }
         });
 
         // The whole window accepts the drop so a file released just outside the box does not
         // make the browser navigate away to the raw .ipa.
-        const hasFiles = (event) => Array.from(event.dataTransfer?.types || []).includes('Files');
+        const hasFiles = (event) => Array.from((event.dataTransfer && event.dataTransfer.types) || []).includes('Files');
         let dragDepth = 0;
         window.addEventListener('dragenter', (event) => {
           if (!hasFiles(event) || uploading) return;
@@ -384,7 +386,8 @@
           if (uploading) return;
           const file = Array.from(event.dataTransfer.files).find((item) => /\.ipa$/i.test(item.name));
           if (!file) {
-            setStatus(detectStatus, 'Chỉ nhận file .ipa.', 'error');
+            showStage('drop');
+            setStatus(uploadStatus, 'Chỉ nhận file .ipa.', 'error');
             return;
           }
           const transfer = new DataTransfer();
@@ -393,18 +396,10 @@
           fileInput.dispatchEvent(new Event('change'));
         });
 
-        form.addEventListener('submit', async (event) => {
-          event.preventDefault();
-          const file = fileInput.files?.[0];
-          const meta = Object.fromEntries(Object.entries(fields).map(([key, input]) => [key, input.value.trim()]));
-          const missing = [
-            !file && { label: 'file .ipa' },
-            !meta.bundleId && { label: 'Bundle ID', input: fields.bundleId },
-          ].filter(Boolean);
-          if (missing.length) {
-            for (const { input } of missing) input?.setAttribute('aria-invalid', 'true');
-            missing.find(({ input }) => input)?.input.focus();
-            setStatus(uploadStatus, `Thiếu ${missing.map(({ label }) => label).join(', ')}.`, 'error');
+        submitButton.addEventListener('click', async () => {
+          const file = fileInput.files && fileInput.files[0];
+          if (!file) {
+            setStatus(uploadStatus, 'Chọn file .ipa trước.', 'error');
             return;
           }
           if (!/\.ipa$/i.test(file.name)) {
@@ -417,59 +412,78 @@
           }
 
           uploading = true;
-          submitButton.disabled = true;
           fileInput.disabled = true;
-          dropzone.classList.add('is-busy');
           progress.value = 0;
-          progress.classList.remove('hidden');
-          setStatus(uploadStatus, 'Đang upload…');
+          progressText.textContent = 'Đang upload 0%';
+          setStatus(uploadStatus, '');
+          showStage('uploading');
           try {
-            const build = await uploadIpa(file, meta, (ratio, text) => {
+            const build = await uploadIpa(file, (ratio, text) => {
               progress.value = ratio;
-              setStatus(uploadStatus, text);
+              progressText.textContent = text;
             });
+            showResult(build);
             const replaced = build.replaced
               ? `, đã thay bản ${build.replaced.version}${build.replaced.build ? ` (${build.replaced.build})` : ''}`
               : '';
-            setStatus(uploadStatus, `Upload xong: ${buildTitle(build)}${replaced}`, 'ok');
-            showResult(build);
+            setStatus(uploadStatus, `Upload xong${replaced}.`, 'ok');
             fileInput.value = '';
-            for (const input of Object.values(fields)) input.value = '';
             renderDropzone(null);
             loadBuilds();
           } catch (error) {
+            showStage('drop');
             setStatus(uploadStatus, `Upload lỗi: ${error.message}`, 'error');
           } finally {
             uploading = false;
-            submitButton.disabled = false;
             fileInput.disabled = false;
-            dropzone.classList.remove('is-busy');
-            progress.classList.add('hidden');
           }
         });
 
-        fields.bundleId.addEventListener('input', () => fields.bundleId.removeAttribute('aria-invalid'));
-        fileInput.addEventListener('change', () => fields.bundleId.removeAttribute('aria-invalid'));
-
-        document.getElementById('copy-result-link').addEventListener('click', () => copyText(resultLink.value));
-        document.getElementById('reload-builds').addEventListener('click', loadBuilds);
-
         function showResult(build) {
-          const url = installPageUrl(build.id);
-          renderQr(resultQr, url);
-          resultMeta.textContent = [buildTitle(build), build.bundleId, formatSize(build.size), build.note].filter(Boolean).join(' • ');
-          resultLink.value = url;
-          resultLinkRow.classList.remove('hidden');
+          resultBuild = build;
+          renderQr(resultQr, installPageUrl(build.id));
+          resultTitle.textContent = buildTitle(build);
+          resultMeta.textContent = [build.bundleId, formatSize(build.size)].filter(Boolean).join(' · ');
+          copyButton.textContent = 'Copy link';
+          showStage('result');
         }
 
-        async function copyText(text) {
+        async function copyLink() {
+          const url = installPageUrl(resultBuild.id);
           try {
-            await navigator.clipboard.writeText(text);
+            await navigator.clipboard.writeText(url);
           } catch {
-            resultLink.select();
+            const textarea = document.createElement('textarea');
+            textarea.value = url;
+            document.body.appendChild(textarea);
+            textarea.select();
             document.execCommand('copy');
+            textarea.remove();
           }
+          copyButton.textContent = 'Đã copy';
+          setTimeout(() => { copyButton.textContent = 'Copy link'; }, 1500);
         }
+
+        shareButton.addEventListener('click', async () => {
+          const title = buildTitle(resultBuild);
+          const data = { title, text: `Cài ${title} trên iPhone/iPad`, url: installPageUrl(resultBuild.id) };
+          if (navigator.share) {
+            try {
+              await navigator.share(data);
+            } catch (error) {
+              if (error.name !== 'AbortError') copyLink();
+            }
+            return;
+          }
+          // Browsers without the share sheet get the link on the clipboard instead.
+          copyLink();
+        });
+        copyButton.addEventListener('click', copyLink);
+        document.getElementById('upload-another').addEventListener('click', () => {
+          setStatus(uploadStatus, '');
+          showStage('drop');
+        });
+        document.getElementById('reload-builds').addEventListener('click', loadBuilds);
 
         function showListMessage(text) {
           buildList.innerHTML = '';
@@ -503,12 +517,7 @@
             title.textContent = buildTitle(build);
             const meta = document.createElement('p');
             meta.className = 'meta';
-            meta.textContent = [
-              formatDate(build.createdAt),
-              formatSize(build.size),
-              build.bundleId,
-              build.note,
-            ].filter(Boolean).join(' • ');
+            meta.textContent = [formatDate(build.createdAt), formatSize(build.size), build.bundleId].filter(Boolean).join(' • ');
 
             const actions = document.createElement('div');
             actions.className = 'build-actions';
@@ -516,44 +525,32 @@
             qrButton.type = 'button';
             qrButton.className = 'button small';
             qrButton.textContent = 'QR';
-            qrButton.addEventListener('click', () => showResult(build));
+            qrButton.addEventListener('click', () => {
+              if (uploading) return;
+              setStatus(uploadStatus, '');
+              showResult(build);
+              result.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            });
             const openLink = document.createElement('a');
             openLink.className = 'button small';
             openLink.textContent = 'Mở trang cài';
             openLink.href = installPageUrl(build.id);
             openLink.target = '_blank';
             openLink.rel = 'noopener';
-            const deleteButton = document.createElement('button');
-            deleteButton.type = 'button';
-            deleteButton.className = 'button small danger';
-            deleteButton.textContent = 'Xoá';
-            deleteButton.addEventListener('click', async () => {
-              if (!confirm(`Xoá ${buildTitle(build)}? Link và QR của build này sẽ không dùng được nữa.`)) return;
-              deleteButton.disabled = true;
-              try {
-                await api(`/api/builds/${encodeURIComponent(build.id)}`, { method: 'DELETE' });
-                loadBuilds();
-              } catch (error) {
-                deleteButton.disabled = false;
-                alert(`Xoá lỗi: ${error.message}`);
-              }
-            });
-            actions.append(qrButton, openLink, deleteButton);
+            actions.append(qrButton, openLink);
             item.append(title, meta, actions);
             buildList.appendChild(item);
           }
         }
 
+        renderDropzone(null);
+        showStage('drop');
         loadBuilds();
       }
 
-      // The body is the raw .ipa; the server re-reads Info.plist, and the edited fields go in the
-      // query string to override it.
-      function uploadIpa(file, meta, onProgress) {
+      // The body is the raw .ipa; the server reads Info.plist itself.
+      function uploadIpa(file, onProgress) {
         const query = new URLSearchParams({ fileName: file.name });
-        for (const [key, value] of Object.entries(meta)) {
-          if (value) query.set(key, value);
-        }
         return new Promise((resolve, reject) => {
           const xhr = new XMLHttpRequest();
           xhr.open('POST', `${API_BASE}/api/builds?${query}`);
