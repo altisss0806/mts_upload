@@ -214,7 +214,9 @@
         const bundleId = config.bundleId || (isFlutter ? 'Flutter app' : (seccode ? 'vn.altisss.mts' : 'vn.ysvn.ysflex'));
         const apkName = isFlutter && seccode
           ? `Flutter_${seccode}_${env === 'prod' ? 'PROD' : 'UAT'}.apk`
-          : (config.apkName || (hasOtherSeccode && config.scheme ? `${config.scheme}.apk` : undefined));
+          : (config.apkName || (hasOtherSeccode && config.scheme ? `${config.scheme}.apk` : undefined)
+            // The YSflex release (no seccode) names its APK ALTMobile004[UAT].apk.
+            || (!hasOtherSeccode && !isFlutter ? `ALTMobile004${envSlug === 'uat' ? 'UAT' : ''}.apk` : undefined));
         const apkUrl = apkName
           ? `https://github.com/${GH_OWNER}/${GH_REPO}/releases/download/${tag}/${encodeURIComponent(apkName)}`
           : null;
