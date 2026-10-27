@@ -1,0 +1,457 @@
+[08:24:37]: [33mGet started using a Gemfile for fastlane https://docs.fastlane.tools/getting-started/ios/setup/#use-a-gemfile[0m
+[08:24:37]: fastlane 2.241.0 (Ruby 4.0.7, homebrew)
+[08:24:37]: [32m------------------------------[0m
+[08:24:37]: [32m--- Step: default_platform ---[0m
+[08:24:37]: [32m------------------------------[0m
+[08:24:37]: [32mDriving the lane 'ios build_bot' 🚀[0m
+[08:24:37]: ENV build_bot: uat
+[08:24:37]: Sử dụng versionName: 3.9.99
+[08:24:37]: [32m---------------------------[0m
+[08:24:37]: [32m--- Step: shell command ---[0m
+[08:24:37]: [32m---------------------------[0m
+[08:25:00]: Chạy build android tuần tự
+[08:25:00]: [32m---------------------------------[0m
+[08:25:00]: [32m--- Step: app:assembleRelease ---[0m
+[08:25:00]: [32m---------------------------------[0m
+[08:27:56]: [32m---------------------------[0m
+[08:27:56]: [32m--- Step: shell command ---[0m
+[08:27:56]: [32m---------------------------[0m
+[08:27:56]: Chạy build ios tuần tự
+[08:27:56]: [Fastfile] Installing pods with /opt/homebrew/bin/pod in /Users/solutionaltisss/YSflexMobile/Sources/YSfleX_Mobile/ios
+[08:27:56]: [32m---------------------------[0m
+[08:27:56]: [32m--- Step: shell command ---[0m
+[08:27:56]: [32m---------------------------[0m
+[08:27:57]: [32m---------------------------[0m
+[08:27:57]: [32m--- Step: shell command ---[0m
+[08:27:57]: [32m---------------------------[0m
+[08:28:16]: [32m-------------------[0m
+[08:28:16]: [32m--- Step: match ---[0m
+[08:28:16]: [32m-------------------[0m
+[08:28:16]: [32mSuccessfully loaded '/Users/solutionaltisss/YSflexMobile/Sources/YSfleX_Mobile/fastlane/Matchfile' 📄[0m
+
++----------------------------------------------------------------+
+|          Detected Values from './fastlane/Matchfile'           |
++-------------------------+--------------------------------------+
+| git_url                 | git@gl.altisss.vn:fos/ios-certifica  |
+|                         | tes.git                              |
+| git_branch              | 004                                  |
+| storage_mode            | git                                  |
+| type                    | development                          |
+| app_identifier          | ["vn.ysvn.ysflex",                   |
+|                         | "vn.ysvn.ysflex.OneSignalNotificati  |
+|                         | onServiceExtension"]                 |
+| team_id                 | 87TYJKSBAH                           |
+| force_legacy_encryption | true                                 |
+| certificate_id          | 8G3J9FTDMK                           |
++-------------------------+--------------------------------------+
+
+
++-----------------------------------------------------------------------------+
+|                          [32mSummary for match 2.241.0[0m                          |
++--------------------------------------+--------------------------------------+
+| type                                 | development                          |
+| app_identifier                       | ["vn.ysvn.ysflex",                   |
+|                                      | "vn.ysvn.ysflex.OneSignalNotificati  |
+|                                      | onServiceExtension"]                 |
+| readonly                             | true                                 |
+| force_legacy_encryption              | true                                 |
+| generate_apple_certs                 | true                                 |
+| skip_provisioning_profiles           | false                                |
+| username                             | altissssolution@gmail.com            |
+| team_id                              | 87TYJKSBAH                           |
+| storage_mode                         | git                                  |
+| git_url                              | git@gl.altisss.vn:fos/ios-certifica  |
+|                                      | tes.git                              |
+| git_branch                           | 004                                  |
+| shallow_clone                        | false                                |
+| clone_branch_directly                | false                                |
+| skip_google_cloud_account_confirmat  | false                                |
+| ion                                  |                                      |
+| s3_skip_encryption                   | false                                |
+| gitlab_host                          | https://gitlab.com                   |
+| keychain_name                        | login.keychain                       |
+| force                                | false                                |
+| force_for_new_devices                | false                                |
+| include_mac_in_profiles              | false                                |
+| include_all_certificates             | false                                |
+| certificate_id                       | 8G3J9FTDMK                           |
+| force_for_new_certificates           | false                                |
+| renew_expired_certs                  | false                                |
+| skip_confirmation                    | false                                |
+| safe_remove_certs                    | false                                |
+| skip_docs                            | false                                |
+| platform                             | ios                                  |
+| derive_catalyst_app_identifier       | false                                |
+| fail_on_name_taken                   | false                                |
+| skip_certificate_matching            | false                                |
+| skip_set_partition_list              | false                                |
+| offline_profile                      | false                                |
+| verbose                              | false                                |
++--------------------------------------+--------------------------------------+
+
+[08:28:16]: Cloning remote git repo...
+[08:28:16]: If cloning the repo takes too long, you can use the `clone_branch_directly` option in match.
+[08:28:19]: Checking out branch 004...
+[08:28:19]: [32m🔓  Successfully decrypted certificates repo[0m
+[08:28:19]: Installing certificate...
+
++-------------------------------------------------------------------+
+|                       [32mInstalled Certificate[0m                       |
++-------------------+-----------------------------------------------+
+| User ID           | KRDYWQPHYV                                    |
+| Common Name       | Apple Development: Tan Vuong (GM37VA55HZ)     |
+| Organisation Unit | 87TYJKSBAH                                    |
+| Organisation      | YUANTA SECURITIES VIETNAM JOINT STOCK COMPANY |
+| Country           | US                                            |
+| Start Datetime    | 2026-03-25 01:52:35 UTC                       |
+| End Datetime      | 2027-03-25 01:52:34 UTC                       |
++-------------------+-----------------------------------------------+
+
+[08:28:19]: Installing provisioning profile...
+[08:28:19]: Installing provisioning profile...
+
++-----------------------------------------------------------------------+
+|                    [32mInstalled Provisioning Profile[0m                     |
++---------------------+------------------------+------------------------+
+| Parameter           | Environment Variable   | Value                  |
++---------------------+------------------------+------------------------+
+| App Identifier      |                        | vn.ysvn.ysflex         |
+| Type                |                        | development            |
+| Platform            |                        | ios                    |
+| Profile UUID        | sigh_vn.ysvn.ysflex_d  | c571fd1d-bbfb-4126-8a  |
+|                     | evelopment             | c0-7e4ae9da392f        |
+| Profile Name        | sigh_vn.ysvn.ysflex_d  | iOS Team Provisioning  |
+|                     | evelopment_profile-na  | Profile:               |
+|                     | me                     | vn.ysvn.ysflex         |
+| Profile Path        | sigh_vn.ysvn.ysflex_d  | /Users/solutionaltiss  |
+|                     | evelopment_profile-pa  | s/Library/Developer/X  |
+|                     | th                     | code/UserData/Provisi  |
+|                     |                        | oning                  |
+|                     |                        | Profiles/c571fd1d-bbf  |
+|                     |                        | b-4126-8ac0-7e4ae9da3  |
+|                     |                        | 92f.mobileprovision    |
+| Development Team ID | sigh_vn.ysvn.ysflex_d  | 87TYJKSBAH             |
+|                     | evelopment_team-id     |                        |
+| Certificate Name    | sigh_vn.ysvn.ysflex_d  | Apple Development:     |
+|                     | evelopment_certificat  | Minh VU Le             |
+|                     | e-name                 | (W25MYPM8XA)           |
++---------------------+------------------------+------------------------+
+
+
++-----------------------------------------------------------------------+
+|                    [32mInstalled Provisioning Profile[0m                     |
++---------------------+------------------------+------------------------+
+| Parameter           | Environment Variable   | Value                  |
++---------------------+------------------------+------------------------+
+| App Identifier      |                        | vn.ysvn.ysflex.OneSig  |
+|                     |                        | nalNotificationServic  |
+|                     |                        | eExtension             |
+| Type                |                        | development            |
+| Platform            |                        | ios                    |
+| Profile UUID        | sigh_vn.ysvn.ysflex.O  | 35c0b001-be82-4497-80  |
+|                     | neSignalNotificationS  | 62-e862fbfb8a69        |
+|                     | erviceExtension_devel  |                        |
+|                     | opment                 |                        |
+| Profile Name        | sigh_vn.ysvn.ysflex.O  | iOS Team Provisioning  |
+|                     | neSignalNotificationS  | Profile:               |
+|                     | erviceExtension_devel  | vn.ysvn.ysflex.OneSig  |
+|                     | opment_profile-name    | nalNotificationServic  |
+|                     |                        | eExtension             |
+| Profile Path        | sigh_vn.ysvn.ysflex.O  | /Users/solutionaltiss  |
+|                     | neSignalNotificationS  | s/Library/Developer/X  |
+|                     | erviceExtension_devel  | code/UserData/Provisi  |
+|                     | opment_profile-path    | oning                  |
+|                     |                        | Profiles/35c0b001-be8  |
+|                     |                        | 2-4497-8062-e862fbfb8  |
+|                     |                        | a69.mobileprovision    |
+| Development Team ID | sigh_vn.ysvn.ysflex.O  | 87TYJKSBAH             |
+|                     | neSignalNotificationS  |                        |
+|                     | erviceExtension_devel  |                        |
+|                     | opment_team-id         |                        |
+| Certificate Name    | sigh_vn.ysvn.ysflex.O  | Apple Development:     |
+|                     | neSignalNotificationS  | Minh VU Le             |
+|                     | erviceExtension_devel  | (W25MYPM8XA)           |
+|                     | opment_certificate-na  |                        |
+|                     | me                     |                        |
++---------------------+------------------------+------------------------+
+
+[08:28:19]: [32m[32mAll required keys, certificates and provisioning profiles are installed 🙌[0m
+[08:28:19]: Setting Provisioning Profile type to 'development'
+[08:28:19]: [32m------------------------------------------[0m
+[08:28:19]: [32m--- Step: update_code_signing_settings ---[0m
+[08:28:19]: [32m------------------------------------------[0m
+
++--------------------------------------------------------------+
+|              [32mSummary for code signing settings[0m               |
++-----------------------+--------------------------------------+
+| path                  | /Users/solutionaltisss/YSflexMobile  |
+|                       | /Sources/YSfleX_Mobile/ios/YSVNMobi  |
+|                       | le.xcodeproj                         |
+| targets               | ["YSVNMobile"]                       |
+| use_automatic_signing | true                                 |
+| team_id               | 87TYJKSBAH                           |
+| code_sign_identity    | Apple Development                    |
+| bundle_identifier     | vn.ysvn.ysflex                       |
++-----------------------+--------------------------------------+
+
+[08:28:19]: Updating the Automatic Codesigning flag to enabled for the given project '/Users/solutionaltisss/YSflexMobile/Sources/YSfleX_Mobile/ios/YSVNMobile.xcodeproj/project.pbxproj'
+[08:28:19]: [33mSet Team id to: 87TYJKSBAH for target: YSVNMobile for build configuration: Debug[0m
+[08:28:19]: [33mSet Code Sign identity to: Apple Development for target: YSVNMobile for build configuration: Debug[0m
+[08:28:19]: [33mSet Provisioning Profile name to:  for target: YSVNMobile for build configuration: Debug[0m
+[08:28:19]: [33mSet Bundle identifier to: vn.ysvn.ysflex for target: YSVNMobile for build configuration: Debug[0m
+[08:28:19]: [33mSet Team id to: 87TYJKSBAH for target: YSVNMobile for build configuration: Release[0m
+[08:28:19]: [33mSet Code Sign identity to: Apple Development for target: YSVNMobile for build configuration: Release[0m
+[08:28:19]: [33mSet Provisioning Profile name to:  for target: YSVNMobile for build configuration: Release[0m
+[08:28:19]: [33mSet Bundle identifier to: vn.ysvn.ysflex for target: YSVNMobile for build configuration: Release[0m
+[08:28:19]: [33mSkipping OneSignalNotificationServiceExtension not selected (YSVNMobile)[0m
+[08:28:19]: [32mSuccessfully updated project settings to use Code Sign Style = 'Automatic'[0m
+[08:28:19]: [32mModified Targets:[0m
+[08:28:19]: [32m	 * YSVNMobile[0m
+[08:28:19]: [32mModified Build Configurations:[0m
+[08:28:19]: [32m	 * Debug[0m
+[08:28:19]: [32m	 * Release[0m
+[08:28:19]: [32m------------------------------------------[0m
+[08:28:19]: [32m--- Step: update_code_signing_settings ---[0m
+[08:28:19]: [32m------------------------------------------[0m
+
++--------------------------------------------------------------+
+|              [32mSummary for code signing settings[0m               |
++-----------------------+--------------------------------------+
+| path                  | /Users/solutionaltisss/YSflexMobile  |
+|                       | /Sources/YSfleX_Mobile/ios/YSVNMobi  |
+|                       | le.xcodeproj                         |
+| targets               | ["OneSignalNotificationServiceExten  |
+|                       | sion"]                               |
+| use_automatic_signing | true                                 |
+| team_id               | 87TYJKSBAH                           |
+| code_sign_identity    | Apple Development                    |
+| bundle_identifier     | vn.ysvn.ysflex.OneSignalNotificatio  |
+|                       | nServiceExtension                    |
++-----------------------+--------------------------------------+
+
+[08:28:19]: Updating the Automatic Codesigning flag to enabled for the given project '/Users/solutionaltisss/YSflexMobile/Sources/YSfleX_Mobile/ios/YSVNMobile.xcodeproj/project.pbxproj'
+[08:28:19]: [33mSkipping YSVNMobile not selected (OneSignalNotificationServiceExtension)[0m
+[08:28:19]: [33mSet Team id to: 87TYJKSBAH for target: OneSignalNotificationServiceExtension for build configuration: Debug[0m
+[08:28:19]: [33mSet Code Sign identity to: Apple Development for target: OneSignalNotificationServiceExtension for build configuration: Debug[0m
+[08:28:19]: [33mSet Provisioning Profile name to:  for target: OneSignalNotificationServiceExtension for build configuration: Debug[0m
+[08:28:19]: [33mSet Bundle identifier to: vn.ysvn.ysflex.OneSignalNotificationServiceExtension for target: OneSignalNotificationServiceExtension for build configuration: Debug[0m
+[08:28:19]: [33mSet Team id to: 87TYJKSBAH for target: OneSignalNotificationServiceExtension for build configuration: Release[0m
+[08:28:19]: [33mSet Code Sign identity to: Apple Development for target: OneSignalNotificationServiceExtension for build configuration: Release[0m
+[08:28:19]: [33mSet Provisioning Profile name to:  for target: OneSignalNotificationServiceExtension for build configuration: Release[0m
+[08:28:19]: [33mSet Bundle identifier to: vn.ysvn.ysflex.OneSignalNotificationServiceExtension for target: OneSignalNotificationServiceExtension for build configuration: Release[0m
+[08:28:19]: [32mSuccessfully updated project settings to use Code Sign Style = 'Automatic'[0m
+[08:28:19]: [32mModified Targets:[0m
+[08:28:19]: [32m	 * OneSignalNotificationServiceExtension[0m
+[08:28:19]: [32mModified Build Configurations:[0m
+[08:28:19]: [32m	 * Debug[0m
+[08:28:19]: [32m	 * Release[0m
+[08:28:19]: [32m-----------------------[0m
+[08:28:19]: [32m--- Step: build_app ---[0m
+[08:28:19]: [32m-----------------------[0m
+[08:28:19]: [33mResolving Swift Package Manager dependencies...[0m
+[08:28:19]: [36m$ xcodebuild -resolvePackageDependencies -workspace /Users/solutionaltisss/YSflexMobile/Sources/YSfleX_Mobile/ios/YSVNMobile.xcworkspace -scheme YSVNMobile[0m
+[08:28:20]: ▸ [35mCommand line invocation:[0m
+[08:28:20]: ▸ [35m    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -resolvePackageDependencies -workspace /Users/solutionaltisss/YSflexMobile/Sources/YSfleX_Mobile/ios/YSVNMobile.xcworkspace -scheme YSVNMobile[0m
+[08:28:22]: ▸ [35mResolve Package Graph[0m
+[08:28:22]: ▸ [35mResolved source packages:[0m
+[08:28:22]: ▸ [35m  YuantaEKYCResource: /Users/solutionaltisss/YSflexMobile/Sources/YSfleX_Mobile/Ekyc/FCIResources/YuantaEKYCResource @ local[0m
+[08:28:22]: ▸ [35m  FCIVisionMLVietnam: /Users/solutionaltisss/YSflexMobile/Sources/YSfleX_Mobile/Ekyc/FCIDependencies/ML/FCIVisionMLVietnam @ local[0m
+[08:28:22]: ▸ [35m  FCIVisionMLCore: /Users/solutionaltisss/YSflexMobile/Sources/YSfleX_Mobile/Ekyc/FCIDependencies/ML/FCIVisionMLCore @ local[0m
+[08:28:22]: ▸ [35m  FCIVisionServiceBinary: /Users/solutionaltisss/YSflexMobile/Sources/YSfleX_Mobile/Ekyc/FCIDependencies/VisionService/FCIVisionServiceBinary @ local[0m
+[08:28:22]: ▸ [35m  EkycSDK: /Users/solutionaltisss/YSflexMobile/Sources/YSfleX_Mobile/Ekyc/EkycSDK @ local[0m
+[08:28:22]: ▸ [35mresolved source packages: YuantaEKYCResource, FCIVisionMLVietnam, FCIVisionMLCore, FCIVisionServiceBinary, EkycSDK[0m
+[08:28:22]: [36m$ xcodebuild -showBuildSettings -workspace /Users/solutionaltisss/YSflexMobile/Sources/YSfleX_Mobile/ios/YSVNMobile.xcworkspace -scheme YSVNMobile 2>&1[0m
+[08:28:24]: Detected provisioning profile mapping: {"vn.ysvn.ysflex": "iOS Team Provisioning Profile: vn.ysvn.ysflex", "vn.ysvn.ysflex.OneSignalNotificationServiceExtension": "iOS Team Provisioning Profile: vn.ysvn.ysflex.OneSignalNotificationServiceExtension"}
+
++-----------------------------------------------------------------------------+
+|                           [32mSummary for gym 2.241.0[0m                           |
++--------------------------------------+--------------------------------------+
+| workspace                            | /Users/solutionaltisss/YSflexMobile  |
+|                                      | /Sources/YSfleX_Mobile/ios/YSVNMobi  |
+|                                      | le.xcworkspace                       |
+| scheme                               | YSVNMobile                           |
+| clean                                | true                                 |
+| suppress_xcode_output                | true                                 |
+| export_method                        | development                          |
+| output_directory                     | /Users/solutionaltisss/YSflexMobile  |
+|                                      | /Sources/YSfleX_Mobile/fastlane/bui  |
+|                                      | ld/2026-10-27-MTS_UAT_3.9.99         |
+| silent                               | true                                 |
+| skip_package_ipa                     | true                                 |
+| export_options.provisioningProfiles  | iOS Team Provisioning Profile:       |
+| .vn.ysvn.ysflex                      | vn.ysvn.ysflex                       |
+| export_options.provisioningProfiles  | iOS Team Provisioning Profile:       |
+| .vn.ysvn.ysflex.OneSignalNotificati  | vn.ysvn.ysflex.OneSignalNotificatio  |
+| onServiceExtension                   | nServiceExtension                    |
+| output_name                          | YSflex                               |
+| skip_package_pkg                     | false                                |
+| build_path                           | /Users/solutionaltisss/Library/Deve  |
+|                                      | loper/Xcode/Archives/2026-10-27      |
+| result_bundle                        | false                                |
+| buildlog_path                        | ~/Library/Logs/gym                   |
+| destination                          | generic/platform=iOS                 |
+| xcodebuild_formatter                 | xcpretty                             |
+| build_timing_summary                 | false                                |
+| skip_profile_detection               | false                                |
+| xcodebuild_command                   | xcodebuild                           |
+| skip_package_dependencies_resolutio  | false                                |
+| n                                    |                                      |
+| disallow_xcodebuild_settings_lookup  | false                                |
+| disable_package_automatic_updates    | false                                |
+| skip_package_repository_fetches      | false                                |
+| use_system_scm                       | false                                |
+| generate_appstore_info               | false                                |
+| xcode_path                           | /Applications/Xcode.app              |
++--------------------------------------+--------------------------------------+
+
+[08:28:24]: [33mUsing xcpretty can result in missing some build errors and is slower than the preferred xcbeautify. See https://docs.fastlane.tools/best-practices/xcodebuild-formatters/ for more information.[0m
+[12:22:38]: ▸ [35m** ARCHIVE FAILED **[0m
+[12:22:38]: ▸ [35mThe following build commands failed:[0m
+[12:22:38]: ▸ [35m	ProcessInfoPlistFile /Users/solutionaltisss/Library/Developer/Xcode/DerivedData/YSVNMobile-gvvnxblukhwrdperwauiwnsijaej/Build/Intermediates.noindex/ArchiveIntermediates/YSVNMobile/InstallationBuildProductsLocation/Applications/YSflex.app/Info.plist /Users/solutionaltisss/YSflexMobile/Sources/YSfleX_Mobile/ios/YSVNMobile/Info.plist (in target 'YSVNMobile' from project 'YSVNMobile')[0m
+[12:22:38]: ▸ [35m	Archiving workspace YSVNMobile with scheme YSVNMobile[0m
+[12:22:38]: ▸ [35m(2 failures)[0m
+[12:22:38]: [31mExit status: 65[0m
+
++-----------------------------------------+
+|            [32m[33mBuild environment[0m            |
++---------------+-------------------------+
+| xcode_path    | /Applications/Xcode.app |
+| gym_version   | 2.241.0                 |
+| export_method | development             |
+| sdk           | iPhoneOS26.2.sdk        |
++---------------+-------------------------+
+
+[12:22:38]: ▸ [35mwarning: Run script build phase '[CP-User] [RN]Check rncore' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'React-Fabric' from project 'Pods')[0m
+[12:22:38]: ▸ [35mwarning: Run script build phase 'Start Packager' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'YSVNMobile' from project 'YSVNMobile')[0m
+[12:22:38]: ▸ [35mwarning: Run script build phase 'Crashlytics Run Script' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'YSVNMobile' from project 'YSVNMobile')[0m
+[12:22:38]: ▸ [35mwarning: Run script build phase 'Bundle React Native code and images' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'YSVNMobile' from project 'YSVNMobile')[0m
+[12:22:38]: ▸ [35mwarning: Run script build phase '[CP-User] [RNFB] Core Configuration' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'YSVNMobile' from project 'YSVNMobile')[0m
+[12:22:38]: ▸ [35merror: error: accessing build database "/Users/solutionaltisss/Library/Developer/Xcode/DerivedData/YSVNMobile-gvvnxblukhwrdperwauiwnsijaej/Build/Intermediates.noindex/ArchiveIntermediates/YSVNMobile/IntermediateBuildFilesPath/XCBuildData/build.db": disk I/O error[0m
+[12:22:38]: 
+[12:22:38]: [31m⬆️  Check out the few lines of raw `xcodebuild` output above for potential hints on how to solve this error[0m
+[12:22:38]: [33m📋  For the complete and more detailed error log, check the full log at:[0m
+[12:22:38]: [33m📋  /Users/solutionaltisss/Library/Logs/gym/YSflex-YSVNMobile.log[0m
+[12:22:38]: 
+[12:22:38]: [31mYour `export_method` in gym is defined as `development`[0m
+[12:22:38]: [31mwhich might cause problems when signing your application[0m
+[12:22:38]: [31mAre you sure want to build and export for development?[0m
+[12:22:38]: [31mPlease make sure to define the correct export methods when calling[0m
+[12:22:38]: [31mgym in your Fastfile or from the command line[0m
+[12:22:38]: 
+[12:22:38]: 
+[12:22:38]: [31mLooks like fastlane ran into a build/archive error with your project[0m
+[12:22:38]: [31mIt's hard to tell what's causing the error, so we wrote some guides on how[0m
+[12:22:38]: [31mto troubleshoot build and signing issues: https://docs.fastlane.tools/codesigning/getting-started/[0m
+[12:22:38]: [31mBefore submitting an issue on GitHub, please follow the guide above and make[0m
+[12:22:38]: [31msure your project is set up correctly.[0m
+[12:22:38]: [31mfastlane uses `xcodebuild` commands to generate your binary, you can see the[0m
+[12:22:38]: [31mthe full commands printed out in yellow in the above log.[0m
+[12:22:38]: [31mMake sure to inspect the output above, as usually you'll find more error information there[0m
+[12:22:38]: 
++----------------------------------------------------------------------------+
+|                                [33mLane Context[0m                                |
++-------------------------------------+--------------------------------------+
+| DEFAULT_PLATFORM                    | ios                                  |
+| PLATFORM_NAME                       | ios                                  |
+| LANE_NAME                           | ios build_bot                        |
+| GRADLE_BUILD_TYPE                   | Release                              |
+| GRADLE_ALL_APK_OUTPUT_PATHS         | ["/Users/solutionaltisss/YSflexMobi  |
+|                                     | le/Sources/YSfleX_Mobile/android/ap  |
+|                                     | p/build/outputs/apk/release/app-rel  |
+|                                     | ease.apk"]                           |
+| GRADLE_ALL_AAB_OUTPUT_PATHS         | []                                   |
+| GRADLE_ALL_OUTPUT_JSON_OUTPUT_PATHS | ["/Users/solutionaltisss/YSflexMobi  |
+|                                     | le/Sources/YSfleX_Mobile/android/ap  |
+|                                     | p/build/outputs/apk/debug/output-me  |
+|                                     | tadata.json",                        |
+|                                     | "/Users/solutionaltisss/YSflexMobil  |
+|                                     | e/Sources/YSfleX_Mobile/android/app  |
+|                                     | /build/outputs/apk/release/output-m  |
+|                                     | etadata.json"]                       |
+| GRADLE_ALL_MAPPING_TXT_OUTPUT_PATHS | ["/Users/solutionaltisss/YSflexMobi  |
+|                                     | le/Sources/YSfleX_Mobile/android/ap  |
+|                                     | p/build/outputs/mapping/release/map  |
+|                                     | ping.txt"]                           |
+| GRADLE_APK_OUTPUT_PATH              | /Users/solutionaltisss/YSflexMobile  |
+|                                     | /Sources/YSfleX_Mobile/android/app/  |
+|                                     | build/outputs/apk/release/app-relea  |
+|                                     | se.apk                               |
+| GRADLE_OUTPUT_JSON_OUTPUT_PATH      | /Users/solutionaltisss/YSflexMobile  |
+|                                     | /Sources/YSfleX_Mobile/android/app/  |
+|                                     | build/outputs/apk/release/output-me  |
+|                                     | tadata.json                          |
+| GRADLE_MAPPING_TXT_OUTPUT_PATH      | /Users/solutionaltisss/YSflexMobile  |
+|                                     | /Sources/YSfleX_Mobile/android/app/  |
+|                                     | build/outputs/mapping/release/mappi  |
+|                                     | ng.txt                               |
+| SIGH_PROFILE_TYPE                   | development                          |
+| MATCH_PROVISIONING_PROFILE_MAPPING  | {"vn.ysvn.ysflex" => "iOS Team       |
+|                                     | Provisioning Profile:                |
+|                                     | vn.ysvn.ysflex",                     |
+|                                     | "vn.ysvn.ysflex.OneSignalNotificati  |
+|                                     | onServiceExtension" => "iOS Team     |
+|                                     | Provisioning Profile:                |
+|                                     | vn.ysvn.ysflex.OneSignalNotificatio  |
+|                                     | nServiceExtension"}                  |
++-------------------------------------+--------------------------------------+
+[12:22:38]: [31mCalled from Fastfile at line 345[0m
+[12:22:38]: [31m```[0m
+[12:22:38]: [31m    343:	      # gym chỉ archive; export .ipa qua export_development_ipa (xem chú thích ở helper).[0m
+[12:22:38]: [31m    344:	      build_options[:skip_package_ipa] = true[0m
+[12:22:38]: [31m => 345:	      build_app(build_options) unless can_resume_export[0m
+[12:22:38]: [31m    346:	      export_development_ipa((can_resume_export ? archive_path : lane_context[Fastlane::Actions::SharedValues::XCODEBUILD_ARCHIVE]),[0m
+[12:22:38]: [31m    347:	                             path_build, export_options)[0m
+[12:22:38]: [31m```[0m
+
++---------------------------------------------+
+|              [32mfastlane summary[0m               |
++------+------------------------+-------------+
+| Step | Action                 | Time (in s) |
++------+------------------------+-------------+
+| 1    | default_platform       | 0           |
+| 2    | shell command          | 23          |
+| 3    | app:assembleRelease    | 175         |
+| 4    | shell command          | 0           |
+| 5    | shell command          | 0           |
+| 6    | shell command          | 18          |
+| 7    | match                  | 3           |
+| 8    | update_code_signing_s  | 0           |
+|      | ettings                |             |
+| 9    | update_code_signing_s  | 0           |
+|      | ettings                |             |
+| 💥   | [31mbuild_app[0m              | 14059       |
++------+------------------------+-------------+
+
+[12:22:38]: [31mfastlane finished with errors[0m
+[31m
+[!] Error building the application - see the log above[0m
+
+#######################################################################
+# fastlane 2.241.2 is available. You are on 2.241.0.
+# You should use the latest version.
+# Please update using `fastlane update_fastlane`.
+#######################################################################
+
+[32m2.241.2 Improvements[0m
+* [spec] Fix the Windows test job (#30475) via Jerome Lacoste (@lacostej)
+* [spaceship] Fix GHSA-m67f-ghvw-j7qp via Jerome Lacoste (@lacostej)
+* [Fastlane.Swift] Fix GHSA-gqqf-9mh3-3578 via Jerome Lacoste (@lacostej)
+* [match] Fix GHSA-hqmj-jmgc-wmwp via Jerome Lacoste (@lacostej)
+* Bump ruby/setup-ruby from 1.329.0 to 1.331.0 (#30473) via dependabot[bot] (@dependabot[bot])
+* Bump github/codeql-action/upload-sarif from 4.38.3 to 4.39.0 (#30472) via dependabot[bot] (@dependabot[bot])
+* [sigh] Skip installing provisioning profiles when not on macOS (#30463) via John Szumski (@jszumski)
+* [spaceship] prevent frozen error when logging response (#30460) via Connor Tumbleson (@iBotPeaches)
+* Bump ossf/scorecard-action from 2.4.4 to 2.5.0 (#30449) via dependabot[bot] (@dependabot[bot])
+* Bump ruby/setup-ruby from 1.327.0 to 1.329.0 (#30450) via dependabot[bot] (@dependabot[bot])
+* Bump github/codeql-action/upload-sarif from 4.38.2 to 4.38.3 (#30453) via dependabot[bot] (@dependabot[bot])
+* Bump actions/download-artifact from 8.0.1 to 8.0.2 (#30452) via dependabot[bot] (@dependabot[bot])
+* Bump actions/upload-artifact from 7.0.1 to 7.0.2 (#30451) via dependabot[bot] (@dependabot[bot])
+
+[32m2.241.1 Improvements[0m
+* Revert "[produce] Support App Store Connect API key for create/enable_services/disable_services" (#30447) via Connor Tumbleson (@iBotPeaches)
+* [deliver] add iphone duo screenshot sizes (#30444) via Tim Shedor (@tshedor)
+* [snapshot] Add iPhone 18 Pro / Pro Max device names (#30443) via Emilia (@lazerwalker)
+* [ci] release: keep Bundler config out of the tracked .bundle/config (#30437) via Jerome Lacoste (@lacostej)
+* [ci] build: move openssl into group that release ignores (#30435) via Connor Tumbleson (@iBotPeaches)
+
+[32mPlease update using `fastlane update_fastlane`[0m
