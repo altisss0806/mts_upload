@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b1220" />
+  <meta name="referrer" content="no-referrer" />
+  <title>Lấy UDID iPhone</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #0b1220;
+      color: #e5edf8;
+      font-synthesis: none;
+    }
+    * { box-sizing: border-box; }
+    body { min-width: 0; min-height: 100dvh; margin: 0; background: radial-gradient(circle at top left, #172554, #0b1220 46rem); }
+    a, button { font: inherit; }
+    button, a, summary { -webkit-tap-highlight-color: transparent; }
+    button:focus-visible, a:focus-visible, summary:focus-visible { outline: 3px solid #93c5fd; outline-offset: 2px; }
+    .hidden { display: none !important; }
+    h1, h2, h3, p { margin-top: 0; }
+    a { color: #93c5fd; }
+    code, .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    code { padding: 1px 5px; border-radius: 6px; background: #172033; color: #dbeafe; font-size: .92em; overflow-wrap: anywhere; }
+
+    .page { width: min(100%, 760px); margin: 0 auto; padding: clamp(16px, 4vw, 32px) 16px 48px; }
+    .eyebrow { margin: 0 0 8px; color: #93c5fd; font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    header h1 { margin-bottom: 8px; font-size: clamp(26px, 5vw, 36px); line-height: 1.12; letter-spacing: -.02em; }
+    header p { margin-bottom: 0; color: #a9b9cf; font-size: 15px; line-height: 1.55; }
+
+    .card { margin-top: 20px; padding: clamp(18px, 4vw, 28px); border: 1px solid rgba(148, 163, 184, .25); border-radius: 18px; background: rgba(15, 23, 42, .9); box-shadow: 0 24px 60px rgba(0, 0, 0, .3); }
+    .card h2 { margin-bottom: 8px; font-size: 20px; }
+    .lead { margin-bottom: 16px; color: #cbd5e1; font-size: 15px; line-height: 1.55; }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; }
+    .button { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; border: 1px solid #334155; border-radius: 10px; padding: 10px 16px; background: #172033; color: #dbeafe; font-size: 15px; font-weight: 700; text-decoration: none; cursor: pointer; }
+    .button.primary { border-color: transparent; background: #2563eb; color: #fff; box-shadow: 0 10px 24px -14px #2563eb; }
+    .button svg { width: 18px; height: 18px; flex: none; }
+    .status { min-height: 20px; margin: 10px 0 0; color: #94a3b8; font-size: 13px; line-height: 1.45; }
+    .status[data-state="ok"] { color: #86efac; }
+    .status[data-state="error"] { color: #fca5a5; }
+    .warn { margin-bottom: 16px; padding: 12px 14px; border: 1px solid #854d0e; border-radius: 12px; background: rgba(66, 32, 6, .55); color: #fde68a; font-size: 14px; line-height: 1.5; }
+    .error-box { border-color: #7f1d1d; background: rgba(42, 18, 21, .7); color: #fecaca; }
+
+    .qr-wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; }
+    .qr-box { padding: 10px; border-radius: 12px; background: #fff; line-height: 0; }
+    .qr-box img, .qr-box canvas { width: 168px; height: 168px; }
+    .qr-wrap p { flex: 1 1 220px; margin: 0; color: #cbd5e1; font-size: 15px; line-height: 1.55; }
+
+    .udid-value { display: block; width: 100%; margin: 4px 0 14px; padding: 14px; border: 1px solid #2563eb; border-radius: 12px; background: #0b1426; color: #f8fafc; font-size: clamp(16px, 4.4vw, 20px); font-weight: 700; letter-spacing: .02em; line-height: 1.4; text-align: center; overflow-wrap: anywhere; user-select: all; -webkit-user-select: all; }
+    .format-tag { display: inline-block; margin-left: 6px; padding: 2px 8px; border-radius: 999px; background: #1e3a8a; color: #bfdbfe; font-size: 12px; font-weight: 700; vertical-align: middle; }
+    .details { display: grid; grid-template-columns: max-content 1fr; gap: 8px 16px; margin: 18px 0 0; font-size: 14px; }
+    .details dt { color: #94a3b8; }
+    .details dd { margin: 0; color: #e2e8f0; overflow-wrap: anywhere; }
+    .skel { border-radius: 10px; background: linear-gradient(90deg, #1e293b 25%, #334155 37%, #1e293b 63%); background-size: 400% 100%; animation: shimmer 1.4s ease infinite; }
+    .skel-line { height: 18px; margin-bottom: 12px; }
+    .skel-udid { height: 56px; margin-bottom: 14px; }
+    @keyframes shimmer { from { background-position: 100% 50%; } to { background-position: 0 50%; } }
+
+    section.guide { margin-top: 36px; }
+    section.guide > h2 { margin-bottom: 14px; font-size: 22px; }
+    .steps { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; counter-reset: step; }
+    .steps li { position: relative; padding: 0 0 22px 48px; counter-increment: step; }
+    .steps li::before { content: counter(step); position: absolute; top: 0; left: 0; width: 32px; height: 32px; display: grid; place-items: center; border-radius: 50%; background: #1e3a8a; color: #dbeafe; font-size: 14px; font-weight: 800; }
+    .steps li:not(:last-child)::after { content: ""; position: absolute; top: 36px; bottom: 4px; left: 15px; width: 2px; background: #1e293b; }
+    .steps h3 { margin: 4px 0 6px; font-size: 16px; }
+    .steps p, .guide-text { margin: 0 0 6px; color: #cbd5e1; font-size: 14.5px; line-height: 1.6; }
+    .path { color: #f8fafc; font-weight: 600; }
+    .table-wrap { overflow-x: auto; margin: 8px 0 4px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { padding: 9px 10px; border-bottom: 1px solid #1e293b; text-align: left; vertical-align: top; }
+    th { color: #94a3b8; font-weight: 600; }
+    td { color: #e2e8f0; }
+    details { border-bottom: 1px solid #1e293b; }
+    summary { min-height: 44px; display: flex; align-items: center; padding: 10px 0; color: #f1f5f9; font-size: 15px; font-weight: 600; cursor: pointer; list-style: none; }
+    summary::-webkit-details-marker { display: none; }
+    summary::before { content: "›"; width: 20px; flex: none; color: #93c5fd; font-size: 20px; transition: transform .15s; }
+    details[open] summary::before { transform: rotate(90deg); }
+    details > div { padding: 0 0 14px 20px; }
+    .foot { margin-top: 32px; color: #64748b; font-size: 13px; line-height: 1.55; }
+    .toast { position: fixed; left: 50%; bottom: max(20px, env(safe-area-inset-bottom)); transform: translate(-50%, 20px); padding: 10px 16px; border-radius: 10px; background: #f8fafc; color: #0b1220; font-size: 14px; font-weight: 700; opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s; }
+    .toast.show { opacity: 1; transform: translate(-50%, 0); }
+    @media (max-width: 430px) {
+      .actions .button { flex: 1 1 100%; }
+      .details { grid-template-columns: 1fr; gap: 2px; }
+      .details dd { margin-bottom: 8px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .skel { animation: none; }
+      .toast, summary::before { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <p class="eyebrow">iOS · Ad-hoc</p>
+      <h1>Lấy UDID iPhone / iPad</h1>
+      <p>UDID là mã định danh duy nhất của máy. Dev cần UDID để thêm máy vào provisioning profile, sau đó máy mới cài được bản build ad-hoc/development. Trang này đọc UDID qua một profile cấu hình của Apple, không cần cáp hay máy Mac.</p>
+    </header>
+
+    <!-- Result (?t=<token>) -->
+    <section class="card hidden" id="result-card" aria-live="polite">
+      <div id="result-loading">
+        <div class="skel skel-line" style="width: 40%"></div>
+        <div class="skel skel-udid"></div>
+        <div class="skel skel-line" style="width: 70%"></div>
+      </div>
+      <div class="hidden" id="result-body">
+        <h2>UDID của máy <span class="format-tag" id="udid-format"></span></h2>
+        <div class="warn hidden" id="sim-warning">Đây là UDID giả của iOS Simulator, không dùng được trên Apple Developer. Hãy lấy lại trên iPhone/iPad thật.</div>
+        <output class="udid-value mono" id="udid-value"></output>
+        <div class="actions">
+          <button class="button primary" type="button" id="copy-udid">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2" /><path d="M5 15V5a2 2 0 0 1 2-2h10" /></svg>
+            Copy UDID
+          </button>
+          <button class="button" type="button" id="share-udid">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v13" /><path d="m7 8 5-5 5 5" /><path d="M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6" /></svg>
+            Gửi cho dev
+          </button>
+        </div>
+        <dl class="details" id="udid-details"></dl>
+        <p class="status" id="result-status"></p>
+      </div>
+      <div class="hidden" id="result-error">
+        <h2>Chưa lấy được UDID</h2>
+        <p class="lead" id="result-error-text"></p>
+        <div class="actions"><a class="button primary" id="retry-link" href="./">Thử lại</a></div>
+      </div>
+    </section>
+
+    <!-- Start: iPhone/iPad in Safari -->
+    <section class="card hidden" id="start-ios">
+      <h2>Bắt đầu</h2>
+      <p class="lead">Bấm nút bên dưới, chọn <b>Cho phép</b>, rồi làm theo hướng dẫn ở phần dưới. Khi xong, Safari tự mở lại trang này và hiện UDID.</p>
+      <div class="actions">
+        <a class="button primary" id="profile-link" href="#">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12" /><path d="m7 10 5 5 5-5" /><path d="M5 21h14" /></svg>
+          Tải profile lấy UDID
+        </a>
+      </div>
+      <p class="status" id="profile-status"></p>
+    </section>
+
+    <!-- iPhone/iPad, but not Safari (Chrome, Zalo, Messenger...) -->
+    <section class="card hidden" id="start-not-safari">
+      <div class="warn">Trình duyệt này không cài được profile cấu hình. Hãy mở trang bằng <b>Safari</b>.</div>
+      <p class="lead">Copy link, mở Safari, dán vào thanh địa chỉ. Trong Zalo/Messenger: bấm <b>⋯</b> rồi chọn <b>Mở bằng trình duyệt</b> hoặc <b>Mở trong Safari</b>.</p>
+      <div class="actions"><button class="button primary" type="button" id="copy-page-link">Copy link trang</button></div>
+    </section>
+
+    <!-- Desktop / Android -->
+    <section class="card hidden" id="start-desktop">
+      <h2>Mở trang này trên iPhone/iPad</h2>
+      <div class="qr-wrap">
+        <div class="qr-box" id="page-qr" aria-label="QR mở trang lấy UDID"></div>
+        <p>Mở app <b>Camera</b> trên iPhone, quét QR rồi chạm vào link hiện ra để mở bằng Safari. Hoặc gửi link cho người dùng qua Zalo/email.</p>
+      </div>
+      <div class="actions" style="margin-top: 16px">
+        <a class="button primary" id="open-page-tab" href="./" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6" /><path d="M20 4 10 14" /><path d="M19 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5" /></svg>
+          Mở link trên tab mới
+        </a>
+        <button class="button" type="button" id="copy-page-link-desktop">Copy link trang</button>
+      </div>
+    </section>
+
+    <section class="guide" aria-labelledby="guide-title">
+      <h2 id="guide-title">Hướng dẫn chi tiết</h2>
+      <ol class="steps">
+        <li>
+          <h3>Mở trang bằng Safari</h3>
+          <p>Chỉ Safari mới tải được profile cấu hình. Chrome, Cốc Cốc hay trình duyệt bên trong Zalo/Messenger/Facebook sẽ không phản hồi khi bấm nút.</p>
+        </li>
+        <li>
+          <h3>Bấm “Tải profile lấy UDID” → Cho phép</h3>
+          <p>Safari hỏi <i>“Trang web này đang cố tải xuống một hồ sơ cấu hình”</i>. Chọn <b>Cho phép</b>. Nếu iPhone hỏi cài lên iPhone hay Apple Watch, chọn <b>iPhone</b>. Màn hình báo <i>“Đã tải về hồ sơ”</i>, bấm <b>Đóng</b>.</p>
+        </li>
+        <li>
+          <h3>Mở Cài đặt → Đã tải về hồ sơ</h3>
+          <p>Mở app <b>Cài đặt</b>. Dòng <span class="path">Đã tải về hồ sơ</span> hiện ngay dưới tên Apple ID ở đầu trang, bấm vào đó.</p>
+          <p>Không thấy dòng này: vào <span class="path">Cài đặt → Cài đặt chung → Quản lý VPN &amp; thiết bị</span> (iOS 15 trở lên) hoặc <span class="path">Cài đặt chung → Hồ sơ</span> (iOS 14 trở xuống), chọn <b>Lấy UDID thiết bị</b>.</p>
+        </li>
+        <li>
+          <h3>Bấm Cài đặt, nhập mật mã máy</h3>
+          <p>Màn <b>Cài đặt hồ sơ</b> hiện tên <b>Lấy UDID thiết bị</b>. Bấm <b>Cài đặt</b> ở góc trên bên phải và nhập mật mã mở khoá máy.</p>
+          <p>Nếu hiện màn <b>Cảnh báo</b> “Hồ sơ chưa được ký” (dòng <i>Ký bởi</i> màu đỏ), bấm <b>Cài đặt</b> ở góc trên lần nữa, rồi bấm <b>Cài đặt</b> trong hộp xác nhận. Profile này chỉ đọc thông tin máy, không cài gì lên máy, nên an toàn để tiếp tục.</p>
+        </li>
+        <li>
+          <h3>Safari tự mở lại và hiện UDID</h3>
+          <p>Sau vài giây, Safari mở lại trang này và hiện UDID kèm model, bản iOS, số serial. Profile <b>không</b> nằm lại trong Cài đặt: Apple chỉ gửi thông tin rồi kết thúc.</p>
+          <p>Nếu Safari không tự mở, quay lại Safari bằng tay: trang sẽ hiện kết quả nếu đã nhận được.</p>
+        </li>
+        <li>
+          <h3>Gửi UDID cho dev</h3>
+          <p>Bấm <b>Copy UDID</b> hoặc <b>Gửi cho dev</b> (gửi qua Zalo, Mail…). Dev thêm UDID vào <span class="path">developer.apple.com → Certificates, IDs &amp; Profiles → Devices</span>, tạo lại provisioning profile ad-hoc, rồi build lại app. Kết quả trên trang chỉ giữ 30 phút.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="guide" aria-labelledby="format-title">
+      <h2 id="format-title">UDID định dạng mới và cũ</h2>
+      <p class="guide-text">Từ iPhone XS/XR (chip A12, năm 2018) trở đi, Apple đổi định dạng UDID. Hai định dạng đều hợp lệ trên Apple Developer, chỉ cần copy đúng nguyên chuỗi, kể cả dấu gạch ngang.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Định dạng</th><th>Ví dụ</th><th>Máy</th></tr></thead>
+          <tbody>
+            <tr><td>Mới · 25 ký tự</td><td><code>00008110-001A2B3C4D5E801E</code></td><td>iPhone XS, XR trở về sau; iPad dùng chip A12/M1 trở lên</td></tr>
+            <tr><td>Cũ · 40 ký tự hex</td><td><code>2b6f0cc904d137be2e1730235f5664094b831186</code></td><td>iPhone X, iPhone 8 và cũ hơn</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="guide-text">Định dạng mới là <code>8 ký tự</code> mã chip (ví dụ <code>00008110</code>), dấu <code>-</code>, rồi <code>16 ký tự</code> ECID của máy. Đừng nhầm UDID với <b>số serial</b> hay <b>IMEI</b>: Apple Developer chỉ nhận UDID.</p>
+    </section>
+
+    <section class="guide" aria-labelledby="other-title">
+      <h2 id="other-title">Cách khác, khi có máy Mac</h2>
+      <details>
+        <summary>Finder trên macOS (Catalina trở lên)</summary>
+        <div><p class="guide-text">Cắm iPhone vào Mac bằng cáp, bấm <b>Tin cậy</b> trên iPhone. Mở <b>Finder</b>, chọn iPhone ở thanh bên. Bấm vào dòng chữ xám dưới tên máy (model, dung lượng, pin) vài lần cho đến khi hiện <b>UDID</b>. Chuột phải vào dòng đó → <b>Sao chép UDID</b>.</p></div>
+      </details>
+      <details>
+        <summary>Xcode</summary>
+        <div><p class="guide-text">Cắm máy vào Mac, mở Xcode → <span class="path">Window → Devices and Simulators</span>, chọn máy. UDID nằm ở dòng <b>Identifier</b>, chọn chuỗi đó rồi copy. Nếu project dùng Automatic Signing, Xcode tự đăng ký máy vào team khi cắm máy và build.</p></div>
+      </details>
+      <details>
+        <summary>Apple Configurator / Terminal</summary>
+        <div><p class="guide-text">Apple Configurator: cắm máy, chuột phải vào máy → <b>Get Info</b>, xem dòng <b>UDID</b>. Terminal: <code>system_profiler SPUSBDataType | grep -A11 -E "iPhone|iPad"</code>, dòng <b>Serial Number</b> chính là UDID (thiếu dấu gạch ngang với máy đời mới: thêm <code>-</code> sau 8 ký tự đầu).</p></div>
+      </details>
+    </section>
+
+    <section class="guide" aria-labelledby="faq-title">
+      <h2 id="faq-title">Xử lý sự cố</h2>
+      <details>
+        <summary>Bấm nút nhưng không có gì xảy ra</summary>
+        <div><p class="guide-text">Bạn đang mở trang trong Chrome hoặc trình duyệt trong app. Copy link, mở bằng Safari. Kiểm tra thêm <span class="path">Cài đặt → Thời gian sử dụng → Bộ giới hạn</span> không chặn cài hồ sơ.</p></div>
+      </details>
+      <details>
+        <summary>“Cài đặt hồ sơ không thành công” / “Không thể kết nối với máy chủ”</summary>
+        <div><p class="guide-text">Máy cần mạng ổn định trong lúc cài. Tắt VPN, Private Relay hoặc chuyển 4G ↔ Wi‑Fi rồi tải lại profile. Nếu vẫn lỗi, báo dev: server UDID có thể đang tắt.</p></div>
+      </details>
+      <details>
+        <summary>Cài xong nhưng Safari không mở lại</summary>
+        <div><p class="guide-text">Mở Safari bằng tay. Nếu trang vẫn ở bước đầu, cài lại profile một lần nữa. Kết quả chỉ giữ 30 phút: quá thời gian thì làm lại từ bước 2.</p></div>
+      </details>
+      <details>
+        <summary>Máy quản lý bởi công ty (MDM) không cho cài hồ sơ</summary>
+        <div><p class="guide-text">Một số máy MDM chặn cài hồ sơ cấu hình. Dùng cách Finder/Xcode ở trên hoặc nhờ IT xem UDID trong trang quản trị MDM.</p></div>
+      </details>
+      <details>
+        <summary>Đã gửi UDID nhưng vẫn không cài được app</summary>
+        <div><p class="guide-text">Dev phải thêm UDID, tạo lại provisioning profile ad-hoc có máy đó, rồi build và upload IPA mới. Bản IPA cũ không tự nhận máy mới.</p></div>
+      </details>
+    </section>
+
+    <p class="foot">Thông tin đọc được: UDID, mã model, bản build iOS, số serial, IMEI. Server chỉ giữ kết quả trong bộ nhớ 30 phút để hiện lên trang này, không lưu ra ổ đĩa, không cài lại profile trên máy.</p>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script>
+    (() => {
+      // UDID API lives in ipa-upload-server behind nginx on devops.altisss.vn.
+      const API_BASE = 'https://devops.altisss.vn/mts-upload';
+      const params = new URLSearchParams(location.search);
+      const token = (params.get('t') || '').trim();
+      const errorCode = (params.get('error') || '').trim();
+      const pageUrl = `${location.origin}${location.pathname}`;
+      const $ = (id) => document.getElementById(id);
+
+      // Token stays out of history and of links people copy from the address bar.
+      if (token || errorCode) history.replaceState(null, '', location.pathname);
+
+      if (token) showResult(token);
+      else if (errorCode) showError(errorCode === 'parse'
+        ? 'Server không đọc được UDID từ phản hồi của iPhone. Cài lại profile một lần nữa.'
+        : 'Phản hồi từ iPhone bị lỗi. Kiểm tra mạng rồi thử lại.');
+      if (!token) showStart();
+
+      function platform() {
+        const ua = navigator.userAgent || '';
+        const ios = /iphone|ipad|ipod/i.test(ua) || (/macintosh/i.test(ua) && navigator.maxTouchPoints > 1);
+        if (!ios) return 'desktop';
+        // Chrome, Firefox, Edge, Opera, Google app and in-app browsers cannot install profiles.
+        if (/CriOS|FxiOS|EdgiOS|OPiOS|GSA\/|YaBrowser|FBAN|FBAV|Instagram|Line\/|Zalo|MicroMessenger|TikTok/i.test(ua)) return 'ios-other';
+        return 'ios-safari';
+      }
+
+      function showStart() {
+        const kind = platform();
+        if (kind === 'ios-safari') {
+          $('start-ios').classList.remove('hidden');
+          const link = $('profile-link');
+          link.href = `${API_BASE}/udid/profile.mobileconfig`;
+          link.addEventListener('click', () => {
+            setStatus($('profile-status'), 'Đã gửi yêu cầu. Chọn “Cho phép”, sau đó mở Cài đặt → Đã tải về hồ sơ.', 'ok');
+          });
+        } else if (kind === 'ios-other') {
+          $('start-not-safari').classList.remove('hidden');
+          $('copy-page-link').addEventListener('click', () => copy(pageUrl, 'Đã copy link, mở Safari và dán vào'));
+        } else {
+          $('start-desktop').classList.remove('hidden');
+          $('copy-page-link-desktop').addEventListener('click', () => copy(pageUrl, 'Đã copy link trang'));
+          $('open-page-tab').href = pageUrl;
+          renderQr($('page-qr'), pageUrl);
+        }
+      }
+
+      async function showResult(id) {
+        $('result-card').classList.remove('hidden');
+        let data;
+        try {
+          if (!/^[0-9a-f]{32}$/.test(id)) throw new Error('Link kết quả không hợp lệ.');
+          const response = await fetch(`${API_BASE}/api/udid/${id}`, { cache: 'no-store' });
+          data = await response.json().catch(() => null);
+          if (!response.ok) throw new Error((data && data.error) || `Server trả về HTTP ${response.status}`);
+        } catch (error) {
+          showError(error.message === 'Failed to fetch' ? 'Không kết nối được server. Kiểm tra mạng rồi thử lại.' : error.message);
+          return;
+        }
+        $('result-loading').classList.add('hidden');
+        $('result-body').classList.remove('hidden');
+        $('udid-value').textContent = data.udid;
+        $('udid-format').textContent = data.udid.length === 25 ? 'Định dạng mới' : 'Định dạng cũ';
+        // The iOS Simulator answers with a placeholder UDID made only of F.
+        if (/^F+$/i.test(data.udid.replace(/-/g, ''))) {
+          $('udid-format').textContent = 'Simulator';
+          $('sim-warning').classList.remove('hidden');
+        }
+
+        const rows = [
+          ['Mã model', data.product],
+          ['Bản build iOS', data.version],
+          ['Tên máy', data.deviceName],
+          ['Serial', data.serial],
+          ['IMEI', data.imei],
+          ['MEID', data.meid],
+        ].filter((row) => row[1]);
+        const list = $('udid-details');
+        rows.forEach(([label, value]) => {
+          const dt = document.createElement('dt');
+          dt.textContent = label;
+          const dd = document.createElement('dd');
+          dd.className = 'mono';
+          dd.textContent = value;
+          list.append(dt, dd);
+        });
+
+        const expires = new Date(data.expiresAt);
+        if (!Number.isNaN(expires.getTime())) {
+          setStatus($('result-status'), `Kết quả giữ đến ${expires.toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' })}. Copy và gửi cho dev trước khi đóng trang.`);
+        }
+
+        const message = [`UDID: ${data.udid}`, data.product && `Model: ${data.product}`, data.version && `iOS build: ${data.version}`]
+          .filter(Boolean).join('\n');
+        $('copy-udid').addEventListener('click', () => copy(data.udid, 'Đã copy UDID'));
+        $('share-udid').addEventListener('click', async () => {
+          if (navigator.share) {
+            try {
+              await navigator.share({ title: 'UDID iPhone', text: message });
+              return;
+            } catch (error) {
+              if (error && error.name === 'AbortError') return;
+            }
+          }
+          copy(message, 'Đã copy UDID và thông tin máy');
+        });
+      }
+
+      function showError(text) {
+        $('result-card').classList.remove('hidden');
+        $('result-loading').classList.add('hidden');
+        $('result-body').classList.add('hidden');
+        $('result-error').classList.remove('hidden');
+        $('result-error-text').textContent = text;
+      }
+
+      function renderQr(container, text) {
+        container.innerHTML = '';
+        if (typeof QRCode === 'function') {
+          try {
+            new QRCode(container, { text, width: 168, height: 168, correctLevel: QRCode.CorrectLevel.M });
+            return;
+          } catch (error) {
+            console.warn('QR render failed', error);
+          }
+        }
+        container.classList.add('hidden');
+      }
+
+      async function copy(text, done) {
+        try {
+          await navigator.clipboard.writeText(text);
+        } catch (error) {
+          const area = document.createElement('textarea');
+          area.value = text;
+          area.setAttribute('readonly', '');
+          area.style.position = 'fixed';
+          area.style.opacity = '0';
+          document.body.append(area);
+          area.select();
+          area.setSelectionRange(0, text.length);
+          const ok = document.execCommand('copy');
+          area.remove();
+          if (!ok) return toast('Không copy được, hãy chọn và copy bằng tay');
+        }
+        toast(done);
+      }
+
+      let toastTimer = 0;
+      function toast(text) {
+        const element = $('toast');
+        element.textContent = text;
+        element.classList.add('show');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => element.classList.remove('show'), 2200);
+      }
+
+      function setStatus(element, text, state = '') {
+        element.textContent = text;
+        element.dataset.state = state;
+      }
+    })();
+  </script>
+</body>
+</html>
