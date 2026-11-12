@@ -43,6 +43,10 @@
     "bundleId": "vn.innotech.hsc.MTS",
     "scheme": "HACMobile"
   },
+  "119": {
+    "bundleId": "vn.casc.casc",
+    "scheme": "CASMobile"
+  },
   "flutter": {
     "888": { "bundleId": "vn.altisss.mts.ios", "scheme": "Flutter Altisss" },
     "102": { "bundleId": "com.vn.vncsmts", "scheme": "Flutter VNCS" },
